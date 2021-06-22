@@ -1,0 +1,56 @@
+﻿<Window x:Class="Sismeio.CadastroCliente"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Sismeio"
+        mc:Ignorable="d"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="CadastroCliente" Height="450" Width="800" Margin="20,0,30,0">
+
+    <Grid Margin="-23,-32,-51,-77">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="218*"/>
+        </Grid.RowDefinitions>
+
+
+        <Border BorderThickness="1" BorderBrush="Black" Margin="848,-67,-74,-83" Grid.RowSpan="2"/>
+        <Label Content="Nome" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="76,75,0,0" FontSize="16"  FontFamily="Lucida Sans Unicode" FontWeight="Bold" Grid.Row="1"/>
+        <Label Content="CPF" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="372,75,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.057,4.741" Grid.Row="1"/>
+        <Label Content="RG" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="620,68,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.66,0.559" Grid.Row="1"/>
+        <Label Content="Telefone" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="406,175,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.66,0.559" Grid.Row="1"/>
+        <Label Content="Data de Nascimento" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="76,175,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.681,0.227" Height="39" Width="215" Grid.Row="1"/>
+        <Label Content="Endereço" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="42,288,0,0" FontSize="20" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="2.165,1.795" Grid.Row="1"/>
+        <Label Content="Rua:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="92,327,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.66,0.559" Grid.Row="1"/>
+        <Label Content="Nº:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="377,320,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856" Grid.Row="1"/>
+        <Label Content="Complemento:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="541,313,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856" Grid.Row="1"/>
+        <Label Content="Cidade:" VerticalAlignment="Top" Margin="565,381,232,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856" Grid.Row="1"/>
+        <Label Content="Bairro:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="92,383,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856" Grid.Row="1"/>
+        <Label Content="CEP:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="377,383,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856" Grid.Row="1"/>
+        <TextBlock Text="TextBlock" TextWrapping="Wrap"/>
+        <TextBlock Text="TextBlock" TextWrapping="Wrap"/>
+        <TextBox Text="TextBox" TextWrapping="Wrap" Width="120"/>
+        <TextBlock Text="TextBlock" TextWrapping="Wrap"/>
+        <TextBox TextWrapping="Wrap" Margin="377,112,353,368" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam" Text="Digite aqui"/>
+        <TextBox TextWrapping="Wrap" Margin="635,112,95,368" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam" Text="Digite aqui"/>
+        <TextBox TextWrapping="Wrap" Margin="92,112,638,367" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam" Text="Digite aqui"/>
+        <TextBox TextWrapping="Wrap" Margin="420,224,310,259" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam" Text="Digite aqui"/>
+        <TextBox TextWrapping="Wrap" Margin="642,396,88,98" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam" Text="Digite aqui"/>
+        <TextBox TextWrapping="Wrap" Margin="164,400,503,95" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam" Text="Digite aqui"/>
+        <TextBox TextWrapping="Wrap" Margin="140,336,527,158" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam" Text="Digite aqui"/>
+        <TextBox TextWrapping="Wrap" Margin="420,336,338,158" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam" Text="Digite aqui"/>
+        <TextBox TextWrapping="Wrap" Margin="437,399,321,95" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam" Text="Digite aqui"/>
+        <DatePicker
+        materialDesign:HintAssist.Hint="Janeiro"
+        Style="{StaticResource MaterialDesignOutlinedDatePicker}" Margin="76,219,606,0" Grid.Row="1" VerticalAlignment="Top" />
+        <TextBox TextWrapping="Wrap" Margin="672,336,86,158" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam" Text="Digite aqui"/>
+    </Grid>
+</Window>
