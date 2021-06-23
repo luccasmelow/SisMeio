@@ -1,0 +1,57 @@
+﻿<Window x:Class="Sismeio.AtualizarProduto"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Sismeio"
+        mc:Ignorable="d"
+        xmlns:materialDesign = " http://materialdesigninxaml.net/winfx/xaml/themes "
+        TextElement.Foreground = "{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight = "Regular"
+        TextElement.FontSize = " 13 "
+        TextOptions.TextFormattingMode = " Ideal " 
+        TextOptions.TextRenderingMode = " Auto "        
+        Background = "{DynamicResource MaterialDesignPaper}"
+        FontFamily = " {DynamicResource MaterialDesignFont} "
+        Title="ATUALIZAR PRODUTO" Height="400" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="70" />
+            <RowDefinition Height="250"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+
+        
+        <Label Margin="11,32,589,188" Grid.RowSpan="2" FontFamily = " Lucida Sans Unicode " FontSize = " 14" RenderTransformOrigin="0,66">PESQUISAR POR:
+        </Label>
+        <ComboBox Height="22" Width="200" Margin="146,29,454,0" VerticalAlignment="Top"  Foreground="#8d8d8d"  Cursor="IBeam" RenderTransformOrigin="0.5,0.5">
+            <ComboBoxItem Content="CÓDIGO"/>
+            <ComboBoxItem Content="NOME"/>
+        </ComboBox>
+        <Label Content="Marca" VerticalAlignment = "Top"  HorizontalAlignment = "Left"  Margin = "71,30,0,0"  FontSize = " 16 "  FontFamily = " Lucida Sans Unicode "  FontWeight = "Bold" RenderTransformOrigin="0,66" Grid.Row = " 1 "  />
+        <Label Content="Quantidade" VerticalAlignment = "Top"  HorizontalAlignment = "Left"  Margin = "229,30,0,0"  FontSize = " 16 "  FontFamily = " Lucida Sans Unicode "  FontWeight = "Bold" RenderTransformOrigin="0,66" Grid.Row = " 1 "  />
+        <Label Content="Categoria" VerticalAlignment = "Top"  HorizontalAlignment = "Left"  Margin = "419,30,0,0"  FontSize = " 16 "  FontFamily = " Lucida Sans Unicode "  FontWeight = "Bold" RenderTransformOrigin="0,66" Grid.Row = " 1 "  />
+        <Label Content="Numeração" VerticalAlignment = "Top"  HorizontalAlignment = "Left"  Margin = "622,30,0,0"  FontSize = " 16 "  FontFamily = " Lucida Sans Unicode "  FontWeight = "Bold" RenderTransformOrigin="0,66" Grid.Row = " 1 "  />
+
+        <TextBox TextWrapping="Wrap" Margin="35,63,609,160" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d"  Cursor="IBeam" Text="Digite aqui" RenderTransformOrigin="0.5,0.5"/>
+        <TextBox TextWrapping="Wrap" Margin="224,64,420,159" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" Cursor="IBeam" Text="Digite aqui" RenderTransformOrigin="0.5,0.5"/>
+        <TextBox TextWrapping="Wrap" Margin="400,62,244,160" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" Cursor="IBeam" Text="Digite aqui" RenderTransformOrigin="0.5,0.5"/>
+        <TextBox TextWrapping="Wrap" Margin="610,60,34,160" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d"  Cursor="IBeam" Text="Digite aqui" RenderTransformOrigin="0.5,0.5"/>
+
+
+
+        <Label Content="R$ Estoque" VerticalAlignment = "Top"  HorizontalAlignment = "Left"  Margin = "56,134,0,0"  FontSize = " 16 "  FontFamily = " Lucida Sans Unicode "  FontWeight = "Bold" RenderTransformOrigin="0,66" Grid.Row = " 1 "  />
+        <Label Content="R$ Unitário" VerticalAlignment = "Top"  HorizontalAlignment = "Left"  Margin = "232,132,0,0"  FontSize = " 16 "  FontFamily = " Lucida Sans Unicode "  FontWeight = "Bold" RenderTransformOrigin="0,66" Grid.Row = " 1 "  />
+        <Label Content="R$ Frete" VerticalAlignment = "Top"  HorizontalAlignment = "Left"  Margin = "429,134,0,0"  FontSize = " 16 "  FontFamily = " Lucida Sans Unicode "  FontWeight = "Bold" RenderTransformOrigin="0,66" Grid.Row = " 1 "  />
+        <Label Content="R$ Desconto" VerticalAlignment = "Top"  HorizontalAlignment = "Left"  Margin = "622,134,0,0"  FontSize = " 16 "  FontFamily = " Lucida Sans Unicode "  FontWeight = "Bold" RenderTransformOrigin="0,66" Grid.Row = " 1 "  />
+
+        <TextBox TextWrapping="Wrap" Margin="35,169,609,54" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d"  Cursor="IBeam" Text="Digite aqui" RenderTransformOrigin="0.5,0.5"/>
+        <TextBox TextWrapping="Wrap" Margin="224,169,420,54" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d"  Cursor="IBeam" Text="Digite aqui" RenderTransformOrigin="0.5,0.5"/>
+        <TextBox TextWrapping="Wrap" Margin="400,169,244,54" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d"  Cursor="IBeam" Text="Digite aqui" RenderTransformOrigin="0.5,0.5"/>
+        <TextBox TextWrapping="Wrap" Margin="610,169,34,54" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d"  Cursor="IBeam" Text="Digite aqui" RenderTransformOrigin="0.5,0.5"/>
+
+
+    </Grid>
+</Window>

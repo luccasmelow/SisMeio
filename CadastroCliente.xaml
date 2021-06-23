@@ -52,5 +52,6 @@
         materialDesign:HintAssist.Hint="Janeiro"
         Style="{StaticResource MaterialDesignOutlinedDatePicker}" Margin="76,219,606,0" Grid.Row="1" VerticalAlignment="Top" />
         <TextBox TextWrapping="Wrap" Margin="672,336,86,158" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam" Text="Digite aqui"/>
+        <Button Content="atualizar_prod" HorizontalAlignment="Left" Margin="642,245,0,0" Grid.Row="1" VerticalAlignment="Top" Click="Button_Click"/>
     </Grid>
 </Window>

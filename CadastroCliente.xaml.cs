@@ -31,5 +31,11 @@ namespace Sismeio
         {
             
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            AtualizarProduto atualizar = new AtualizarProduto();
+            atualizar.Show();
+        }
     }
 }
