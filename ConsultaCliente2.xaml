@@ -1,0 +1,114 @@
+﻿<Window x:Class="Sismeio.ConsultaCliente2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Sismeio"
+        mc:Ignorable="d"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+    Title="ConsultaCliente2" Height="800" Width="1200">
+    <Grid>
+
+        <Border BorderThickness="1" BorderBrush="Black" Margin="1246,-67,-74,-83" Grid.RowSpan="2"/>
+        <Label Content="Código" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="77,91,0,0" FontSize="16"  FontFamily="Lucida Sans Unicode" FontWeight="Bold"/>
+        <Label Content="Nome" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="92,153,0,0" FontSize="16"  FontFamily="Lucida Sans Unicode" FontWeight="Bold"/>
+        <Label Content="CPF" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="398,153,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.057,4.741"/>
+        <Label Content="RG" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="727,153,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.66,0.559"/>
+        <Label Content="Telefone" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="398,241,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.66,0.559"/>
+        <Label Content="Data de Nascimento" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="88,240,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.681,0.227" Height="33" Width="215">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="2.116"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0.327"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label Content="Endereço" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="92,336,0,0" FontSize="20" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="2.165,1.795"/>
+        <Label Content="Logradouro:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="110,382,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.746,1.123"/>
+        <Label Content="Nº:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="472,382,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856"/>
+        <Label Content="Complemento:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="679,382,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856"/>
+        <Label Content="Cidade:" VerticalAlignment="Top" Margin="679,442,335,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856"/>
+        <Label Content="Bairro:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="119,442,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856"/>
+        <Label Content="CEP:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="472,442,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856"/>
+        <Rectangle HorizontalAlignment="Left" Height="33" Margin="92,191,0,0" Stroke="Black" VerticalAlignment="Top" Width="229"/>
+        <Rectangle HorizontalAlignment="Left" Height="33" Margin="398,186,0,0" Stroke="Black" VerticalAlignment="Top" Width="229"/>
+        <Rectangle HorizontalAlignment="Left" Height="33" Margin="727,191,0,0" Stroke="Black" VerticalAlignment="Top" Width="229"/>
+        <Rectangle HorizontalAlignment="Left" Height="33" Margin="161,91,0,0" Stroke="Black" VerticalAlignment="Top" Width="131"/>
+        <Rectangle HorizontalAlignment="Left" Height="33" Margin="398,274,0,0" Stroke="Black" VerticalAlignment="Top" Width="229"/>
+        <Rectangle HorizontalAlignment="Left" Height="33" Margin="222,383,0,0" Stroke="Black" VerticalAlignment="Top" Width="195"/>
+        <Rectangle HorizontalAlignment="Left" Height="33" Margin="185,442,0,0" Stroke="Black" VerticalAlignment="Top" Width="211"/>
+        <Rectangle HorizontalAlignment="Left" Height="33" Margin="512,382,0,0" Stroke="Black" VerticalAlignment="Top" Width="122"/>
+        <Rectangle HorizontalAlignment="Left" Height="32" Margin="520,443,0,0" Stroke="Black" VerticalAlignment="Top" Width="136"/>
+        <Rectangle HorizontalAlignment="Left" Height="32" Margin="765,443,0,0" Stroke="Black" VerticalAlignment="Top" Width="191"/>
+        <Rectangle HorizontalAlignment="Left" Height="38" Margin="810,378,0,0" Stroke="Black" VerticalAlignment="Top" Width="191"/>
+        <Label Content="Situação" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="99,572,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856" Width="86" Foreground="#FF110F0F"/>
+        <Label Content="Compras Pendentes" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="325,572,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856" Width="168" Foreground="#FF0A0A0F"/>
+        <Label Content="Compras Pagas" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="633,572,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856" Width="139" Foreground="#FF110F0F"/>
+        <Label Content="Compras Realizadas" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="906,572,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856" Width="184" Foreground="#FF110F0F"/>
+
+
+        <ComboBox
+        x:Name="ComprasPendentes"
+        Style="{StaticResource MaterialDesignFilledComboBox}"
+        IsEnabled="{Binding Path=IsChecked, ElementName=FilledComboBoxEnabledCheckBox}"
+        materialDesign:HintAssist.Hint="Some item" Margin="313,610,640,126">
+            <ComboBoxItem
+         Content="Chinelo Havaina 34" />
+            <ComboBoxItem
+        Content="Tenis Adidas 34" />
+            <ComboBoxItem
+        Content="Sandália Ramarim 32" />
+        </ComboBox>
+        <ComboBox
+        x:Name="Situação"
+        Style="{StaticResource MaterialDesignFilledComboBox}"
+        IsEnabled="{Binding Path=IsChecked, ElementName=FilledComboBoxEnabledCheckBox}"
+        materialDesign:HintAssist.Hint="Some item" Margin="67,610,940,126">
+            <ComboBoxItem
+         Content="Devedor" />
+            <ComboBoxItem
+        Content="Item 2" />
+            <ComboBoxItem
+        Content="Item 3" />
+        </ComboBox>
+        <ComboBox
+            x:Name="ComprasPagas"
+            Style="{StaticResource MaterialDesignFilledComboBox}"
+            IsEnabled="{Binding IsChecked, ElementName=FilledComboBoxEnabledCheckBox}"
+            materialDesign:HintAssist.Hint="Some item" Margin="597,610,335,124" SelectionChanged="ComprasPagas_SelectionChanged">
+            <ComboBoxItem
+                Content="Chinelo Havaina 34" />
+            <ComboBoxItem
+                Content="Tenis Adidas 34" />
+            <ComboBoxItem
+                Content="Sandália Ramarim 32" />
+        </ComboBox>
+        <ComboBox
+            x:Name="ComprasRealizadas"
+            Style="{StaticResource MaterialDesignFilledComboBox}"
+            IsEnabled="{Binding IsChecked, ElementName=FilledComboBoxEnabledCheckBox}"
+            materialDesign:HintAssist.Hint="Some item" Margin="906,610,64,124">
+            <ComboBoxItem
+                Content="Chinelo Havaina 34" />
+            <ComboBoxItem
+                Content="Tenis Adidas 34" />
+            <ComboBoxItem
+                Content="Sandália Ramarim 32" />
+        </ComboBox>
+        <Rectangle HorizontalAlignment="Left" Height="33" Margin="90,274,0,0" Stroke="Black" VerticalAlignment="Top" Width="230"/>
+        <Label Content="Útilma Compra" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="742,241,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856" Width="144"/>
+      
+
+    </Grid>
+
+
+</Window>

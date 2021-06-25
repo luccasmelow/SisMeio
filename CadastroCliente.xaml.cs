@@ -37,5 +37,15 @@ namespace Sismeio
             AtualizarProduto atualizar = new AtualizarProduto();
             atualizar.Show();
         }
+
+        private void ToggleButton_Checked(object sender, RoutedEventArgs e)
+        {
+          
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
