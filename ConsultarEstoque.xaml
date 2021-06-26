@@ -5,8 +5,41 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Sismeio"
         mc:Ignorable="d"
-        Title="ConsultarEstoque" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="Consultar Estoque" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+
+    <DockPanel>
+        <StackPanel DockPanel.Dock="top" Orientation = "Horizontal" Width="800"  Height="105" Margin="0 5" VerticalAlignment="Top">
+
+            <materialDesign:PackIcon Kind="Magnify" Margin="80 45 5 0"/>
+            
+            <ComboBox
+                
+                Width="105"  Height="30" Margin="0 5"
+                materialDesign:HintAssist.Hint="Buscar Produto"
+                materialDesign:HintAssist.HintOpacity=".26"
+                IsEditable="True">
+
+                <ComboBoxItem
+                Content="Chinelo Havaina" />
+                <ComboBoxItem
+                Content="Tenis Adidas" />
+                <ComboBoxItem
+                Content="Sandália Ramarim" />
+                
+            </ComboBox>
+            
+            
+        </StackPanel>
+
+
+    </DockPanel>
+    
 </Window>
