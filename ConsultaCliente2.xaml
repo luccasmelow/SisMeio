@@ -106,7 +106,10 @@
         </ComboBox>
         <Rectangle HorizontalAlignment="Left" Height="33" Margin="90,274,0,0" Stroke="Black" VerticalAlignment="Top" Width="230"/>
         <Label Content="Útilma Compra" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="742,241,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856" Width="144"/>
-      
+        <Button HorizontalAlignment="Left" Margin="369,74,0,0" VerticalAlignment="Top">
+            <Button Content="cadprod" Click="Button_Click_1"/>
+        </Button>
+
 
     </Grid>
 

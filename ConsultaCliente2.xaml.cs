@@ -36,5 +36,13 @@ namespace Sismeio
         {
 
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            CadastroProduto cadprod = new CadastroProduto();
+            cadprod.Show();
+        }
+
+        
     }
 }

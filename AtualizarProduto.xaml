@@ -5,56 +5,85 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Sismeio"
         mc:Ignorable="d"
-        xmlns:materialDesign = " http://materialdesigninxaml.net/winfx/xaml/themes "
+        xmlns:materialDesign = "http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground = "{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight = "Regular"
-        TextElement.FontSize = " 13 "
-        TextOptions.TextFormattingMode = " Ideal " 
-        TextOptions.TextRenderingMode = " Auto "        
+        TextElement.FontSize = "13"
+        TextOptions.TextFormattingMode ="Ideal " 
+        TextOptions.TextRenderingMode = "Auto"        
         Background = "{DynamicResource MaterialDesignPaper}"
-        FontFamily = " {DynamicResource MaterialDesignFont} "
-        Title="ATUALIZAR PRODUTO" Height="450" Width="800">
+        FontFamily = "{DynamicResource MaterialDesignFont}"
+        Title="ATUALIZAR PRODUTO" Height="500" Width="800" WindowStartupLocation="CenterScreen">
+
+
+
+
     <Grid>
+
+
         <Grid.RowDefinitions>
 
             <RowDefinition Height="70" />
-            <RowDefinition Height="250"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="70"/>
         </Grid.RowDefinitions>
 
+        <materialDesign:ColorZone
+            Foreground="Black" 
+             Background="#D3D3D3"
+            Mode="PrimaryLight"
+            Padding="1" Margin="1,1,1,0" Height="55" RenderTransformOrigin="0.5,0.5">
+            <materialDesign:ColorZone.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-1.042" AngleY="0.003"/>
+                    <RotateTransform Angle="-0.011"/>
+                    <TranslateTransform X="-0.582" Y="0.022"/>
+                </TransformGroup>
+            </materialDesign:ColorZone.RenderTransform>
+            <StackPanel Orientation="Horizontal" Margin="1,-1,0,-2" HorizontalAlignment="Left" Width="796">
+                <ToggleButton
+                    Style="{DynamicResource MaterialDesignHamburgerToggleButton}"  Content="" RenderTransformOrigin="0.666,0.431" Width="50" Height="46"/>
 
 
-        <Label Margin="11,32,589,188" Grid.RowSpan="2" FontFamily = " Lucida Sans Unicode " FontSize = " 14" RenderTransformOrigin="0,66">PESQUISAR POR:
+            </StackPanel>
+        </materialDesign:ColorZone>
+
+        <materialDesign:PackIcon Kind="Magnify" Margin="358,6,0,0" Grid.Row="1"/>
+        <Label Margin="10,4,658,0" FontFamily = " Lucida Sans Unicode " FontSize = " 14" RenderTransformOrigin="0,66" Grid.Row="1" Height="26" VerticalAlignment="Top">PESQUISAR POR:
         </Label>
-        <ComboBox Height="22" Width="200" Margin="146,29,454,0" VerticalAlignment="Top"  Foreground="#8d8d8d"  Cursor="IBeam" RenderTransformOrigin="0.5,0.5">
+        <ComboBox Height="22" Width="200" Margin="147,0,453,0" VerticalAlignment="Top"  Foreground="#8d8d8d"  Cursor="IBeam" RenderTransformOrigin="0.5,0.5" Grid.Row="1">
             <ComboBoxItem Content="CÓDIGO"/>
             <ComboBoxItem Content="NOME"/>
         </ComboBox>
-        <Label Content="Marca" VerticalAlignment = "Top"  HorizontalAlignment = "Left"  Margin = "71,30,0,0"  FontSize = " 16 "  FontFamily = " Lucida Sans Unicode "  FontWeight = "Bold" RenderTransformOrigin="0,66" Grid.Row = " 1 "  />
-        <Label Content="Quantidade" VerticalAlignment = "Top"  HorizontalAlignment = "Left"  Margin = "229,30,0,0"  FontSize = " 16 "  FontFamily = " Lucida Sans Unicode "  FontWeight = "Bold" RenderTransformOrigin="0,66" Grid.Row = " 1 "  />
-        <Label Content="Categoria" VerticalAlignment = "Top"  HorizontalAlignment = "Left"  Margin = "419,30,0,0"  FontSize = " 16 "  FontFamily = " Lucida Sans Unicode "  FontWeight = "Bold" RenderTransformOrigin="0,66" Grid.Row = " 1 "  />
-        <Label Content="Numeração" VerticalAlignment = "Top"  HorizontalAlignment = "Left"  Margin = "622,30,0,0"  FontSize = " 16 "  FontFamily = " Lucida Sans Unicode "  FontWeight = "Bold" RenderTransformOrigin="0,66" Grid.Row = " 1 "  />
+        <Label Content="Marca" VerticalAlignment = "Top"  HorizontalAlignment = "Left"  Margin = "76,85,0,0"  FontSize = " 16 "  FontFamily = " Lucida Sans Unicode "  FontWeight = "Bold" RenderTransformOrigin="0,66" Grid.Row = " 1 "  />
+        <Label Content="Quantidade" VerticalAlignment = "Top"  HorizontalAlignment = "Left"  Margin = "228,83,0,0"  FontSize = " 16 "  FontFamily = " Lucida Sans Unicode "  FontWeight = "Bold" RenderTransformOrigin="0,66" Grid.Row = " 1 "  />
+        <Label Content="Categoria" VerticalAlignment = "Top"  HorizontalAlignment = "Left"  Margin = "418,81,0,0"  FontSize = " 16 "  FontFamily = " Lucida Sans Unicode "  FontWeight = "Bold" RenderTransformOrigin="0,66" Grid.Row = " 1 "  />
+        <Label Content="Numeração" VerticalAlignment = "Top"  HorizontalAlignment = "Left"  Margin = "621,81,0,0"  FontSize = " 16 "  FontFamily = " Lucida Sans Unicode "  FontWeight = "Bold" RenderTransformOrigin="0,66" Grid.Row = " 1 "  />
 
-        <TextBox x:Name="txtMarca"  TextWrapping="Wrap" Margin="35,63,609,160" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d"  Cursor="IBeam" Text="Digite aqui" RenderTransformOrigin="0.5,0.5"/>
-        <TextBox x:Name="txtQtd" TextWrapping="Wrap" Margin="224,64,420,159" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" Cursor="IBeam" Text="Digite aqui" RenderTransformOrigin="0.5,0.5"/>
-        <TextBox x:Name="txtCat"  TextWrapping="Wrap" Margin="400,62,244,160" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" Cursor="IBeam" Text="Digite aqui" RenderTransformOrigin="0.5,0.5"/>
-        <TextBox x:Name="txtNum" TextWrapping="Wrap" Margin="610,60,34,160" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d"  Cursor="IBeam" Text="Digite aqui" RenderTransformOrigin="0.5,0.5"/>
+        <TextBox x:Name="txtMarca"  TextWrapping="Wrap" Margin="34,0,610,183" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d"  Cursor="IBeam" Text="Digite aqui" RenderTransformOrigin="0.5,0.5" Height="28" VerticalAlignment="Bottom"/>
+        <TextBox x:Name="txtQtd" TextWrapping="Wrap" Margin="223,0,421,183" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" Cursor="IBeam" Text="Digite aqui" RenderTransformOrigin="0.5,0.5" Height="27" VerticalAlignment="Bottom"/>
+        <TextBox x:Name="txtCat"  TextWrapping="Wrap" Margin="399,0,245,183" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" Cursor="IBeam" Text="Digite aqui" RenderTransformOrigin="0.5,0.5" Height="29" VerticalAlignment="Bottom"/>
+        <TextBox x:Name="txtNum" TextWrapping="Wrap" Margin="609,0,35,183" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d"  Cursor="IBeam" Text="Digite aqui" RenderTransformOrigin="0.5,0.5" Height="31" VerticalAlignment="Bottom"/>
 
 
 
-        <Label Content="R$ Estoque" VerticalAlignment = "Top"  HorizontalAlignment = "Left"  Margin = "56,134,0,0"  FontSize = " 16 "  FontFamily = " Lucida Sans Unicode "  FontWeight = "Bold" RenderTransformOrigin="0,66" Grid.Row = " 1 "  />
-        <Label Content="R$ Unitário" VerticalAlignment = "Top"  HorizontalAlignment = "Left"  Margin = "232,132,0,0"  FontSize = " 16 "  FontFamily = " Lucida Sans Unicode "  FontWeight = "Bold" RenderTransformOrigin="0,66" Grid.Row = " 1 "  />
-        <Label Content="R$ Frete" VerticalAlignment = "Top"  HorizontalAlignment = "Left"  Margin = "429,134,0,0"  FontSize = " 16 "  FontFamily = " Lucida Sans Unicode "  FontWeight = "Bold" RenderTransformOrigin="0,66" Grid.Row = " 1 "  />
-        <Label Content="R$ Desconto" VerticalAlignment = "Top"  HorizontalAlignment = "Left"  Margin = "622,134,0,0"  FontSize = " 16 "  FontFamily = " Lucida Sans Unicode "  FontWeight = "Bold" RenderTransformOrigin="0,66" Grid.Row = " 1 "  />
+        <Label Content="R$ Estoque" VerticalAlignment = "Top"  HorizontalAlignment = "Left"  Margin = "55,204,0,0"  FontSize = " 16 "  FontFamily = " Lucida Sans Unicode "  FontWeight = "Bold" RenderTransformOrigin="0,66" Grid.Row = " 1 "  />
+        <Label Content="R$ Unitário" VerticalAlignment = "Top"  HorizontalAlignment = "Left"  Margin = "231,202,0,0"  FontSize = " 16 "  FontFamily = " Lucida Sans Unicode "  FontWeight = "Bold" RenderTransformOrigin="0,66" Grid.Row = " 1 "  />
+        <Label Content="R$ Frete" VerticalAlignment = "Top"  HorizontalAlignment = "Left"  Margin = "428,204,0,0"  FontSize = " 16 "  FontFamily = " Lucida Sans Unicode "  FontWeight = "Bold" RenderTransformOrigin="0,66" Grid.Row = " 1 "  />
+        <Label Content="R$ Desconto" VerticalAlignment = "Top"  HorizontalAlignment = "Left"  Margin = "621,204,0,0"  FontSize = " 16 "  FontFamily = " Lucida Sans Unicode "  FontWeight = "Bold" RenderTransformOrigin="0,66" Grid.Row = " 1 "  />
 
-        <TextBox x:Name="txtEstoq" TextWrapping="Wrap" Margin="35,169,609,54" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d"  Cursor="IBeam" Text="Digite aqui" RenderTransformOrigin="0.5,0.5"/>
-        <TextBox x:Name="txtUnit"  TextWrapping="Wrap" Margin="224,169,420,54" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d"  Cursor="IBeam" Text="Digite aqui" RenderTransformOrigin="0.5,0.5"/>
-        <TextBox x:Name="txtFrete"  TextWrapping="Wrap" Margin="400,169,244,54" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d"  Cursor="IBeam" Text="Digite aqui" RenderTransformOrigin="0.5,0.5"/>
-        <TextBox x:Name="txtDesconto" TextWrapping="Wrap" Margin="610,169,34,54" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d"  Cursor="IBeam" Text="Digite aqui" RenderTransformOrigin="0.5,0.5"/>
-        <Button x:Name="btnSalvar" Content="Salvar" HorizontalAlignment="Left" Margin="484,27,0,0" Grid.Row="2" VerticalAlignment="Top" Click="btnSalvar_Click"/>
-        <Button x:Name="btnCancelar"  Content="Cancelar"  HorizontalAlignment="Left" Margin="688,27,0,0" Grid.Row="2" VerticalAlignment="Top" Click="btnCancelar_Click" Cursor="Hand"/>
-        <Button x:Name="btnAlterar" Content="Alterar" HorizontalAlignment="Left" Margin="588,27,0,0" Grid.Row="2" VerticalAlignment="Top" Click="btnAlterar_Click"/>
-
+        <TextBox x:Name="txtEstoq" TextWrapping="Wrap" Margin="34,239,610,0" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d"  Cursor="IBeam" Text="Digite aqui" RenderTransformOrigin="0.5,0.5" Height="26" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtUnit"  TextWrapping="Wrap" Margin="223,239,421,0" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d"  Cursor="IBeam" Text="Digite aqui" RenderTransformOrigin="0.5,0.5" Height="26" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtFrete"  TextWrapping="Wrap" Margin="399,239,245,0" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d"  Cursor="IBeam" Text="Digite aqui" RenderTransformOrigin="0.5,0.5" Height="26" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtDesconto" TextWrapping="Wrap" Margin="609,239,35,0" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d"  Cursor="IBeam" Text="Digite aqui" RenderTransformOrigin="0.5,0.5" Height="26" VerticalAlignment="Top"/>
+        <Button x:Name="btnSalvar" Content="Salvar" HorizontalAlignment="Left" Margin="474,10,0,0" Grid.Row="2" VerticalAlignment="Top" Click="btnSalvar_Click"/>
+        <Button x:Name="btnCancelar"  Content="Cancelar"  HorizontalAlignment="Left" Margin="678,10,0,0" Grid.Row="2" VerticalAlignment="Top" Click="btnCancelar_Click" Cursor="Hand"/>
+        <Button x:Name="btnAlterar" Content="Alterar" HorizontalAlignment="Left" Margin="578,10,0,0" Grid.Row="2" VerticalAlignment="Top" Click="btnAlterar_Click"/>
+        <Button x:Name="btnir" Content="CadPro" HorizontalAlignment="Left" Margin="269,10,0,0" Grid.Row="2" VerticalAlignment="Top" Click="btnir_Click" />
+        <TextBlock
+                    FontSize="35"
+                    Text="Atualizar  Produto" RenderTransformOrigin="0.881,0.436" Margin="225,4,276,27"/>
 
     </Grid>
 </Window>

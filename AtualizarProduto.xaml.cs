@@ -54,5 +54,11 @@ namespace Sismeio
             txtDesconto.Text = "";
              
         }
+
+        private void btnir_Click(object sender, RoutedEventArgs e)
+        {
+            CadastroProduto cadprod = new CadastroProduto();
+            cadprod.Show();
+        }
     }
 }

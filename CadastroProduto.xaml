@@ -1,0 +1,137 @@
+﻿<Window x:Class="Sismeio.CadastroProduto"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Sismeio"
+        mc:Ignorable="d"
+        xmlns:materialDesign = "http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground = "{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight = "Regular"
+        TextElement.FontSize = " 13 "
+        TextOptions.TextFormattingMode = " Ideal " 
+        TextOptions.TextRenderingMode = " Auto "        
+        Background = "{DynamicResource MaterialDesignPaper}"
+        FontFamily = "{DynamicResource MaterialDesignFont}"
+        Title="CADASTRAR PRODUTO" Height="750" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid Margin="1,-21,-1,21">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="200"/>
+
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+
+        <materialDesign:ColorZone
+            Foreground="Black" 
+             Background="#D3D3D3"
+            Mode="PrimaryLight"
+            Padding="1" Margin="1,24,1,0" Height="56" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2">
+            <materialDesign:ColorZone.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-1.042" AngleY="0.003"/>
+                    <RotateTransform Angle="-0.011"/>
+                    <TranslateTransform X="-0.582" Y="0.022"/>
+                </TransformGroup>
+            </materialDesign:ColorZone.RenderTransform>
+            <StackPanel Orientation="Horizontal" Margin="1,18,0,-21" HorizontalAlignment="Left" Width="796"/>
+        </materialDesign:ColorZone>
+
+        <TextBlock FontSize="35" Text="Cadastrar Produto" RenderTransformOrigin="0.881,0.436" Margin="226,23,275,8"/>
+
+
+        <Label Content="CÓDIGO PRODUTO" HorizontalAlignment="Left" Margin="19,0,0,41" VerticalAlignment="Bottom" RenderTransformOrigin="-2.563,0.341" Grid.Row="1" Height="22" Width="109"/>
+        <Label Content="CÓDIGO BARRA" HorizontalAlignment="Left" Margin="365,0,0,42" VerticalAlignment="Bottom" RenderTransformOrigin="-2.563,0.341" Grid.Row="1" Height="22" Width="92"/>
+
+        <TextBox x:Name="txtCodP"  TextWrapping="Wrap" Margin="158,0,486,39" Foreground="#8d8d8d" CaretBrush="#8d8d8d"  Cursor="IBeam" Text="Digite aqui" RenderTransformOrigin="0.5,0.5" Grid.Row="1" Height="26" VerticalAlignment="Bottom"/>
+        <TextBox x:Name="txtCodB"  TextWrapping="Wrap" Margin="485,0,159,43" Foreground="#8d8d8d" CaretBrush="#8d8d8d"  Cursor="IBeam" Text="Digite aqui" RenderTransformOrigin="0.5,0.5" Grid.Row="1" Height="27" VerticalAlignment="Bottom"/>
+
+
+        <Label Content="SOBRE O PRODUTO" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.563,0.341" Grid.Row="2" Height="22" Width="113" FontStyle="Italic"/>
+        <Label Content="Data Importação" VerticalAlignment = "Top"  HorizontalAlignment = "Left"  Margin = "20,43,0,0"  FontSize = " 13 "  FontFamily = " Lucida Sans Unicode "  FontWeight = "Bold" RenderTransformOrigin="0,66" Grid.Row = " 2 "  />
+        <DatePicker
+        materialDesign:HintAssist.Hint="Janeiro"
+        Style="{StaticResource MaterialDesignOutlinedDatePicker}" Margin="20,66,670,0" Grid.Row="2" VerticalAlignment="Top" Height="46" />
+        <Label Content="Data Entrega" VerticalAlignment = "Top"  HorizontalAlignment = "Left"  Margin = "181,42,0,0"  FontSize = " 13 "  FontFamily = " Lucida Sans Unicode "  FontWeight = "Bold" RenderTransformOrigin="0,66" Grid.Row = " 2 "  />
+        <DatePicker
+            materialDesign:HintAssist.Hint="Janeiro"
+            Style="{StaticResource MaterialDesignOutlinedDatePicker}" Margin="181,65,509,0" Grid.Row="2" VerticalAlignment="Top" Height="47" />
+        <ToggleButton
+                    Style="{DynamicResource MaterialDesignHamburgerToggleButton}"  Content="" RenderTransformOrigin="0.666,0.431" Margin="2,27,748,87" Grid.RowSpan="2">
+            <ToggleButton.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="0"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0"/>
+                </TransformGroup>
+            </ToggleButton.RenderTransform>
+        </ToggleButton>
+
+        <Label Content="Fornecedor" VerticalAlignment = "Top"  HorizontalAlignment = "Left"  Margin = "351,44,0,0"  FontSize = " 13 "  FontFamily = " Lucida Sans Unicode "  FontWeight = "Bold" RenderTransformOrigin="0,66" Grid.Row = " 2 "  />
+        <TextBox x:Name="txtFornecedor"  TextWrapping="Wrap" Margin="326,74,318,0" Foreground="#8d8d8d" CaretBrush="#8d8d8d"  Cursor="IBeam" Text="Digite aqui" RenderTransformOrigin="0.5,0.5" Grid.Row="2" Height="26" VerticalAlignment="Top"/>
+        <Label Content="Observações" VerticalAlignment = "Top"  HorizontalAlignment = "Left"  Margin = "602,44,0,0"  FontSize = " 13 "  FontFamily = " Lucida Sans Unicode "  FontWeight = "Bold" RenderTransformOrigin="0,66" Grid.Row = " 2 "  />
+        <TextBox x:Name="txtObs"  TextWrapping="Wrap" Margin="576,74,68,0" Foreground="#8d8d8d" CaretBrush="#8d8d8d"  Cursor="IBeam" Text="Digite aqui" RenderTransformOrigin="0.5,0.5" Grid.Row="2" Height="26" VerticalAlignment="Top"/>
+        <Button Content="atualizar" HorizontalAlignment="Left" Margin="57,141,0,-73" Grid.Row="4" Click="Button_Click_1"/>
+        <Label Content="Marca" VerticalAlignment = "Top"  HorizontalAlignment = "Left"  Margin = "61,130,0,0"  FontSize = " 13 "  FontFamily = " Lucida Sans Unicode "  FontWeight = "Bold" RenderTransformOrigin="0,66" Grid.Row = " 2 "  />
+        <TextBox x:Name="txtMarca"  TextWrapping="Wrap" Margin="20,162,624,0" Foreground="#8d8d8d" CaretBrush="#8d8d8d"  Cursor="IBeam" Text="Digite aqui" RenderTransformOrigin="0.5,0.5" Grid.Row="2" Height="26" VerticalAlignment="Top"/>
+        <Label Content="Peso" VerticalAlignment = "Top"  HorizontalAlignment = "Left"  Margin = "336,132,0,0"  FontSize = " 13 "  FontFamily = " Lucida Sans Unicode "  FontWeight = "Bold" RenderTransformOrigin="0,66" Grid.Row = " 2 "  />
+        <Label Content="Quantidade" VerticalAlignment = "Top"  HorizontalAlignment = "Left"  Margin = "607,132,0,0"  FontSize = " 13 "  FontFamily = " Lucida Sans Unicode "  FontWeight = "Bold" RenderTransformOrigin="0,66" Grid.Row = " 2 "  />
+        <TextBox x:Name="txtPeso"  TextWrapping="Wrap" Margin="282,160,362,0" Foreground="#8d8d8d" CaretBrush="#8d8d8d"  Cursor="IBeam" Text="Digite aqui" RenderTransformOrigin="0.678,0.511" Grid.Row="2" Height="26" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtQtdd"  TextWrapping="Wrap" Margin="588,159,56,0" Foreground="#8d8d8d" CaretBrush="#8d8d8d"  Cursor="IBeam" Text="Digite aqui" RenderTransformOrigin="0.5,0.5" Grid.Row="2" Height="26" VerticalAlignment="Top"/>
+        <Label Content="CUSTOS DO PRODUTO" HorizontalAlignment="Left" Margin="10,32,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.563,0.341" Grid.Row="3" Height="22" Width="143" FontStyle="Italic"/>
+        <Label Content="$ em Estoque" VerticalAlignment = "Top"  HorizontalAlignment = "Left"  Margin = "50,60,0,0"  FontSize = " 13 "  FontFamily = " Lucida Sans Unicode "  FontWeight = "Bold" RenderTransformOrigin="0,66" Grid.Row = "3"  />
+        <Label Content="$ Unitário" VerticalAlignment = "Top"  HorizontalAlignment = "Left"  Margin = "326,61,0,0"  FontSize = " 13 "  FontFamily = " Lucida Sans Unicode "  FontWeight = "Bold" RenderTransformOrigin="0,66" Grid.Row = "3"  />
+        <Label Content="Outras Despesas" VerticalAlignment = "Top"  HorizontalAlignment = "Left"  Margin = "589,60,0,0"  FontSize = " 13 "  FontFamily = " Lucida Sans Unicode "  FontWeight = "Bold" RenderTransformOrigin="0,66" Grid.Row = "3"  />
+        <Label Content="$ Frete" VerticalAlignment = "Top"  HorizontalAlignment = "Left"  Margin = "61,134,0,0"  FontSize = " 13 "  FontFamily = " Lucida Sans Unicode "  FontWeight = "Bold" RenderTransformOrigin="0,66" Grid.Row = "3"  />
+        <Label Content="$ Descontos" VerticalAlignment = "Top"  HorizontalAlignment = "Left"  Margin = "319,137,0,0"  FontSize = " 13 "  FontFamily = " Lucida Sans Unicode "  FontWeight = "Bold" RenderTransformOrigin="0,66" Grid.Row = "3"  />
+        <TextBox x:Name="txtValEtq"  TextWrapping="Wrap" Margin="20,92,624,0" Foreground="#8d8d8d" CaretBrush="#8d8d8d"  Cursor="IBeam" Text="Digite aqui" RenderTransformOrigin="0.5,0.5" Grid.Row="3" Height="26" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtValUnit"  TextWrapping="Wrap" Margin="298,95,346,0" Foreground="#8d8d8d" CaretBrush="#8d8d8d"  Cursor="IBeam" Text="Digite aqui" RenderTransformOrigin="0.5,0.5" Grid.Row="3" Height="26" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtValFrt"  TextWrapping="Wrap" Margin="20,160,624,14" Foreground="#8d8d8d" CaretBrush="#8d8d8d"  Cursor="IBeam" Text="Digite aqui" RenderTransformOrigin="0.5,0.5" Grid.Row="3"/>
+        <TextBox x:Name="txtValDescon"  TextWrapping="Wrap" Margin="298,160,346,0" Foreground="#8d8d8d" CaretBrush="#8d8d8d"  Cursor="IBeam" Text="Digite aqui" RenderTransformOrigin="0.5,0.5" Grid.Row="3" Height="26" VerticalAlignment="Top"/>
+
+
+        <DataGrid 
+                    Height="97" 
+                    VerticalAlignment="Top"
+                    IsReadOnly="False"
+                    AutoGenerateColumns="False"
+                    AlternatingRowBackground="#FFE5E5E5"
+                    AlternationCount="2" 
+                    Margin="569,89,39,0" Grid.Row="3">
+
+            <DataGrid.Columns>
+
+                <DataGridTextColumn Header="Descrição" Binding="{Binding Descricao}"/>
+                <DataGridTextColumn Header="Valor" Binding="{Binding QtdProdutos, ConverterCulture='pt-Br', StringFormat=C}"/>
+
+            </DataGrid.Columns>
+
+
+        </DataGrid>
+        <Label Content="DADOS GERAIS" HorizontalAlignment="Left" Margin="6,26,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.563,0.341" Grid.Row="4" Height="22" Width="143" FontStyle="Italic"/>
+        <Label Content="Alterar Valor na Venda" VerticalAlignment = "Top"  HorizontalAlignment = "Left"  Margin = "21,46,0,0"  FontSize = " 13 "  FontFamily = " Lucida Sans Unicode "  FontWeight = "Bold" RenderTransformOrigin="0,66" Grid.Row = "4"  />
+        <Label Content="Alterar Valor no Desconto" VerticalAlignment = "Top"  HorizontalAlignment = "Left"  Margin = "416,46,0,0"  FontSize = " 13 "  FontFamily = " Lucida Sans Unicode "  FontWeight = "Bold" RenderTransformOrigin="0,66" Grid.Row = "4"  />
+        <TextBox x:Name="txtSugestao"  TextWrapping="Wrap" Margin="189,49,455,25" Foreground="#8d8d8d" CaretBrush="#8d8d8d"  Cursor="IBeam" Text="Sugestão" RenderTransformOrigin="0.5,0.5" Grid.Row="4"/>
+
+        <StackPanel x:Name="sug1" Orientation="Horizontal" Grid.Row="4" HorizontalAlignment="Left" Width="100" Margin="50,70,0,-5">
+            <RadioButton Content="Sim" Checked="RBSug_Checked" Height="31"/>
+            <RadioButton Content="Não" Checked="RBSug_Checked" Height="31" Width="58"/>
+        </StackPanel>
+
+        <StackPanel x:Name="sug2" Orientation="Horizontal" Grid.Row="4" HorizontalAlignment="Left" Width="100" Margin="461,69,0,-4">
+            <RadioButton Content="Sim" Checked="RBSug2_Checked" Height="31"/>
+            <RadioButton Content="Não" Checked="RBSug2_Checked" Height="31" Width="58"/>
+        </StackPanel>
+        <TextBox x:Name="txtSugestao2"  TextWrapping="Wrap" Margin="606,46,38,28" Foreground="#8d8d8d" CaretBrush="#8d8d8d"  Cursor="IBeam" Text="Sugestão" RenderTransformOrigin="0.5,0.5" Grid.Row="4"/>
+        <Button Content="SALVAR" HorizontalAlignment="Left" Margin="463,147,0,-79" Grid.Row="4" Click="btnSalvar_Click"/>
+        <Button Content="CANCELAR" HorizontalAlignment="Left" Margin="675,143,0,-75" Grid.Row="4" Click="btnCancelar_Click"/>
+        <Button Content="NOVO" HorizontalAlignment="Left" Margin="568,146,0,-78" Grid.Row="4" Click="bbtnNovo_Click"/>
+
+
+
+    </Grid>
+</Window>

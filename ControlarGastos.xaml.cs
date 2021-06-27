@@ -21,5 +21,10 @@ namespace Sismeio
         {
             InitializeComponent();
         }
+
+        private void btnRelatorio_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
