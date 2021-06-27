@@ -16,30 +16,149 @@
         Title="Consultar Estoque" Height="450" Width="800" WindowStartupLocation="CenterScreen">
 
     <DockPanel>
-        <StackPanel DockPanel.Dock="top" Orientation = "Horizontal" Width="800"  Height="105" Margin="0 5" VerticalAlignment="Top">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
 
-            <materialDesign:PackIcon Kind="Magnify" Margin="80 45 5 0"/>
-            
-            <ComboBox
+            <StackPanel  Grid.Row ="0" DockPanel.Dock="top" Orientation = "Horizontal" Width="800"  Height="105" Margin="0 5" VerticalAlignment="Top">
+
+
+                <materialDesign:PackIcon Kind="Magnify" Margin="80 45 5 0" Height="21" Width="27"/>
+
+                <ComboBox
                 
-                Width="105"  Height="30" Margin="0 5"
-                materialDesign:HintAssist.Hint="Buscar Produto"
+                Width="156"  Height="38" Margin="0 5"
+                materialDesign:HintAssist.Hint="Consultar Estoque"
                 materialDesign:HintAssist.HintOpacity=".26"
                 IsEditable="True">
 
-                <ComboBoxItem
-                Content="Chinelo Havaina" />
-                <ComboBoxItem
-                Content="Tenis Adidas" />
-                <ComboBoxItem
-                Content="Sandália Ramarim" />
-                
-            </ComboBox>
-            
-            
-        </StackPanel>
+                    <ComboBoxItem
+                        Content="Chinelo Havaina" />
+                    <ComboBoxItem
+                        Content="Tenis Adidas" />
+                    <ComboBoxItem
+                        Content="Sandália Ramarim" />
+
+                </ComboBox>
+
+
+                <StackPanel  Width="227" Height="90" Margin ="50 0" Orientation="Horizontal">
+
+                    <ComboBox
+                        x:Name="Filtros" 
+                        materialDesign:HintAssist.Hint="Filtros" 
+                        materialDesign:HintAssist.HintOpacity=".26" 
+                        materialDesign:HintAssist.Foreground="Gray"
+                        Margin ="15 20" Width="95" Height="40">
+
+                        <ComboBoxItem
+                        Content="Tênis" />
+                        <ComboBoxItem
+                        Content="Chinelo" />
+                        <ComboBoxItem
+                        Content="Sandálias" />
+                        <ComboBoxItem
+                        Content="Havaina" />
+                        <ComboBoxItem
+                        Content="Adidas" />
+                        <ComboBoxItem
+                        Content="Ramarim" />
+
+                    </ComboBox>
+
+                    <Button 
+                    x:Name="btnBuscar" 
+                    Content="Buscar" 
+                    Click="btnBuscar_Click" 
+                    Margin="5 7" 
+                    Cursor="Hand" 
+                    Height="32" Width="84" ClickMode="Press"/>
+
+                </StackPanel>
+
+
+
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="1">
+                <DataGrid 
+                    Width="720" 
+                    Height="220" 
+                    VerticalAlignment="Top"
+                    IsReadOnly="False"
+                    AutoGenerateColumns="False"
+                    AlternatingRowBackground="#FFE5E5E5"
+                    AlternationCount="2" SelectionChanged="DataGrid_SelectionChanged"
+                    Margin="5 0 5 0">
+
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Código" Binding="{Binding Id}"/>
+                        <DataGridTextColumn Header="Descrição" Binding="{Binding Descricao}"/>
+                        <DataGridTextColumn Header="Quantidade" Binding="{Binding QtdProdutos}"/>
+                        <DataGridTextColumn Header="Valor" Binding="{Binding QtdProdutos, ConverterCulture='pt-Br', StringFormat=C}"/>
+                        <DataGridTextColumn Header="Categoria" Binding="{Binding Categoria}"/>
+                        <DataGridTextColumn Header="Marca" Binding="{Binding Marca}"/>
+                        <DataGridTextColumn Header="Numeração" Binding="{Binding Numeracao}"/>
+                        <DataGridTextColumn Header="Pedido" Binding="{Binding DataPedido}"/>
+                        <DataGridTextColumn Header="Entrega" Binding="{Binding DataEntrega}"/>
+                    </DataGrid.Columns>
+
+
+                </DataGrid>
+            </StackPanel>
+
+
+            <StackPanel Grid.Row="2" Orientation="Horizontal" Height="77" VerticalAlignment="Center" HorizontalAlignment="Center" Width="800">
+
+                <Button 
+                    x:Name="btnVisualizar" 
+                    Content="Ver Produto" 
+                    Click="btnVisualizar_Click" 
+                    Margin="459 0 5 0" 
+                    Cursor="Hand" 
+                    Height="32" Width="110" 
+                    ClickMode="Press" 
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Bottom"
+                 />
+                <Button 
+                    x:Name="btnAlterar" 
+                    Content="Alterar" 
+                    Click="btnAlterar_Click" 
+                    Margin="10 0 5 0" 
+                    Cursor="Hand" 
+                    Height="32" Width="84" 
+                    ClickMode="Press" 
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Bottom"
+                 />
+                <Button 
+                    x:Name="btnExcluir" 
+                    Content="Excluir" 
+                    Click="btnExcluir_Click" 
+                    Margin="10 0 5 0"
+                    Cursor="Hand" 
+                    Height="32" Width="84" 
+                    ClickMode="Press" 
+                    HorizontalAlignment="Right" 
+                    VerticalAlignment="Bottom"
+                 />
+
+
+            </StackPanel>
+
+
+
+
+        </Grid>
+
+
 
 
     </DockPanel>
-    
+
 </Window>
