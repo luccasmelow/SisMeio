@@ -21,5 +21,10 @@ namespace Sismeio
         {
             InitializeComponent();
         }
+
+        private void btnBuscar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
