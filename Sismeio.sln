@@ -5,6 +5,13 @@ VisualStudioVersion = 16.0.31410.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sismeio", "Sismeio.csproj", "{7DD70CA8-9DCA-46E0-9DBD-B9B70836E784}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dominio", "Dominio", "{E064FB7A-3749-4193-A48E-8174EB4F5F24}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cliente", "Cliente", "{4C52ABE0-543E-430E-9364-A8AFC1F81E35}"
+	ProjectSection(SolutionItems) = preProject
+		Cliente.cs = Cliente.cs
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,6 +25,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4C52ABE0-543E-430E-9364-A8AFC1F81E35} = {E064FB7A-3749-4193-A48E-8174EB4F5F24}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F0D88D59-9C21-4A0A-BA9C-C36E0AF6ACD6}

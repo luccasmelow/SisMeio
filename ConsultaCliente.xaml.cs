@@ -37,5 +37,21 @@ namespace Sismeio
             ConsultaCliente2 consulcli = new ConsultaCliente2();
             consulcli.Show();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            CadastroCliente cadastrocli = new CadastroCliente();
+            cadastrocli.Show();
+        }
+
+        private void dataGridCliente_SelectionChanged_2(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void DataGrid_SelectionChanged_2(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
