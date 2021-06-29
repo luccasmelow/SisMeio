@@ -1,0 +1,17 @@
+﻿<Window x:Class="Sismeio.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Login" Height="600" Width="900">
+    <Grid Grid.Column="1">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width = "300"/>
+            <ColumnDefinition Width = "300"/>
+            <ColumnDefinition Width = "300"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column = "1" Margin="20" VerticalAlignment="Center">
+            <TextBox x:Name="textlogin" Text="Login" TextWrapping="WrapWithOverflow" Width="158" Height="44" TextAlignment="Center"/>
+            <TextBox x:Name="textsenha" Text="Senha" TextWrapping="WrapWithOverflow" Width="158" Height="44" TextAlignment="Center"/>
+        </StackPanel>
+    </Grid>
+</Window>
