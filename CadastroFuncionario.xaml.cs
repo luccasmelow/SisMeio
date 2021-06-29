@@ -37,11 +37,29 @@ namespace Sismeio
         private void cadastrar_Click(object sender, RoutedEventArgs e)
         {
 
+            MessageBox.Show($"Cadastro feita com sucesso", "CADASTRO FUNCIONÁRIO", MessageBoxButton.OK);
+            this.Close();
+
+
+
         }
+
+    
 
         private void cancelar_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            MessageBoxResult result = MessageBox.Show("Deseja realmente cancelar o cadastro?", "CADASTRAR FUNCIONÁRIO", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            switch (result)
+            {
+                case MessageBoxResult.Yes:
+                    this.Close();
+                    break;
+            }
+        }
+
+        private void cpf_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }
