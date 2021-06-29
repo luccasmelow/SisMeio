@@ -13,11 +13,11 @@ using System.Windows.Shapes;
 namespace Sismeio
 {
     /// <summary>
-    /// Lógica interna para ConsultaCliente.xaml
+    /// Lógica interna para ConsultaCompra.xaml
     /// </summary>
-    public partial class ConsultaCliente : Window
+    public partial class ConsultaCompra : Window
     {
-        public ConsultaCliente()
+        public ConsultaCompra()
         {
             InitializeComponent();
         }
@@ -36,23 +36,7 @@ namespace Sismeio
                     situacao = "Devedor"
                 });
             }
-        }
-  
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            ConsultaCliente2 consulcli = new ConsultaCliente2();
-            consulcli.Show();
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            CadastroCliente cadastrocli = new CadastroCliente();
-            cadastrocli.Show();
-        }
- 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
+        
         }
     }
 }

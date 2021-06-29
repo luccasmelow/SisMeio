@@ -13,10 +13,10 @@
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-    Title="ConsultaCliente2" Height="800" Width="1200">
+    Title="ConsultaCliente2" Height="800" Width="1300">
     <Grid>
 
-        <Border BorderThickness="1" BorderBrush="Black" Margin="72,-67,-74,-83" Grid.Column="16"/>
+        <Border BorderThickness="1" BorderBrush="Black" Margin="0,-65,-30,8"/>
         <Label Content="Código" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="77,91,0,0" FontSize="16"  FontFamily="Lucida Sans Unicode" FontWeight="Bold" Height="33" Width="65"/>
         <Label Content="Nome" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="92,153,0,0" FontSize="16"  FontFamily="Lucida Sans Unicode" FontWeight="Bold" Height="33" Width="55"/>
         <Label Content="CPF" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="398,153,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.057,4.741" Height="33" Width="37"/>
@@ -54,25 +54,11 @@
         <Label Content="Compras Pendentes" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="325,572,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856" Width="168" Foreground="#FF0A0A0F" Height="33"/>
         <Label Content="Compras Pagas" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="633,572,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856" Width="139" Foreground="#FF110F0F" Height="33"/>
         <Label Content="Compras Realizadas" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="906,572,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856" Width="184" Foreground="#FF110F0F" Grid.ColumnSpan="4" Height="33"/>
-
-
         <ComboBox
         x:Name="ComprasPendentes"
         Style="{StaticResource MaterialDesignFilledComboBox}"
         IsEnabled="{Binding Path=IsChecked, ElementName=FilledComboBoxEnabledCheckBox}"
-        materialDesign:HintAssist.Hint="Some item" Margin="313,610,516,126">
-            <ComboBoxItem
-         Content="Chinelo Havaina 34" />
-            <ComboBoxItem
-        Content="Tenis Adidas 34" />
-            <ComboBoxItem
-        Content="Sandália Ramarim 32" />
-        </ComboBox>
-        <ComboBox
-        x:Name="Situação"
-        Style="{StaticResource MaterialDesignFilledComboBox}"
-        IsEnabled="{Binding Path=IsChecked, ElementName=FilledComboBoxEnabledCheckBox}"
-        materialDesign:HintAssist.Hint="Some item" Margin="67,610,816,126">
+        materialDesign:HintAssist.Hint="Some item" Margin="318,610,816,126">
             <ComboBoxItem
          Content="Devedor" />
             <ComboBoxItem
@@ -84,7 +70,7 @@
             x:Name="ComprasPagas"
             Style="{StaticResource MaterialDesignFilledComboBox}"
             IsEnabled="{Binding IsChecked, ElementName=FilledComboBoxEnabledCheckBox}"
-            materialDesign:HintAssist.Hint="Some item" Margin="597,610,211,124" SelectionChanged="ComprasPagas_SelectionChanged">
+            materialDesign:HintAssist.Hint="Some item" Margin="597,610,516,124" SelectionChanged="ComprasPagas_SelectionChanged">
             <ComboBoxItem
                 Content="Chinelo Havaina 34" />
             <ComboBoxItem
@@ -96,7 +82,7 @@
             x:Name="ComprasRealizadas"
             Style="{StaticResource MaterialDesignFilledComboBox}"
             IsEnabled="{Binding IsChecked, ElementName=FilledComboBoxEnabledCheckBox}"
-            materialDesign:HintAssist.Hint="Some item" Margin="906,610,0,124" Grid.ColumnSpan="6">
+            materialDesign:HintAssist.Hint="Some item" Margin="906,610,182,124">
             <ComboBoxItem
                 Content="Chinelo Havaina 34" />
             <ComboBoxItem
@@ -112,6 +98,18 @@
         <Button Content="Fechar" HorizontalAlignment="Right"  Background="#FFBFB8B8" RenderTransformOrigin="8,6" Margin="0,710,52,42" Width="150" FontSize="16" FontWeight="UltraBlack" BorderBrush="#FF6C6C6C" Foreground="#FF090909" Padding="16,4,16,4" />
         <Button Content="Editar" HorizontalAlignment="Right"  Background="#FFBFB8B8" RenderTransformOrigin="8,6" Margin="0,242,59,510" Width="143" FontSize="16" FontWeight="UltraBlack" BorderBrush="#FF6C6C6C" Foreground="#FF090909" Padding="16,4,16,4" />
         <Button Content="Salvar"  Background="#FFBFB8B8" RenderTransformOrigin="8,6" Margin="998,314,61,438" FontSize="16" FontWeight="UltraBlack" BorderBrush="#FF6C6C6C" Foreground="#FF090909" Padding="16,4,16,4" Click="Button_Click_1" />
+        <ComboBox
+            x:Name="Situação"
+            Style="{StaticResource MaterialDesignFilledComboBox}"
+            IsEnabled="{Binding IsChecked, ElementName=FilledComboBoxEnabledCheckBox}"
+            materialDesign:HintAssist.Hint="Some item" Margin="90,612,1044,124">
+            <ComboBoxItem
+                Content="Devedor" />
+            <ComboBoxItem
+                Content="Item 2" />
+            <ComboBoxItem
+                Content="Item 3" />
+        </ComboBox>
 
     </Grid>
 

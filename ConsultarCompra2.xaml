@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Sismeio"
         mc:Ignorable="d"
-        Title="ConsultarCompra2" Height="850" Width="1100">
+        Title="ConsultarCompra2" Height="800" Width="1100">
     <Grid>
         <Label Content="Fornecedor" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="39,54,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="2.165,1.795"/>
         <Label Content="Data da Compra" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="88,111,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.746,1.123"/>
@@ -55,16 +55,12 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <Button Content="Fechar" HorizontalAlignment="Right"  Background="#FFBFB8B8" RenderTransformOrigin="8,6" Margin="0,710,52,42" Width="150" FontSize="16" FontWeight="UltraBlack" BorderBrush="#FF6C6C6C" Foreground="#FF090909" Padding="16,4,16,4" />
-        <Button Content="Editar" HorizontalAlignment="Right"  Background="#FFBFB8B8" RenderTransformOrigin="8,6" Margin="0,242,59,510" Width="143" FontSize="16" FontWeight="UltraBlack" BorderBrush="#FF6C6C6C" Foreground="#FF090909" Padding="16,4,16,4" />
-        <Button Content="Salvar"  Background="#FFBFB8B8" RenderTransformOrigin="8,6" Margin="898,339,61,463" FontSize="16" FontWeight="UltraBlack" BorderBrush="#FF6C6C6C" Foreground="#FF090909" Padding="16,4,16,4" Click="Button_Click_1" />
 
-        <DataGrid 
-                    Height="249"
+        <DataGrid
                     IsReadOnly="False"
                     AutoGenerateColumns="False"
                     AlternatingRowBackground="#FFE5E5E5"
-                    AlternationCount="100" SelectionChanged="DataGrid_SelectionChanged" Margin="200,243,323,342"  >
+                    AlternationCount="100" SelectionChanged="DataGrid_SelectionChanged" Margin="66,275,343,263"  >
 
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Código" Binding="{Binding Id}"/>
@@ -72,11 +68,14 @@
                 <DataGridTextColumn Header="Marca" Binding="{Binding Marca}"/>
                 <DataGridTextColumn Header="Quantidade" Binding="{Binding QtdProdutos}"/>
                 <DataGridTextColumn Header="Valor" Binding="{Binding QtdProdutos, ConverterCulture=pt-Br, StringFormat=C}"/>
-               
-               
+
+
             </DataGrid.Columns>
         </DataGrid>
-
+      
+        <Button Content="Fechar" HorizontalAlignment="Right"  Background="#FFBFB8B8" RenderTransformOrigin="8,6" Margin="0,681,52,71" Width="150" FontSize="16" FontWeight="UltraBlack" BorderBrush="#FF6C6C6C" Foreground="#FF090909" Padding="16,4,16,4" />
+        <Button Content="Editar" HorizontalAlignment="Right"  Background="#FFBFB8B8" RenderTransformOrigin="8,6" Margin="0,242,59,510" Width="143" FontSize="16" FontWeight="UltraBlack" BorderBrush="#FF6C6C6C" Foreground="#FF090909" Padding="16,4,16,4" />
+        <Button Content="Salvar"  Background="#FFBFB8B8" RenderTransformOrigin="8,6" Margin="898,360,61,392" FontSize="16" FontWeight="UltraBlack" BorderBrush="#FF6C6C6C" Foreground="#FF090909" Padding="16,4,16,4" />
 
     </Grid>
 </Window>
