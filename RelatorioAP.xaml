@@ -1,0 +1,94 @@
+﻿<Window x:Class="Sismeio.RelatorioAP"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Sismeio"
+        mc:Ignorable="d"
+        xmlns:materialDesign = "http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground = "{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight = "Regular"
+        TextElement.FontSize = "13"
+        TextOptions.TextFormattingMode ="Ideal " 
+        TextOptions.TextRenderingMode = "Auto"        
+        Background = "{DynamicResource MaterialDesignPaper}"
+        FontFamily = "{DynamicResource MaterialDesignFont}"
+        Title="RELATÓRIOS PRODUTOS" Height="500" Width="800" WindowStartupLocation="CenterScreen">
+
+    <Grid>
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="70" />
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="70"/>
+        </Grid.RowDefinitions>
+
+        <materialDesign:ColorZone
+            Foreground="Black" 
+             Background="#D3D3D3"
+            Mode="PrimaryLight"
+            Padding="1" Margin="1,1,1,0" Height="55" RenderTransformOrigin="0.5,0.5">
+            <materialDesign:ColorZone.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-1.042" AngleY="0.003"/>
+                    <RotateTransform Angle="-0.011"/>
+                    <TranslateTransform X="-0.582" Y="0.022"/>
+                </TransformGroup>
+            </materialDesign:ColorZone.RenderTransform>
+            <StackPanel Orientation="Horizontal" Margin="2,-1,0,-6" HorizontalAlignment="Left" Width="795">
+                <ToggleButton
+                    Style="{DynamicResource MaterialDesignHamburgerToggleButton}"  Content="" RenderTransformOrigin="0.666,0.431" Width="50" Height="46"/>
+
+
+            </StackPanel>
+        </materialDesign:ColorZone>
+
+        <TextBlock
+                    FontSize="35"
+                    Text="Relatório de Produtos" RenderTransformOrigin="0.881,0.436" Margin="225,4,230,27"/>
+
+        <ComboBox Grid.Row="1"
+  materialDesign:HintAssist.Hint="" Height="26" Margin="128,36,474,0" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top">
+            <ComboBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </ComboBox.RenderTransform>
+            <ComboBoxItem
+    Content="Código" />
+            <ComboBoxItem
+    Content="Nome" />
+            <ComboBoxItem
+    Content="Linux" />
+            <ComboBoxItem
+    Content="Marca" />
+        </ComboBox>
+
+        <Label Margin="10,39,658,0" FontFamily = " Lucida Sans Unicode " FontSize = " 14" RenderTransformOrigin="0,66" Grid.Row="1" Height="26" VerticalAlignment="Top">FILTRAR POR:</Label>
+
+        <Button Grid.Row="1"
+  Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}"
+  ToolTip="MaterialDesignFloatingActionMiniDarkButton" Margin="347,27,413,277">
+
+            <Image Source= "/img/pesquisar.png " Width="15"/>
+
+        </Button>
+
+
+
+       
+        <Button 
+
+                Style="{StaticResource MaterialDesignFlatAccentBgButton}"
+                ToolTip="MaterialDesignFlatAccentBackgroundButton"
+                Content="VER" Margin="655,302,56,10" Grid.Row="1" />
+        <Button x:Name="btnVoltar"  Content="VOLTAR"  HorizontalAlignment="Left" Margin="657,0,0,0" Grid.Row="2" VerticalAlignment="Center" Click="btnVoltar_Click" Cursor="Hand"/>
+
+
+
+    </Grid>
+</Window>
