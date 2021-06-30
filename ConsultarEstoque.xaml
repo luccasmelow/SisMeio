@@ -123,7 +123,7 @@
                         <DataGridTemplateColumn Header="Selecionar">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <CheckBox x:Name="cbSelecionarP" ></CheckBox>
+                                    <CheckBox />
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>

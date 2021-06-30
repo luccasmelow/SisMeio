@@ -72,7 +72,7 @@
                 </StackPanel>
 
 
-                <DataGrid 
+                <DataGrid x:Name="dataGridGastos" 
                     Grid.Column="0"
                     Width="291" 
                     Height="220"

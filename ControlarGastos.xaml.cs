@@ -31,5 +31,25 @@ namespace Sismeio
         {
 
         }
+
+        private void ControlarGastos_Loaded(object sender, RoutedEventArgs e)
+        {
+            List<Despesa> ListaGastos = new List<Despesa>();
+
+
+            ListaGastos.Add(new Despesa()
+            {
+                id= 0158,
+                descricao = "Conta de Energia",
+                Valor = 500.97
+
+
+            });
+
+           
+
+
+            dataGridGastos.ItemsSource = ListaGastos;
+        }
     }
 }
