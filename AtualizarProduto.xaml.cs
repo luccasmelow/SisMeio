@@ -60,5 +60,13 @@ namespace Sismeio
             CadastroProduto cadprod = new CadastroProduto();
             cadprod.Show();
         }
+
+        private void btnRelatorio_Click(object sender, RoutedEventArgs e)
+        {
+            
+            RelatorioAP relatorio = new RelatorioAP();
+            relatorio.Show();
+
+        }
     }
 }

@@ -48,8 +48,9 @@
 
         <TextBox x:Name="txtCodP"  TextWrapping="Wrap" Margin="158,0,486,39" Foreground="#8d8d8d" CaretBrush="#8d8d8d"  Cursor="IBeam" Text="Digite aqui" RenderTransformOrigin="0.5,0.5" Grid.Row="1" Height="26" VerticalAlignment="Bottom"/>
         <TextBox x:Name="txtCodB"  TextWrapping="Wrap" Margin="485,0,159,43" Foreground="#8d8d8d" CaretBrush="#8d8d8d"  Cursor="IBeam" Text="Digite aqui" RenderTransformOrigin="0.5,0.5" Grid.Row="1" Height="27" VerticalAlignment="Bottom"/>
-
-
+        
+        
+        
         <Label Content="SOBRE O PRODUTO" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.563,0.341" Grid.Row="2" Height="22" Width="113" FontStyle="Italic"/>
         <Label Content="Data Importação" VerticalAlignment = "Top"  HorizontalAlignment = "Left"  Margin = "20,43,0,0"  FontSize = " 13 "  FontFamily = " Lucida Sans Unicode "  FontWeight = "Bold" RenderTransformOrigin="0,66" Grid.Row = " 2 "  />
         <DatePicker
@@ -73,7 +74,7 @@
 
         <Label Content="Fornecedor" VerticalAlignment = "Top"  HorizontalAlignment = "Left"  Margin = "351,44,0,0"  FontSize = " 13 "  FontFamily = " Lucida Sans Unicode "  FontWeight = "Bold" RenderTransformOrigin="0,66" Grid.Row = " 2 "  />
         <TextBox x:Name="txtFornecedor"  TextWrapping="Wrap" Margin="326,74,318,0" Foreground="#8d8d8d" CaretBrush="#8d8d8d"  Cursor="IBeam" Text="Digite aqui" RenderTransformOrigin="0.5,0.5" Grid.Row="2" Height="26" VerticalAlignment="Top"/>
-        <Label Content="Observações" VerticalAlignment = "Top"  HorizontalAlignment = "Left"  Margin = "602,44,0,0"  FontSize = " 13 "  FontFamily = " Lucida Sans Unicode "  FontWeight = "Bold" RenderTransformOrigin="0,66" Grid.Row = " 2 "  />
+        <Label Content="Descrição" VerticalAlignment = "Top"  HorizontalAlignment = "Left"  Margin = "602,44,0,0"  FontSize = " 13 "  FontFamily = " Lucida Sans Unicode "  FontWeight = "Bold" RenderTransformOrigin="0,66" Grid.Row = " 2 "  />
         <TextBox x:Name="txtObs"  TextWrapping="Wrap" Margin="576,74,68,0" Foreground="#8d8d8d" CaretBrush="#8d8d8d"  Cursor="IBeam" Text="Digite aqui" RenderTransformOrigin="0.5,0.5" Grid.Row="2" Height="26" VerticalAlignment="Top"/>
         <Button Content="atualizar" HorizontalAlignment="Left" Margin="57,141,0,-73" Grid.Row="4" Click="Button_Click_1"/>
         <Label Content="Marca" VerticalAlignment = "Top"  HorizontalAlignment = "Left"  Margin = "61,130,0,0"  FontSize = " 13 "  FontFamily = " Lucida Sans Unicode "  FontWeight = "Bold" RenderTransformOrigin="0,66" Grid.Row = " 2 "  />
@@ -131,6 +132,8 @@
         <Button Content="CANCELAR" HorizontalAlignment="Left" Margin="675,143,0,-75" Grid.Row="4" Click="btnCancelar_Click"/>
         <Button Content="NOVO" HorizontalAlignment="Left" Margin="568,146,0,-78" Grid.Row="4" Click="bbtnNovo_Click"/>
 
+        <materialDesign:PackIcon Kind="ImageEdit" Margin="682,8,0,0" Grid.Row="1" Height="44" Width="79" />
+        <Button Content="Adicionar Imagem" HorizontalAlignment="Left" Margin="642,53,0,5" Grid.Row="1" Click="btnSalvar_Click" Width="151"/>
 
 
     </Grid>
