@@ -20,23 +20,62 @@ namespace Sismeio
         public ConsultaCompra()
         {
             InitializeComponent();
+            Loaded += ConsultaCompra_Loaded;
         }
 
-        public void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void ConsultaCompra_Loaded(object sender, RoutedEventArgs e)
         {
-            List<Cliente> listacliente = new List<Cliente>();
+            List<Compra> listacompra = new List<Compra>();
 
             for (int i = 0; i < 10; i++)
             {
 
-                listacliente.Add(new Cliente()
+                listacompra.Add(new Compra()
                 {
-                    codigo = i + 1,
-                    nome = "João Alves" + i,
-                    situacao = "Devedor"
+
+                    Codigo = 001,
+                    Nome = "Chinelo Vermelho",
+                    Categoria = "Feminino",
+                    Quantidade = 2,
+                    Valor = 49.90,
+                    Datacompra = "23/09/2020"
+                    
+
+
                 });
-            }
+             
+                listacompra.Add(new Compra()
+                {
+                    Codigo = 009,
+                    Nome = "Chinelo Verde",
+                    Categoria = "Feminino",
+                    Quantidade = 2,
+                    Valor = 99.80,
+                    Datacompra = "23/09/2020"
+
+
+                });
+
+                listacompra.Add(new Compra()
+                {
+                    Codigo = 002,
+                    Nome = "Sandália Dourada",
+                    Categoria = "Feminino",
+                    Quantidade = 3,
+                    Valor = 299.70,
+                    Datacompra = "23/09/2020"
+
+
+
+                });
+            
+            } dataGridCompras1.ItemsSource = listacompra;
         
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

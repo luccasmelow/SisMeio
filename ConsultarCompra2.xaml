@@ -7,12 +7,12 @@
         mc:Ignorable="d"
         Title="ConsultarCompra2" Height="800" Width="1100">
     <Grid>
-        <Label Content="Fornecedor" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="39,54,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="2.165,1.795"/>
-        <Label Content="Data da Compra" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="88,111,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.746,1.123"/>
-        <Label Content="Dia da Semana" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="301,111,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856"/>
-        <Label Content="Horário" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="514,111,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856"/>
-        <Label Content="Forma de Pagamento" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="746,111,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856"/>
-        <Rectangle HorizontalAlignment="Left" Height="33" Margin="301,149,0,0" Stroke="Black" VerticalAlignment="Top" Width="165" RenderTransformOrigin="0.5,0.5">
+        <Label Content="Fornecedor" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="58,65,0,0" FontSize="17" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="2.165,1.795"/>
+        <Label Content="Data da Compra" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="88,133,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.746,1.123"/>
+        <Label Content="Dia da Semana" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="320,133,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856"/>
+        <Label Content="Horário" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="550,133,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856"/>
+        <Label Content="Forma de Pagamento" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="752,133,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856"/>
+        <Rectangle HorizontalAlignment="Left" Height="29" Margin="306,187,0,0" Stroke="Black" VerticalAlignment="Top" Width="165" RenderTransformOrigin="0.5,0.5">
             <Rectangle.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -22,9 +22,9 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <Rectangle HorizontalAlignment="Left" Height="33" Margin="143,54,0,0" Stroke="Black" VerticalAlignment="Top" Width="131"/>
-        <Rectangle HorizontalAlignment="Left" Height="33" Margin="66,149,0,0" Stroke="Black" VerticalAlignment="Top" Width="181"/>
-        <Rectangle HorizontalAlignment="Left" Height="33" Margin="527,149,0,0" Stroke="Black" VerticalAlignment="Top" Width="165" RenderTransformOrigin="0.5,0.5">
+        <Rectangle HorizontalAlignment="Left" Height="33" Margin="177,70,0,0" Stroke="Black" VerticalAlignment="Top" Width="131"/>
+        <Rectangle HorizontalAlignment="Left" Height="33" Margin="66,183,0,0" Stroke="Black" VerticalAlignment="Top" Width="181"/>
+        <Rectangle HorizontalAlignment="Left" Height="33" Margin="537,184,0,0" Stroke="Black" VerticalAlignment="Top" Width="165" RenderTransformOrigin="0.5,0.5">
             <Rectangle.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -34,7 +34,7 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <Rectangle HorizontalAlignment="Left" Height="33" Margin="763,149,0,0" Stroke="Black" VerticalAlignment="Top" Width="165" RenderTransformOrigin="0.5,0.5">
+        <Rectangle HorizontalAlignment="Left" Height="33" Margin="773,183,0,0" Stroke="Black" VerticalAlignment="Top" Width="165" RenderTransformOrigin="0.5,0.5">
             <Rectangle.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -44,8 +44,8 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <Label Content="Valor Total:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="592,604,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856"/>
-        <Rectangle HorizontalAlignment="Left" Height="33" Margin="707,599,0,0" Stroke="Black" VerticalAlignment="Top" Width="118" RenderTransformOrigin="0.5,0.5">
+        <Label Content="Valor Total:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="605,641,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856"/>
+        <Rectangle HorizontalAlignment="Left" Height="33" Margin="717,638,0,0" Stroke="Black" VerticalAlignment="Top" Width="135" RenderTransformOrigin="0.5,0.5">
             <Rectangle.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -56,31 +56,56 @@
             </Rectangle.RenderTransform>
         </Rectangle>
 
+        <Button 
+                    x:Name="b" 
+                    Content="Fechar" 
+                    Cursor="Hand" 
+                    Height="47" Width="166" 
+                    ClickMode="Press" 
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Top" Margin="873,690,0,0" FontSize="18"
+                 />
+        <Button 
+                    x:Name="btnsalvar" 
+                    Content="Salvar" 
+                    Margin="902,491,0,0" 
+                    Cursor="Hand" 
+                    Height="45" Width="139" 
+                    ClickMode="Press" 
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Top"
+                 />
+        <Button 
+                    x:Name="btneditar" 
+                    Content="Editar" 
+                    Margin="902,392,0,0" 
+                    Cursor="Hand" 
+                    Height="42" Width="139" 
+                    ClickMode="Press" 
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Top"
+                 />
 
-        <Button Content="Fechar" HorizontalAlignment="Right"  Background="#FFBFB8B8" RenderTransformOrigin="8,6" Margin="0,710,52,42" Width="150" FontSize="16" FontWeight="UltraBlack" BorderBrush="#FF6C6C6C" Foreground="#FF090909" Padding="16,4,16,4" />
-        <Button Content="Editar" HorizontalAlignment="Right"  Background="#FFBFB8B8" RenderTransformOrigin="8,6" Margin="0,242,59,510" Width="143" FontSize="16" FontWeight="UltraBlack" BorderBrush="#FF6C6C6C" Foreground="#FF090909" Padding="16,4,16,4" />
 
-
-        <DataGrid
-                    IsReadOnly="False"
+        <DataGrid 
+                    x:Name="dataGridCompras2"
+                    IsReadOnly="true"
                     AutoGenerateColumns="False"
                     AlternatingRowBackground="#FFE5E5E5"
-                    AlternationCount="100" SelectionChanged="DataGrid_SelectionChanged" Margin="66,275,343,263"  >
+                    AlternationCount="2" 
+                    Margin="58,303,265,185" AutomationProperties.Name="dataGridEstoque">
 
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Código" Binding="{Binding Id}"/>
-                <DataGridTextColumn Header="Nome" Binding="{Binding Descricao}"/>
+                <DataGridTextColumn Header="Descrição" Binding="{Binding Descricao}"/>
+                <DataGridTextColumn Header="Quantidade" Binding="{Binding Quantidade}"/>
+                <DataGridTextColumn Header="Valor" Binding="{Binding ValorUnitario, ConverterCulture='pt-Br', StringFormat=C}"/>
+                <DataGridTextColumn Header="Valor Total" Binding="{Binding ValorEstoque, ConverterCulture='pt-Br', StringFormat=C}"/>
+                <DataGridTextColumn Header="Categoria" Binding="{Binding Categoria}"/>
                 <DataGridTextColumn Header="Marca" Binding="{Binding Marca}"/>
-                <DataGridTextColumn Header="Quantidade" Binding="{Binding QtdProdutos}"/>
-                <DataGridTextColumn Header="Valor" Binding="{Binding QtdProdutos, ConverterCulture=pt-Br, StringFormat=C}"/>
-
-
+                <DataGridTextColumn Header="Numeração" Binding="{Binding Numeracao}"/>
             </DataGrid.Columns>
         </DataGrid>
-      
-        <Button Content="Fechar" HorizontalAlignment="Right"  Background="#FFBFB8B8" RenderTransformOrigin="8,6" Margin="0,681,52,71" Width="150" FontSize="16" FontWeight="UltraBlack" BorderBrush="#FF6C6C6C" Foreground="#FF090909" Padding="16,4,16,4" />
-        <Button Content="Editar" HorizontalAlignment="Right"  Background="#FFBFB8B8" RenderTransformOrigin="8,6" Margin="0,242,59,510" Width="143" FontSize="16" FontWeight="UltraBlack" BorderBrush="#FF6C6C6C" Foreground="#FF090909" Padding="16,4,16,4" />
-        <Button Content="Salvar"  Background="#FFBFB8B8" RenderTransformOrigin="8,6" Margin="898,360,61,392" FontSize="16" FontWeight="UltraBlack" BorderBrush="#FF6C6C6C" Foreground="#FF090909" Padding="16,4,16,4" />
 
     </Grid>
 </Window>

@@ -20,11 +20,30 @@ namespace Sismeio
         public ConsultarCompra2()
         {
             InitializeComponent();
+            Loaded += ConsultarCompras2_Loaded;
         }
 
-        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void ConsultarCompras2_Loaded(object sender, RoutedEventArgs e)
         {
+            List<Compras2> listacompra2 = new List <Compras2> ();
 
+
+            listacompra2.Add(new Compras2()
+            {
+                Codigo = 001,
+                Nome = "Chinelo Vermelho",
+                Categoria = "Feminino",
+                Quantidade = 2,
+                ValorUnitario = 49.90,
+                ValorTotal = 99.80,
+                Marca = "Havaiana",
+                Numeracao = 34
+
+
+            });
+
+            dataGridCompras2.ItemsSource = listacompra2;
         }
+    }
     }
 }

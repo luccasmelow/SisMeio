@@ -5,22 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Sismeio"
         mc:Ignorable="d"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        
         Title="ConsultaCliente" Height="700" Width="900" MaxHeight="900" MaxWidth="1200" MinHeight="50" MinWidth="50">
     <Grid>
+        
 
-        <DataGrid
-                    IsReadOnly="False"
+        <DataGrid 
+                    x:Name="dataGridCliente"
+                    IsReadOnly="true"
                     AutoGenerateColumns="False"
                     AlternatingRowBackground="#FFE5E5E5"
-                    AlternationCount="200" SelectionChanged="DataGrid_SelectionChanged" Margin="73,231,264,139"  >
+                    AlternationCount="8"
+                    Margin="100,200,200,166" AutomationProperties.Name="dataGridCliente">
 
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Código" Binding="{Binding Id}"/>
                 <DataGridTextColumn Header="Nome" Binding="{Binding Descricao}"/>
-                <DataGridTextColumn Header="Marca" Binding="{Binding Marca}"/>
-                <DataGridTextColumn Header="Quantidade" Binding="{Binding QtdProdutos}"/>
-                <DataGridTextColumn Header="Valor" Binding="{Binding QtdProdutos, ConverterCulture=pt-Br, StringFormat=C}"/>
-
+                <DataGridTextColumn Header="Situação" Binding="{Binding ValorUnitario, ConverterCulture='pt-Br', StringFormat=C}"/>
 
             </DataGrid.Columns>
         </DataGrid>
@@ -28,35 +37,65 @@
         <Button Content="Fechar" HorizontalAlignment="Right"  Background="#FFBFB8B8" RenderTransformOrigin="8,6" Margin="0,610,32,42" Width="150" FontSize="16" FontWeight="UltraBlack" BorderBrush="#FF6C6C6C" Foreground="#FF090909" Padding="16,4,16,4" />
         <Button Content="Excluir" HorizontalAlignment="Right"  Background="#FFBFB8B8" RenderTransformOrigin="8,6" Margin="0,138,32,170" Width="150" FontSize="16" FontWeight="UltraBlack" BorderBrush="#FF6C6C6C" Foreground="#FF090909" Padding="16,4,16,4" Grid.ColumnSpan="4" Grid.Column="3" />
         <Button Content="Novo" HorizontalAlignment="Right"  Background="#FFBFB8B8" RenderTransformOrigin="8,6" Margin="0,44,32,608" Width="150" FontSize="16" FontWeight="UltraBlack" BorderBrush="#FF6C6C6C" Foreground="#FF090909" Padding="16,4,16,4" Click="Button_Click_1" />
+        <Button
+        Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}"
+        ToolTip="MaterialDesignFloatingActionMiniDarkButton" Margin="450,81,410,563">
 
+            <Image Source= "/img/pesquisar.png " Width="15"/>
 
-        <Label Content="Pesquisar" HorizontalAlignment="Left" Margin="19,73,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Height="28" Width="122" FontSize="16" FontFamily="Elephant">
-            <Label.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform AngleX="5.448"/>
-                    <RotateTransform Angle="-0.603"/>
-                    <TranslateTransform X="1.812" Y="-0.019"/>
-                </TransformGroup>
-            </Label.RenderTransform>
-        </Label>
-        <Image  Source="img\pesquisar.png" Margin="258,76,605,590" RenderTransformOrigin="1.848,2.224"/>
-        <TextBox HorizontalAlignment="Left" Margin="115,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" Height="36" TextChanged="TextBox_TextChanged"/>
-        <Image  Source="img\menu.png" Margin="73,0,594,460" RenderTransformOrigin="1.848,2.224" Height="95" VerticalAlignment="Bottom">
-            <Image.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform ScaleY="1"/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Image.RenderTransform>
-        </Image>
-        <MenuItem>
-            <MenuItem Header="Cdastrar Cliente"/>
-            <MenuItem Header="Cdastrar Cliente"/>
-            <MenuItem Header="Cdastrar Cliente"/>
+        </Button>
+        <MenuItem  Margin="10,23,779,629" Header="Menu">
+
+            <MenuItem Header="Página Inicial"/>
+            <MenuItem Header="Realizar Venda"/>
+            <MenuItem Header="Cadastrar Produto"/>
+            <MenuItem Header="Cadastrar Funcionário"/>
+            <MenuItem Header="Cadastrar Cliente"/>
+            <MenuItem Header="Cadastrar Compra"/>
+            <MenuItem Header="Consultar Estoque"/>
+            <MenuItem Header="Consultar Funcionário"/>
+            <MenuItem Header="Consultar Cliente"/>
+            <MenuItem Header="Consultar Vendas"/>
+            <MenuItem Header="Controlar Gastos"/>
+
         </MenuItem>
+        <ComboBox
+                
+                    Width="156"  Height="38" Margin="87,83,657,0"
+                    materialDesign:HintAssist.Hint="Consultar Compra"
+                    materialDesign:HintAssist.HintOpacity=".26"
+                    IsEditable="True" VerticalAlignment="Top" SelectionChanged="ComboBox_SelectionChanged">
+
+            <ComboBoxItem
+                        Content="Chinelo Havaina" />
+            <ComboBoxItem
+                        Content="Tenis Adidas" />
+            <ComboBoxItem
+                        Content="Sandália Ramarim" />
+
+        </ComboBox>
+
+        <ComboBox
+            x:Name="Filtros" 
+            materialDesign:HintAssist.Hint="Filtros" 
+            materialDesign:HintAssist.HintOpacity=".26" 
+            materialDesign:HintAssist.Foreground="Gray"
+            Margin ="285,81,520,0" Width="95" Height="40" VerticalAlignment="Top">
+
+            <ComboBoxItem
+                        Content="Tênis" />
+            <ComboBoxItem
+                        Content="Chinelo" />
+            <ComboBoxItem
+                        Content="Sandálias" />
+            <ComboBoxItem
+                        Content="Havaina" />
+            <ComboBoxItem
+                        Content="Adidas" />
+            <ComboBoxItem
+                        Content="Ramarim" />
+
+        </ComboBox>
 
 
 
