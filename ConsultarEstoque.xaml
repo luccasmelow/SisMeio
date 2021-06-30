@@ -119,6 +119,15 @@
                     Margin="15 0 5 0" AutomationProperties.Name="dataGridEstoque">
 
                     <DataGrid.Columns>
+
+                        <DataGridTemplateColumn Header="Selecionar">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <CheckBox />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
                         <DataGridTextColumn Header="Código" Binding="{Binding Id}"/>
                         <DataGridTextColumn Header="Descrição" Binding="{Binding Descricao}"/>
                         <DataGridTextColumn Header="Quantidade" Binding="{Binding Quantidade}"/>
@@ -154,7 +163,7 @@
                     Height="32" Width="84" 
                     ClickMode="Press" 
                     HorizontalAlignment="Left" 
-                    VerticalAlignment="center"
+                    VerticalAlignment="center" Click="btnAlterar_Click"
                  />
                 <Button 
                     x:Name="btnExcluir" 

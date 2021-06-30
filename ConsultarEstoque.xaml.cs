@@ -116,6 +116,12 @@ namespace Sismeio
             dataGridEstoque.ItemsSource = ListaEstoque;
         }
 
+        private void btnAlterar_Click(object sender, RoutedEventArgs e)
+        {
+            AtualizarProduto vsAtualizarProduto = new AtualizarProduto();
+
+            vsAtualizarProduto.ShowDialog();
+        }
 
 
     }
