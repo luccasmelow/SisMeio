@@ -21,6 +21,7 @@
                     <TranslateTransform/>
                 </TransformGroup>
             </Rectangle.RenderTransform>
+            
         </Rectangle>
         <Rectangle HorizontalAlignment="Left" Height="33" Margin="143,54,0,0" Stroke="Black" VerticalAlignment="Top" Width="131"/>
         <Rectangle HorizontalAlignment="Left" Height="33" Margin="66,149,0,0" Stroke="Black" VerticalAlignment="Top" Width="181"/>
