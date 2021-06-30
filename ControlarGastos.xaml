@@ -13,26 +13,50 @@
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="ControlarGastos" Height="450" Width="800">
+        Title="Controlar Gastos" MinHeight="500" MinWidth="800" MaxHeight="500" MaxWidth="800" WindowStartupLocation="CenterScreen" >
     <DockPanel>
+
         <Grid>
 
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width = "Auto"/>
+                <ColumnDefinition Width = "30"/>
                 <ColumnDefinition Width = "Auto"/>
             </Grid.ColumnDefinitions>
 
-            <StackPanel Grid.Column="0">
-                <StackPanel Orientation="Horizontal">
-                    <DatePicker  Padding="5 5" Grid.Column="1" HorizontalAlignment="Left" Margin="20,45,0,0" Width="137" Height="59" HorizontalContentAlignment="Center"/>
 
-                    <materialDesign:PackIcon Kind="Magnify" Margin="10,75,0,0" Height="21" Width="27"/>
+            <materialDesign:ColorZone
+                Foreground="Black" 
+                Background="#D3D3D3"
+                Mode="PrimaryLight"
+                Margin="1,0,1,0" Height="56" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2">
+                <materialDesign:ColorZone.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="-1.042" AngleY="0.003"/>
+                        <RotateTransform Angle="-0.011"/>
+                        <TranslateTransform X="-0.582" Y="0.022"/>
+                    </TransformGroup>
+                </materialDesign:ColorZone.RenderTransform>
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,0" HorizontalAlignment="Left" Width="796" Height="53"/>
+                
+                
+            </materialDesign:ColorZone>
+
+            <StackPanel Grid.ColumnSpan="2">
+                <TextBlock FontSize="35" Text="Controle de Gastos" RenderTransformOrigin="0.881,0.436" Margin="226,10,275,431"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="0" Margin="0,58,0,126" Grid.ColumnSpan="2">
+                <StackPanel Orientation="Horizontal">
+                    <DatePicker  Padding="5 5" Grid.Column="1" Margin="20,5,0,0" Width="137" Height="40" HorizontalContentAlignment="Center"/>
+
+                    <materialDesign:PackIcon Kind="Magnify" Margin="10,15,0,0" Height="21" Width="27"/>
 
                     <ComboBox
                 
-                        Width="156"  Height="38" Margin="10,63,0,0"
+                        Width="156"  Height="38" Margin="10,9,0,0"
                         Padding="5 5"
-                        materialDesign:HintAssist.Hint="Consultar Estoque"
+                        materialDesign:HintAssist.Hint="Consultar Gastos"
                         materialDesign:HintAssist.HintOpacity=".26"
                         IsEditable="True">
 
@@ -46,16 +70,17 @@
                     </ComboBox>
 
                 </StackPanel>
-                
+
+
                 <DataGrid 
-                    Width="300" 
-                    Height="220" 
-                    VerticalAlignment="Top"
+                    Grid.Column="0"
+                    Width="291" 
+                    Height="220"
                     IsReadOnly="False"
                     AutoGenerateColumns="False"
                     AlternatingRowBackground="#FFE5E5E5"
                     AlternationCount="2" 
-                    Margin="20 20 10 0">
+                    Margin="20 20 490 20" SelectionChanged="DataGrid_SelectionChanged">
 
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
@@ -64,22 +89,40 @@
 
                     </DataGrid.Columns>
 
-                   
+
                 </DataGrid>
             </StackPanel>
 
-            <StackPanel>
+            <StackPanel Margin="0,358,0,-2" Grid.ColumnSpan="2">
 
                 <Button 
                     x:Name="btnRelatorio" 
                     Content="Relatório" 
-                    Margin="20 380 5 0"
+                    Margin="20 28 5 0"
                     Cursor="Hand" 
                     Height="32" Width="90" 
                     ClickMode="Press" 
                     HorizontalAlignment="Left" 
                     VerticalAlignment="Bottom"
                  />
+            </StackPanel>
+
+            <StackPanel Grid.ColumnSpan="2" Margin="428,0,0,0">
+                <WrapPanel Orientation="Vertical">
+                    <Border Width="160" Background="#FFE5E5E5" CornerRadius="5" Padding="5" Margin="80 115 10 0">
+                        <StackPanel>
+                            <TextBlock FontSize="20" HorizontalAlignment="Center">Disponível</TextBlock>
+                            <TextBlock FontSize="25" HorizontalAlignment="Right">R$ 2.000,00</TextBlock>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Width="160" Background="#FFE5E5E5" CornerRadius="5" Padding="5" Margin="80 15 5 5">
+                        <StackPanel>
+                            <TextBlock FontSize="20" HorizontalAlignment="Center">Utilizado</TextBlock>
+                            <TextBlock FontSize="25" HorizontalAlignment="Right">R$ 8.000,00</TextBlock>
+                        </StackPanel>
+                    </Border>
+                </WrapPanel>
             </StackPanel>
 
 
