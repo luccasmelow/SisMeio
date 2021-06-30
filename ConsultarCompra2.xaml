@@ -55,11 +55,10 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
-<<<<<<< HEAD
-=======
+        
         <Button Content="Fechar" HorizontalAlignment="Right"  Background="#FFBFB8B8" RenderTransformOrigin="8,6" Margin="0,710,52,42" Width="150" FontSize="16" FontWeight="UltraBlack" BorderBrush="#FF6C6C6C" Foreground="#FF090909" Padding="16,4,16,4" />
         <Button Content="Editar" HorizontalAlignment="Right"  Background="#FFBFB8B8" RenderTransformOrigin="8,6" Margin="0,242,59,510" Width="143" FontSize="16" FontWeight="UltraBlack" BorderBrush="#FF6C6C6C" Foreground="#FF090909" Padding="16,4,16,4" />
->>>>>>> main
+
 
         <DataGrid
                     IsReadOnly="False"
