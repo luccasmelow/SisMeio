@@ -17,10 +17,46 @@ namespace Sismeio
     /// </summary>
     public partial class RelatorioGastos : Window
     {
+
         public RelatorioGastos()
         {
             InitializeComponent();
+            Loaded += RelatorioGastos_Loaded;
         }
+
+        private void RelatorioGastos_Loaded(object sender, RoutedEventArgs e)
+        {
+            List<Despesa> ListaGastos = new List<Despesa>();
+
+
+            ListaGastos.Add(new Despesa()
+            {
+                abertas ="Conta de Energia",
+                vencidas="Pagamento - Vendedora",
+                pagas="Pagamento - Caixa",
+                caixa=2000,
+                debito=3000
+
+
+
+            });
+            ListaGastos.Add(new Despesa()
+            {
+                abertas = "Água",
+                pagas = "Pedido Ramarim"
+
+
+            });
+            ListaGastos.Add(new Despesa()
+            {
+                abertas = "Pedido Arezzo",
+                pagas = "Pedido Adidas",
+                caixa=0
+               
+            });
+
+            dataGridEstoque.ItemsSource = ListaGastos;
+        }    
         private void mnuInicial_Click(object sender, RoutedEventArgs e)
         {
 

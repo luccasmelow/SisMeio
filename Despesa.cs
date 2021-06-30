@@ -13,6 +13,20 @@ namespace Sismeio
 
         public double valordesp{ get; set; }
 
+        public String abertas { get; set; }
+
+        public String vencidas { get; set; }
+
+        public String pagas { get; set; }
+
+        public double caixa { get; set; }
+
+        public double debito { get; set; }
+
+
+
+
+
 
 
     }
