@@ -14,7 +14,7 @@
         Background = "{DynamicResource MaterialDesignPaper}"
         FontFamily = "{DynamicResource MaterialDesignFont}"
   
-    Title="ATUALIZAR PRODUTO" Height="500" Width="800" WindowStartupLocation="CenterScreen">
+    Title="ATUALIZAR PRODUTO" Height="500" Width="800" MinHeight="500" MaxHeight="500" MinWidth="800" MaxWidth="800" WindowStartupLocation="CenterScreen">
 
 
 
@@ -46,7 +46,7 @@
         </materialDesign:ColorZone>
         <Label Margin="10,9,658,0" FontFamily = " Lucida Sans Unicode " FontSize = " 14" RenderTransformOrigin="0,66" Grid.Row="1" Height="26" VerticalAlignment="Top">PESQUISAR POR:
         </Label>
-        
+
         <ComboBox Height="22" Width="200" Margin="147,7,453,0" VerticalAlignment="Top"  Foreground="#8d8d8d"  Cursor="IBeam" RenderTransformOrigin="0.5,0.5" Grid.Row="1">
             <ComboBoxItem Content="CÓDIGO"/>
             <ComboBoxItem Content="NOME"/>
@@ -75,7 +75,7 @@
         <TextBox x:Name="txtFrete"  TextWrapping="Wrap" Margin="399,239,245,0" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d"  Cursor="IBeam" Text="Digite aqui" RenderTransformOrigin="0.5,0.5" Height="26" VerticalAlignment="Top"/>
         <TextBox x:Name="txtDesconto" TextWrapping="Wrap" Margin="609,239,35,0" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d"  Cursor="IBeam" Text="Digite aqui" RenderTransformOrigin="0.5,0.5" Height="26" VerticalAlignment="Top"/>
         <Button x:Name="btnSalvar" Content="Salvar" HorizontalAlignment="Left" Margin="420,10,0,0" Grid.Row="2" VerticalAlignment="Top" Click="btnSalvar_Click" Height="32" Width="114"/>
-        <Button x:Name="btnCancelar"  Content="Cancelar"  HorizontalAlignment="Left" Margin="675,10,0,0" Grid.Row="2" VerticalAlignment="Top" Click="btnCancelar_Click" Cursor="Hand" RenderTransformOrigin="-1.638,0.798" Height="32" Width="112"/>
+        <Button x:Name="btnCancelar"  Content="Cancelar" Margin="675,10,13,0" Grid.Row="2" VerticalAlignment="Top" Click="btnCancelar_Click" Cursor="Hand" RenderTransformOrigin="-1.638,0.798" Height="32"/>
         <Button x:Name="btnAlterar" Content="Alterar" HorizontalAlignment="Left" Margin="552,10,0,0" Grid.Row="2" VerticalAlignment="Top" Click="btnAlterar_Click" Height="32" Width="114"/>
         <Button x:Name="btnir" Content="CadPro" HorizontalAlignment="Left" Margin="269,10,0,0" Grid.Row="2" VerticalAlignment="Top" Click="btnir_Click" />
 

@@ -13,7 +13,7 @@
         TextOptions.TextRenderingMode = " Auto "        
         Background ="{DynamicResource MaterialDesignPaper}"
         FontFamily ="{DynamicResource MaterialDesignFont}"
-        Title="CADASTRAR PRODUTO" Height="780" Width="880" WindowStartupLocation="CenterScreen">
+        Title="CADASTRAR PRODUTO" Height="780" Width="880" MaxHeight="780" MinHeight="780" MaxWidth="880" MinWidth="880" WindowStartupLocation="CenterScreen">
     <Grid Margin="1,-21,0,-50">
         <Grid.RowDefinitions>
             <RowDefinition Height="70"/>

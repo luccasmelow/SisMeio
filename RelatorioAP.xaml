@@ -14,7 +14,7 @@
         Background= "{DynamicResource MaterialDesignPaper}"
         
         FontFamily = "{DynamicResource MaterialDesignFont}"
-        Title="RELATÓRIOS PRODUTOS" Height="500" Width="800" WindowStartupLocation="CenterScreen">
+        Title="RELATÓRIOS PRODUTOS" Height="500" Width="800" MinHeight="500" MaxHeight="500" MinWidth="800" MaxWidth="800" WindowStartupLocation="CenterScreen">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -43,7 +43,7 @@
         <materialDesign:PackIcon Kind="Magnify" Margin="337,41,0,0" Height="21" Width="27" Grid.Row="1"/>
         <TextBlock
                     FontSize="35"
-                    Text="Relatório de Produtos" RenderTransformOrigin="0.881,0.436" Margin="228,5,227,26"/>
+                    Text="Relatório de Produtos" RenderTransformOrigin="0.881,0.436" Margin="228,5,0,26" HorizontalAlignment="Left" Width="345"/>
 
         <ComboBox Grid.Row="1"
   materialDesign:HintAssist.Hint="" Height="26" Margin="128,36,474,0" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top">
@@ -60,8 +60,7 @@
             <ComboBoxItem
     Content="Nome" />
             <ComboBoxItem
-    Content="Linux" />
-            <ComboBoxItem
+   
     Content="Marca" />
         </ComboBox>
 
@@ -86,6 +85,14 @@
 
 
             <DataGrid.Columns>
+                <DataGridTemplateColumn Header="Selecionar">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
                 <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
                 <DataGridTextColumn Header="Marca" Binding="{Binding Marca}"/>
                 <DataGridTextColumn Header="Descrição" Binding="{Binding Descricao}"/>
@@ -108,7 +115,7 @@
                 ToolTip="MaterialDesignFlatAccentBackgroundButton"
                 Content="VER" Margin="469,3,242,35" Grid.Row="2" Cursor="Hand" />
         <Button x:Name="btnVoltar"  Content="VOLTAR"  HorizontalAlignment="Left" Margin="683,3,0,0" Grid.Row="2" VerticalAlignment="Top" Click="btnVoltar_Click" Cursor="Hand"/>
-        <Button x:Name="btnAlterar"  Content="ALTERAR" Margin="582,3,128,0" Grid.Row="2" VerticalAlignment="Top" Click="btnAlterar_Click" Cursor="Hand"/>
+        <Button x:Name="btnAlterar"  Content="ALTERAR" Margin="578,3,128,0" Grid.Row="2" VerticalAlignment="Top" Click="btnAlterar_Click" Cursor="Hand"/>
 
 
 
