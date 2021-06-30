@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Sismeio"
         mc:Ignorable="d"
         xmlns:materialDesign = "http://materialdesigninxaml.net/winfx/xaml/themes"
-        TextElement.Foreground = "{DynamicResource MaterialDesignBody}"
+        TextElement.Foreground ="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight = "Regular"
         TextElement.FontSize = "13"
         TextOptions.TextFormattingMode ="Ideal " 
@@ -19,7 +19,7 @@
 
 
 
-    <Grid>
+    <Grid Margin="1,0,-1,0">
 
 
         <Grid.RowDefinitions>
@@ -42,12 +42,7 @@
                     <TranslateTransform X="-0.582" Y="0.022"/>
                 </TransformGroup>
             </materialDesign:ColorZone.RenderTransform>
-            <StackPanel Orientation="Horizontal" Margin="1,-1,0,-2" HorizontalAlignment="Left" Width="796">
-                <ToggleButton
-                    Style="{DynamicResource MaterialDesignHamburgerToggleButton}"  Content="" RenderTransformOrigin="0.666,0.431" Width="50" Height="46"/>
-
-
-            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="1,-1,0,-2" HorizontalAlignment="Left" Width="796"/>
         </materialDesign:ColorZone>
         <Label Margin="10,9,658,0" FontFamily = " Lucida Sans Unicode " FontSize = " 14" RenderTransformOrigin="0,66" Grid.Row="1" Height="26" VerticalAlignment="Top">PESQUISAR POR:
         </Label>
@@ -60,6 +55,8 @@
         <Label Content="Quantidade" VerticalAlignment = "Top"  HorizontalAlignment = "Left"  Margin = "228,83,0,0"  FontSize = " 16 "  FontFamily = " Lucida Sans Unicode "  FontWeight = "Bold" RenderTransformOrigin="0,66" Grid.Row = " 1 "  />
         <Label Content="Categoria" VerticalAlignment = "Top"  HorizontalAlignment = "Left"  Margin = "418,81,0,0"  FontSize = " 16 "  FontFamily = " Lucida Sans Unicode "  FontWeight = "Bold" RenderTransformOrigin="0,66" Grid.Row = " 1 "  />
         <Label Content="Numeração" VerticalAlignment = "Top"  HorizontalAlignment = "Left"  Margin = "621,81,0,0"  FontSize = " 16 "  FontFamily = " Lucida Sans Unicode "  FontWeight = "Bold" RenderTransformOrigin="0,66" Grid.Row = " 1 "  />
+
+        <materialDesign:PackIcon Kind="Magnify" Margin="362,10,0,0" Height="21" Width="27" Grid.Row="1"/>
 
         <TextBox x:Name="txtMarca"  TextWrapping="Wrap" Margin="34,0,610,183" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d"  Cursor="IBeam" Text="Digite aqui" RenderTransformOrigin="0.5,0.5" Height="28" VerticalAlignment="Bottom"/>
         <TextBox x:Name="txtQtd" TextWrapping="Wrap" Margin="223,0,421,183" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" Cursor="IBeam" Text="Digite aqui" RenderTransformOrigin="0.5,0.5" Height="27" VerticalAlignment="Bottom"/>
@@ -77,19 +74,19 @@
         <TextBox x:Name="txtUnit"  TextWrapping="Wrap" Margin="223,239,421,0" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d"  Cursor="IBeam" Text="Digite aqui" RenderTransformOrigin="0.5,0.5" Height="26" VerticalAlignment="Top"/>
         <TextBox x:Name="txtFrete"  TextWrapping="Wrap" Margin="399,239,245,0" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d"  Cursor="IBeam" Text="Digite aqui" RenderTransformOrigin="0.5,0.5" Height="26" VerticalAlignment="Top"/>
         <TextBox x:Name="txtDesconto" TextWrapping="Wrap" Margin="609,239,35,0" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d"  Cursor="IBeam" Text="Digite aqui" RenderTransformOrigin="0.5,0.5" Height="26" VerticalAlignment="Top"/>
-        <Button x:Name="btnSalvar" Content="Salvar" HorizontalAlignment="Left" Margin="474,10,0,0" Grid.Row="2" VerticalAlignment="Top" Click="btnSalvar_Click"/>
-        <Button x:Name="btnCancelar"  Content="Cancelar"  HorizontalAlignment="Left" Margin="678,10,0,0" Grid.Row="2" VerticalAlignment="Top" Click="btnCancelar_Click" Cursor="Hand"/>
-        <Button x:Name="btnAlterar" Content="Alterar" HorizontalAlignment="Left" Margin="578,10,0,0" Grid.Row="2" VerticalAlignment="Top" Click="btnAlterar_Click"/>
+        <Button x:Name="btnSalvar" Content="Salvar" HorizontalAlignment="Left" Margin="420,10,0,0" Grid.Row="2" VerticalAlignment="Top" Click="btnSalvar_Click" Height="32" Width="114"/>
+        <Button x:Name="btnCancelar"  Content="Cancelar"  HorizontalAlignment="Left" Margin="675,10,0,0" Grid.Row="2" VerticalAlignment="Top" Click="btnCancelar_Click" Cursor="Hand" RenderTransformOrigin="-1.638,0.798" Height="32" Width="112"/>
+        <Button x:Name="btnAlterar" Content="Alterar" HorizontalAlignment="Left" Margin="552,10,0,0" Grid.Row="2" VerticalAlignment="Top" Click="btnAlterar_Click" Height="32" Width="114"/>
         <Button x:Name="btnir" Content="CadPro" HorizontalAlignment="Left" Margin="269,10,0,0" Grid.Row="2" VerticalAlignment="Top" Click="btnir_Click" />
 
         <Button 
 
   Style="{StaticResource MaterialDesignFlatAccentBgButton}"
   ToolTip="MaterialDesignFlatAccentBackgroundButton"
-  Content="Relatórios" Margin="19,10,668,28" Grid.Row="2"  Click="btnRelatorio_Click"  />
+  Content="Relatórios" Margin="19,10,668,28" Grid.Row="2"  Click="btnRelatorio_Click" Cursor="Hand"  />
         <TextBlock
                     FontSize="35"
-                    Text="Atualizar  Produto" RenderTransformOrigin="0.881,0.436" Margin="225,4,276,27"/>
+                    Text="Atualizar  Produto" RenderTransformOrigin="0.881,0.436" Margin="251,4,250,27"/>
 
     </Grid>
 </Window>

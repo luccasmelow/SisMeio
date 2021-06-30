@@ -65,7 +65,7 @@ namespace Sismeio
             txtCodP.Text = " ";
             txtCodB.Text = "";
             txtFornecedor.Text = "";
-            txtObs.Text = "";
+            txtDescricao.Text = "";
             txtMarca.Text = "";
             txtPeso.Text = "";
             txtQtdd.Text = "";
@@ -75,7 +75,24 @@ namespace Sismeio
             txtValDescon.Text = "";
             txtSugestao.Text = "";
             txtSugestao2.Text = "";
+            txtdescrvalor1.Text = "";
+            txtdescrvalor2.Text = "";
             
+
+        }
+
+        private void txtPeso_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void btnImagem_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show($"Essa ação ainda não está disponível.", "Opss!", MessageBoxButton.OK);
+        }
+
+        private void txtValEtq_TextChanged(object sender, TextChangedEventArgs e)
+        {
 
         }
     }
