@@ -11,7 +11,7 @@ namespace Sismeio
 
         public String descricao { get; set; }
 
-        public double Valor{ get; set; }
+        public double valordesp{ get; set; }
 
 
 

@@ -22,9 +22,78 @@
                 <ColumnDefinition Width = "30"/>
                 <ColumnDefinition Width = "Auto"/>
             </Grid.ColumnDefinitions>
+            
+            <Grid.RowDefinitions>
+            <RowDefinition Height = "20"/>
+            <RowDefinition Height = "Auto"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Height="20" Grid.Column="0" Grid.Row="0">
+                <Menu Height="20" Width="106" Margin="10,0,750,0">
+                    <MenuItem Padding ="1,0,0,0" Header="Menu" Height="20" Width="93" RenderTransformOrigin="0.471,0.43">
+                        <MenuItem x:Name="mnuInicial"
+                          Header="_Página Inicial"  
+                          Height="Auto" Width="Auto" Click="mnuInicial_Click"
+                        />
+                        <Separator/>
+                        <MenuItem x:Name="mnuRealizarVenda"
+                          Header="_Realizar Venda"  
+                          Height="Auto" Width="Auto" Click="mnuRealizarVenda_Click"
+                        />
+                        <Separator/>
+                        <MenuItem x:Name="mnuCadastrarProduto"
+                          Header="_Cadastrar Produto"  
+                          Height="Auto" Width="Auto" Click="mnuCadastrarProduto_Click"
+                        />
+                        <Separator/>
+                        <MenuItem x:Name="mnuCadastrarFuncionario"
+                          Header="_Cadastrar Funcionário"  
+                          Height="Auto" Width="Auto" Click="mnuCadastrarFuncionario_Click"
+                        />
+                        <Separator/>
+                        <MenuItem x:Name="mnuCadastrarCliente"
+                          Header="_Cadastrar Cliente"  
+                          Height="Auto" Width="Auto" Click="mnuCadastrarCliente_Click"
+                        />
+                        <Separator/>
+                        <MenuItem x:Name="mnuCadastrarCompra"
+                          Header="_Cadastrar Compra"  
+                          Height="Auto" Width="Auto" Click="mnuCadastrarCompra_Click"
+                        />
+                        <Separator/>
+                        <MenuItem x:Name="mnuConsultarEstoque"
+                          Header="_Consultar Estoque"  
+                          Height="Auto" Width="Auto" Click="mnuConsultarEstoque_Click"
+                        />
+                        <Separator/>
+                        <MenuItem x:Name="mnuConsultarFuncionario"
+                          Header="_Consultar Funcionário"  
+                          Height="Auto" Width="Auto" Click="mnuConsultarFuncionario_Click"
+                        />
+                        <Separator/>
+                        <MenuItem x:Name="mnuConsultarCliente"
+                          Header="_Consultar Cliente"  
+                          Height="Auto" Width="Auto" Click="mnuConsultarCliente_Click"
+                        />
+                        <Separator/>
+                        <MenuItem x:Name="mnuConsultarVenda"
+                          Header="_Consultar Vendas"  
+                          Height="Auto" Width="Auto" Click="mnuConsultarVenda_Click"
+                        />
+                        <Separator/>
+                        <MenuItem x:Name="mnuControlarGastos"
+                          Header="_Controlar Gastos"  
+                          Height="Auto" Width="Auto" Click="mnuControlarGastos_Click"
+                        />
+                    </MenuItem>
+                    
+                    
+                </Menu>
+            </StackPanel>
 
 
             <materialDesign:ColorZone
+                Grid.Row="1"
                 Foreground="Black" 
                 Background="#D3D3D3"
                 Mode="PrimaryLight"
@@ -39,14 +108,15 @@
                 </materialDesign:ColorZone.RenderTransform>
                 <StackPanel Orientation="Horizontal" Margin="0,0,0,0" HorizontalAlignment="Left" Width="796" Height="53"/>
                 
+                                
                 
             </materialDesign:ColorZone>
 
-            <StackPanel Grid.ColumnSpan="2">
+            <StackPanel Grid.ColumnSpan="2" Grid.Row="1">
                 <TextBlock FontSize="35" Text="Controle de Gastos" RenderTransformOrigin="0.881,0.436" Margin="226,10,275,431"/>
             </StackPanel>
 
-            <StackPanel Grid.Column="0" Margin="0,58,0,126" Grid.ColumnSpan="2">
+            <StackPanel Grid.Row="1" Grid.Column="0" Margin="0,58,0,126" Grid.ColumnSpan="2">
                 <StackPanel Orientation="Horizontal">
                     <DatePicker  Padding="5 5" Grid.Column="1" Margin="20,5,0,0" Width="137" Height="40" HorizontalContentAlignment="Center"/>
 
@@ -74,18 +144,19 @@
 
                 <DataGrid x:Name="dataGridGastos" 
                     Grid.Column="0"
+                    Grid.Row="1"
                     Width="291" 
                     Height="220"
-                    IsReadOnly="False"
+                    IsReadOnly="True"
                     AutoGenerateColumns="False"
                     AlternatingRowBackground="#FFE5E5E5"
                     AlternationCount="2" 
                     Margin="20 20 490 20" SelectionChanged="DataGrid_SelectionChanged">
-
+                    
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
-                        <DataGridTextColumn Header="Descrição" Binding="{Binding Descricao}"/>
-                        <DataGridTextColumn Header="Valor" Binding="{Binding QtdProdutos, ConverterCulture='pt-Br', StringFormat=C}"/>
+                        <DataGridTextColumn Header="Id" Binding="{Binding id}"/>
+                        <DataGridTextColumn Header="Descrição" Binding="{Binding descricao}"/>
+                        <DataGridTextColumn Header="Valor" Binding="{Binding valordesp, ConverterCulture='pt-Br', StringFormat=C}"/>
 
                     </DataGrid.Columns>
 
@@ -93,7 +164,7 @@
                 </DataGrid>
             </StackPanel>
 
-            <StackPanel Margin="0,358,0,-2" Grid.ColumnSpan="2">
+            <StackPanel Grid.Row="1" Margin="0,358,0,41">
 
                 <Button 
                     x:Name="btnRelatorio" 
@@ -107,7 +178,7 @@
                  />
             </StackPanel>
 
-            <StackPanel Grid.ColumnSpan="2" Margin="428,0,0,0">
+            <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Margin="428,0,0,38">
                 <WrapPanel Orientation="Vertical">
                     <Border Width="160" Background="#FFE5E5E5" CornerRadius="5" Padding="5" Margin="80 115 10 0">
                         <StackPanel>
@@ -119,7 +190,7 @@
                     <Border Width="160" Background="#FFE5E5E5" CornerRadius="5" Padding="5" Margin="80 15 5 5">
                         <StackPanel>
                             <TextBlock FontSize="20" HorizontalAlignment="Center">Utilizado</TextBlock>
-                            <TextBlock FontSize="25" HorizontalAlignment="Right">R$ 8.000,00</TextBlock>
+                            <TextBlock FontSize="25" HorizontalAlignment="Right">R$ 2.652,0</TextBlock>
                         </StackPanel>
                     </Border>
                 </WrapPanel>

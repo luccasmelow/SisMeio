@@ -45,5 +45,5 @@ namespace Sismeio
             dataGridCompras2.ItemsSource = listacompra2;
         }
     }
-    }
+    
 }

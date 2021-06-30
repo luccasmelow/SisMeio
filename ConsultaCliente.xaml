@@ -64,7 +64,7 @@
                     Width="156"  Height="38" Margin="87,83,657,0"
                     materialDesign:HintAssist.Hint="Consultar Compra"
                     materialDesign:HintAssist.HintOpacity=".26"
-                    IsEditable="True" VerticalAlignment="Top" SelectionChanged="ComboBox_SelectionChanged">
+                    IsEditable="True" VerticalAlignment="Top">
 
             <ComboBoxItem
                         Content="Chinelo Havaina" />
