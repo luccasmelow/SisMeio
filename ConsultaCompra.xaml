@@ -1,0 +1,128 @@
+﻿<Window x:Class="Sismeio.ConsultaCompra"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Sismeio"
+        mc:Ignorable="d"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="ConsultaCompra" Height="500" Width="800">
+    <Grid>
+        <Grid Height="300" VerticalAlignment="Top" Margin="0,134,0,0">
+            <DataGrid x:Name="dataGridCompras1"
+                    IsReadOnly="False"
+                    AutoGenerateColumns="False"
+                    AlternatingRowBackground="#FFE5E5E5"
+                    AlternationCount="200" Margin="27,30,251,26"  >
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Código" Binding="{Binding Id}"/>
+                    <DataGridTextColumn Header="Nome" Binding="{Binding Descricao}"/>
+                    <DataGridTextColumn Header="Marca" Binding="{Binding Marca}"/>
+                    <DataGridTextColumn Header="Quantidade" Binding="{Binding QtdProdutos}"/>
+                    <DataGridTextColumn Header="Numeração" Binding="{Binding QtdProdutos, ConverterCulture=pt-Br, StringFormat=C}"/>
+                    <DataGridTextColumn Header="Valor Unitário" Binding="{Binding QtdProdutos, ConverterCulture=pt-Br, StringFormat=C}"/>
+                    <DataGridTextColumn Header="Valor Total" Binding="{Binding QtdProdutos, ConverterCulture=pt-Br, StringFormat=C}"/>
+
+
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+        <Grid Margin="0,0,0,305" >
+            <MenuItem  Margin="0,10,682,137" Header="Menu">
+                
+                <MenuItem Header="Página Inicial"/>
+                <MenuItem Header="Realizar Venda"/>
+                <MenuItem Header="Cadastrar Produto"/>
+                <MenuItem Header="Cadastrar Funcionário"/>
+                <MenuItem Header="Cadastrar Cliente"/>
+                <MenuItem Header="Cadastrar Compra"/>
+                <MenuItem Header="Consultar Estoque"/>
+                <MenuItem Header="Consultar Funcionário"/>
+                <MenuItem Header="Consultar Cliente"/>
+                <MenuItem Header="Consultar Vendas"/>
+                <MenuItem Header="Controlar Gastos"/>
+
+            </MenuItem>
+
+        </Grid>
+        <ComboBox
+                
+                    Width="156"  Height="38" Margin="102,67,542,0"
+                    materialDesign:HintAssist.Hint="Consultar Compra"
+                    materialDesign:HintAssist.HintOpacity=".26"
+                    IsEditable="True" VerticalAlignment="Top" SelectionChanged="ComboBox_SelectionChanged">
+
+            <ComboBoxItem
+                        Content="Chinelo Havaina" />
+            <ComboBoxItem
+                        Content="Tenis Adidas" />
+            <ComboBoxItem
+                        Content="Sandália Ramarim" />
+
+        </ComboBox>
+
+        <ComboBox
+            x:Name="Filtros" 
+            materialDesign:HintAssist.Hint="Filtros" 
+            materialDesign:HintAssist.HintOpacity=".26" 
+            materialDesign:HintAssist.Foreground="Gray"
+            Margin ="319,66,386,0" Width="95" Height="40" VerticalAlignment="Top">
+
+            <ComboBoxItem
+                        Content="Tênis" />
+            <ComboBoxItem
+                        Content="Chinelo" />
+            <ComboBoxItem
+                        Content="Sandálias" />
+            <ComboBoxItem
+                        Content="Havaina" />
+            <ComboBoxItem
+                        Content="Adidas" />
+            <ComboBoxItem
+                        Content="Ramarim" />
+
+        </ComboBox>
+
+        <Button 
+                        x:Name="btnNovo" 
+                        Content="Novo" 
+                        Margin="690,46,26,356" 
+                        Cursor="Hand" 
+                        Height="32" Width="84" ClickMode="Press"/>
+        <Button 
+                        x:Name="btnconsul" 
+                        Content="Consultar" 
+                        Margin="671,238,26,164" 
+                        Cursor="Hand" 
+                        Height="32" ClickMode="Press"/>
+        <Button 
+                        x:Name="btnexcluir" 
+                        Content="Excluir" 
+                        Margin="671,297,26,105" 
+                        Cursor="Hand" 
+                        Height="32" ClickMode="Press"/>
+        <Button 
+                        x:Name="btnfechar" 
+                        Content="Fechar" 
+                        Margin="648,434,26,18" 
+                        Cursor="Hand" 
+                        Height="32" ClickMode="Press"/>
+        <Button
+                  Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}"
+                    ToolTip="MaterialDesignFloatingActionMiniDarkButton" Margin="448,63,312,381" Background="#FF6539B7">
+
+            <Image Source= "/img/pesquisar.png " Width="15"/>
+
+        </Button>
+    </Grid>
+
+
+</Window>

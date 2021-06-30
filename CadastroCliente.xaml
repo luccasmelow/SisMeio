@@ -67,11 +67,26 @@
                 </TransformGroup>
             </materialDesign:ColorZone.RenderTransform>
             <StackPanel Orientation="Horizontal" Margin="0,-5,-12,0" HorizontalAlignment="Right" Width="1173">
-                <ToggleButton
-                    Style="{DynamicResource MaterialDesignHamburgerToggleButton}" Checked="ToggleButton_Checked" Content="" RenderTransformOrigin="0.666,0.431" Width="41">
-                </ToggleButton>
+                <ToggleButton>
+                    <MenuItem>
+                        <MenuItem Header="Cdastrar Cliente"/>
+                        <MenuItem Header="Cdastrar Cliente"/>
+                        <MenuItem Header="Cdastrar Cliente"/>
+                    </MenuItem>
 
-                    <TextBlock
+                </ToggleButton>
+                <Image Source=" img/menu.png" Height="24" RenderTransformOrigin="0.5,0.5" Width="35">
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="-1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+
+                <TextBlock
                     VerticalAlignment="Center"
                      Margin=" 400 0 0 0"
                     FontSize="35"

@@ -22,16 +22,22 @@ namespace Sismeio
             InitializeComponent();
         }
 
-        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        public void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            List<Cliente> listacliente = new List<Cliente>();
 
+            for (int i = 0; i < 10; i++)
+            {
+
+                listacliente.Add(new Cliente()
+                {
+                    codigo = i + 1,
+                    nome = "João Alves" + i,
+                    situacao = "Devedor"
+                });
+            }
         }
-
-        private void DataGrid_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
+  
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             ConsultaCliente2 consulcli = new ConsultaCliente2();
@@ -43,13 +49,8 @@ namespace Sismeio
             CadastroCliente cadastrocli = new CadastroCliente();
             cadastrocli.Show();
         }
-
-        private void dataGridCliente_SelectionChanged_2(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void DataGrid_SelectionChanged_2(object sender, SelectionChangedEventArgs e)
+ 
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }

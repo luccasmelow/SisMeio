@@ -13,7 +13,7 @@
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="Consultar Estoque" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+        Title="Consultar Estoque" MinHeight="500" MinWidth="800" MaxHeight="500" MaxWidth="800" WindowStartupLocation="CenterScreen">
 
     <DockPanel>
         <Grid>
@@ -21,9 +21,33 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <StackPanel  Grid.Row ="0" DockPanel.Dock="top" Orientation = "Horizontal" Width="800"  Height="105" Margin="0 5" VerticalAlignment="Top">
+            <materialDesign:ColorZone
+                Grid.Row="0"
+                Foreground="Black" 
+                Background="#D3D3D3"
+                Mode="PrimaryLight"
+                Margin="1,0,1,0" Height="56" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2">
+                <materialDesign:ColorZone.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="-1.042" AngleY="0.003"/>
+                        <RotateTransform Angle="-0.011"/>
+                        <TranslateTransform X="-0.582" Y="0.022"/>
+                    </TransformGroup>
+                </materialDesign:ColorZone.RenderTransform>
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,0" HorizontalAlignment="Left" Width="796" Height="53"/>
+               
+
+            </materialDesign:ColorZone>
+
+            <StackPanel Grid.ColumnSpan="2">
+                <TextBlock FontSize="35" Text="Consultar Estoque" HorizontalAlignment="Center"/>
+            </StackPanel>
+
+            <StackPanel  Grid.Row ="1" DockPanel.Dock="top" Orientation = "Horizontal" Width="800"  Height="105" Margin="0 5" VerticalAlignment="Top">
 
 
                 <materialDesign:PackIcon Kind="Magnify" Margin="80 45 5 0" Height="21" Width="27"/>
@@ -83,27 +107,35 @@
 
             </StackPanel>
 
-            <StackPanel Grid.Row="1">
+            <StackPanel Grid.Row="2">
                 <DataGrid 
-                    Width="720" 
-                    Height="220" 
-                    VerticalAlignment="Top"
-                    IsReadOnly="False"
+                    x:Name="dataGridEstoque"
+                    Width="703" 
+                    Height="220"
+                    IsReadOnly="true"
                     AutoGenerateColumns="False"
                     AlternatingRowBackground="#FFE5E5E5"
                     AlternationCount="2" 
-                    Margin="5 0 5 0">
+                    Margin="15 0 5 0" AutomationProperties.Name="dataGridEstoque">
 
                     <DataGrid.Columns>
+
+                        <DataGridTemplateColumn Header="Selecionar">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <CheckBox />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
                         <DataGridTextColumn Header="Código" Binding="{Binding Id}"/>
                         <DataGridTextColumn Header="Descrição" Binding="{Binding Descricao}"/>
-                        <DataGridTextColumn Header="Quantidade" Binding="{Binding QtdProdutos}"/>
-                        <DataGridTextColumn Header="Valor" Binding="{Binding QtdProdutos, ConverterCulture='pt-Br', StringFormat=C}"/>
+                        <DataGridTextColumn Header="Quantidade" Binding="{Binding Quantidade}"/>
+                        <DataGridTextColumn Header="Valor" Binding="{Binding ValorUnitario, ConverterCulture='pt-Br', StringFormat=C}"/>
+                        <DataGridTextColumn Header="Valor Total" Binding="{Binding ValorEstoque, ConverterCulture='pt-Br', StringFormat=C}"/>
                         <DataGridTextColumn Header="Categoria" Binding="{Binding Categoria}"/>
                         <DataGridTextColumn Header="Marca" Binding="{Binding Marca}"/>
                         <DataGridTextColumn Header="Numeração" Binding="{Binding Numeracao}"/>
-                        <DataGridTextColumn Header="Pedido" Binding="{Binding DataPedido}"/>
-                        <DataGridTextColumn Header="Entrega" Binding="{Binding DataEntrega}"/>
                     </DataGrid.Columns>
 
 
@@ -111,7 +143,7 @@
             </StackPanel>
 
 
-            <StackPanel Grid.Row="2" Orientation="Horizontal" Height="77" VerticalAlignment="Center" HorizontalAlignment="Center" Width="800">
+            <StackPanel Grid.Row="3" Orientation="Horizontal" Height="77" VerticalAlignment="Center" HorizontalAlignment="Center" Width="800">
 
                 <Button 
                     x:Name="btnVisualizar" 
@@ -121,7 +153,7 @@
                     Height="32" Width="110" 
                     ClickMode="Press" 
                     HorizontalAlignment="Left" 
-                    VerticalAlignment="Bottom"
+                    VerticalAlignment="center"
                  />
                 <Button 
                     x:Name="btnAlterar" 
@@ -131,7 +163,7 @@
                     Height="32" Width="84" 
                     ClickMode="Press" 
                     HorizontalAlignment="Left" 
-                    VerticalAlignment="Bottom"
+                    VerticalAlignment="center" Click="btnAlterar_Click"
                  />
                 <Button 
                     x:Name="btnExcluir" 
@@ -141,7 +173,7 @@
                     Height="32" Width="84" 
                     ClickMode="Press" 
                     HorizontalAlignment="Right" 
-                    VerticalAlignment="Bottom"
+                    VerticalAlignment="Center"
                  />
 
 

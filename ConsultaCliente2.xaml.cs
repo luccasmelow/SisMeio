@@ -43,6 +43,9 @@ namespace Sismeio
             cadprod.Show();
         }
 
-        
+        private void ComprasPendentes_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

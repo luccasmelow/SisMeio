@@ -24,22 +24,13 @@ namespace Sismeio
         {
             InitializeComponent();
         }
-        private void MainWindow_Loaded(object sender,RoutedEventArgs e)
-        {
-            List<Cliente> listacliente = new List<Cliente>();
-
-            for (int i = 0; i < 10; i++)
-            {
-
-                listacliente.Add(new Cliente()
-                {
-                    codigo = i + 1,
-                    nome = "João Alves" + i,
-                    situacao = "Devedor"
-                });
-            } 
-          
+     
             
-        }
+
+
+
+
+
+        
     }
 }
