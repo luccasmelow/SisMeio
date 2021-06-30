@@ -10,10 +10,11 @@
         TextElement.FontWeight = "Regular"
         TextElement.FontSize = "13"
         TextOptions.TextFormattingMode ="Ideal " 
-        TextOptions.TextRenderingMode = "Auto"        
-        Background = "{DynamicResource MaterialDesignPaper}"
+        TextOptions.TextRenderingMode = "Auto"
+    Background = "{DynamicResource MaterialDesignPaper}"
         FontFamily = "{DynamicResource MaterialDesignFont}"
-        Title="ATUALIZAR PRODUTO" Height="500" Width="800" WindowStartupLocation="CenterScreen">
+  
+    Title="ATUALIZAR PRODUTO" Height="500" Width="800" WindowStartupLocation="CenterScreen">
 
 
 
