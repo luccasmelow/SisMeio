@@ -21,5 +21,13 @@ namespace Sismeio
         {
             InitializeComponent();
         }
+
+        private void btnEntrar_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new CadastrarFuncionario();
+
+            window.Owner = this;
+            window.ShowDialog();
+        }
     }
 }
