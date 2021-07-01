@@ -69,6 +69,70 @@ namespace Sismeio
             window.Owner = this;
             window.ShowDialog();
         }
+
+        private void BtnTrocarUsuario_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new Login();
+
+            window.Owner = this;
+            window.ShowDialog();
+        }
+
+        private void BtnGestaoControle_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new ControlarGastos();
+
+            window.Owner = this;
+            window.ShowDialog();
+        }
+
+        private void BtnCadastroClientes_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new CadastroCliente();
+
+            window.Owner = this;
+            window.ShowDialog();
+        }
+
+        private void BtnCadastroProduto_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new CadastroProduto();
+
+            window.Owner = this;
+            window.ShowDialog();
+        }
+
+        private void BtnCadastroFuncionario_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new CadastrarFuncionario();
+
+            window.Owner = this;
+            window.ShowDialog();
+        }
+
+        private void BtnConsultarClientes_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new ConsultaCliente2();
+
+            window.Owner = this;
+            window.ShowDialog();
+        }
+
+        private void BtnConsultarFuncioanrios_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new ConsultarFuncionario();
+
+            window.Owner = this;
+            window.ShowDialog();
+        }
+
+        private void BtnConsultarProdutos_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new ConsultarEstoque();
+
+            window.Owner = this;
+            window.ShowDialog();
+        }
+
     }
-    
 }
