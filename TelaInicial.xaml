@@ -141,29 +141,32 @@
         </Grid>
 
         <Grid Background="#FFDFD0F0" Margin="7">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="253*"/>
+                <RowDefinition Height="81*"/>
+            </Grid.RowDefinitions>
 
             <StackPanel Grid.Row="0" Width="376" HorizontalAlignment="Left"
-                 Margin="9"        >
-                <StackPanel.RenderTransform>
-                    <TransformGroup>
-                        
-                    </TransformGroup>
-                </StackPanel.RenderTransform>
+                 Margin="9,9,0,9" Grid.RowSpan="2">
 
 
-                <TabControl
+
+
+
+                <StackPanel>
+                    <TabControl
               Style="{StaticResource MaterialDesignNavigatilRailTabControl}"
               materialDesign:ColorZoneAssist.Mode="PrimaryDark" Height="300" Width="375">
-                    <materialDesign:NavigationRailAssist.FloatingContent>
-                        <Button
+                        <materialDesign:NavigationRailAssist.FloatingContent>
+                            <Button
                   Style="{StaticResource MaterialDesignFloatingActionAccentButton}"
                   Margin="0,8"
                   Content="{materialDesign:PackIcon Kind=Plus}" />
-                    </materialDesign:NavigationRailAssist.FloatingContent>
-                    <TabItem
+                        </materialDesign:NavigationRailAssist.FloatingContent>
+                        <TabItem
                 Header="{materialDesign:PackIcon Kind=Heart, Size=24}"
                 Style="{StaticResource MaterialDesignNavigationRailTabItem}">
-                        <TextBlock Margin="0,14,0,10" Width="300" HorizontalAlignment="Center">
+                            <TextBlock Margin="0,14,0,10" Width="300" HorizontalAlignment="Center">
                   <Run
                     Text="   Venda: 265841    |    ID produto: 58   |    26/06/2021" />
                   <LineBreak />
@@ -174,14 +177,14 @@
                             <LineBreak />
                  <Run
                       Text="---------------------------------------------------------------------------------------------------   "/>
-                        </TextBlock>
-                    </TabItem>
-                    
-                    
-                    <TabItem
+                            </TextBlock>
+                        </TabItem>
+
+
+                        <TabItem
                 Header="{materialDesign:PackIcon Kind=Spade, Size=24}"
                 Style="{StaticResource MaterialDesignNavigationRailTabItem}">
-                        <TextBlock Height="284" VerticalAlignment="Top" Margin="0,6,0,0">
+                            <TextBlock Height="284" VerticalAlignment="Top" Margin="0,6,0,0">
                   <Run
                     Text="Venda: 5697541   |   ID Produto: 5986   |   26/06/2021" />
                   <LineBreak />
@@ -195,10 +198,105 @@
                             <Run>
                                 ---------------------------------------------------------------------------------------------
                             </Run>
-                        </TextBlock>
-                    </TabItem>
-                </TabControl>
+                            </TextBlock>
+                        </TabItem>
+                    </TabControl>
+                </StackPanel>
+
+                <StackPanel  Margin="0 35 0 15">
+                    <materialDesign:ColorZone
+                      Mode="PrimaryDark"
+                      Padding="16"
+                      CornerRadius="10"
+                      materialDesign:ShadowAssist.ShadowDepth="Depth3"
+                      ClipToBounds="False">
+                        <StackPanel
+                        Orientation="Horizontal">
+                            <TextBlock
+                          VerticalAlignment="Center"
+                          Margin="16 0 0 0"
+                          Text="1- Faturamento Mensal                                                   + R$42.695,47"/>
+                        </StackPanel>
+                    </materialDesign:ColorZone>
+                </StackPanel>
+
+
+                <StackPanel Margin="0 0 0 15">
+                    <materialDesign:ColorZone
+                      Mode="PrimaryDark"
+                      Padding="16"
+                      CornerRadius="10"
+                      materialDesign:ShadowAssist.ShadowDepth="Depth3"
+                      ClipToBounds="False">
+                        <StackPanel
+                        Orientation="Horizontal">
+                            <TextBlock
+                          VerticalAlignment="Center"
+                          Margin="16 0 0 0"
+                          Text="2- Impostos                                                                           - R$8.695,36"/>
+
+                        </StackPanel>
+                    </materialDesign:ColorZone>
+                </StackPanel>
+
+                <StackPanel Margin="0 0 0 15">
+                    <materialDesign:ColorZone
+                      Mode="PrimaryDark"
+                      Padding="16"
+                      CornerRadius="10"
+                      materialDesign:ShadowAssist.ShadowDepth="Depth3"
+                      ClipToBounds="False">
+                        <StackPanel
+                        Orientation="Horizontal">
+                            <TextBlock
+                          VerticalAlignment="Center"
+                          Margin="16 0 0 0"
+                          Text="3 - Funcionários                                                                 - R$12.689,45"/>
+
+                        </StackPanel>
+                    </materialDesign:ColorZone>
+                </StackPanel>
+
+                <StackPanel Margin="0 0 0 15">
+                    <materialDesign:ColorZone
+                      Mode="PrimaryDark"
+                      Padding="16"
+                      CornerRadius="10"
+                      materialDesign:ShadowAssist.ShadowDepth="Depth3"
+                      ClipToBounds="False">
+                        <StackPanel
+                        Orientation="Horizontal">
+                            <TextBlock
+                          VerticalAlignment="Center"
+                          Margin="16 0 0 0"
+                          Text="4- Energia                                                                                  - R$648,45"/>
+                        </StackPanel>
+                    </materialDesign:ColorZone>
+                </StackPanel>
+
+                <StackPanel Margin="0 0 0 15">
+                    <materialDesign:ColorZone
+                      Mode="PrimaryDark"
+                      Padding="16"
+                      CornerRadius="10"
+                      materialDesign:ShadowAssist.ShadowDepth="Depth3"
+                      ClipToBounds="False">
+                        <StackPanel
+                        Orientation="Horizontal">
+                            <TextBlock
+                          VerticalAlignment="Center"
+                          Margin="16 0 0 0"
+                          Text="5- Divulgação                                                                            - R$800,00"/>
+                        </StackPanel>
+                    </materialDesign:ColorZone>
+                </StackPanel>
+                
+                
+
+
             </StackPanel>
+
+
         </Grid>
     </DockPanel>
 </Window>
