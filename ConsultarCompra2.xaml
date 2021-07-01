@@ -65,13 +65,13 @@
         </Rectangle>
 
         <Button 
-                    x:Name="bttfechar" 
+                    x:Name="btnfechar" 
                     Content="Fechar" 
                     Cursor="Hand" 
                     Height="64" Width="223" 
                     ClickMode="Press" 
                     HorizontalAlignment="Left" 
-                    VerticalAlignment="Top" Margin="867,684,0,0" FontSize="18" RenderTransformOrigin="0.459,1.266"
+                    VerticalAlignment="Top" Margin="867,684,0,0" FontSize="18" RenderTransformOrigin="0.459,1.266" Click="btnfechar_Click"
                  />
         <Button 
                     x:Name="btnsalvar" 

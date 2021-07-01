@@ -129,7 +129,7 @@
             <MenuItem Padding ="1,0,0,0" Header="Menu" Height="25" Width="138" RenderTransformOrigin="0.471,0.43">
                 <MenuItem x:Name="mnuInicial"
                           Header="_Página Inicial"  
-                          Height="Auto" Width="Auto" Click="mnuInicial_Click"
+                          Height="Auto" Width="Auto"
                         />
                 <Separator/>
                 <MenuItem x:Name="mnuRealizarVenda"

@@ -131,6 +131,9 @@ namespace Sismeio
 
         private void mnuRealizarVenda_Click(object sender, RoutedEventArgs e)
         {
+            RealizarVendas vsRealizarVendas = new RealizarVendas();
+
+            vsRealizarVendas.ShowDialog();
 
         }
 

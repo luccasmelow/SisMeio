@@ -175,12 +175,12 @@
                 <DataGrid 
                     x:Name="dataGridEstoque"
                     Width="702" 
-                    Height="272"
+                    Height="213"
                     IsReadOnly="true"
                     AutoGenerateColumns="False"
                     AlternatingRowBackground="#FFE5E5E5"
                     AlternationCount="2" 
-                    Margin="15 20 5 0" AutomationProperties.Name="dataGridEstoque">
+                    Margin="15 90 5 0" AutomationProperties.Name="dataGridEstoque">
 
                     <DataGrid.Columns>
 

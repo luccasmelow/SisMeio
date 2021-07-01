@@ -23,10 +23,10 @@ namespace Sismeio
         public MainWindow()
         {
             InitializeComponent();
-<<<<<<< Updated upstream
+
         }      
-=======
-        }
+
+    }
      
             
 
@@ -35,6 +35,6 @@ namespace Sismeio
 
 
         
->>>>>>> Stashed changes
-    }
+
+    
 }

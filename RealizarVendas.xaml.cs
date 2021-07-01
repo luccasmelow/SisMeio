@@ -69,7 +69,7 @@ namespace Sismeio
         }
         private void mnuInicial_Click(object sender, RoutedEventArgs e)
         {
-
+           
         }
 
         private void mnuRealizarVenda_Click(object sender, RoutedEventArgs e)

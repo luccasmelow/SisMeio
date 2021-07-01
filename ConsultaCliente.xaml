@@ -60,7 +60,7 @@
                     FontSize="35"
                     Text="Consultar Cliente"/>
 
-        <MenuItem  Margin="10,10,779,542" Header="Menu" Click="MenuItem_Click">
+        <MenuItem  Margin="10,10,779,542" Header="Menu" >
 
             <MenuItem Header="Página Inicial"/>
             <MenuItem Header="Realizar Venda"/>
@@ -124,11 +124,11 @@
                         Cursor="Hand" 
                         Height="32" ClickMode="Press" RenderTransformOrigin="0.928,-1.446"/>
         <Button 
-                        x:Name="bttfechar" 
+                        x:Name="btnfechar" 
                         Content="Fechar" 
                         Margin="693,515,26,37" 
                         Cursor="Hand" 
-                        Height="32" ClickMode="Press" Click="bttfechar"/>
+                        Height="32" ClickMode="Press" Click="btnfechar_click"/>
     </Grid>
 
 
