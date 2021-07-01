@@ -6,20 +6,21 @@
         xmlns:local="clr-namespace:Sismeio"
         mc:Ignorable="d"
         xmlns:materialDesign = "http://materialdesigninxaml.net/winfx/xaml/themes"
-        TextElement.Foreground = "{DynamicResource MaterialDesignBody}"
+        TextElement.Foreground ="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight = "Regular"
         TextElement.FontSize = "13"
         TextOptions.TextFormattingMode ="Ideal " 
-        TextOptions.TextRenderingMode = "Auto"        
-        Background = "{DynamicResource MaterialDesignPaper}"
+        TextOptions.TextRenderingMode = "Auto"    
+        Background= "{DynamicResource MaterialDesignPaper}"
+        
         FontFamily = "{DynamicResource MaterialDesignFont}"
-        Title="RELATÓRIOS PRODUTOS" Height="500" Width="800" WindowStartupLocation="CenterScreen">
+        Title="RELATÓRIOS PRODUTOS" Height="500" Width="800" MinHeight="500" MaxHeight="500" MinWidth="800" MaxWidth="800" WindowStartupLocation="CenterScreen">
 
     <Grid>
         <Grid.RowDefinitions>
 
             <RowDefinition Height="70" />
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="300"/>
             <RowDefinition Height="70"/>
         </Grid.RowDefinitions>
 
@@ -36,17 +37,13 @@
                     <TranslateTransform X="-0.582" Y="0.022"/>
                 </TransformGroup>
             </materialDesign:ColorZone.RenderTransform>
-            <StackPanel Orientation="Horizontal" Margin="2,-1,0,-6" HorizontalAlignment="Left" Width="795">
-                <ToggleButton
-                    Style="{DynamicResource MaterialDesignHamburgerToggleButton}"  Content="" RenderTransformOrigin="0.666,0.431" Width="50" Height="46"/>
-
-
-            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="2,-1,0,-6" HorizontalAlignment="Left" Width="795"/>
         </materialDesign:ColorZone>
 
+        <materialDesign:PackIcon Kind="Magnify" Margin="337,41,0,0" Height="21" Width="27" Grid.Row="1"/>
         <TextBlock
                     FontSize="35"
-                    Text="Relatório de Produtos" RenderTransformOrigin="0.881,0.436" Margin="225,4,230,27"/>
+                    Text="Relatório de Produtos" RenderTransformOrigin="0.881,0.436" Margin="228,5,0,26" HorizontalAlignment="Left" Width="345"/>
 
         <ComboBox Grid.Row="1"
   materialDesign:HintAssist.Hint="" Height="26" Margin="128,36,474,0" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top">
@@ -63,30 +60,62 @@
             <ComboBoxItem
     Content="Nome" />
             <ComboBoxItem
-    Content="Linux" />
-            <ComboBoxItem
+   
     Content="Marca" />
         </ComboBox>
 
         <Label Margin="10,39,658,0" FontFamily = " Lucida Sans Unicode " FontSize = " 14" RenderTransformOrigin="0,66" Grid.Row="1" Height="26" VerticalAlignment="Top">FILTRAR POR:</Label>
 
-        <Button Grid.Row="1"
-  Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}"
-  ToolTip="MaterialDesignFloatingActionMiniDarkButton" Margin="347,27,413,277">
 
-            <Image Source= "/img/pesquisar.png " Width="15"/>
+        <DataGrid 
+                    x:Name="dataGridRelatorio"
+                    IsReadOnly="true"
+                    AutoGenerateColumns="False"
+                    AlternatingRowBackground="#FFE5E5E5"
+                    AlternationCount="2" 
+                    AutomationProperties.Name="dataGridRelatorio" Margin="55,94,52,30" Grid.Row="1" RenderTransformOrigin="0.5,0.5">
+            <DataGrid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="1.302"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="1.227"/>
+                </TransformGroup>
+            </DataGrid.RenderTransform>
 
-        </Button>
+
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="Selecionar">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Marca" Binding="{Binding Marca}"/>
+                <DataGridTextColumn Header="Descrição" Binding="{Binding Descricao}"/>
+                <DataGridTextColumn Header="Valor" Binding="{Binding ValorUnitario, ConverterCulture=pt-Br, StringFormat=C}"/>
+                <DataGridTextColumn Header="Quantidade" Binding="{Binding Quantidade}"/>
+                <DataGridTextColumn Header="Numeração" Binding="{Binding Numeracao}"/>
+                <DataGridTextColumn Header="Data Pedido" Binding="{Binding Importacao}"/>
+                <DataGridTextColumn Header="Data Entrega" Binding="{Binding Entrega}"/>
+            </DataGrid.Columns>
+
+
+        </DataGrid>
 
 
 
-       
-        <Button 
+
+        <Button x:Name="btnVer" Click="btnVer_Click"
 
                 Style="{StaticResource MaterialDesignFlatAccentBgButton}"
                 ToolTip="MaterialDesignFlatAccentBackgroundButton"
-                Content="VER" Margin="655,302,56,10" Grid.Row="1" />
-        <Button x:Name="btnVoltar"  Content="VOLTAR"  HorizontalAlignment="Left" Margin="657,0,0,0" Grid.Row="2" VerticalAlignment="Center" Click="btnVoltar_Click" Cursor="Hand"/>
+                Content="VER" Margin="469,3,242,35" Grid.Row="2" Cursor="Hand" />
+        <Button x:Name="btnVoltar"  Content="VOLTAR"  HorizontalAlignment="Left" Margin="683,3,0,0" Grid.Row="2" VerticalAlignment="Top" Click="btnVoltar_Click" Cursor="Hand"/>
+        <Button x:Name="btnAlterar"  Content="ALTERAR" Margin="578,3,128,0" Grid.Row="2" VerticalAlignment="Top" Click="btnAlterar_Click" Cursor="Hand"/>
 
 
 

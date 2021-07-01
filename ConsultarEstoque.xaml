@@ -13,17 +13,105 @@
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="Consultar Estoque" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+        Title="Consultar Estoque" MinHeight="500" MinWidth="800" MaxHeight="500" MaxWidth="800" WindowStartupLocation="CenterScreen">
 
     <DockPanel>
         <Grid>
             <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
                 <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto" MinHeight="315"/>
+                <RowDefinition/>
+
             </Grid.RowDefinitions>
 
-            <StackPanel  Grid.Row ="0" DockPanel.Dock="top" Orientation = "Horizontal" Width="800"  Height="105" Margin="0 5" VerticalAlignment="Top">
+            <StackPanel Height="20" Grid.Row="0">
+                <Menu Height="20" Width="106" Margin="10,0,750,0">
+                    <MenuItem Padding ="0,0,10,0" Header="Menu_" Height="20" Width="106" RenderTransformOrigin="0.471,0.43" >
+                        <MenuItem x:Name="mnuInicial"
+                          Header="_Página Inicial"  
+                          Height="Auto" Width="Auto" Click="mnuInicial_Click"
+                        />
+                        <Separator/>
+                        <MenuItem x:Name="mnuRealizarVenda"
+                          Header="_Realizar Venda"  
+                          Height="Auto" Width="Auto" Click="mnuRealizarVenda_Click"
+                        />
+                        <Separator/>
+                        <MenuItem x:Name="mnuCadastrarProduto"
+                          Header="_Cadastrar Produto"  
+                          Height="Auto" Width="Auto" Click="mnuCadastrarProduto_Click"
+                        />
+                        <Separator/>
+                        <MenuItem x:Name="mnuCadastrarFuncionario"
+                          Header="_Cadastrar Funcionário"  
+                          Height="Auto" Width="Auto" Click="mnuCadastrarFuncionario_Click"
+                        />
+                        <Separator/>
+                        <MenuItem x:Name="mnuCadastrarCliente"
+                          Header="_Cadastrar Cliente"  
+                          Height="Auto" Width="Auto" Click="mnuCadastrarCliente_Click"
+                        />
+                        <Separator/>
+                        <MenuItem x:Name="mnuCadastrarCompra"
+                          Header="_Cadastrar Compra"  
+                          Height="Auto" Width="Auto" Click="mnuCadastrarCompra_Click"
+                        />
+                        <Separator/>
+                        <MenuItem x:Name="mnuConsultarEstoque"
+                          Header="_Consultar Estoque"  
+                          Height="Auto" Width="Auto" Click="mnuConsultarEstoque_Click"
+                        />
+                        <Separator/>
+                        <MenuItem x:Name="mnuConsultarFuncionario"
+                          Header="_Consultar Funcionário"  
+                          Height="Auto" Width="Auto" Click="mnuConsultarFuncionario_Click"
+                        />
+                        <Separator/>
+                        <MenuItem x:Name="mnuConsultarCliente"
+                          Header="_Consultar Cliente"  
+                          Height="Auto" Width="Auto" Click="mnuConsultarCliente_Click"
+                        />
+                        <Separator/>
+                        <MenuItem x:Name="mnuConsultarVenda"
+                          Header="_Consultar Vendas"  
+                          Height="Auto" Width="Auto" Click="mnuConsultarVenda_Click"
+                        />
+                        <Separator/>
+                        <MenuItem x:Name="mnuControlarGastos"
+                          Header="_Controlar Gastos"  
+                          Height="Auto" Width="Auto" Click="mnuControlarGastos_Click"
+                        />
+                    </MenuItem>
+
+
+                </Menu>
+            </StackPanel>
+
+            <materialDesign:ColorZone
+                Grid.Row="1"
+                Foreground="Black" 
+                Background="#D3D3D3"
+                Mode="PrimaryLight"
+                Margin="1,0,1,0" Height="56" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Center">
+                <materialDesign:ColorZone.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="-1.042" AngleY="0.003"/>
+                        <RotateTransform Angle="-0.011"/>
+                        <TranslateTransform X="-0.582" Y="0.022"/>
+                    </TransformGroup>
+                </materialDesign:ColorZone.RenderTransform>
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,0" HorizontalAlignment="Left" Width="796" Height="53"/>
+
+
+            </materialDesign:ColorZone>
+
+            <StackPanel Grid.Row ="1">
+                <TextBlock  Margin="10" FontSize="35" Text="Consultar Estoque" HorizontalAlignment="Center" Height="38"/>
+            </StackPanel>
+
+            <StackPanel  Grid.Row ="2" DockPanel.Dock="top" Orientation = "Horizontal"  Height="105" Margin="0,5,0,0" VerticalAlignment="Top">
 
 
                 <materialDesign:PackIcon Kind="Magnify" Margin="80 45 5 0" Height="21" Width="27"/>
@@ -83,27 +171,35 @@
 
             </StackPanel>
 
-            <StackPanel Grid.Row="1">
+            <StackPanel Grid.Row="2">
                 <DataGrid 
-                    Width="720" 
-                    Height="220" 
-                    VerticalAlignment="Top"
-                    IsReadOnly="False"
+                    x:Name="dataGridEstoque"
+                    Width="702" 
+                    Height="272"
+                    IsReadOnly="true"
                     AutoGenerateColumns="False"
                     AlternatingRowBackground="#FFE5E5E5"
                     AlternationCount="2" 
-                    Margin="5 0 5 0">
+                    Margin="15 20 5 0" AutomationProperties.Name="dataGridEstoque">
 
                     <DataGrid.Columns>
+
+                        <DataGridTemplateColumn Header="Selecionar">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <CheckBox />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
                         <DataGridTextColumn Header="Código" Binding="{Binding Id}"/>
                         <DataGridTextColumn Header="Descrição" Binding="{Binding Descricao}"/>
-                        <DataGridTextColumn Header="Quantidade" Binding="{Binding QtdProdutos}"/>
-                        <DataGridTextColumn Header="Valor" Binding="{Binding QtdProdutos, ConverterCulture='pt-Br', StringFormat=C}"/>
+                        <DataGridTextColumn Header="Quantidade" Binding="{Binding Quantidade}"/>
+                        <DataGridTextColumn Header="Valor" Binding="{Binding ValorUnitario, ConverterCulture='pt-Br', StringFormat=C}"/>
+                        <DataGridTextColumn Header="Valor Total" Binding="{Binding ValorEstoque, ConverterCulture='pt-Br', StringFormat=C}"/>
                         <DataGridTextColumn Header="Categoria" Binding="{Binding Categoria}"/>
                         <DataGridTextColumn Header="Marca" Binding="{Binding Marca}"/>
                         <DataGridTextColumn Header="Numeração" Binding="{Binding Numeracao}"/>
-                        <DataGridTextColumn Header="Pedido" Binding="{Binding DataPedido}"/>
-                        <DataGridTextColumn Header="Entrega" Binding="{Binding DataEntrega}"/>
                     </DataGrid.Columns>
 
 
@@ -111,7 +207,7 @@
             </StackPanel>
 
 
-            <StackPanel Grid.Row="2" Orientation="Horizontal" Height="77" VerticalAlignment="Center" HorizontalAlignment="Center" Width="800">
+            <StackPanel Grid.Row="3" Orientation="Horizontal" Height="77" VerticalAlignment="Center" HorizontalAlignment="Center" Width="800">
 
                 <Button 
                     x:Name="btnVisualizar" 
@@ -121,7 +217,7 @@
                     Height="32" Width="110" 
                     ClickMode="Press" 
                     HorizontalAlignment="Left" 
-                    VerticalAlignment="Bottom"
+                    VerticalAlignment="center"
                  />
                 <Button 
                     x:Name="btnAlterar" 
@@ -131,7 +227,7 @@
                     Height="32" Width="84" 
                     ClickMode="Press" 
                     HorizontalAlignment="Left" 
-                    VerticalAlignment="Bottom"
+                    VerticalAlignment="center" Click="btnAlterar_Click"
                  />
                 <Button 
                     x:Name="btnExcluir" 
@@ -141,7 +237,7 @@
                     Height="32" Width="84" 
                     ClickMode="Press" 
                     HorizontalAlignment="Right" 
-                    VerticalAlignment="Bottom"
+                    VerticalAlignment="Center"
                  />
 
 

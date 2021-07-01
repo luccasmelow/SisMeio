@@ -13,71 +13,58 @@ using System.Windows.Shapes;
 namespace Sismeio
 {
     /// <summary>
-    /// Lógica interna para ControlarGastos.xaml
+    /// Lógica interna para RelatorioGastos.xaml
     /// </summary>
-    public partial class ControlarGastos : Window
+    public partial class RelatorioGastos : Window
     {
 
-        public ControlarGastos()
+        public RelatorioGastos()
         {
             InitializeComponent();
-            Loaded += ControlarGastos_Loaded;
+            Loaded += RelatorioGastos_Loaded;
         }
 
-        private void btnRelatorio_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void ControlarGastos_Loaded(object sender, RoutedEventArgs e)
+        private void RelatorioGastos_Loaded(object sender, RoutedEventArgs e)
         {
             List<Despesa> ListaGastos = new List<Despesa>();
 
 
             ListaGastos.Add(new Despesa()
             {
-                id= 0158,
-                descricao = "Conta de Energia",
-                valordesp = 500.97
+                abertas ="Conta de Energia",
+                vencidas="Pagamento - Vendedora",
+                pagas="Pagamento - Caixa",
+                caixa=2000,
+                debito=3000
+
 
 
             });
             ListaGastos.Add(new Despesa()
             {
-                id = 0159,
-                descricao = "Água",
-                valordesp = 150.77
+                abertas = "Água",
+                pagas = "Pedido Ramarim"
 
 
             });
             ListaGastos.Add(new Despesa()
             {
-                id = 0160,
-                descricao = "Pedido Arezzo",
-                valordesp = 2000.99
-
-
+                abertas = "Pedido Arezzo",
+                pagas = "Pedido Adidas",
+                caixa=0
+               
             });
 
-
-
-
-            dataGridGastos.ItemsSource = ListaGastos;
-        }
-        
+            dataGridEstoque.ItemsSource = ListaGastos;
+        }    
         private void mnuInicial_Click(object sender, RoutedEventArgs e)
         {
-            
+
         }
 
         private void mnuRealizarVenda_Click(object sender, RoutedEventArgs e)
         {
-            
+
         }
 
         private void mnuCadastrarProduto_Click(object sender, RoutedEventArgs e)
@@ -87,7 +74,7 @@ namespace Sismeio
             vsCadastrarProduto.ShowDialog();
         }
 
-        
+
         private void mnuCadastrarCliente_Click(object sender, RoutedEventArgs e)
         {
             CadastroCliente vsCadastrarCliente = new CadastroCliente();
@@ -108,7 +95,7 @@ namespace Sismeio
 
         private void mnuConsultarFuncionario_Click(object sender, RoutedEventArgs e)
         {
-            
+
         }
 
         private void mnuConsultarCliente_Click(object sender, RoutedEventArgs e)
@@ -120,7 +107,7 @@ namespace Sismeio
 
         private void mnuConsultarVenda_Click(object sender, RoutedEventArgs e)
         {
-            
+
         }
 
         private void mnuControlarGastos_Click(object sender, RoutedEventArgs e)
@@ -143,6 +130,11 @@ namespace Sismeio
             RelatorioGastos vsRelatorioGastos = new RelatorioGastos();
 
             vsRelatorioGastos.ShowDialog();
+        }
+
+        private void btnSair_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
