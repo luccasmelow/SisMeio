@@ -33,7 +33,7 @@
                     <materialDesign:PackIcon Kind="AccountMultiple" Height="40" Width="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 </Button>
 
-                <TextBlock FontSize="14" Padding="1" TextAlignment="Center">Produtos</TextBlock>
+                <TextBlock FontSize="14" Padding="1" TextAlignment="Center">Clientes</TextBlock>
             </StackPanel>
 
             <StackPanel Margin="10 20">
@@ -146,15 +146,14 @@
                  Margin="9"        >
                 <StackPanel.RenderTransform>
                     <TransformGroup>
-                        <ScaleTransform ScaleX="1"/>
-                        <SkewTransform AngleX="-0.841" AngleY="0.06"/>
-                        <RotateTransform/>
-                        <TranslateTransform X="-1.982" Y="-0.197"/>
+                        
                     </TransformGroup>
                 </StackPanel.RenderTransform>
+
+
                 <TabControl
               Style="{StaticResource MaterialDesignNavigatilRailTabControl}"
-              materialDesign:ColorZoneAssist.Mode="PrimaryDark">
+              materialDesign:ColorZoneAssist.Mode="PrimaryDark" Height="300" Width="375">
                     <materialDesign:NavigationRailAssist.FloatingContent>
                         <Button
                   Style="{StaticResource MaterialDesignFloatingActionAccentButton}"
@@ -164,21 +163,25 @@
                     <TabItem
                 Header="{materialDesign:PackIcon Kind=Heart, Size=24}"
                 Style="{StaticResource MaterialDesignNavigationRailTabItem}">
-                        <TextBlock>
+                        <TextBlock Margin="0,14,0,10" Width="300" HorizontalAlignment="Center">
                   <Run
-                    Text="tab 1 content. Default look and behaviors." />
+                    Text="   Venda: 265841    |    ID produto: 58   |    26/06/2021" />
                   <LineBreak />
                   <LineBreak />
                   <Run
-                    FontStyle="Italic">
-                  Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...
-                </Run>
+                      Text="   1 Tamanco Social   |   Cor: Vermelho   | tamanho: 37"/>
+                            <LineBreak />
+                            <LineBreak />
+                 <Run
+                      Text="---------------------------------------------------------------------------------------------------   "/>
                         </TextBlock>
                     </TabItem>
+                    
+                    
                     <TabItem
                 Header="{materialDesign:PackIcon Kind=Spade, Size=24}"
                 Style="{StaticResource MaterialDesignNavigationRailTabItem}">
-                        <TextBlock Height="216" VerticalAlignment="Bottom" Margin="10">
+                        <TextBlock Height="284" VerticalAlignment="Top" Margin="0,6,0,0">
                   <Run
                     Text="Venda: 5697541   |   ID Produto: 5986   |   26/06/2021" />
                   <LineBreak />
