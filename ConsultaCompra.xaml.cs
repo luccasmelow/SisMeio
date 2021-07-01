@@ -77,5 +77,14 @@ namespace Sismeio
         {
 
         }
+
+        private void dataGridCompras1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+        private void bttfechar_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

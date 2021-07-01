@@ -14,71 +14,109 @@
         TextOptions.TextFormattingMode="Ideal" 
         TextOptions.TextRenderingMode="Auto"        
         
-        Background="#ffffff"
+        Background="AliceBlue"
         FontFamily="{DynamicResource MaterialDesignFont}"
         
-        Title="TelaInicial" Height="450" Width="1100">
-    
-    
+        
+        Title="TelaInicial" Height="800" Width="1050" WindowStartupLocation="CenterOwner">
+
+
     <DockPanel>
-        <StackPanel DockPanel.Dock="Left" Width="200" Margin="5 0">
+        <StackPanel DockPanel.Dock="Left" Width="200" Margin="5 0" Background="#FF8171A4">
 
-            <Image Height="100" Width="200" Source="\img\Logo.png"/>
+            <Image Source="C:\Users\thiaguera\Documents\sismeio\SisMeio\SisMeio\img\Logo.png"/>
 
-            <Button Margin="0 20 0 2" Height="50">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock FontSize="16" Padding="5 10">Clientes</TextBlock>
-                    <materialDesign:PackIcon Kind="AccountSupervisor" Width="28" Height="28" Margin="0 4" />
-                </StackPanel>
-            </Button>
+            <StackPanel Margin="10 20">
+                <Button
+              Style="{StaticResource MaterialDesignFloatingActionDarkButton}"
+              ToolTip="MaterialDesignFloatingActionDarkButton">
+                    <materialDesign:PackIcon Kind="AccountMultiple" Height="40" Width="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Button>
 
-            <Button Margin="0 2" Height="50">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock FontSize="14" Padding="10">Produtos</TextBlock>
-                </StackPanel>
-            </Button>
+                <TextBlock FontSize="14" Padding="1" TextAlignment="Center">Clientes</TextBlock>
+            </StackPanel>
 
-            <Button Margin="0 2" Height="50">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock FontSize="14" Padding="10">Vendas</TextBlock>
-                </StackPanel>
-            </Button>
+            <StackPanel Margin="10 20">
+                <Button
+              Style="{StaticResource MaterialDesignFloatingActionDarkButton}"
+              ToolTip="MaterialDesignFloatingActionDarkButton">
+                    <materialDesign:PackIcon Kind="ShoeHeel"  Height="40" Width="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Button>
 
-            <Button Margin="0 2" Height="50">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock FontSize="14" Padding="10">Relatórios</TextBlock>
-                </StackPanel>
-            </Button>
+                <TextBlock FontSize="14" Padding="1" TextAlignment="Center">Produtos</TextBlock>
+            </StackPanel>
 
-            <Button Margin="0 2" Height="50">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock FontSize="14" Padding="10">Usuários</TextBlock>
-                </StackPanel>
-            </Button>
+            <StackPanel Margin="10 20">
+                <Button
+              Style="{StaticResource MaterialDesignFloatingActionDarkButton}"
+              ToolTip="MaterialDesignFloatingActionDarkButton">
+                    <materialDesign:PackIcon Kind="ClipboardTextSearch" Height="40" Width="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Button>
+
+                <TextBlock FontSize="14" Padding="1" TextAlignment="Center">Gestão de Gastos</TextBlock>
+            </StackPanel>
+            <StackPanel Margin="10 20">
+                <Button
+              Style="{StaticResource MaterialDesignFloatingActionDarkButton}"
+              ToolTip="MaterialDesignFloatingActionDarkButton">
+                    <materialDesign:PackIcon Kind="AccountBox"  Height="40" Width="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Button>
+
+                <TextBlock FontSize="14" Padding="1" TextAlignment="Center">Perfil</TextBlock>
+            </StackPanel>
+
+            <StackPanel Margin="10 20">
+                <Button
+              Style="{StaticResource MaterialDesignFloatingActionDarkButton}"
+              ToolTip="MaterialDesignFloatingActionDarkButton">
+                    <materialDesign:PackIcon Kind="BadgeAccount" Height="40" Width="58" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                </Button>
+
+                <TextBlock FontSize="14" Padding="1" TextAlignment="Center">Funcionários</TextBlock>
+            </StackPanel>
+
+            <StackPanel Margin="10 20">
+                <Button Background="DarkRed"
+              Style="{StaticResource MaterialDesignFloatingActionDarkButton}"
+              ToolTip="MaterialDesignFloatingActionDarkButton">
+                    <materialDesign:PackIcon Kind="BasketPlus" Height="40" Width="58" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                </Button>
+
+                <TextBlock FontSize="14" Padding="1" TextAlignment="Center">Nova Venda</TextBlock>
+            </StackPanel>
         </StackPanel>
 
         <StackPanel DockPanel.Dock="Top" Margin="0 5" Orientation="Horizontal">
             <Menu Padding="12">
-                <MenuItem Header="_Arquivo">
+                <MenuItem Header="ínicio">
                     <MenuItem Header="Trocar _Usuário"/>
+                    <MenuItem Header="Gestão de Controle"/>
                     <MenuItem Header="_Sobre"/>
                     <Separator/>
-                    <MenuItem Header="_Sair do sistema"/>
+                    <MenuItem Header="_Sair"/>
                 </MenuItem>
             </Menu>
+
+
 
             <Menu Padding="12" Margin="2 0">
                 <MenuItem Header="_Cadastros">
                     <MenuItem Header="_Cliente"/>
                     <MenuItem Header="_Funcionários"/>
-                    <MenuItem Header="_Fornecedores"/>
+                    <MenuItem Header="_Produtos"/>
+                </MenuItem>
+            </Menu>
+
+            <Menu Padding="12" Margin="2 0">
+                <MenuItem Header="Consultas">
+                    <MenuItem Header="_Cliente"/>
+                    <MenuItem Header="_Funcionários"/>
                     <MenuItem Header="_Produtos"/>
                 </MenuItem>
             </Menu>
 
             <Menu Padding="12">
                 <MenuItem Header="_Vendas">
-                    <MenuItem Header="_Nova venda"/>
                     <MenuItem Header="_Relatórios de vendas"/>
                 </MenuItem>
             </Menu>
@@ -92,72 +130,172 @@
 
             <StackPanel Grid.Column="0" Orientation="Horizontal">
                 <TextBlock FontWeight="Bold" Padding="5">Usuário Logado:</TextBlock>
-                <TextBlock Padding="0 5">João Teixeira</TextBlock>
+                <TextBlock Padding="0 5">Vrau nelas</TextBlock>
             </StackPanel>
 
             <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
                 <TextBlock FontWeight="Bold" Padding="5">Data:</TextBlock>
-                <TextBlock x:Name="txtDataAtual" Padding="0 5 5 5"/>
+                <TextBlock FontWeight="Bold" Padding="0 5 5 5"> 30/06/2021</TextBlock>
             </StackPanel>
 
         </Grid>
 
-        <Grid>
+        <Grid Background="#FFDFD0F0" Margin="7">
             <Grid.RowDefinitions>
-                <RowDefinition Height="0"/>
-                <RowDefinition Height="86.503"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition/>
+                <RowDefinition Height="253*"/>
+                <RowDefinition Height="81*"/>
             </Grid.RowDefinitions>
 
-            <WrapPanel Margin="0,0,0,36" Grid.RowSpan="3">
-                <Border Width="160" Background="#FFE5E5E5" CornerRadius="5" Padding="5" Margin="2 5">
-                    <StackPanel>
-                        <TextBlock FontSize="30" HorizontalAlignment="Center">45</TextBlock>
-                        <TextBlock FontSize="20" HorizontalAlignment="Center">Vendas</TextBlock>
-                    </StackPanel>
-                </Border>
+            <StackPanel Grid.Row="0" Width="376" HorizontalAlignment="Left"
+                 Margin="9,9,0,9" Grid.RowSpan="2">
 
-                <Border Width="160" Background="#FFE5E5E5" CornerRadius="5" Padding="5" Margin="2 5">
-                    <StackPanel>
-                        <TextBlock FontSize="30" HorizontalAlignment="Center">45</TextBlock>
-                        <TextBlock FontSize="20" HorizontalAlignment="Center">Clientes</TextBlock>
-                    </StackPanel>
-                </Border>
 
-                <Border Width="160" Background="#FFE5E5E5" CornerRadius="5" Padding="5" Margin="2 5">
-                    <StackPanel>
-                        <TextBlock FontSize="30" HorizontalAlignment="Center">45</TextBlock>
-                        <TextBlock FontSize="20" HorizontalAlignment="Center">Produtos</TextBlock>
-                    </StackPanel>
-                </Border>
 
-                <Border Width="160" Background="#FFE5E5E5" CornerRadius="5" Padding="5" Margin="2 5">
-                    <StackPanel>
-                        <TextBlock FontSize="30" HorizontalAlignment="Center">45</TextBlock>
-                        <TextBlock FontSize="20" HorizontalAlignment="Center">Fornecedores</TextBlock>
-                    </StackPanel>
-                </Border>
 
-                <Border Width="160" Background="#FFE5E5E5" CornerRadius="5" Padding="5" Margin="2 5">
-                    <StackPanel>
-                        <TextBlock FontSize="30" HorizontalAlignment="Center">45</TextBlock>
-                        <TextBlock FontSize="20" HorizontalAlignment="Center">Usuários</TextBlock>
-                    </StackPanel>
-                </Border>
-            </WrapPanel>
 
-            <TextBlock Grid.Row="2" Text="Últimas Vendas" FontSize="20" Margin="5,5,5,5"/>
+                <StackPanel>
+                    <TabControl
+              Style="{StaticResource MaterialDesignNavigatilRailTabControl}"
+              materialDesign:ColorZoneAssist.Mode="PrimaryDark" Height="300" Width="375">
+                        <materialDesign:NavigationRailAssist.FloatingContent>
+                            <Button
+                  Style="{StaticResource MaterialDesignFloatingActionAccentButton}"
+                  Margin="0,8"
+                  Content="{materialDesign:PackIcon Kind=Plus}" />
+                        </materialDesign:NavigationRailAssist.FloatingContent>
+                        <TabItem
+                Header="{materialDesign:PackIcon Kind=Heart, Size=24}"
+                Style="{StaticResource MaterialDesignNavigationRailTabItem}">
+                            <TextBlock Margin="0,14,0,10" Width="300" HorizontalAlignment="Center">
+                  <Run
+                    Text="   Venda: 265841    |    ID produto: 58   |    26/06/2021" />
+                  <LineBreak />
+                  <LineBreak />
+                  <Run
+                      Text="   1 Tamanco Social   |   Cor: Vermelho   | tamanho: 37"/>
+                            <LineBreak />
+                            <LineBreak />
+                 <Run
+                      Text="---------------------------------------------------------------------------------------------------   "/>
+                            </TextBlock>
+                        </TabItem>
 
-            <DataGrid Grid.Row="3" Margin="5,5,5,5" x:Name="dataGridVendas" IsReadOnly="true"
-                      AutoGenerateColumns="False" AlternatingRowBackground="#FFE5E5E5" AlternationCount="2">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
-                    <DataGridTextColumn Header="Nome do Cliente" Binding="{Binding Cliente}"/>
-                    <DataGridTextColumn Header="Qtd. Produtos" Binding="{Binding QuantidadeProdutos}"/>
-                    <DataGridTextColumn Header="Total" Binding="{Binding ValorTotal, ConverterCulture='pt-BR', StringFormat=C}"/>
-                </DataGrid.Columns>
-            </DataGrid>
+
+                        <TabItem
+                Header="{materialDesign:PackIcon Kind=Spade, Size=24}"
+                Style="{StaticResource MaterialDesignNavigationRailTabItem}">
+                            <TextBlock Height="284" VerticalAlignment="Top" Margin="0,6,0,0">
+                  <Run
+                    Text="Venda: 5697541   |   ID Produto: 5986   |   26/06/2021" />
+                  <LineBreak />
+                  <LineBreak />
+                  <Run>
+                  
+                  1 Tamanco social  |  Cor: vermelho  |  Número:36
+                   
+                </Run>
+                            <LineBreak />
+                            <Run>
+                                ---------------------------------------------------------------------------------------------
+                            </Run>
+                            </TextBlock>
+                        </TabItem>
+                    </TabControl>
+                </StackPanel>
+
+                <StackPanel  Margin="0 35 0 15">
+                    <materialDesign:ColorZone
+                      Mode="PrimaryDark"
+                      Padding="16"
+                      CornerRadius="10"
+                      materialDesign:ShadowAssist.ShadowDepth="Depth3"
+                      ClipToBounds="False">
+                        <StackPanel
+                        Orientation="Horizontal">
+                            <TextBlock
+                          VerticalAlignment="Center"
+                          Margin="16 0 0 0"
+                          Text="1- Faturamento Mensal                                                   + R$42.695,47"/>
+                        </StackPanel>
+                    </materialDesign:ColorZone>
+                </StackPanel>
+
+
+                <StackPanel Margin="0 0 0 15">
+                    <materialDesign:ColorZone
+                      Mode="PrimaryDark"
+                      Padding="16"
+                      CornerRadius="10"
+                      materialDesign:ShadowAssist.ShadowDepth="Depth3"
+                      ClipToBounds="False">
+                        <StackPanel
+                        Orientation="Horizontal">
+                            <TextBlock
+                          VerticalAlignment="Center"
+                          Margin="16 0 0 0"
+                          Text="2- Impostos                                                                           - R$8.695,36"/>
+
+                        </StackPanel>
+                    </materialDesign:ColorZone>
+                </StackPanel>
+
+                <StackPanel Margin="0 0 0 15">
+                    <materialDesign:ColorZone
+                      Mode="PrimaryDark"
+                      Padding="16"
+                      CornerRadius="10"
+                      materialDesign:ShadowAssist.ShadowDepth="Depth3"
+                      ClipToBounds="False">
+                        <StackPanel
+                        Orientation="Horizontal">
+                            <TextBlock
+                          VerticalAlignment="Center"
+                          Margin="16 0 0 0"
+                          Text="3 - Funcionários                                                                 - R$12.689,45"/>
+
+                        </StackPanel>
+                    </materialDesign:ColorZone>
+                </StackPanel>
+
+                <StackPanel Margin="0 0 0 15">
+                    <materialDesign:ColorZone
+                      Mode="PrimaryDark"
+                      Padding="16"
+                      CornerRadius="10"
+                      materialDesign:ShadowAssist.ShadowDepth="Depth3"
+                      ClipToBounds="False">
+                        <StackPanel
+                        Orientation="Horizontal">
+                            <TextBlock
+                          VerticalAlignment="Center"
+                          Margin="16 0 0 0"
+                          Text="4- Energia                                                                                  - R$648,45"/>
+                        </StackPanel>
+                    </materialDesign:ColorZone>
+                </StackPanel>
+
+                <StackPanel Margin="0 0 0 15">
+                    <materialDesign:ColorZone
+                      Mode="PrimaryDark"
+                      Padding="16"
+                      CornerRadius="10"
+                      materialDesign:ShadowAssist.ShadowDepth="Depth3"
+                      ClipToBounds="False">
+                        <StackPanel
+                        Orientation="Horizontal">
+                            <TextBlock
+                          VerticalAlignment="Center"
+                          Margin="16 0 0 0"
+                          Text="5- Divulgação                                                                            - R$800,00"/>
+                        </StackPanel>
+                    </materialDesign:ColorZone>
+                </StackPanel>
+                
+                
+
+
+            </StackPanel>
+
 
         </Grid>
     </DockPanel>

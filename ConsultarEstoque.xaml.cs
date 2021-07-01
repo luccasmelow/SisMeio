@@ -123,6 +123,7 @@ namespace Sismeio
             vsAtualizarProduto.ShowDialog();
         }
 
+
         private void mnuInicial_Click(object sender, RoutedEventArgs e)
         {
 
@@ -130,6 +131,9 @@ namespace Sismeio
 
         private void mnuRealizarVenda_Click(object sender, RoutedEventArgs e)
         {
+            RealizarVendas vsRealizarVendas = new RealizarVendas();
+
+            vsRealizarVendas.ShowDialog();
 
         }
 
@@ -192,5 +196,9 @@ namespace Sismeio
         }
 
 
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
