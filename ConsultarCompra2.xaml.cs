@@ -25,7 +25,7 @@ namespace Sismeio
 
         private void ConsultarCompras2_Loaded(object sender, RoutedEventArgs e)
         {
-            List<Compras2> listacompra2 = new List <Compras2> ();
+            List<Compras2> listacompra2 = new List<Compras2>();
 
 
             listacompra2.Add(new Compras2()
@@ -45,12 +45,14 @@ namespace Sismeio
             dataGridCompras2.ItemsSource = listacompra2;
         }
     }
+
     
         private void bttfechar_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
- }
+   
+}
 
 
 

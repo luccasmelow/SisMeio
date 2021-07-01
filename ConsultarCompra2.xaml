@@ -133,21 +133,67 @@
                      Margin="390,67,10,0"
                     FontSize="35"
                     ><Run Text="Consultar C"/><Run Language="pt-br" Text="ompra"/></TextBlock>
-        <MenuItem  Margin="16,10,938,742" Header="Menu">
+        <Menu Height="20" Width="106" Margin="10,10,984,754">
+            <MenuItem Padding ="1,0,0,0" Header="Menu" Height="20" Width="93" RenderTransformOrigin="0.471,0.43">
+                <MenuItem x:Name="mnuInicial"
+                          Header="_Página Inicial"  
+                          Height="Auto" Width="Auto" Click="mnuInicial_Click"
+                        />
+                <Separator/>
+                <MenuItem x:Name="mnuRealizarVenda"
+                          Header="_Realizar Venda"  
+                          Height="Auto" Width="Auto" Click="mnuRealizarVenda_Click"
+                        />
+                <Separator/>
+                <MenuItem x:Name="mnuCadastrarProduto"
+                          Header="_Cadastrar Produto"  
+                          Height="Auto" Width="Auto" Click="mnuCadastrarProduto_Click"
+                        />
+                <Separator/>
+                <MenuItem x:Name="mnuCadastrarFuncionario"
+                          Header="_Cadastrar Funcionário"  
+                          Height="Auto" Width="Auto" Click="mnuCadastrarFuncionario_Click"
+                        />
+                <Separator/>
+                <MenuItem x:Name="mnuCadastrarCliente"
+                          Header="_Cadastrar Cliente"  
+                          Height="Auto" Width="Auto" Click="mnuCadastrarCliente_Click"
+                        />
+                <Separator/>
+                <MenuItem x:Name="mnuCadastrarCompra"
+                          Header="_Cadastrar Compra"  
+                          Height="Auto" Width="Auto" Click="mnuCadastrarCompra_Click"
+                        />
+                <Separator/>
+                <MenuItem x:Name="mnuConsultarEstoque"
+                          Header="_Consultar Estoque"  
+                          Height="Auto" Width="Auto" Click="mnuConsultarEstoque_Click"
+                        />
+                <Separator/>
+                <MenuItem x:Name="mnuConsultarFuncionario"
+                          Header="_Consultar Funcionário"  
+                          Height="Auto" Width="Auto" Click="mnuConsultarFuncionario_Click"
+                        />
+                <Separator/>
+                <MenuItem x:Name="mnuConsultarCliente"
+                          Header="_Consultar Cliente"  
+                          Height="Auto" Width="Auto" Click="mnuConsultarCliente_Click"
+                        />
+                <Separator/>
+                <MenuItem x:Name="mnuConsultarVenda"
+                          Header="_Consultar Vendas"  
+                          Height="Auto" Width="Auto" Click="mnuConsultarVenda_Click"
+                        />
+                <Separator/>
+                <MenuItem x:Name="mnuControlarGastos"
+                          Header="_Controlar Gastos"  
+                          Height="Auto" Width="Auto" Click="mnuControlarGastos_Click"
+                        />
+            </MenuItem>
 
-            <MenuItem Header="Página Inicial"/>
-            <MenuItem Header="Realizar Venda"/>
-            <MenuItem Header="Cadastrar Produto"/>
-            <MenuItem Header="Cadastrar Funcionário"/>
-            <MenuItem Header="Cadastrar Cliente"/>
-            <MenuItem Header="Cadastrar Compra"/>
-            <MenuItem Header="Consultar Estoque"/>
-            <MenuItem Header="Consultar Funcionário"/>
-            <MenuItem Header="Consultar Cliente"/>
-            <MenuItem Header="Consultar Vendas"/>
-            <MenuItem Header="Controlar Gastos"/>
 
-        </MenuItem>
+        </Menu>
+       
 
 
     </Grid>
