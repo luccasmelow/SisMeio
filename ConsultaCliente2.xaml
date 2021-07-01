@@ -13,16 +13,16 @@
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-    Title="ConsultaCliente2" Height="800" Width="1300">
+    Title="ConsultaCliente2" Height="1000" Width="1300">
     <Grid>
 
         <Border BorderThickness="1" BorderBrush="Black" Margin="0,-65,-30,8"/>
-        <Label Content="Código" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="77,91,0,0" FontSize="16"  FontFamily="Lucida Sans Unicode" FontWeight="Bold" Height="33" Width="65"/>
-        <Label Content="Nome" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="92,153,0,0" FontSize="16"  FontFamily="Lucida Sans Unicode" FontWeight="Bold" Height="33" Width="55"/>
-        <Label Content="CPF" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="398,153,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.057,4.741" Height="33" Width="37"/>
-        <Label Content="RG" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="727,153,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.66,0.559" Height="33" Width="30"/>
-        <Label Content="Telefone" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="398,241,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.66,0.559" Height="33" Width="78"/>
-        <Label Content="Data de Nascimento" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="88,240,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.681,0.227" Height="33" Width="215">
+        <Label Content="Código" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="100,175,0,0" FontSize="16"  FontFamily="Lucida Sans Unicode" FontWeight="Bold" Height="33" Width="66"/>
+        <Label Content="Nome" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="102,242,0,0" FontSize="16"  FontFamily="Lucida Sans Unicode" FontWeight="Bold" Height="33" Width="55"/>
+        <Label Content="CPF" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="408,247,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.057,4.741" Height="33" Width="37"/>
+        <Label Content="RG" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="728,254,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.66,0.559" Height="33" Width="30"/>
+        <Label Content="Telefone" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="398,352,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.66,0.559" Height="33" Width="78"/>
+        <Label Content="Data de Nascimento" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="88,351,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.681,0.227" Height="33" Width="215">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -32,33 +32,33 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Label Content="Endereço" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="92,336,0,0" FontSize="20" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="2.165,1.795" Height="39" Width="100"/>
-        <Label Content="Logradouro:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="110,382,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.746,1.123" Height="33" Width="107"/>
-        <Label Content="Nº:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="472,382,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856" Height="33" Width="33"/>
-        <Label Content="Complemento:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="679,382,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856" Height="33" Width="126"/>
-        <Label Content="Cidade:" VerticalAlignment="Top" Margin="679,442,211,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856" Height="33"/>
-        <Label Content="Bairro:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="119,442,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856" Height="33" Width="61"/>
-        <Label Content="CEP:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="472,442,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856" Height="33" Width="43"/>
-        <Rectangle HorizontalAlignment="Left" Height="33" Margin="92,191,0,0" Stroke="Black" VerticalAlignment="Top" Width="229"/>
-        <Rectangle HorizontalAlignment="Left" Height="33" Margin="398,186,0,0" Stroke="Black" VerticalAlignment="Top" Width="229"/>
-        <Rectangle HorizontalAlignment="Left" Height="33" Margin="727,191,0,0" Stroke="Black" VerticalAlignment="Top" Width="229"/>
-        <Rectangle HorizontalAlignment="Left" Height="33" Margin="161,91,0,0" Stroke="Black" VerticalAlignment="Top" Width="131"/>
-        <Rectangle HorizontalAlignment="Left" Height="33" Margin="398,274,0,0" Stroke="Black" VerticalAlignment="Top" Width="229"/>
-        <Rectangle HorizontalAlignment="Left" Height="33" Margin="222,383,0,0" Stroke="Black" VerticalAlignment="Top" Width="195"/>
-        <Rectangle HorizontalAlignment="Left" Height="33" Margin="185,442,0,0" Stroke="Black" VerticalAlignment="Top" Width="211"/>
-        <Rectangle HorizontalAlignment="Left" Height="33" Margin="512,382,0,0" Stroke="Black" VerticalAlignment="Top" Width="122"/>
-        <Rectangle HorizontalAlignment="Left" Height="32" Margin="520,443,0,0" Stroke="Black" VerticalAlignment="Top" Width="136"/>
-        <Rectangle HorizontalAlignment="Left" Height="32" Margin="765,443,0,0" Stroke="Black" VerticalAlignment="Top" Width="191"/>
-        <Rectangle HorizontalAlignment="Left" Height="38" Margin="810,378,0,0" Stroke="Black" VerticalAlignment="Top" Width="191"/>
-        <Label Content="Situação" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="99,572,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856" Width="86" Foreground="#FF110F0F" Height="33"/>
-        <Label Content="Compras Pendentes" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="325,572,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856" Width="168" Foreground="#FF0A0A0F" Height="33"/>
-        <Label Content="Compras Pagas" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="633,572,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856" Width="139" Foreground="#FF110F0F" Height="33"/>
-        <Label Content="Compras Realizadas" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="906,572,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856" Width="184" Foreground="#FF110F0F" Grid.ColumnSpan="4" Height="33"/>
+        <Label Content="Endereço" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="94,0,0,0" FontSize="20" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="2.165,1.795" Height="39" Width="100"/>
+        <Label Content="Logradouro:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="98,548,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.746,1.123" Height="34" Width="108"/>
+        <Label Content="Nº:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="517,543,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856" Height="33" Width="33"/>
+        <Label Content="Complemento:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="780,549,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856" Height="33" Width="126"/>
+        <Label Content="Cidade:" VerticalAlignment="Top" Margin="765,616,440,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856" Height="32"/>
+        <Label Content="Bairro:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="102,616,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856" Height="33" Width="62"/>
+        <Label Content="CEP:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="512,616,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856" Height="33" Width="43"/>
+        <Rectangle HorizontalAlignment="Left" Height="33" Margin="91,287,0,0" Stroke="Black" VerticalAlignment="Top" Width="229"/>
+        <Rectangle HorizontalAlignment="Left" Height="33" Margin="396,287,0,0" Stroke="Black" VerticalAlignment="Top" Width="230"/>
+        <Rectangle HorizontalAlignment="Left" Height="33" Margin="728,287,0,0" Stroke="Black" VerticalAlignment="Top" Width="230"/>
+        <Rectangle HorizontalAlignment="Left" Height="33" Margin="190,175,0,0" Stroke="Black" VerticalAlignment="Top" Width="130"/>
+        <Rectangle HorizontalAlignment="Left" Height="33" Margin="405,397,0,0" Stroke="Black" VerticalAlignment="Top" Width="229"/>
+        <Rectangle HorizontalAlignment="Left" Height="33" Margin="226,549,0,0" Stroke="Black" VerticalAlignment="Top" Width="194"/>
+        <Rectangle HorizontalAlignment="Left" Height="33" Margin="181,616,0,0" Stroke="Black" VerticalAlignment="Top" Width="211"/>
+        <Rectangle HorizontalAlignment="Left" Height="33" Margin="573,548,0,0" Stroke="Black" VerticalAlignment="Top" Width="122"/>
+        <Rectangle HorizontalAlignment="Left" Height="32" Margin="573,616,0,0" Stroke="Black" VerticalAlignment="Top" Width="136"/>
+        <Rectangle HorizontalAlignment="Left" Height="32" Margin="852,616,0,0" Stroke="Black" VerticalAlignment="Top" Width="192"/>
+        <Rectangle HorizontalAlignment="Left" Height="38" Margin="928,549,0,0" Stroke="Black" VerticalAlignment="Top" Width="190"/>
+        <Label Content="Situação" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="94,719,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856" Width="86" Foreground="#FF110F0F" Height="33"/>
+        <Label Content="Compras Pendentes" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="308,719,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856" Width="168" Foreground="#FF0A0A0F" Height="33"/>
+        <Label Content="Compras Pagas" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="556,719,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856" Width="139" Foreground="#FF110F0F" Height="33"/>
+        <Label Content="Compras Realizadas" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="856,697,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856" Width="184" Foreground="#FF110F0F" Height="33"/>
         <ComboBox
         x:Name="ComprasPendentes"
         Style="{StaticResource MaterialDesignFilledComboBox}"
         IsEnabled="{Binding Path=IsChecked, ElementName=FilledComboBoxEnabledCheckBox}"
-        materialDesign:HintAssist.Hint="Some item" Margin="318,610,816,126">
+        materialDesign:HintAssist.Hint="Some item" Margin="310,770,824,158">
             <ComboBoxItem
          Content="Devedor" />
             <ComboBoxItem
@@ -70,7 +70,7 @@
             x:Name="ComprasPagas"
             Style="{StaticResource MaterialDesignFilledComboBox}"
             IsEnabled="{Binding IsChecked, ElementName=FilledComboBoxEnabledCheckBox}"
-            materialDesign:HintAssist.Hint="Some item" Margin="597,610,516,124" SelectionChanged="ComprasPagas_SelectionChanged">
+            materialDesign:HintAssist.Hint="Some item" Margin="556,764,556,154" SelectionChanged="ComprasPagas_SelectionChanged">
             <ComboBoxItem
                 Content="Chinelo Havaina 34" />
             <ComboBoxItem
@@ -82,7 +82,7 @@
             x:Name="ComprasRealizadas"
             Style="{StaticResource MaterialDesignFilledComboBox}"
             IsEnabled="{Binding IsChecked, ElementName=FilledComboBoxEnabledCheckBox}"
-            materialDesign:HintAssist.Hint="Some item" Margin="906,610,182,124">
+            materialDesign:HintAssist.Hint="Some item" Margin="842,763,246,158">
             <ComboBoxItem
                 Content="Chinelo Havaina 34" />
             <ComboBoxItem
@@ -90,26 +90,87 @@
             <ComboBoxItem
                 Content="Sandália Ramarim 32" />
         </ComboBox>
-        <Rectangle HorizontalAlignment="Left" Height="33" Margin="90,274,0,0" Stroke="Black" VerticalAlignment="Top" Width="230"/>
-        <Label Content="Útilma Compra" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="742,241,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856" Width="144" Height="33"/>
-        <Button HorizontalAlignment="Left" Margin="369,74,0,0" VerticalAlignment="Top" Height="32" Width="115">
+        <Rectangle HorizontalAlignment="Left" Height="33" Margin="91,397,0,0" Stroke="Black" VerticalAlignment="Top" Width="230"/>
+        <Label Content="Útilma Compra" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="780,352,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856" Width="144" Height="33"/>
+        <Button HorizontalAlignment="Left" Margin="1116,250,0,0" VerticalAlignment="Top" Height="32" Width="114">
             <Button Content="cadprod" Click="Button_Click_1"/>
         </Button>
-        <Button Content="Fechar" HorizontalAlignment="Right"  Background="#FFBFB8B8" RenderTransformOrigin="8,6" Margin="0,710,52,42" Width="150" FontSize="16" FontWeight="UltraBlack" BorderBrush="#FF6C6C6C" Foreground="#FF090909" Padding="16,4,16,4" />
-        <Button Content="Editar" HorizontalAlignment="Right"  Background="#FFBFB8B8" RenderTransformOrigin="8,6" Margin="0,242,59,510" Width="143" FontSize="16" FontWeight="UltraBlack" BorderBrush="#FF6C6C6C" Foreground="#FF090909" Padding="16,4,16,4" />
-        <Button Content="Salvar"  Background="#FFBFB8B8" RenderTransformOrigin="8,6" Margin="998,314,61,438" FontSize="16" FontWeight="UltraBlack" BorderBrush="#FF6C6C6C" Foreground="#FF090909" Padding="16,4,16,4" Click="Button_Click_1" />
         <ComboBox
             x:Name="Situação"
             Style="{StaticResource MaterialDesignFilledComboBox}"
             IsEnabled="{Binding IsChecked, ElementName=FilledComboBoxEnabledCheckBox}"
-            materialDesign:HintAssist.Hint="Some item" Margin="90,612,1044,124">
+            materialDesign:HintAssist.Hint="Some item" Margin="77,768,1057,158">
             <ComboBoxItem
                 Content="Devedor" />
             <ComboBoxItem
-                Content="Item 2" />
-            <ComboBoxItem
-                Content="Item 3" />
+                Content="Não Devedor" />
+
         </ComboBox>
+        <materialDesign:ColorZone
+            Foreground="Black" 
+             Background="#D3D3D3"
+            Mode="PrimaryLight"
+            Padding="14" Margin="8,51,6,0" Height="77" RenderTransformOrigin="0.5,0.5">
+            <materialDesign:ColorZone.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-1.042"/>
+                    <RotateTransform Angle="-0.011"/>
+                    <TranslateTransform X="-0.582"/>
+                </TransformGroup>
+            </materialDesign:ColorZone.RenderTransform>
+        </materialDesign:ColorZone>
+        <TextBlock
+                    VerticalAlignment="Top"
+                     Margin="511,72,457,0"
+                    FontSize="35"
+                    Text="Consultar Cliente"/>
+        <MenuItem  Margin="24,20,1106,932" Header="Menu">
+
+            <MenuItem Header="Página Inicial"/>
+            <MenuItem Header="Realizar Venda"/>
+            <MenuItem Header="Cadastrar Produto"/>
+            <MenuItem Header="Cadastrar Funcionário"/>
+            <MenuItem Header="Cadastrar Cliente"/>
+            <MenuItem Header="Cadastrar Compra"/>
+            <MenuItem Header="Consultar Estoque"/>
+            <MenuItem Header="Consultar Funcionário"/>
+            <MenuItem Header="Consultar Cliente"/>
+            <MenuItem Header="Consultar Vendas"/>
+            <MenuItem Header="Controlar Gastos"/>
+
+        </MenuItem>
+
+        <Button 
+                    x:Name="bttfechar" 
+                    Content="Fechar" 
+                    Cursor="Hand" 
+                    Height="64" Width="244" 
+                    ClickMode="Press" 
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Top" Margin="1013,869,0,0" FontSize="18" RenderTransformOrigin="0.459,1.266"
+                 />
+
+        <Button 
+                    x:Name="bttsalvar" 
+                    Content="Salvar" 
+                    Cursor="Hand" 
+                    Height="52" Width="223" 
+                    ClickMode="Press" 
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Top" Margin="1023,440,0,0" FontSize="18" RenderTransformOrigin="0.459,1.266"
+                 />
+
+        <Button 
+                    x:Name="btteditar" 
+                    Content="Editar" 
+                    Cursor="Hand" 
+                    Height="52" Width="222" 
+                    ClickMode="Press" 
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Top" Margin="1024,352,0,0" FontSize="18" RenderTransformOrigin="0.459,1.266"
+                 />
+        <Rectangle HorizontalAlignment="Left" Height="33" Margin="791,397,0,0" Stroke="Black" VerticalAlignment="Top" Width="122"/>
 
     </Grid>
 

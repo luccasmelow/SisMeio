@@ -47,5 +47,10 @@ namespace Sismeio
         {
 
         }
+        private void bttfechar_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
+    
 }

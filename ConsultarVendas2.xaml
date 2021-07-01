@@ -1,11 +1,11 @@
-﻿<Window x:Class="Sismeio.ConsultarCompra2"
+﻿<Window x:Class="Sismeio.ConsultarVendas2"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Sismeio"
         mc:Ignorable="d"
-          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
         TextElement.FontSize="13"
@@ -13,9 +13,9 @@
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="ConsultarCompra2" Height="800" Width="1100">
+        Title="ConsultarVendas2" Height="800" Width="1200">
     <Grid>
-        <Label Content="Fornecedor" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="58,178,0,0" FontSize="17" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="2.165,1.795"/>
+        <Label Content="Codigo do Vendedor" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="58,178,0,0" FontSize="17" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="2.165,1.795"/>
         <Label Content="Data da Compra" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="88,234,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.746,1.123"/>
         <Label Content="Dia da Semana" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="333,234,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.5,0.5"/>
         <Label Content="Horário" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="567,234,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856"/>
@@ -30,7 +30,7 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <Rectangle HorizontalAlignment="Left" Height="33" Margin="198,179,0,0" Stroke="Black" VerticalAlignment="Top" Width="131"/>
+        <Rectangle HorizontalAlignment="Left" Height="33" Margin="265,178,0,0" Stroke="Black" VerticalAlignment="Top" Width="131"/>
         <Rectangle HorizontalAlignment="Left" Height="33" Margin="66,272,0,0" Stroke="Black" VerticalAlignment="Top" Width="181" RenderTransformOrigin="0.309,0.821"/>
         <Rectangle HorizontalAlignment="Left" Height="34" Margin="547,270,0,0" Stroke="Black" VerticalAlignment="Top" Width="165" RenderTransformOrigin="0.5,0.5">
             <Rectangle.RenderTransform>
@@ -71,12 +71,12 @@
                     Height="64" Width="223" 
                     ClickMode="Press" 
                     HorizontalAlignment="Left" 
-                    VerticalAlignment="Top" Margin="867,684,0,0" FontSize="18" RenderTransformOrigin="0.459,1.266"
+                    VerticalAlignment="Top" Margin="895,684,0,0" FontSize="18" RenderTransformOrigin="0.459,1.266"
                  />
         <Button 
                     x:Name="btnsalvar" 
                     Content="Salvar" 
-                    Margin="902,491,0,0" 
+                    Margin="978,493,0,0" 
                     Cursor="Hand" 
                     Height="45" Width="139" 
                     ClickMode="Press" 
@@ -86,9 +86,9 @@
         <Button 
                     x:Name="btneditar" 
                     Content="Editar" 
-                    Margin="902,392,0,0" 
+                    Margin="978,392,0,0" 
                     Cursor="Hand" 
-                    Height="42" Width="139" 
+                    Height="42" Width="140" 
                     ClickMode="Press" 
                     HorizontalAlignment="Left" 
                     VerticalAlignment="Top" MaxHeight="800" MaxWidth="800" MinHeight="10" MinWidth="10"
@@ -96,22 +96,22 @@
 
 
         <DataGrid 
-                    x:Name="dataGridCompras2"
+                    x:Name="dataGridVendas2"
                     IsReadOnly="true"
                     AutoGenerateColumns="False"
                     AlternatingRowBackground="#FFE5E5E5"
                     AlternationCount="2" 
-                    Margin="58,345,265,143" AutomationProperties.Name="dataGridCompras2">
+                    Margin="58,345,265,143" AutomationProperties.Name="dataGridEstoque">
 
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Código" Binding="{Binding Id}"/>
-                <DataGridTextColumn Header="Descrição" Binding="{Binding Descricao}"/>
+                <DataGridTextColumn Header="Produtos" Binding="{Binding Descricao}"/>
                 <DataGridTextColumn Header="Quantidade" Binding="{Binding Quantidade}"/>
-                <DataGridTextColumn Header="Valor" Binding="{Binding ValorUnitario, ConverterCulture='pt-Br', StringFormat=C}"/>
-                <DataGridTextColumn Header="Valor Total" Binding="{Binding ValorEstoque, ConverterCulture='pt-Br', StringFormat=C}"/>
                 <DataGridTextColumn Header="Categoria" Binding="{Binding Categoria}"/>
                 <DataGridTextColumn Header="Marca" Binding="{Binding Marca}"/>
                 <DataGridTextColumn Header="Numeração" Binding="{Binding Numeracao}"/>
+                <DataGridTextColumn Header="Valor" Binding="{Binding ValorUnitario, ConverterCulture='pt-Br', StringFormat=C}"/>
+
             </DataGrid.Columns>
         </DataGrid>
         <materialDesign:ColorZone
@@ -129,10 +129,12 @@
             </materialDesign:ColorZone.RenderTransform>
         </materialDesign:ColorZone>
         <TextBlock
+                  
                     VerticalAlignment="Top"
-                     Margin="390,67,10,0"
+                     Margin="468,70,437,0"
                     FontSize="35"
-                    ><Run Text="Consultar C"/><Run Language="pt-br" Text="ompra"/></TextBlock>
+                    Text="Consultar Vendas"/>
+
         <MenuItem  Margin="16,10,938,742" Header="Menu">
 
             <MenuItem Header="Página Inicial"/>
@@ -148,7 +150,12 @@
             <MenuItem Header="Controlar Gastos"/>
 
         </MenuItem>
+        <Rectangle HorizontalAlignment="Left" Height="33" Margin="659,179,0,0" Stroke="Black" VerticalAlignment="Top" Width="131"/>
+        <Label Content="Codigo do Cliente" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="468,179,0,0" FontSize="17" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="2.165,1.795"/>
 
 
     </Grid>
 </Window>
+
+
+

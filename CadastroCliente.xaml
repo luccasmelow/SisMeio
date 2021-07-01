@@ -13,50 +13,51 @@
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="CadastroCliente" Height="450" Width="1200" Margin="20,0,30,0">
+        Title="CadastroCliente" Height="600" Width="1200" Margin="20,0,30,0" MaxHeight="800" MaxWidth="1200" MinHeight="100" MinWidth="100">
 
-    <Grid Margin="-23,-32,-51,-77">
+    <Grid Margin="-23,-32,-47,-75">
         <Grid.RowDefinitions>
             <RowDefinition Height="7*"/>
             <RowDefinition Height="218*"/>
         </Grid.RowDefinitions>
-
-
-        <Border BorderThickness="1" BorderBrush="Black" Margin="1246,-67,-74,-83" Grid.RowSpan="2"/>
-        <Label Content="Nome" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="76,75,0,0" FontSize="16"  FontFamily="Lucida Sans Unicode" FontWeight="Bold" Grid.Row="1"/>
-        <Label Content="CPF" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="372,75,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.057,4.741" Grid.Row="1"/>
-        <Label Content="RG" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="695,70,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.66,0.559" Grid.Row="1"/>
-        <Label Content="Telefone" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="406,175,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.66,0.559" Grid.Row="1"/>
-        <Label Content="Data de Nascimento" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="76,175,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.681,0.227" Height="39" Width="215" Grid.Row="1"/>
-        <Label Content="Endereço" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="42,288,0,0" FontSize="20" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="2.165,1.795" Grid.Row="1"/>
-        <Label Content="Rua:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="92,327,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.66,0.559" Grid.Row="1"/>
-        <Label Content="Nº:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="377,320,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856" Grid.Row="1"/>
-        <Label Content="Complemento:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="631,311,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856" Grid.Row="1"/>
-        <Label Content="Cidade:" VerticalAlignment="Top" Margin="656,382,527,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856" Grid.Row="1"/>
-        <Label Content="Bairro:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="92,383,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856" Grid.Row="1"/>
-        <Label Content="CEP:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="377,383,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856" Grid.Row="1"/>
+        <Label Content="Nome" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="71,153,0,0" FontSize="16"  FontFamily="Lucida Sans Unicode" FontWeight="Bold" Grid.Row="1"/>
+        <Label Content="CPF" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="384,153,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.057,4.741" Grid.Row="1"/>
+        <Label Content="RG" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="709,153,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.675,0.825" Grid.Row="1"/>
+        <Label Content="Telefone" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="400,256,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.66,0.559" Grid.Row="1"/>
+        <Label Content="Data de Nascimento" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="90,256,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.681,0.227" Height="39" Width="215" Grid.Row="1"/>
+        <Label Content="Endereço" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="82,375,0,0" FontSize="20" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="2.165,1.795" Grid.Row="1"/>
+        <Label Content="Rua:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="82,439,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.66,0.559" Grid.Row="1"/>
+        <Label Content="Nº:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="400,442,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856" Grid.Row="1"/>
+        <Label Content="Complemento:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="653,442,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856" Grid.Row="1"/>
+        <Label Content="Cidade:" VerticalAlignment="Top" Margin="648,506,535,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856" Grid.Row="1"/>
+        <Label Content="Bairro:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="82,506,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856" Grid.Row="1"/>
+        <Label Content="CEP:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="400,506,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856" Grid.Row="1"/>
         <TextBlock Text="TextBlock" TextWrapping="Wrap"/>
         <TextBlock Text="TextBlock" TextWrapping="Wrap"/>
         <TextBox Text="TextBox" TextWrapping="Wrap" Width="120"/>
         <TextBlock Text="TextBlock" TextWrapping="Wrap"/>
-        <TextBox TextWrapping="Wrap" Margin="377,112,655,368" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam" Text="Digite aqui"/>
-        <TextBox TextWrapping="Wrap" Margin="699,112,360,368" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam" Text="Digite aqui"/>
-        <TextBox TextWrapping="Wrap" Margin="92,112,960,367" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam" Text="Digite aqui"/>
-        <TextBox TextWrapping="Wrap" Margin="420,224,527,259" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam" Text="Digite aqui"/>
-        <TextBox TextWrapping="Wrap" Margin="723,383,300,111" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam" Text="Digite aqui"/>
-        <TextBox TextWrapping="Wrap" Margin="164,400,902,95" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam" Text="Digite aqui"/>
-        <TextBox TextWrapping="Wrap" Margin="140,336,927,158" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam" Text="Digite aqui"/>
-        <TextBox TextWrapping="Wrap" Margin="420,336,721,158" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam" Text="Digite aqui"/>
-        <TextBox TextWrapping="Wrap" Margin="437,399,709,95" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam" Text="Digite aqui"/>
+        <TextBox TextWrapping="Wrap" Margin="388,191,644,437" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam" Text="Digite aqui"/>
+        <TextBox TextWrapping="Wrap" Margin="694,192,366,437" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam" Text="Digite aqui"/>
+        <TextBox TextWrapping="Wrap" Margin="91,190,961,437" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam" Text="Digite aqui"/>
+        <TextBox TextWrapping="Wrap" Margin="398,297,549,319" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam" Text="Digite aqui"/>
+        <TextBox TextWrapping="Wrap" Margin="809,442,214,188" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam" Text="Digite aqui"/>
+        <TextBox TextWrapping="Wrap" Margin="161,517,905,111" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam" Text="Digite aqui"/>
+        <TextBox TextWrapping="Wrap" Margin="140,450,905,178" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam" Text="Digite aqui"/>
+        <TextBox TextWrapping="Wrap" Margin="445,450,696,178" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam" Text="Digite aqui"/>
+        <TextBox TextWrapping="Wrap" Margin="445,518,701,111" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam" Text="Digite aqui"/>
         <DatePicker
         materialDesign:HintAssist.Hint="Janeiro"
+
         Style="{StaticResource MaterialDesignOutlinedDatePicker}" Margin="68,224,975,0" Grid.Row="1" VerticalAlignment="Top" />
         <TextBox TextWrapping="Wrap" Margin="732,336,300,158" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam" Text="Digite aqui"/>
+        <TextBox TextWrapping="Wrap" Margin="739,506,293,107" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam" Text="Digite aqui"/>
+        <Button Content="atualizar_prod" HorizontalAlignment="Left" Margin="1062,168,0,0" Grid.Row="1" VerticalAlignment="Top" Click="Button_Click" Height="36" Width="90"/>
+
         <materialDesign:ColorZone
             Foreground="Black" 
              Background="#D3D3D3"
             Mode="PrimaryLight"
-            Padding="14" Margin="24,14,50,0" Grid.Row="1" Height="53" RenderTransformOrigin="0.5,0.5">
+            Padding="14" Margin="24,59,50,0" Grid.Row="1" Height="75" RenderTransformOrigin="0.5,0.5">
             <materialDesign:ColorZone.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -65,58 +66,42 @@
                     <TranslateTransform X="-0.582"/>
                 </TransformGroup>
             </materialDesign:ColorZone.RenderTransform>
-            <StackPanel Orientation="Horizontal" Margin="0,-5,-12,0" HorizontalAlignment="Right" Width="1173">
-                <ToggleButton>
-                    <MenuItem>
-                        <MenuItem Header="Cdastrar Cliente"/>
-                        <MenuItem Header="Cdastrar Cliente"/>
-                        <MenuItem Header="Cdastrar Cliente"/>
-                    </MenuItem>
-
-                </ToggleButton>
-                <Image Source=" img/menu.png" Height="24" RenderTransformOrigin="0.5,0.5" Width="35">
-                    <Image.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform ScaleX="-1"/>
-                            <SkewTransform/>
-                            <RotateTransform/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </Image.RenderTransform>
-                </Image>
-
-                <TextBlock
-                    VerticalAlignment="Center"
-                     Margin=" 400 0 0 0"
-                    FontSize="35"
-                    Text="Cadastrar Cliente"/>
-
-
-            </StackPanel>
         </materialDesign:ColorZone>
+        <MenuItem  Margin="48,10,1072,597" Header="Menu" Grid.Row="1">
 
-        <Button
-        Style="{StaticResource MaterialDesignFlatLightBgButton}"
-        ToolTip="MaterialDesignFlatLightButton"
-        Margin="1089,336,63,158" 
-        Foreground="Black" 
-        Background="#D3D3D3"
-        Content="Cadastrar" Grid.Row="1" FontStretch="UltraCondensed" FontSize="16" FontStyle="Normal" FontWeight="UltraBlack" />
+            <MenuItem Header="Página Inicial"/>
+            <MenuItem Header="Realizar Venda"/>
+            <MenuItem Header="Cadastrar Produto"/>
+            <MenuItem Header="Cadastrar Funcionário"/>
+            <MenuItem Header="Cadastrar Cliente"/>
+            <MenuItem Header="Cadastrar Compra"/>
+            <MenuItem Header="Consultar Estoque"/>
+            <MenuItem Header="Consultar Funcionário"/>
+            <MenuItem Header="Consultar Cliente"/>
+            <MenuItem Header="Consultar Vendas"/>
+            <MenuItem Header="Controlar Gastos"/>
+
+        </MenuItem>
+        <TextBlock
+                    VerticalAlignment="Top"
+                     Margin="437,76,495,0"
+                    FontSize="35"
+                    Text="Cadastrar Cliente" Grid.Row="1" Height="45"/>
 
         <Button 
-        Style="{StaticResource MaterialDesignFlatLightBgButton}"
-        ToolTip="MaterialDesignFlatLightButton"
-        Margin="1089,119,63,375"
-        Foreground="Black" 
-        Background="#D3D3D3"
-        Content ="Novo"  Grid.Row="1" FontStretch="UltraCondensed" FontSize="16" FontStyle="Normal" FontWeight="UltraBlack"/>
+                        x:Name="btcadastrar" 
+                        Content="Cadastrar" 
+                        Margin="1020,191,80,303" 
+                        Cursor="Hand" 
+                        Height="32" ClickMode="Press" Grid.Row="1"/>
+        <Button 
+                        x:Name="bttfechar" 
+                        Content="Fechar" 
+                        Margin="1020,255,80,239" 
+                        Cursor="Hand" 
+                        Height="32" ClickMode="Press" Grid.Row="1"/>
 
-        <Button
-        Style="{StaticResource MaterialDesignFlatLightBgButton}"
-        ToolTip="MaterialDesignFlatLightButton"
-        Margin="1090,400,63,94"
-        Foreground="Black" 
-        Background="#D3D3D3"
-        Content="Cancelar" Grid.Row="1" FontStretch="UltraCondensed" FontSize="16" FontStyle="Normal" FontWeight="UltraBlack" />
+
+
     </Grid>
 </Window>
