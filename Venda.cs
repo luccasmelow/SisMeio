@@ -9,6 +9,8 @@ namespace Sismeio
        
         public int id_venda { get; set; }
 
+        public int valor_total{ get; set; }
+
         public String pagamento { get; set; }
 
         public Produto produto { get; set; }
