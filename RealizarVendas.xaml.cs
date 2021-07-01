@@ -13,53 +13,51 @@ using System.Windows.Shapes;
 namespace Sismeio
 {
     /// <summary>
-    /// Lógica interna para ControlarGastos.xaml
+    /// Lógica interna para RealizarVendas.xaml
     /// </summary>
-    public partial class ControlarGastos : Window
+    public partial class RealizarVendas : Window
     {
-
-        public ControlarGastos()
+       
+        public RealizarVendas()
         {
             InitializeComponent();
-            Loaded += ControlarGastos_Loaded;
+            Loaded += RealizarVendas_Loaded;
         }
 
-        private void btnRelatorio_Click(object sender, RoutedEventArgs e)
+        private void RealizarVendas_Loaded(object sender, RoutedEventArgs e)
         {
+            txtData.Text = DateTime.Now.ToString("dd/MM/yyyy");
 
-        }
-
-        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void ControlarGastos_Loaded(object sender, RoutedEventArgs e)
-        {
-            List<Despesa> ListaGastos = new List<Despesa>();
+            List <Produto> ListaVenda = new List<Produto>();
 
 
-            ListaGastos.Add(new Despesa()
+            ListaVenda.Add(new Produto()
             {
-                id= 0158,
-                descricao = "Conta de Energia",
-                valordesp = 500.97
+                Id= 256,
+                Descricao="Chinelo Vizzano",
+                Quantidade=5,
+                ValorUnitario=250
+                
 
 
             });
-            ListaGastos.Add(new Despesa()
+            ListaVenda.Add(new Produto()
             {
-                id = 0159,
-                descricao = "Água",
-                valordesp = 150.77
+                Id = 215,
+                Descricao = "Rasteira Vizzano",
+                Quantidade = 2,
+                ValorUnitario = 100
+
 
 
             });
-            ListaGastos.Add(new Despesa()
+            ListaVenda.Add(new Produto()
             {
-                id = 0160,
-                descricao = "Pedido Arezzo",
-                valordesp = 2000.99
+                Id = 258,
+                Descricao = "Chinelo Básico Havaianas",
+                Quantidade = 1,
+                ValorUnitario = 50
+
 
 
             });
@@ -67,12 +65,11 @@ namespace Sismeio
 
 
 
-            dataGridGastos.ItemsSource = ListaGastos;
+            dataGridVenda.ItemsSource = ListaVenda;
         }
-        
         private void mnuInicial_Click(object sender, RoutedEventArgs e)
         {
-            
+           
         }
 
         private void mnuRealizarVenda_Click(object sender, RoutedEventArgs e)
@@ -89,7 +86,7 @@ namespace Sismeio
             vsCadastrarProduto.ShowDialog();
         }
 
-        
+
         private void mnuCadastrarCliente_Click(object sender, RoutedEventArgs e)
         {
             CadastroCliente vsCadastrarCliente = new CadastroCliente();
@@ -110,7 +107,7 @@ namespace Sismeio
 
         private void mnuConsultarFuncionario_Click(object sender, RoutedEventArgs e)
         {
-            
+
         }
 
         private void mnuConsultarCliente_Click(object sender, RoutedEventArgs e)
@@ -122,7 +119,7 @@ namespace Sismeio
 
         private void mnuConsultarVenda_Click(object sender, RoutedEventArgs e)
         {
-            
+
         }
 
         private void mnuControlarGastos_Click(object sender, RoutedEventArgs e)
@@ -140,11 +137,19 @@ namespace Sismeio
 
         }
 
-        private void btnRelatorio_Click_1(object sender, RoutedEventArgs e)
+        private void btnConfirmaVenda_Click(object sender, RoutedEventArgs e)
         {
-            RelatorioGastos vsRelatorioGastos = new RelatorioGastos();
 
-            vsRelatorioGastos.ShowDialog();
+
+            MessageBoxResult result = MessageBox.Show("Venda Realizada com sucesso!", "Confirmação", MessageBoxButton.OK, MessageBoxImage.Information);
+
+        }
+
+        private void btnCancelaVenda_Click(object sender, RoutedEventArgs e)
+        {
+
+            MessageBoxResult result = MessageBox.Show("Deseja Realmente cancelar a venda", "Confirmação",MessageBoxButton.OKCancel, MessageBoxImage.Information);
+            
         }
     }
 }

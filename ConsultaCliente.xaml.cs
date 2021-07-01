@@ -20,9 +20,10 @@ namespace Sismeio
         public ConsultaCliente()
         {
             InitializeComponent();
+            Loaded += ConsultarCliente_Loaded;
         }
 
-        public void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void ConsultarCliente_Loaded(object sender, RoutedEventArgs e)
         {
             List<Cliente> listacliente = new List<Cliente>();
 
@@ -34,7 +35,7 @@ namespace Sismeio
                     codigo = i + 1,
                     nome = "João Alves" + i,
                     situacao = "Devedor"
-                });
+                }); dataGridCliente.ItemsSource = listacliente;
             }
         }
   
@@ -53,6 +54,23 @@ namespace Sismeio
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        
+
+        private void btnfechar_click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

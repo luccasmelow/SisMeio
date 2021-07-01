@@ -33,7 +33,7 @@
             Foreground="Black" 
              Background="#D3D3D3"
             Mode="PrimaryLight"
-            Padding="1" Margin="1,1,1,0" Height="55" RenderTransformOrigin="0.5,0.5">
+            Padding="1" Margin="-1,45,0,0" Height="51" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2">
             <materialDesign:ColorZone.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -42,12 +42,17 @@
                     <TranslateTransform X="-0.582" Y="0.022"/>
                 </TransformGroup>
             </materialDesign:ColorZone.RenderTransform>
+        
             <StackPanel Orientation="Horizontal" Margin="1,-1,0,-2" HorizontalAlignment="Left" Width="796"/>
         </materialDesign:ColorZone>
-        <Label Margin="10,9,658,0" FontFamily = " Lucida Sans Unicode " FontSize = " 14" RenderTransformOrigin="0,66" Grid.Row="1" Height="26" VerticalAlignment="Top">PESQUISAR POR:
+        <Label Margin="10,38,658,0" FontFamily = " Lucida Sans Unicode " FontSize = " 14" RenderTransformOrigin="0,66" Grid.Row="1" Height="26" VerticalAlignment="Top">PESQUISAR POR:
         </Label>
 
+       
         <ComboBox Height="22" Width="200" Margin="147,7,453,0" VerticalAlignment="Top"  Foreground="#8d8d8d"  Cursor="IBeam" RenderTransformOrigin="0.5,0.5" Grid.Row="1">
+
+        <ComboBox Height="22" Width="200" Margin="147,35,453,0" VerticalAlignment="Top"  Foreground="#8d8d8d"  Cursor="IBeam" RenderTransformOrigin="0.5,0.5" Grid.Row="1">
+
             <ComboBoxItem Content="CÓDIGO"/>
             <ComboBoxItem Content="NOME"/>
         </ComboBox>
@@ -86,7 +91,72 @@
   Content="Relatórios" Margin="19,10,668,28" Grid.Row="2"  Click="btnRelatorio_Click" Cursor="Hand"  />
         <TextBlock
                     FontSize="35"
+
                     Text="Atualizar  Produto" RenderTransformOrigin="0.881,0.436" Margin="251,4,250,27"/>
 
+                    Text="Atualizar  Produto" RenderTransformOrigin="0.881,0.436" Margin="223,50,278,330" Grid.RowSpan="2"/>
+            <Menu Height="20" Width="106" Margin="10,0,450,0">
+                <MenuItem Padding ="1,0,0,0" Header="Menu" Height="20" Width="93" RenderTransformOrigin="0.471,0.43">
+                    <MenuItem x:Name="mnuInicial"
+                          Header="_Página Inicial"  
+                          Height="Auto" Width="Auto" Click="mnuInicial_Click"
+                        />
+                    <Separator/>
+                    <MenuItem x:Name="mnuRealizarVenda"
+                          Header="_Realizar Venda"  
+                          Height="Auto" Width="Auto" Click="mnuRealizarVenda_Click"
+                        />
+                    <Separator/>
+                    <MenuItem x:Name="mnuCadastrarProduto"
+                          Header="_Cadastrar Produto"  
+                          Height="Auto" Width="Auto" Click="mnuCadastrarProduto_Click"
+                        />
+                    <Separator/>
+                    <MenuItem x:Name="mnuCadastrarFuncionario"
+                          Header="_Cadastrar Funcionário"  
+                          Height="Auto" Width="Auto" Click="mnuCadastrarFuncionario_Click"
+                        />
+                    <Separator/>
+                    <MenuItem x:Name="mnuCadastrarCliente"
+                          Header="_Cadastrar Cliente"  
+                          Height="Auto" Width="Auto" Click="mnuCadastrarCliente_Click"
+                        />
+                    <Separator/>
+                    <MenuItem x:Name="mnuCadastrarCompra"
+                          Header="_Cadastrar Compra"  
+                          Height="Auto" Width="Auto" Click="mnuCadastrarCompra_Click"
+                        />
+                    <Separator/>
+                    <MenuItem x:Name="mnuConsultarEstoque"
+                          Header="_Consultar Estoque"  
+                          Height="Auto" Width="Auto" Click="mnuConsultarEstoque_Click"
+                        />
+                    <Separator/>
+                    <MenuItem x:Name="mnuConsultarFuncionario"
+                          Header="_Consultar Funcionário"  
+                          Height="Auto" Width="Auto" Click="mnuConsultarFuncionario_Click"
+                        />
+                    <Separator/>
+                    <MenuItem x:Name="mnuConsultarCliente"
+                          Header="_Consultar Cliente"  
+                          Height="Auto" Width="Auto" Click="mnuConsultarCliente_Click"
+                        />
+                    <Separator/>
+                    <MenuItem x:Name="mnuConsultarVenda"
+                          Header="_Consultar Vendas"  
+                          Height="Auto" Width="Auto" Click="mnuConsultarVenda_Click"
+                        />
+                    <Separator/>
+                    <MenuItem x:Name="mnuControlarGastos"
+                          Header="_Controlar Gastos"  
+                          Height="Auto" Width="Auto" Click="mnuControlarGastos_Click"
+                        />
+                </MenuItem>
+
+
+            </Menu>
+           
+
+        </ComboBox>
     </Grid>
 </Window>
