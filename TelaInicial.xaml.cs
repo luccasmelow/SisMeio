@@ -36,6 +36,16 @@ namespace Sismeio
 
             window.Owner = this;
             window.ShowDialog();
+
+
+            try
+            {
+                var conexao = new Conexao();
+
+            }catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnGestaoDeGastos_Click(object sender, RoutedEventArgs e)
