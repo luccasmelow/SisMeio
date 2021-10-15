@@ -24,22 +24,6 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <materialDesign:ColorZone
-            Foreground="Black" 
-             Background="#D3D3D3"
-            Mode="PrimaryLight"
-            Padding="1" Margin="1,21,1,0" Height="60" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2">
-            <materialDesign:ColorZone.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform AngleX="-1.042" AngleY="0.003"/>
-                    <RotateTransform Angle="-0.011"/>
-                    <TranslateTransform X="-0.582" Y="0.022"/>
-                </TransformGroup>
-            </materialDesign:ColorZone.RenderTransform>
-            <StackPanel Orientation="Horizontal" Margin="1,18,0,0" HorizontalAlignment="Left" Width="796"/>
-        </materialDesign:ColorZone>
-
         <TextBlock FontSize="35" Text="Cadastrar Produto" RenderTransformOrigin="0.881,0.436" Margin="273,27,273,4"/>
 
 
@@ -109,17 +93,6 @@
         <Button Content="SALVAR" Margin="479,148,286,71" Grid.Row="4" Click="btnSalvar_Click" Cursor="Hand"/>
         <Button Content="CANCELAR" Margin="716,158,49,81" Grid.Row="4" Click="btnCancelar_Click" Cursor="Hand" RenderTransformOrigin="0.507,-0.156"/>
         <Button Content="NOVO" Margin="598,158,174,81" Grid.Row="4" Click="bbtnNovo_Click" Cursor="Hand"/>
-
-        <materialDesign:PackIcon Kind="ImageEdit" Margin="635,0,0,0" Grid.Row="1" Height="40" Width="99" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Center" >
-            <materialDesign:PackIcon.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="0.063"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </materialDesign:PackIcon.RenderTransform>
-        </materialDesign:PackIcon>
         <Button Content="Imagem" HorizontalAlignment="Left" Margin="730,31,0,27" Grid.Row="1" Click="btnImagem_Click" Width="102"/>
         <TextBox x:Name="txtTipo"  TextWrapping="Wrap" Margin="234,136,481,0" Foreground="#8d8d8d" CaretBrush="#8d8d8d"  Cursor="IBeam" Text="Digite aqui" RenderTransformOrigin="0.678,0.511" Grid.Row="2" Height="26" VerticalAlignment="Top"/>
         <Label Content="Tipo" VerticalAlignment = "Top"  HorizontalAlignment = "Left"  Margin = "277,107,0,0"  FontSize = " 13 "  FontFamily = " Lucida Sans Unicode "  FontWeight = "Bold" RenderTransformOrigin="0,66" Grid.Row = " 2 " Height="29" Width="47"  />

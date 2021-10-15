@@ -72,5 +72,10 @@ namespace Sismeio
         {
             this.Close();
         }
+
+        private void dataGridCliente_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

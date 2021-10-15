@@ -115,20 +115,6 @@
             <Image Source= "/img/pesquisar.png " Width="15"/>
 
         </Button>
-        <materialDesign:ColorZone
-            Foreground="Black" 
-             Background="#D3D3D3"
-            Mode="PrimaryLight"
-            Padding="14" Margin="3,43,-3,0" Height="63" RenderTransformOrigin="0.5,0.5">
-            <materialDesign:ColorZone.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform AngleX="-1.042"/>
-                    <RotateTransform Angle="-0.011"/>
-                    <TranslateTransform X="-0.582"/>
-                </TransformGroup>
-            </materialDesign:ColorZone.RenderTransform>
-        </materialDesign:ColorZone>
         <TextBlock
                     VerticalAlignment="Top"
                      Margin="269,54,214,0"

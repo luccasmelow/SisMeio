@@ -24,7 +24,7 @@
                     AutoGenerateColumns="False"
                     AlternatingRowBackground="#FFE5E5E5"
                     AlternationCount="8"
-                    Margin="80,260,430,106" AutomationProperties.Name="dataGridCliente" Grid.ColumnSpan="5" Grid.Column="5" FrozenColumnCount="5" Grid.RowSpan="5">
+                    Margin="80,260,430,106" AutomationProperties.Name="dataGridCliente" Grid.ColumnSpan="5" Grid.Column="5" FrozenColumnCount="5" Grid.RowSpan="5" SelectionChanged="dataGridCliente_SelectionChanged">
 
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Código" Binding="{Binding Id}"/>
@@ -33,30 +33,15 @@
 
             </DataGrid.Columns>
         </DataGrid>
+
+        
         <Button
         Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}"
-        ToolTip="MaterialDesignFloatingActionMiniDarkButton" Margin="450,157,410,387" Background="#FF684AA6">
-
-            <Image Source= "/img/pesquisar.png " Width="15"/>
-
-        </Button>
-        <materialDesign:ColorZone
-            Foreground="Black" 
-             Background="#D3D3D3"
-            Mode="PrimaryLight"
-            Padding="14" Margin="7,54,1,0" Height="68" RenderTransformOrigin="0.5,0.5">
-            <materialDesign:ColorZone.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform AngleX="-1.042"/>
-                    <RotateTransform Angle="-0.011"/>
-                    <TranslateTransform X="-0.582"/>
-                </TransformGroup>
-            </materialDesign:ColorZone.RenderTransform>
-        </materialDesign:ColorZone>
-        <TextBlock
+        ToolTip="MaterialDesignFloatingActionMiniDarkButton" Margin="450,153,410,391" Background="#FF684AA6"/>
+        
+        <TextBlock 
                     VerticalAlignment="Top"
-                     Margin="308,69,92,0"
+                     Margin="300,10,100,0"
                     FontSize="35"
                     Text="Consultar Cliente"/>
 
@@ -77,7 +62,7 @@
         </MenuItem>
         <ComboBox
                 
-                    Width="156"  Height="38" Margin="80,158,664,0"
+                    Width="156"  Height="38" Margin="518,227,226,0"
                     materialDesign:HintAssist.Hint="Consultar Compra"
                     materialDesign:HintAssist.HintOpacity=".26"
                     IsEditable="True" VerticalAlignment="Top">
@@ -96,7 +81,7 @@
             materialDesign:HintAssist.Hint="Filtros" 
             materialDesign:HintAssist.HintOpacity=".26" 
             materialDesign:HintAssist.Foreground="Gray"
-            Margin ="308,157,497,0" Width="95" Height="40" VerticalAlignment="Top">
+            Margin ="470,202,335,0" Width="95" Height="40" VerticalAlignment="Top">
 
             <ComboBoxItem
                         Content="Devedor" />
@@ -126,9 +111,11 @@
         <Button 
                         x:Name="btnfechar" 
                         Content="Fechar" 
-                        Margin="693,515,26,37" 
+                        Margin="733,515,26,37" 
                         Cursor="Hand" 
                         Height="32" ClickMode="Press" Click="btnfechar_click"/>
+        <Label Content="Pesquisar" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="66,116,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.66,0.559"/>
+        <Rectangle HorizontalAlignment="Left" Height="48" Margin="66,149,0,0" Stroke="Black" VerticalAlignment="Top" Width="354"/>
     </Grid>
 
 

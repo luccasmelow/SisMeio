@@ -44,29 +44,12 @@
         <TextBox TextWrapping="Wrap" Margin="161,517,905,111" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam" Text="Digite aqui"/>
         <TextBox TextWrapping="Wrap" Margin="140,450,905,178" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam" Text="Digite aqui"/>
         <TextBox TextWrapping="Wrap" Margin="445,450,696,178" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam" Text="Digite aqui"/>
-        <TextBox TextWrapping="Wrap" Margin="445,518,701,111" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam" Text="Digite aqui"/>
+        <TextBox TextWrapping="Wrap" Margin="482,517,635,112" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam" Text="Digite aqui"/>
         <DatePicker
         materialDesign:HintAssist.Hint="Janeiro"
 
-        Style="{StaticResource MaterialDesignOutlinedDatePicker}" Margin="68,224,975,0" Grid.Row="1" VerticalAlignment="Top" />
-        <TextBox TextWrapping="Wrap" Margin="732,336,300,158" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam" Text="Digite aqui"/>
-        <TextBox TextWrapping="Wrap" Margin="739,506,293,107" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam" Text="Digite aqui"/>
-        <Button Content="atualizar_prod" HorizontalAlignment="Left" Margin="1062,168,0,0" Grid.Row="1" VerticalAlignment="Top" Click="Button_Click" Height="36" Width="90"/>
-
-        <materialDesign:ColorZone
-            Foreground="Black" 
-             Background="#D3D3D3"
-            Mode="PrimaryLight"
-            Padding="14" Margin="24,59,50,0" Grid.Row="1" Height="75" RenderTransformOrigin="0.5,0.5">
-            <materialDesign:ColorZone.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform AngleX="-1.042"/>
-                    <RotateTransform Angle="-0.011"/>
-                    <TranslateTransform X="-0.582"/>
-                </TransformGroup>
-            </materialDesign:ColorZone.RenderTransform>
-        </materialDesign:ColorZone>
+        Style="{StaticResource MaterialDesignOutlinedDatePicker}" Margin="78,303,965,0" Grid.Row="1" VerticalAlignment="Top" />
+        <TextBox TextWrapping="Wrap" Margin="757,519,275,111" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam" Text="Digite aqui"/>
         <Menu Height="20" Width="106" Margin="10,0,450,0">
             <MenuItem Padding ="1,0,0,0" Header="Menu" Height="20" Width="93" RenderTransformOrigin="0.471,0.43">
                 <MenuItem x:Name="mnuInicial"
@@ -127,7 +110,7 @@
 
 
         </Menu>
-       
+
         <TextBlock
                     VerticalAlignment="Top"
                      Margin="437,76,495,0"
