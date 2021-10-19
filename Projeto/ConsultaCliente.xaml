@@ -14,7 +14,7 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         
-        Title="ConsultaCliente" Height="600" Width="900" MaxHeight="900" MaxWidth="1200" MinHeight="50" MinWidth="50">
+        Title="ConsultaCliente" Height="600" Width="900" MaxHeight="900" MaxWidth="1200" MinHeight="50" MinWidth="50" WindowStartupLocation="CenterScreen">
     <Grid MaxHeight="800" MaxWidth="1200" MinHeight="100" MinWidth="100">
 
 

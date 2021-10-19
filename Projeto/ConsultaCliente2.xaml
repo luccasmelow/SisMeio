@@ -13,7 +13,7 @@
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-    Title="ConsultaCliente2" Height="1000" Width="1300">
+    Title="ConsultaCliente2" Height="1000" Width="1300" WindowStartupLocation="CenterScreen" >
     <Grid>
 
         <Border BorderThickness="1" BorderBrush="Black" Margin="0,-65,-30,8"/>

@@ -13,7 +13,7 @@
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="ConsultaCompra" Height="500" Width="800">
+        Title="ConsultaCompra" Height="500" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid Height="300" VerticalAlignment="Top" Margin="0,134,0,0">
             <Grid.ColumnDefinitions>
@@ -129,7 +129,7 @@
                 </TransformGroup>
             </TextBlock.RenderTransform>
         </TextBlock>
-        <MenuItem  Margin="10,11,672,441" Header="Menu" Visibility="Visible" AutomationProperties.IsOffscreenBehavior="FromClip">
+        <MenuItem  Margin="10,11,672,441" Header="Menu" Visibility="Visible" AutomationProperties.IsOffscreenBehavior="FromClip" Click="MenuItem_Click">
 
             <MenuItem Header="Página Inicial"/>
             <MenuItem Header="Realizar Venda"/>

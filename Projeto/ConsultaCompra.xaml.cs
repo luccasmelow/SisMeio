@@ -86,5 +86,10 @@ namespace Sismeio
         {
             this.Close();
         }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
