@@ -120,6 +120,11 @@ namespace Sismeio
 
             vsRelatorioGastos.ShowDialog();
         }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
  }
 

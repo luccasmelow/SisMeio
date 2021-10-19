@@ -13,7 +13,7 @@
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="ConsultarVendas2" Height="800" Width="1200">
+        Title="ConsultarVendas2" Height="800" Width="1200" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -140,7 +140,7 @@
                     Text="Consultar Vendas" Grid.Row="1"/>
 
         <Menu Height="20" Width="106" Margin="45,0,1049,750" Grid.Row="1">
-            <MenuItem Padding ="1,0,0,0" Header="Menu" Height="20" Width="93" RenderTransformOrigin="0.471,0.43">
+            <MenuItem Padding ="1,0,0,0" Header="Menu" Height="20" Width="93" RenderTransformOrigin="0.471,0.43" Click="MenuItem_Click">
                 <MenuItem x:Name="mnuInicial"
                           Header="_Página Inicial"  
                           Height="Auto" Width="Auto" Click="mnuInicial_Click"

@@ -13,7 +13,7 @@
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="CadastroCliente" Height="600" Width="1200" Margin="20,0,30,0" MaxHeight="800" MaxWidth="1200" MinHeight="100" MinWidth="100">
+        Title="CadastroCliente" Height="600" Width="1200" Margin="20,0,30,0" MaxHeight="800" MaxWidth="1200" MinHeight="100" MinWidth="100" WindowStartupLocation="CenterScreen">
 
     <Grid Margin="-23,-32,-47,-75">
         <Grid.RowDefinitions>

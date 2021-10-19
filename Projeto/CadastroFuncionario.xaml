@@ -17,7 +17,7 @@
         Background="#ffffff"
         FontFamily="{DynamicResource MaterialDesignFont}"
         
-        Title="CadastroFuncionário" Height="592" Width="946" MinHeight="592" MinWidth="946">
+        Title="CadastroFuncionário" Height="592" Width="946" MinHeight="592" MinWidth="946" WindowStartupLocation="CenterScreen" >
 
     <Grid>
 

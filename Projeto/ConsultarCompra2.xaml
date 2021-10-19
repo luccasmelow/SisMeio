@@ -13,7 +13,7 @@
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="ConsultarCompra2" Height="800" Width="1100">
+        Title="ConsultarCompra2" WindowStartupLocation="CenterScreen" Height="800" Width="1100">
     <Grid>
         <Label Content="Fornecedor" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="58,178,0,0" FontSize="17" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="2.165,1.795"/>
         <Label Content="Data da Compra" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="88,234,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.746,1.123"/>
