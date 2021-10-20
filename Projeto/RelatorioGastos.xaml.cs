@@ -26,10 +26,10 @@ namespace Sismeio
 
         private void RelatorioGastos_Loaded(object sender, RoutedEventArgs e)
         {
-            List<Despesa> ListaGastos = new List<Despesa>();
+            List<Gastos> ListaGastos = new List<Gastos>();
 
 
-            ListaGastos.Add(new Despesa()
+            ListaGastos.Add(new Gastos()
             {
                 abertas ="Conta de Energia",
                 vencidas="Pagamento - Vendedora",
@@ -40,14 +40,14 @@ namespace Sismeio
 
 
             });
-            ListaGastos.Add(new Despesa()
+            ListaGastos.Add(new Gastos()
             {
                 abertas = "Água",
                 pagas = "Pedido Ramarim"
 
 
             });
-            ListaGastos.Add(new Despesa()
+            ListaGastos.Add(new Gastos()
             {
                 abertas = "Pedido Arezzo",
                 pagas = "Pedido Adidas",

@@ -36,10 +36,10 @@ namespace Sismeio
 
         private void ControlarGastos_Loaded(object sender, RoutedEventArgs e)
         {
-            List<Despesa> ListaGastos = new List<Despesa>();
+            List<Gastos> ListaGastos = new List<Gastos>();
 
 
-            ListaGastos.Add(new Despesa()
+            ListaGastos.Add(new Gastos()
             {
                 id= 0158,
                 descricao = "Conta de Energia",
@@ -47,7 +47,7 @@ namespace Sismeio
 
 
             });
-            ListaGastos.Add(new Despesa()
+            ListaGastos.Add(new Gastos()
             {
                 id = 0159,
                 descricao = "Água",
@@ -55,7 +55,7 @@ namespace Sismeio
 
 
             });
-            ListaGastos.Add(new Despesa()
+            ListaGastos.Add(new Gastos()
             {
                 id = 0160,
                 descricao = "Pedido Arezzo",

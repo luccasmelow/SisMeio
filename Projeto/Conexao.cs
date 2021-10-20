@@ -15,7 +15,7 @@ namespace Sismeio
 
         private static string password = "root";
 
-        private static string dbname = "bd_equipe_snow";
+        private static string dbname = "BD_EQUIPE_SNOW";
 
         private static MySqlConnection conection;
 
