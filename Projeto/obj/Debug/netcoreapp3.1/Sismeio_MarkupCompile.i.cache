@@ -1,0 +1,20 @@
+﻿Sismeio
+1.0.0.0
+
+winexe
+C#
+.cs
+C:\Users\Alyne\Documents\Estudos\IFRO\Projeto de DS\SisMeio\Projeto\obj\Debug\netcoreapp3.1\
+Sismeio
+none
+false
+TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
+C:\Users\Alyne\Documents\Estudos\IFRO\Projeto de DS\SisMeio\Projeto\App.xaml
+191909495720
+
+34-1256197732
+202-337423082
+AtualizarProduto.xaml;CadastroCliente.xaml;CadastroFuncionario.xaml;CadastroProduto.xaml;ConsultaCliente.xaml;ConsultaCliente2.xaml;ConsultaCompra.xaml;ConsultarCompra2.xaml;ConsultarEstoque.xaml;ConsultarFuncionario.xaml;ConsultarVendas.xaml;ConsultarVendas2.xaml;ControlarGastos.xaml;Login.xaml;MainWindow.xaml;RealizarVendas.xaml;RelatorioAP.xaml;RelatorioGastos.xaml;TelaInicial.xaml;
+
+False
+
