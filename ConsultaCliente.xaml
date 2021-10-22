@@ -1,0 +1,122 @@
+﻿<Window x:Class="Sismeio.ConsultaCliente"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Sismeio"
+        mc:Ignorable="d"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        
+        Title="ConsultaCliente" Height="600" Width="900" MaxHeight="900" MaxWidth="1200" MinHeight="50" MinWidth="50" WindowStartupLocation="CenterScreen">
+    <Grid MaxHeight="800" MaxWidth="1200" MinHeight="100" MinWidth="100">
+
+
+        <DataGrid 
+                    x:Name="dataGridCliente"
+                    IsReadOnly="true"
+                    AutoGenerateColumns="False"
+                    AlternatingRowBackground="#FFE5E5E5"
+                    AlternationCount="8"
+                    Margin="80,260,430,106" AutomationProperties.Name="dataGridCliente" Grid.ColumnSpan="5" Grid.Column="5" FrozenColumnCount="5" Grid.RowSpan="5" SelectionChanged="dataGridCliente_SelectionChanged">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Código" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Nome" Binding="{Binding Descricao}"/>
+                <DataGridTextColumn Header="Situação" Binding="{Binding ValorUnitario, ConverterCulture='pt-Br', StringFormat=C}"/>
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+        
+        <Button
+        Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}"
+        ToolTip="MaterialDesignFloatingActionMiniDarkButton" Margin="450,153,410,391" Background="#FF684AA6"/>
+        
+        <TextBlock 
+                    VerticalAlignment="Top"
+                     Margin="300,10,100,0"
+                    FontSize="35"
+                    Text="Consultar Cliente"/>
+
+        <MenuItem  Margin="10,10,779,542" Header="Menu" >
+
+            <MenuItem Header="Página Inicial"/>
+            <MenuItem Header="Realizar Venda"/>
+            <MenuItem Header="Cadastrar Produto"/>
+            <MenuItem Header="Cadastrar Funcionário"/>
+            <MenuItem Header="Cadastrar Cliente"/>
+            <MenuItem Header="Cadastrar Compra"/>
+            <MenuItem Header="Consultar Estoque"/>
+            <MenuItem Header="Consultar Funcionário"/>
+            <MenuItem Header="Consultar Cliente"/>
+            <MenuItem Header="Consultar Vendas"/>
+            <MenuItem Header="Controlar Gastos"/>
+
+        </MenuItem>
+        <ComboBox
+                
+                    Width="156"  Height="38" Margin="518,227,226,0"
+                    materialDesign:HintAssist.Hint="Consultar Compra"
+                    materialDesign:HintAssist.HintOpacity=".26"
+                    IsEditable="True" VerticalAlignment="Top">
+
+            <ComboBoxItem
+                        Content="João Silva" />
+            <ComboBoxItem
+                        Content="João Silva" />
+            <ComboBoxItem
+                        Content="João Silva" />
+
+        </ComboBox>
+
+        <ComboBox
+            x:Name="Filtros" 
+            materialDesign:HintAssist.Hint="Filtros" 
+            materialDesign:HintAssist.HintOpacity=".26" 
+            materialDesign:HintAssist.Foreground="Gray"
+            Margin ="470,202,335,0" Width="95" Height="40" VerticalAlignment="Top">
+
+            <ComboBoxItem
+                        Content="Devedor" />
+            <ComboBoxItem
+                        Content="Não Devedor" />
+
+        </ComboBox>
+        <Button 
+                        x:Name="btnnovo" 
+                        Content="Novo" 
+                        Margin="733,161,34,391" 
+                        Cursor="Hand" 
+                        Height="32" ClickMode="Press"/>
+        <Button 
+                        x:Name="btnconsul" 
+                        Content="Consultar" 
+                        Margin="733,369,26,183" 
+                        Cursor="Hand" 
+                        Height="32" ClickMode="Press"/>
+
+        <Button 
+                        x:Name="btexcluir" 
+                        Content="Excluir" 
+                        Margin="733,314,26,238" 
+                        Cursor="Hand" 
+                        Height="32" ClickMode="Press" RenderTransformOrigin="0.928,-1.446"/>
+        <Button 
+                        x:Name="btnfechar" 
+                        Content="Fechar" 
+                        Margin="733,515,26,37" 
+                        Cursor="Hand" 
+                        Height="32" ClickMode="Press" Click="btnfechar_click"/>
+        <Label Content="Pesquisar" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="66,116,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.66,0.559"/>
+        <Rectangle HorizontalAlignment="Left" Height="48" Margin="66,149,0,0" Stroke="Black" VerticalAlignment="Top" Width="354"/>
+    </Grid>
+
+
+</Window>
