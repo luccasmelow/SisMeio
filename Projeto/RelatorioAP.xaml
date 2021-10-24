@@ -41,16 +41,16 @@
         </materialDesign:ColorZone>
 
         <materialDesign:PackIcon Kind="Magnify" Margin="337,41,0,0" Height="21" Width="27" Grid.Row="1"/>
-        <TextBlock
-                    FontSize="35"
-<<<<<<< Updated upstream:Projeto/RelatorioAP.xaml
-                    Text="Relatório de Produtos" RenderTransformOrigin="0.881,0.436" Margin="228,5,0,26" HorizontalAlignment="Left" Width="345"/>
-=======
-                    Text="Relatório de Produtos" RenderTransformOrigin="0.881,0.436" Margin="228,5,227,26"/>
->>>>>>> Stashed changes:RelatorioAP.xaml
+        <TextBlock FontSize="35">
 
-        <ComboBox Grid.Row="1"
-  materialDesign:HintAssist.Hint="" Height="26" Margin="128,36,474,0" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top">
+                   < Text="Relatório de Produtos" RenderTransformOrigin="0.881,0.436" Margin="228,5,0,26" HorizontalAlignment="Left" Width="345"
+                   < Text="Relatório de Produtos" RenderTransformOrigin="0.881,0.436" Margin="228,5,227,26"/>
+
+       </TextBlock>
+            
+            
+            <ComboBox Grid.Row="1"
+           materialDesign:HintAssist.Hint="" Height="26" Margin="128,36,474,0" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top">
             <ComboBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleY="1"/>
@@ -60,12 +60,11 @@
                 </TransformGroup>
             </ComboBox.RenderTransform>
             <ComboBoxItem
-    Content="Código" />
-            <ComboBoxItem
-    Content="Nome" />
+              Content="Código" />
+            <ComboBoxItem Content="Nome" />
             <ComboBoxItem
    
-    Content="Marca" />
+              Content="Marca" />
         </ComboBox>
 
         <Label Margin="10,39,658,0" FontFamily = " Lucida Sans Unicode " FontSize = " 14" RenderTransformOrigin="0,66" Grid.Row="1" Height="26" VerticalAlignment="Top">FILTRAR POR:</Label>
@@ -89,7 +88,7 @@
 
 
             <DataGrid.Columns>
-<<<<<<< Updated upstream:Projeto/RelatorioAP.xaml
+
                 <DataGridTemplateColumn Header="Selecionar">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -98,8 +97,7 @@
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
 
-=======
->>>>>>> Stashed changes:RelatorioAP.xaml
+
                 <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
                 <DataGridTextColumn Header="Marca" Binding="{Binding Marca}"/>
                 <DataGridTextColumn Header="Descrição" Binding="{Binding Descricao}"/>
@@ -122,11 +120,11 @@
                 ToolTip="MaterialDesignFlatAccentBackgroundButton"
                 Content="VER" Margin="469,3,242,35" Grid.Row="2" Cursor="Hand" />
         <Button x:Name="btnVoltar"  Content="VOLTAR"  HorizontalAlignment="Left" Margin="683,3,0,0" Grid.Row="2" VerticalAlignment="Top" Click="btnVoltar_Click" Cursor="Hand"/>
-<<<<<<< Updated upstream:Projeto/RelatorioAP.xaml
+
         <Button x:Name="btnAlterar"  Content="ALTERAR" Margin="578,3,128,0" Grid.Row="2" VerticalAlignment="Top" Click="btnAlterar_Click" Cursor="Hand"/>
-=======
+
         <Button x:Name="btnAlterar"  Content="ALTERAR" Margin="582,3,128,0" Grid.Row="2" VerticalAlignment="Top" Click="btnAlterar_Click" Cursor="Hand"/>
->>>>>>> Stashed changes:RelatorioAP.xaml
+
 
 
 

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Sismeio
+namespace Sismeio.Models
 {
-    class Vendas
+    public class Vendas
     {
         public int Codigo { get; set; }
 

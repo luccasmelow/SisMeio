@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Sismeio
+namespace Sismeio.Models
 {
 	public static class ValidaCPF
 	{

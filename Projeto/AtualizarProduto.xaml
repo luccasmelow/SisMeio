@@ -42,9 +42,9 @@
                     <TranslateTransform X="-0.582" Y="0.022"/>
                 </TransformGroup>
             </materialDesign:ColorZone.RenderTransform>
-<<<<<<< Updated upstream:Projeto/AtualizarProduto.xaml
+
         
-=======
+
 >>>>>>> Stashed changes:AtualizarProduto.xaml
             <StackPanel Orientation="Horizontal" Margin="1,-1,0,-2" HorizontalAlignment="Left" Width="796"/>
         </materialDesign:ColorZone>
