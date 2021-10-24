@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace Sismeio
 {
@@ -36,6 +37,25 @@ namespace Sismeio
 
 
 
+        }
+        public MySqlCommand Query()
+        {
+            try
+            {
+                comand = conection.CreateCommand();
+                comand.CommandType = CommandType.Text;
+
+                return comand; 
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public void Close()
+        {
+            conection.Close();
         }
 
 
