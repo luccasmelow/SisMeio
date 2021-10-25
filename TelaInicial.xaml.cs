@@ -9,6 +9,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Sismeio.Base;
+using Sismeio.Models;
+
 
 namespace Sismeio
 {
@@ -54,6 +57,8 @@ namespace Sismeio
 
             window.Owner = this;
             window.ShowDialog();
+
+           Insert_Teste();
         }
 
         private void btnFuncionarios_Click(object sender, RoutedEventArgs e)
@@ -143,6 +148,32 @@ namespace Sismeio
             window.Owner = this;
             window.ShowDialog();
         }
+
+        private void Insert_Teste()
+        {
+            try
+            {
+                Gasto gastos = new Gasto();
+                gastos.Valor = 58.4;
+                gastos.Data = DateTime.Now;
+                gastos.Descricao = "Agua";
+                gastos.Caixa = 2;
+
+
+                GastosDAO gastosDAO = new GastosDAO();
+                gastosDAO.Insert(gastos);
+
+                MessageBox.Show("Gasto cadastrado com sucesso", "Sucesso", MessageBoxButton.OK);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+
+        }
+
 
     }
 }

@@ -9,6 +9,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Sismeio.Models;
 
 namespace Sismeio
 {
@@ -36,43 +37,45 @@ namespace Sismeio
 
         private void ControlarGastos_Loaded(object sender, RoutedEventArgs e)
         {
-            List<Despesa> ListaGastos = new List<Despesa>();
+            //List<Despesa> ListaGastos = new List<Despesa>();
 
 
-            ListaGastos.Add(new Despesa()
-            {
-                id= 0158,
-                descricao = "Conta de Energia",
-                valordesp = 500.97
+            //ListaGastos.Add(new Despesa()
+            //{
+              //  id= 0158,
+               // descricao = "Conta de Energia",
+                //valordesp = 500.97
 
 
-            });
-            ListaGastos.Add(new Despesa()
-            {
-                id = 0159,
-                descricao = "Água",
-                valordesp = 150.77
+           // });
+           // ListaGastos.Add(new Despesa()
+           // {
+             //   id = 0159,
+               // descricao = "Água",
+              //  valordesp = 150.77
 
 
-            });
-            ListaGastos.Add(new Despesa()
-            {
-                id = 0160,
-                descricao = "Pedido Arezzo",
-                valordesp = 2000.99
+           // });
+           // ListaGastos.Add(new Despesa()
+           // {
+              //  id = 0160,
+               // descricao = "Pedido Arezzo",
+               // valordesp = 2000.99
 
 
-            });
+           // });
 
 
 
 
-            dataGridGastos.ItemsSource = ListaGastos;
+           // dataGridGastos.ItemsSource = ListaGastos;
         }
         
         private void mnuInicial_Click(object sender, RoutedEventArgs e)
         {
-            
+            TelaInicial vstelaInicial = new TelaInicial();
+
+            vstelaInicial.ShowDialog();
         }
 
         private void mnuRealizarVenda_Click(object sender, RoutedEventArgs e)
@@ -100,6 +103,7 @@ namespace Sismeio
         private void mnuCadastrarCompra_Click(object sender, RoutedEventArgs e)
         {
         }
+    
 
         private void mnuConsultarEstoque_Click(object sender, RoutedEventArgs e)
         {
@@ -110,19 +114,25 @@ namespace Sismeio
 
         private void mnuConsultarFuncionario_Click(object sender, RoutedEventArgs e)
         {
-            
+            ConsultarFuncionario vsConsultarFuncionario = new ConsultarFuncionario();
+
+            vsConsultarFuncionario.ShowDialog();
         }
 
         private void mnuConsultarCliente_Click(object sender, RoutedEventArgs e)
         {
             ConsultaCliente vsConsultaCliente = new ConsultaCliente();
 
+
             vsConsultaCliente.ShowDialog();
+            
         }
 
         private void mnuConsultarVenda_Click(object sender, RoutedEventArgs e)
         {
-            
+            ConsultarVendas vsConsultarVendas = new ConsultarVendas();
+
+            vsConsultarVendas.ShowDialog();
         }
 
         private void mnuControlarGastos_Click(object sender, RoutedEventArgs e)

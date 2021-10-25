@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Data;
 using MySql.Data.MySqlClient;
 
 namespace Sismeio.Base
@@ -13,21 +14,26 @@ namespace Sismeio.Base
 
         private static string user = "root";
 
-        private static string password = "root";
+        private static string password = "";
 
         private static string dbname = "bd_equipe_snow";
 
-        private static MySqlConnection conection;
+        private static string sslmode = "none";
 
-        private static MySqlCommand comand;
+
+
+
+        private static MySqlConnection connection;
+
+        private static MySqlCommand command;
 
 
         public Conexao()
         {
             try
             {
-                conection = new MySqlConnection($"server={host};user={user};database={dbname};port={port}; password={password}");
-                conection.Open();
+                connection = new MySqlConnection($"server={host};user={user};database={dbname};port={port}; password={password}; sslmode={sslmode}");
+                connection.Open();
             }
             catch(Exception)
             {
@@ -36,6 +42,29 @@ namespace Sismeio.Base
 
 
 
+        }
+
+        public MySqlCommand Query()
+        {
+            try
+            {
+                command = connection.CreateCommand();
+                command.CommandType = CommandType.Text;
+
+                return command;
+            }
+            catch(Exception)
+            {
+                throw;
+            }
+
+           
+
+        }
+
+        public void Close()
+        {
+            connection.Close();
         }
 
 

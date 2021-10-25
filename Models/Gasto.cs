@@ -11,9 +11,9 @@ namespace Sismeio.Models
         public double Valor { get; set; }
         public DateTime Data { get; set; }
 
-        public string descricao  { get; set; }
+        public string Descricao  { get; set; }
 
-        public int caixa { get; set; }
+        public int Caixa { get; set; }
 
 
 

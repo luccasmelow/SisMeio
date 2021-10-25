@@ -154,9 +154,9 @@
                     Margin="20 20 490 20" SelectionChanged="DataGrid_SelectionChanged">
                     
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Id" Binding="{Binding id}"/>
-                        <DataGridTextColumn Header="Descrição" Binding="{Binding descricao}"/>
-                        <DataGridTextColumn Header="Valor" Binding="{Binding valordesp, ConverterCulture='pt-Br', StringFormat=C}"/>
+                        <DataGridTextColumn Header="Valor" Binding="{Binding Valor, ConverterCulture='pt-Br', StringFormat=C}"/>
+                        <DataGridTextColumn Header="Data" Binding="{Binding Data}"/>
+                        <DataGridTextColumn Header="Descrição" Binding="{Binding Descricao}"/>
 
                     </DataGrid.Columns>
 

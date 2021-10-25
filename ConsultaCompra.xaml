@@ -13,7 +13,7 @@
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="ConsultaCompra" Height="500" Width="800" WindowStartupLocation="CenterScreen">
+        Title="ConsultaCompra" MaxHeight="500" MaxWidth="800" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid Height="300" VerticalAlignment="Top" Margin="0,134,0,0">
             <Grid.ColumnDefinitions>

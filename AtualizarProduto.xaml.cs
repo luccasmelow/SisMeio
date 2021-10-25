@@ -142,5 +142,15 @@ namespace Sismeio
 
             vsRelatorioGastos.ShowDialog();
         }
+
+        private void cancelar_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btn_salvar(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

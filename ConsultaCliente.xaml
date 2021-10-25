@@ -14,8 +14,8 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         
-        Title="ConsultaCliente" Height="600" Width="900" MaxHeight="900" MaxWidth="1200" MinHeight="50" MinWidth="50" WindowStartupLocation="CenterScreen">
-    <Grid MaxHeight="800" MaxWidth="1200" MinHeight="100" MinWidth="100">
+        Title="ConsultaCliente"  MaxHeight="900" MaxWidth="1000"  WindowStartupLocation="CenterScreen">
+    <Grid MaxHeight="800" MaxWidth="1200">
 
 
         <DataGrid 
@@ -34,11 +34,19 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        
+
         <Button
         Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}"
-        ToolTip="MaterialDesignFloatingActionMiniDarkButton" Margin="450,153,410,391" Background="#FF684AA6"/>
-        
+        ToolTip="MaterialDesignFloatingActionMiniDarkButton"  Margin="450,153,410,391"  Background="#FF6539B7">
+
+            <Image Source= "/img/pesquisar.png " Width="15"/>
+
+
+        </Button>
+
+
+
+
         <TextBlock 
                     VerticalAlignment="Top"
                      Margin="300,10,100,0"
@@ -81,7 +89,7 @@
             materialDesign:HintAssist.Hint="Filtros" 
             materialDesign:HintAssist.HintOpacity=".26" 
             materialDesign:HintAssist.Foreground="Gray"
-            Margin ="470,202,335,0" Width="95" Height="40" VerticalAlignment="Top">
+            Margin ="518,162,287,0" Width="95" Height="40" VerticalAlignment="Top">
 
             <ComboBoxItem
                         Content="Devedor" />
