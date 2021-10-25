@@ -9,6 +9,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Sismeio.Models;
 
 namespace Sismeio
 {
@@ -25,18 +26,18 @@ namespace Sismeio
 
         private void ConsultarCliente_Loaded(object sender, RoutedEventArgs e)
         {
-            List<Cliente> listacliente = new List<Cliente>();
+            //List<Cliente> listacliente = new List<Cliente>();
 
-            for (int i = 0; i < 10; i++)
-            {
+           // for (int i = 0; i < 10; i++)
+          //  {
 
-                listacliente.Add(new Cliente()
-                {
-                    codigo = i + 1,
-                    nome = "João Alves" + i,
-                    situacao = "Devedor"
-                }); dataGridCliente.ItemsSource = listacliente;
-            }
+                //listacliente.Add(new Cliente()
+              //  {
+                    //codigo = i + 1,
+                    //nome = "João Alves" + i,
+                   // situacao = "Devedor"
+               // }); dataGridCliente.ItemsSource = listacliente;
+            //}
         }
   
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -77,5 +78,7 @@ namespace Sismeio
         {
 
         }
+
+        
     }
 }

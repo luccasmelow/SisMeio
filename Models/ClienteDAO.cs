@@ -45,6 +45,10 @@ namespace Sismeio.Models
 
                 var result = query.ExecuteNonQuery();
 
+                if (result == 0)
+                    throw new Exception("O registro não foi inserido, Tente novamente");
+
+
             }
             catch (Exception e)
             {

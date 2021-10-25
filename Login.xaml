@@ -17,7 +17,7 @@
         Background="#ffffff"
         FontFamily="{DynamicResource MaterialDesignFont}"
         
-        Title="Login" Height="600" Width="800" WindowStartupLocation="CenterScreen">
+        Title="Login" MaxHeight="600" MaxWidth="800" WindowStartupLocation="CenterScreen">
 
     <Grid>
         <StackPanel Margin="193,109,193,78" RenderTransformOrigin="0.5,0.449">

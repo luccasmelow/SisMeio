@@ -29,7 +29,7 @@ namespace Sismeio.Models
 
 		public string CPF { get; set; }
 
-		public string DataNascimento { get; set; }
+		public DateTime DataNascimento { get; set; }
 
 		public string Sexo { get; set; }
 
