@@ -156,5 +156,12 @@ namespace Sismeio
 
             vsRelatorioGastos.ShowDialog();
         }
+
+        private void btnCadastrar_Click_1(object sender, RoutedEventArgs e)
+        {
+            CadastroGasto vsCadastroGasto = new CadastroGasto();
+
+            vsCadastroGasto.ShowDialog();
+        }
     }
 }

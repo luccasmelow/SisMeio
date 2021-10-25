@@ -164,7 +164,7 @@
                 </DataGrid>
             </StackPanel>
 
-            <StackPanel Grid.Row="1" Margin="0,358,0,41">
+            <StackPanel Grid.Row="1"  Margin="0,358,0,41">
 
                 <Button 
                     x:Name="btnRelatorio" 
@@ -175,6 +175,17 @@
                     ClickMode="Press" 
                     HorizontalAlignment="Left" 
                     VerticalAlignment="Bottom" Click="btnRelatorio_Click_1"
+                 />
+
+                <Button 
+                    x:Name="btnCadastrar" 
+                    Content="Cadastrar Gasto" 
+                    Margin="-400 -50 5 0"
+                    Cursor="Hand" 
+                    Height="32" Width="140" 
+                    ClickMode="Press" 
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Bottom" Click="btnCadastrar_Click_1"
                  />
             </StackPanel>
 

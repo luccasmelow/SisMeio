@@ -58,7 +58,7 @@ namespace Sismeio
             window.Owner = this;
             window.ShowDialog();
 
-           Insert_Teste();
+           //Insert_Teste();
         }
 
         private void btnFuncionarios_Click(object sender, RoutedEventArgs e)
@@ -151,6 +151,7 @@ namespace Sismeio
 
         private void Insert_Teste()
         {
+            /*
             try
             {
                 Gasto gastos = new Gasto();
@@ -170,6 +171,8 @@ namespace Sismeio
             {
                 MessageBox.Show(ex.Message, "Erro", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+
+            */
 
 
         }
