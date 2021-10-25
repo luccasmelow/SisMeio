@@ -28,6 +28,7 @@ namespace Sismeio
 
             window.Owner = this;
             window.ShowDialog();
+            window.Close();
         }
     }
 }
