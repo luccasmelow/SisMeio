@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace Sismeio
 {
@@ -29,13 +30,29 @@ namespace Sismeio
                 conection = new MySqlConnection($"server={host};user={user};database={dbname};port={port}; password={password}");
                 conection.Open();
             }
-            catch(Exception)
+            catch (Exception)
             {
                 throw;
             }
+        }
 
+        public MySqlCommand Query()
+        {
+            try
+            {
+                comand = conection.CreateCommand();
+                comand.CommandType = CommandType.Text;
 
-
+                return comand;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public void Close()
+        {
+            conection.Close();
         }
 
 
@@ -43,3 +60,4 @@ namespace Sismeio
 
     }
 }
+

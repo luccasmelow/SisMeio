@@ -37,7 +37,7 @@ namespace Sismeio.Models
                 query.Parameters.AddWithValue("@nome", t.Nome);
                 query.Parameters.AddWithValue("@cpf", t.CPF);
                 query.Parameters.AddWithValue("@rg", t.RG);
-                query.Parameters.AddWithValue("@data_nasc", t.DataNascimento.ToString("yyyy - MM - DD")); //'18/02/2020 -> '2020/02/18'
+                query.Parameters.AddWithValue("@data_nasc", t.DataNascimento); //'18/02/2020 -> '2020/02/18'
                 query.Parameters.AddWithValue("@sexo", t.Sexo);
                 query.Parameters.AddWithValue("@telefone", t.Telefone);
                 query.Parameters.AddWithValue("@situacao", t.Situacao);
