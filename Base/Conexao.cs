@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream
-using System;
-=======
 
-﻿using System;
->>>>>>> Stashed changes
+using System;
 using System.Collections.Generic;
 using System.Text;
 using MySql.Data.MySqlClient;
@@ -73,7 +69,3 @@ namespace Sismeio.Base
         }
     }
 }
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes

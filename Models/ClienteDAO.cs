@@ -26,7 +26,46 @@ namespace Sismeio.Models
 
         public Cliente GetById(int codigo)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var query = conec.Query();
+                query.CommandText = "SELECT * FROM cliente WHERE cod_cli = @codigo";
+
+                query.Parameters.AddWithValue("@codigo", codigo);
+
+                MySqlDataReader reader = query.ExecuteReader();
+
+                if (!reader.HasRows )
+                {
+                    throw new Exception("Nenhum registro encontrado!");
+                }
+
+                var cliente = new Cliente();
+
+                while (reader.Read())
+                {
+
+                    cliente.Codigo = reader.GetInt32("cod_cli");
+                    cliente.Nome = reader.GetString("nome_cli");
+                    cliente.RG = reader.GetString("rg_cli");
+                    cliente.CPF = reader.GetString("cpf_cli");
+                    cliente.Telefone = reader.GetString("telefone_cli");
+                    cliente.DataNascimento = reader.GetDateTime("data_nasc_cli");
+
+                }
+                return cliente;
+            }
+
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+
+            }
+
+
         }
 
         public void Insert(Cliente t)
@@ -34,7 +73,7 @@ namespace Sismeio.Models
             try
             {
                 var query = conec.Query();
-                query.CommandText = "INSERT INTO cliente (nome_cli, cpf_cli, rg_cli, data_nasc_cli, sexo_cli, telefone_cli, situacao_cli, historico_cli) VALUES (@NOME, @CPF, @RG, @data_nasc, @sexo, @telefone, @situacao, @historico)";
+                query.CommandText = "INSERT INTO cliente (nome_cli = @nome, cpf_cli = @cpf, rg_cli = @rg, data_nasc_cli = @data_nasc, telefone_cli = @telefone, situacao_cli =  @situacao, historico_cli = @historico WHERE cod_cli = @id";
 
                 query.Parameters.AddWithValue("@nome", t.Nome);
                 query.Parameters.AddWithValue("@cpf", t.CPF);
@@ -43,12 +82,14 @@ namespace Sismeio.Models
                 query.Parameters.AddWithValue("@sexo", t.Sexo);
                 query.Parameters.AddWithValue("@telefone", t.Telefone);
                 query.Parameters.AddWithValue("@situacao", t.Situacao);
-                query.Parameters.AddWithValue("@historico", t.Historico);
+
+                query.Parameters.AddWithValue("@id", t.Codigo);
+
 
                 var result = query.ExecuteNonQuery();
 
                 if (result == 0)
-                    throw new Exception("O registro não foi inserido, Tente novamente");
+                    throw new Exception("O registro não foi inserido. Tente novamente");
 
 
             }

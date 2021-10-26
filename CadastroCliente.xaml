@@ -20,6 +20,13 @@
             <RowDefinition Height="7*"/>
             <RowDefinition Height="218*"/>
         </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="1" Margin="10">
+
+            <StackPanel Orientation="Horizontal"/>
+        </StackPanel>
+
+
         <Label Content="Nome" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="71,153,0,0" FontSize="16"  FontFamily="Lucida Sans Unicode" FontWeight="Bold" Grid.Row="1"/>
         <Label Content="CPF" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="384,153,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.057,4.741" Grid.Row="1"/>
         <Label Content="RG" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="709,153,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.675,0.825" Grid.Row="1"/>
@@ -49,67 +56,7 @@
 
         Style="{StaticResource MaterialDesignOutlinedDatePicker}" Margin="78,303,965,0" Grid.Row="1" VerticalAlignment="Top" />
         <TextBox TextWrapping="Wrap" Margin="757,519,275,111" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam"  Name="cidade"/>
-        <Menu Height="20" Width="106" Margin="59,29,1105,621" Grid.Row="1">
-            <MenuItem Padding ="1,0,0,0" Header="Menu" Height="20" Width="93" RenderTransformOrigin="0.5,0.5">
-
-                <MenuItem x:Name="mnuInicial"
-                          Header="_Página Inicial"  
-                          Height="Auto" Width="Auto" Click="mnuInicial_Click"
-                        />
-                <Separator/>
-                <MenuItem x:Name="mnuRealizarVenda"
-                          Header="_Realizar Venda"  
-                          Height="Auto" Width="Auto" Click="mnuRealizarVenda_Click"
-                        />
-                <Separator/>
-                <MenuItem x:Name="mnuCadastrarProduto"
-                          Header="_Cadastrar Produto"  
-                          Height="Auto" Width="Auto" Click="mnuCadastrarProduto_Click"
-                        />
-                <Separator/>
-                <MenuItem x:Name="mnuCadastrarFuncionario"
-                          Header="_Cadastrar Funcionário"  
-                          Height="Auto" Width="Auto" Click="mnuCadastrarFuncionario_Click"
-                        />
-                <Separator/>
-                <MenuItem x:Name="mnuCadastrarCliente"
-                          Header="_Cadastrar Cliente"  
-                          Height="Auto" Width="Auto" Click="mnuCadastrarCliente_Click"
-                        />
-                <Separator/>
-                <MenuItem x:Name="mnuCadastrarCompra"
-                          Header="_Cadastrar Compra"  
-                          Height="Auto" Width="Auto" Click="mnuCadastrarCompra_Click"
-                        />
-                <Separator/>
-                <MenuItem x:Name="mnuConsultarEstoque"
-                          Header="_Consultar Estoque"  
-                          Height="Auto" Width="Auto" Click="mnuConsultarEstoque_Click"
-                        />
-                <Separator/>
-                <MenuItem x:Name="mnuConsultarFuncionario"
-                          Header="_Consultar Funcionário"  
-                          Height="Auto" Width="Auto" Click="mnuConsultarFuncionario_Click"
-                        />
-                <Separator/>
-                <MenuItem x:Name="mnuConsultarCliente"
-                          Header="_Consultar Cliente"  
-                          Height="Auto" Width="Auto" Click="mnuConsultarCliente_Click"
-                        />
-                <Separator/>
-                <MenuItem x:Name="mnuConsultarVenda"
-                          Header="_Consultar Vendas"  
-                          Height="Auto" Width="Auto" Click="mnuConsultarVenda_Click"
-                        />
-                <Separator/>
-                <MenuItem x:Name="mnuControlarGastos"
-                          Header="_Controlar Gastos"  
-                          Height="Auto" Width="Auto" Click="mnuControlarGastos_Click"
-                        />
-            </MenuItem>
-
-
-        </Menu>
+        <Menu Height="20" Width="106" Margin="59,29,1105,621" Grid.Row="1"/>
 
         <TextBlock
                     VerticalAlignment="Top"
@@ -130,6 +77,71 @@
                         Cursor="Hand" 
                         Height="32" ClickMode="Press" Grid.Row="1" Click="bttfechar_Click_1"/>
         <TextBox TextWrapping="Wrap" Margin="73,186,960,437" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam"  x:Name="Nome"/>
+        <MenuItem Padding ="1,0,0,0" Header="Menu" RenderTransformOrigin="0.5,0.5" Click="MenuItem_Click" Margin="59,29,1091,609" Grid.Row="1">
+            <MenuItem.Icon>
+                <Image Source="/img/menu.png"/>
+            </MenuItem.Icon>
+
+            <MenuItem x:Name="mnuInicial"
+                          Header="_Página Inicial"  
+                          Height="Auto" Width="Auto" Click="mnuInicial_Click"
+                        />
+            <Separator/>
+            <MenuItem x:Name="mnuRealizarVenda"
+                          Header="_Realizar Venda"  
+                          Height="Auto" Width="Auto" Click="mnuRealizarVenda_Click"
+                        />
+            <Separator/>
+            <MenuItem x:Name="mnuCadastrarProduto"
+                          Header="_Cadastrar Produto"  
+                          Height="Auto" Width="Auto" Click="mnuCadastrarProduto_Click"
+                        />
+            <Separator/>
+            <MenuItem x:Name="mnuCadastrarFuncionario"
+                          Header="_Cadastrar Funcionário"  
+                          Height="Auto" Width="Auto" Click="mnuCadastrarFuncionario_Click"
+                        />
+            <Separator/>
+            <MenuItem x:Name="mnuCadastrarCliente"
+                          Header="_Cadastrar Cliente"  
+                          Height="Auto" Width="Auto" Click="mnuCadastrarCliente_Click"
+                        />
+            <Separator/>
+            <MenuItem x:Name="mnuCadastrarCompra"
+                          Header="_Cadastrar Compra"  
+                          Height="Auto" Width="Auto" Click="mnuCadastrarCompra_Click"
+                        />
+            <Separator/>
+            <MenuItem x:Name="mnuConsultarEstoque"
+                          Header="_Consultar Estoque"  
+                          Height="Auto" Width="Auto" Click="mnuConsultarEstoque_Click"
+                        />
+            <Separator/>
+            <MenuItem x:Name="mnuConsultarFuncionario"
+                          Header="_Consultar Funcionário"  
+                          Height="Auto" Width="Auto" Click="mnuConsultarFuncionario_Click"
+                        />
+            <Separator/>
+            <MenuItem x:Name="mnuConsultarCliente"
+                          Header="_Consultar Cliente"  
+                          Height="Auto" Width="Auto" Click="mnuConsultarCliente_Click"
+                        />
+            <Separator/>
+            <MenuItem x:Name="mnuConsultarVenda"
+                          Header="_Consultar Vendas"  
+                          Height="Auto" Width="Auto" Click="mnuConsultarVenda_Click"
+                        />
+            <Separator/>
+            <MenuItem x:Name="mnuControlarGastos"
+                          Header="_Controlar Gastos"  
+                          Height="Auto" Width="Auto" Click="mnuControlarGastos_Click"
+                        />
+        </MenuItem>
+        <TextBox
+                x:Name="Codigo"
+                materialDesign:HintAssist.Hint="Codigo"
+                materialDesign:TextFieldAssist.HasClearButton="True"
+                Style="{StaticResource MaterialDesignOutlinedTextBox}" IsEnabled="False" Margin="68,86,1061,535" Grid.Row="1"/>
 
 
 

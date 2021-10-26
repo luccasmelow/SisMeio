@@ -85,8 +85,27 @@ namespace Sismeio
 
         private void btnnovo_Click(object sender, RoutedEventArgs e)
         {
-            CadastroCliente cadastrocli = new CadastroCliente();
-            cadastrocli.Show();
+            var window = new CadastroCliente();
+            window.ShowDialog();
+
+            LoadDataGrid();
+
+        }
+
+        private void btnVisualizar_Click(object sender, RoutedEventArgs e)
+        {
+            var cliente = dataGridcli.SelectedItem as Cliente;
+
+            try
+            {
+                var dao = new ClienteDAO();
+                var cli = dao.GetById(1000);
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Excessão", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
 
         }
     }

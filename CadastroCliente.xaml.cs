@@ -10,15 +10,39 @@ namespace Sismeio
     /// </summary>
     public partial class CadastroCliente : Window
     {
+        private int _id;
+        private Cliente _cliente;
         public CadastroCliente()
         {
+            InitializeComponent();
+            Loaded += CadastroCliente_Loaded;
+        }
+        public CadastroCliente( int id)
+        {
+            _id = id; 
             InitializeComponent();
             Loaded += CadastroCliente_Loaded;
         }
 
         private void CadastroCliente_Loaded (object sender, RoutedEventArgs e)
         {
+            _cliente = new Cliente();
+            try
+            {
+                var dao = new ClienteDAO();
+                _cliente = dao.GetById(_id);
 
+                Codigo.Text = _cliente.Codigo.ToString();
+                Nome.Text = _cliente.Nome;
+                RG.Text = _cliente.RG;
+                CPF.Text = _cliente.CPF;
+                Telefone.Text = _cliente.Telefone;
+                _cliente.DataNascimento = DateTime.Now;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Excessão", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
 
@@ -144,6 +168,11 @@ namespace Sismeio
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
 
         }

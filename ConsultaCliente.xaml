@@ -82,7 +82,7 @@
                     Height="32" Width="110" 
                     ClickMode="Press" 
                     HorizontalAlignment="Left" 
-                    VerticalAlignment="Top"
+                    VerticalAlignment="Top" Click="btnVisualizar_Click"
                  />
         <Button 
                     x:Name="btnExcluir" 
