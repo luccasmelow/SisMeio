@@ -59,11 +59,11 @@ namespace Sismeio
             window.Owner = this;
             window.ShowDialog();
 
-<<<<<<< Updated upstream
+
            //Insert_Teste();
-=======
+
             Insert_Teste();
->>>>>>> Stashed changes
+
         }
 
         private void btnFuncionarios_Click(object sender, RoutedEventArgs e)
