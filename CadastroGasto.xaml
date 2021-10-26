@@ -31,7 +31,7 @@
             <TextBox x:Name="txtValor" materialDesign:HintAssist.Hint="Valor" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 10" Width="201"  Cursor="IBeam"/>
             <DatePicker x:Name ="dtPickerDataGasto" materialDesign:HintAssist.Hint="Data"  Margin="0 10" Width="201"/>
             <TextBox x:Name="txtDescricao" materialDesign:HintAssist.Hint="Descrição" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="201" />
-            <TextBox x:Name="txtCaixa" materialDesign:HintAssist.Hint="Caixa" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="201" />
+            <TextBox x:Name="txtCaixa" materialDesign:HintAssist.Hint="Caixa" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="201" Cursor="IBeam" />
           
 
 

@@ -32,14 +32,21 @@ namespace Sismeio
                 gastos.Valor = Convert.ToDouble(txtValor.Text);
                 gastos.Data = (DateTime)dtPickerDataGasto.SelectedDate;
                 gastos.Descricao = txtDescricao.Text;
-                gastos.Caixa = Convert.ToInt16(txtValor.Text);
+                gastos.Caixa = Convert.ToInt32(txtValor.Text);
 
 
                 GastosDAO gastosDAO = new GastosDAO();
                 gastosDAO.Insert(gastos);
 
-                MessageBox.Show("Gasto cadastrado com sucesso", "Sucesso", MessageBoxButton.OK);
-                this.Close();
+                MessageBox.Show("Gasto cadastrado com sucesso", "Sucesso", MessageBoxButton.OK, MessageBoxImage.Information);
+                var result = MessageBox.Show("Deseja prosseguir com o cadastro de gastos?", "Continuar?", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+                if (result == MessageBoxResult.No)
+
+                    this.Close();
+
+                else
+                    ClearInputs();
 
             }
             catch (Exception ex)
@@ -52,5 +59,18 @@ namespace Sismeio
         {
             this.Close();
         }
+
+        private void ClearInputs()
+        {
+          
+            txtValor.Text ="";
+            dtPickerDataGasto.SelectedDate = null;
+            txtDescricao.Text = "";
+            txtValor.Text = "";
+            txtCaixa.Text = "";
+
+        }
+
+
     }
 }
