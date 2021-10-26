@@ -127,7 +127,7 @@
                     AutoGenerateColumns="False"
                     AlternatingRowBackground="#FFE5E5E5"
                     AlternationCount="2" 
-                    Margin="10 40 5 0" AutomationProperties.Name="dataGridEstoque">
+                    Margin="10 40 5 0" AutomationProperties.Name="dataGridEstoque" SelectionChanged="dataGridEstoque_SelectionChanged">
 
                     <DataGrid.Columns>
 

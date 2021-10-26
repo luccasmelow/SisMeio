@@ -108,5 +108,28 @@ namespace Sismeio
             }
 
         }
+
+        private void btnExcluir_Click(object sender, RoutedEventArgs e)
+        {
+            var clienteSelected = dataGridcli.SelectedItem as Cliente;
+
+            var result = MessageBox.Show($"Tem certeza que deseja excluir o cliente {clienteSelected.Nome}", "Confirmação de Exclusão", MessageBoxButton.YesNo, MessageBoxImage.Warning); 
+            
+            try
+            {
+                if(result == MessageBoxResult.Yes)
+                {
+                    var dao = new ClienteDAO();
+                    dao.Delet(clienteSelected);
+                    LoadDataGrid();
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Excessão", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        
+        }
+
     }
 }

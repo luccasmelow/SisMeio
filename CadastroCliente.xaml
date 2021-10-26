@@ -51,7 +51,7 @@
         <TextBox TextWrapping="Wrap" Margin="140,450,905,178" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam" />
         <TextBox TextWrapping="Wrap" Margin="445,450,696,178" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam" />
         <TextBox TextWrapping="Wrap" Margin="482,517,635,112" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam" />
-        <DatePicker
+        <DatePicker x:Name="dtPickerDataNascimento"
         materialDesign:HintAssist.Hint="Janeiro"
 
         Style="{StaticResource MaterialDesignOutlinedDatePicker}" Margin="78,303,965,0" Grid.Row="1" VerticalAlignment="Top" />
@@ -141,7 +141,7 @@
                 x:Name="Codigo"
                 materialDesign:HintAssist.Hint="Codigo"
                 materialDesign:TextFieldAssist.HasClearButton="True"
-                Style="{StaticResource MaterialDesignOutlinedTextBox}" IsEnabled="False" Margin="68,86,1061,535" Grid.Row="1"/>
+                Style="{StaticResource MaterialDesignOutlinedTextBox}" IsEnabled="False" Text="" TextChanged="Codigo_TextChanged" Margin="53,70,1075,538" Grid.Row="1"/>
 
 
 

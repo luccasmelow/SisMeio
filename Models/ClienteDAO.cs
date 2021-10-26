@@ -21,7 +21,29 @@ namespace Sismeio.Models
         }
         public void Delet(Cliente t)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var query = conec.Query();
+                query.CommandText = "DELETE FROM cliente WHERE cod_cli = @id"; 
+
+                query.Parameters.AddWithValue("@id", t.Codigo);
+        
+
+                var result = query.ExecuteNonQuery();
+
+                if (result == 0)
+                    throw new Exception("O registro não foi excluído. Tente Novamente!");
+
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                conec.Close();
+            }
         }
 
         public Cliente GetById(int codigo)
@@ -73,18 +95,16 @@ namespace Sismeio.Models
             try
             {
                 var query = conec.Query();
-                query.CommandText = "INSERT INTO cliente (nome_cli = @nome, cpf_cli = @cpf, rg_cli = @rg, data_nasc_cli = @data_nasc, telefone_cli = @telefone, situacao_cli =  @situacao, historico_cli = @historico WHERE cod_cli = @id";
+                query.CommandText = "INSERT INTO cliente (nome_cli, cpf_cli, rg_cli, data_nasc_cli, telefone_cli, situacao_cli, historico_cli)" +
+                    " VALUES (@nome, @cpf, @rg, @data_nasc, @telefone, @situacao, @historico)";
 
                 query.Parameters.AddWithValue("@nome", t.Nome);
                 query.Parameters.AddWithValue("@cpf", t.CPF);
                 query.Parameters.AddWithValue("@rg", t.RG);
-                query.Parameters.AddWithValue("@data_nasc", t.DataNascimento.ToString("yyyy-MM-dd")); //'18/02/2020 -> '2020/02/18'
-                query.Parameters.AddWithValue("@sexo", t.Sexo);
+                query.Parameters.AddWithValue("@data_nasc", t.DataNascimento.ToString("yyyy-MM-dd")); //'18/02/2020 -> '2020/02/18' 
                 query.Parameters.AddWithValue("@telefone", t.Telefone);
                 query.Parameters.AddWithValue("@situacao", t.Situacao);
-
-                query.Parameters.AddWithValue("@id", t.Codigo);
-
+                query.Parameters.AddWithValue("@historico", t.Historico);
 
                 var result = query.ExecuteNonQuery();
 
@@ -140,7 +160,37 @@ namespace Sismeio.Models
 
         public void Update(Cliente t)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var query = conec.Query();
+                query.CommandText = " UPDATE cliente SET nome_cli = @nome, cpf_cli = @cpf, rg_cli = @rg, data_nasc_cli = @data_nasc, telefone_cli = @telefone, situacao_cli =  @situacao, historico_cli = @historico WHERE cod_cli = @id";
+
+                query.Parameters.AddWithValue("@nome", t.Nome);
+                query.Parameters.AddWithValue("@cpf", t.CPF);
+                query.Parameters.AddWithValue("@rg", t.RG);
+                query.Parameters.AddWithValue("@data_nasc", t.DataNascimento.ToString("yyyy-MM-dd")); //'18/02/2020 -> '2020/02/18'
+                query.Parameters.AddWithValue("@sexo", t.Sexo);
+                query.Parameters.AddWithValue("@telefone", t.Telefone);
+                query.Parameters.AddWithValue("@situacao", t.Situacao);
+
+                query.Parameters.AddWithValue("@id", t.Codigo);
+
+
+                var result = query.ExecuteNonQuery();
+
+                if (result == 0)
+                    throw new Exception("O registro não foi atualizado. Tente novamente");
+
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                conec.Close();
+            }
         }
     }
 }

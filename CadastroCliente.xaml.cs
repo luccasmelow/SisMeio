@@ -12,6 +12,7 @@ namespace Sismeio
     {
         private int _id;
         private Cliente _cliente;
+
         public CadastroCliente()
         {
             InitializeComponent();
@@ -27,22 +28,9 @@ namespace Sismeio
         private void CadastroCliente_Loaded (object sender, RoutedEventArgs e)
         {
             _cliente = new Cliente();
-            try
-            {
-                var dao = new ClienteDAO();
-                _cliente = dao.GetById(_id);
 
-                Codigo.Text = _cliente.Codigo.ToString();
-                Nome.Text = _cliente.Nome;
-                RG.Text = _cliente.RG;
-                CPF.Text = _cliente.CPF;
-                Telefone.Text = _cliente.Telefone;
-                _cliente.DataNascimento = DateTime.Now;
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Excessão", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
+            if (_id > 0)
+                Form();
         }
 
 
@@ -137,29 +125,81 @@ namespace Sismeio
         }
         private void btcadastrar_Click(object sender, RoutedEventArgs e)
         {
+              
+                _cliente.Nome = Nome.Text;
+                _cliente.CPF = CPF.Text;
+                _cliente.RG = RG.Text;
+                _cliente.DataNascimento = (DateTime)dtPickerDataNascimento.SelectedDate;
+                _cliente.Telefone = Telefone.Text;
+
+            SalvarInfo();
+        }
+
+        private void SalvarInfo()
+        {
             try
             {
-                Cliente cliente = new Cliente();
-                cliente.Nome = Nome.Text;
-                cliente.CPF = CPF.Text;
-                cliente.RG = RG.Text;
-                cliente.DataNascimento = DateTime.Now;
-                cliente.Telefone = Telefone.Text;
+                var dao = new ClienteDAO();
 
+                if (_cliente.Codigo == 0)
+                {
+                    dao.Insert(_cliente);
+                }
+                else
+                {
+                    dao.Update(_cliente);
 
-                ClienteDAO clientedao = new ClienteDAO();
-                clientedao.Insert(cliente);
-
+                    MessageBox.Show("Cadastro realizado com sucesso", "Sucesso", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
             }
             catch (Exception ex)
             {
-               
+                MessageBox.Show(ex.Message, "Não foi possível realizar o cadastro", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+        }
+        private void Form()
+        {
+            try
+            {
+                var dao = new ClienteDAO();
+                _cliente = dao.GetById(_id);
+
+                Codigo.Text = _cliente.Codigo.ToString();
+                Nome.Text = _cliente.Nome;
+                RG.Text = _cliente.RG;
+                CPF.Text = _cliente.CPF;
+                Telefone.Text = _cliente.Telefone;
+                dtPickerDataNascimento.SelectedDate = _cliente.DataNascimento;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Excessão", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+
+       private void ClearInputs()
+        {
+           Nome.Text = "";
+           CPF.Text = "";
+           RG.Text = "";
+           dtPickerDataNascimento.SelectedDate = null;
+           Telefone.Text = "";
+
         }
 
         private void bttfechar_Click_1(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            var result = MessageBox.Show("Tem certeza que deseja fechar esta janela?", "Sucesso", MessageBoxButton.YesNo, MessageBoxImage.Information);
+
+            if (result == MessageBoxResult.Yes)
+
+                this.Close();
+
+            else
+                ClearInputs();
+                
+            
         }
 
         private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
@@ -173,6 +213,11 @@ namespace Sismeio
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Codigo_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }

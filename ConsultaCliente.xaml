@@ -89,7 +89,7 @@
                     Content="Excluir"
                     Cursor="Hand" 
                     ClickMode="Press"
-                 Margin="749,410,29,144" RenderTransformOrigin="0.838,-2.655"
+                 Margin="749,410,29,144" RenderTransformOrigin="0.838,-2.655" Click="btnExcluir_Click"
                  />
     </Grid>
 

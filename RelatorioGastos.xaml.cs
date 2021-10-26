@@ -138,5 +138,10 @@ namespace Sismeio
         {
             this.Close();
         }
+
+        private void dataGridEstoque_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
