@@ -69,3 +69,7 @@ namespace Sismeio.Base
         }
     }
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> main

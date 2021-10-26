@@ -59,11 +59,11 @@ namespace Sismeio
             window.Owner = this;
             window.ShowDialog();
 
-<<<<<<< Updated upstream
+
            //Insert_Teste();
-=======
+
             Insert_Teste();
->>>>>>> Stashed changes
+
         }
 
         private void btnFuncionarios_Click(object sender, RoutedEventArgs e)
@@ -98,6 +98,7 @@ namespace Sismeio
             window.ShowDialog();
         }
 
+        
         private void BtnGestaoControle_Click(object sender, RoutedEventArgs e)
         {
             var window = new ControlarGastos();
@@ -105,6 +106,9 @@ namespace Sismeio
             window.Owner = this;
             window.ShowDialog();
         }
+        
+
+
 
         private void BtnCadastroClientes_Click(object sender, RoutedEventArgs e)
         {

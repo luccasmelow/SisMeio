@@ -4,6 +4,7 @@ using System.Text;
 using System.Windows;
 using Sismeio.Interfaces;
 using Sismeio.Base;
+using MySql.Data.MySqlClient;
 
 
 namespace Sismeio.Models
@@ -24,7 +25,46 @@ namespace Sismeio.Models
 
         public Gasto GetById(int codigo)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var query = conn.Query();
+                query.CommandText = "SELECT * FROM gastos WHERE cod_gas = @codigo";
+
+                query.Parameters.AddWithValue("@codigo", codigo);
+
+                MySqlDataReader reader = query.ExecuteReader();
+
+                var gasto = new Gasto();
+
+                while (reader.Read())
+                {
+
+
+                    //(DateTime)dtPickerDataGasto.SelectedDate
+                    gasto.Codigo = reader.GetInt32("cod_gas");
+                    gasto.Valor = reader.GetDouble("valor_gas");
+                    gasto.Data = reader.GetDateTime("data_gas");
+                    gasto.Descricao = reader.GetString("descricao");
+                    gasto.Caixa = reader.GetInt32("cod_cai_fk");
+
+
+
+                    
+                }
+
+              
+                
+                
+                return gasto;
+            }
+            catch(Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                conn.Query();
+            }
         }
 
         public void Insert(Gasto t)
@@ -52,11 +92,47 @@ namespace Sismeio.Models
             }
 
         }
-
+        
         public List<Gasto> List()
         {
-            throw new NotImplementedException();
+            try
+            {
+                List<Gasto> list = new List<Gasto>();
+
+                var query = conn.Query();
+                query.CommandText = "SELECT * FROM gastos";
+
+                MySqlDataReader reader = query.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    list.Add(new Gasto()
+                    {
+                        //(DateTime)dtPickerDataGasto.SelectedDate
+                        Codigo = reader.GetInt32("cod_gas"),
+                        Valor = reader.GetDouble("valor_gas"),
+                        Data = reader.GetDateTime("data_gas"),
+                        Descricao = reader.GetString("descricao"),
+                        Caixa = reader.GetInt32("cod_cai_fk")
+
+
+
+                    });
+                }
+
+                return list;
+            }
+            catch (Exception e)
+            {
+                throw e;
+
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
+        
 
         public void Update(Gasto t)
         {
