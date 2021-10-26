@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Sismeio.Models;
 
+
 namespace Sismeio
 {
     /// <summary>
@@ -26,18 +27,22 @@ namespace Sismeio
 
         private void ConsultarCliente_Loaded(object sender, RoutedEventArgs e)
         {
-            //List<Cliente> listacliente = new List<Cliente>();
+            LoadDataGrid();
+        }
+        private void LoadDataGrid()
+        {
+            try
+            {
+                var dao = new ClienteDAO();
 
-           // for (int i = 0; i < 10; i++)
-          //  {
+                dataGridcli.ItemsSource = dao.List();
+            
+            }
 
-                //listacliente.Add(new Cliente()
-              //  {
-                    //codigo = i + 1,
-                    //nome = "João Alves" + i,
-                   // situacao = "Devedor"
-               // }); dataGridCliente.ItemsSource = listacliente;
-            //}
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Excessão", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
   
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -46,13 +51,12 @@ namespace Sismeio
             consulcli.Show();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            CadastroCliente cadastrocli = new CadastroCliente();
-            cadastrocli.Show();
-        }
- 
+      
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
         {
 
         }
@@ -74,11 +78,16 @@ namespace Sismeio
             this.Close();
         }
 
-        private void dataGridCliente_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void dataGridcli_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            
         }
 
-        
+        private void btnnovo_Click(object sender, RoutedEventArgs e)
+        {
+            CadastroCliente cadastrocli = new CadastroCliente();
+            cadastrocli.Show();
+
+        }
     }
 }

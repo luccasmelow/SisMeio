@@ -1,8 +1,9 @@
+
 using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Data;
 using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace Sismeio.Base
 {
@@ -35,7 +36,7 @@ namespace Sismeio.Base
                 connection = new MySqlConnection($"server={host};user={user};database={dbname};port={port}; password={password}; sslmode={sslmode}");
                 connection.Open();
             }
-            catch(Exception)
+            catch (Exception)
             {
                 throw;
             }
@@ -53,12 +54,12 @@ namespace Sismeio.Base
 
                 return command;
             }
-            catch(Exception)
+            catch (Exception)
             {
                 throw;
             }
 
-           
+
 
         }
 
@@ -66,9 +67,6 @@ namespace Sismeio.Base
         {
             connection.Close();
         }
-
-
-
-
     }
 }
+

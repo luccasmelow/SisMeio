@@ -1,5 +1,7 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
+using Sismeio.Models;
 
 namespace Sismeio
 {
@@ -10,18 +12,15 @@ namespace Sismeio
     {
         public CadastroCliente()
         {
-            
+            InitializeComponent();
+            Loaded += CadastroCliente_Loaded;
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void CadastroCliente_Loaded (object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
-        {
-
-        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -112,6 +111,41 @@ namespace Sismeio
         {
             this.Close();
         }
+        private void btcadastrar_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Cliente cliente = new Cliente();
+                cliente.Nome = Nome.Text;
+                cliente.CPF = CPF.Text;
+                cliente.RG = RG.Text;
+                cliente.DataNascimento = DateTime.Now;
+                cliente.Telefone = Telefone.Text;
 
+
+                ClienteDAO clientedao = new ClienteDAO();
+                clientedao.Insert(cliente);
+
+            }
+            catch (Exception ex)
+            {
+               
+            }
+        }
+
+        private void bttfechar_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
