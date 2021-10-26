@@ -59,6 +59,7 @@ namespace Sismeio
             window.Owner = this;
             window.ShowDialog();
 
+
            //Insert_Teste();
 
             Insert_Teste();
