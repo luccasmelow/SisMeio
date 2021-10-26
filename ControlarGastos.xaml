@@ -145,7 +145,7 @@
                 <DataGrid x:Name="dataGridGastos" 
                     Grid.Column="0"
                     Grid.Row="1"
-                    Width="291" 
+                    Width="438" 
                     Height="220"
                     IsReadOnly="True"
                     AutoGenerateColumns="False"
@@ -154,6 +154,7 @@
                     Margin="20 20 490 20" SelectionChanged="DataGrid_SelectionChanged">
                     
                     <DataGrid.Columns>
+                        <DataGridTextColumn Header="Codigo" Binding="{Binding Codigo}"/>
                         <DataGridTextColumn Header="Valor" Binding="{Binding Valor, ConverterCulture='pt-Br', StringFormat=C}"/>
                         <DataGridTextColumn Header="Data" Binding="{Binding Data}"/>
                         <DataGridTextColumn Header="Descrição" Binding="{Binding Descricao}"/>
@@ -162,14 +163,14 @@
 
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <StackPanel Orientation="Horizontal">
-                                        <Button x:Name ="Button_acaovi" Style="{StaticResource MaterialDesignIconForegroundButton}"
+                                    <StackPanel Orientation="Horizontal" >
+                                        <Button x:Name ="Button_Vizualizar" Style="{StaticResource MaterialDesignIconForegroundButton}"
                                                 Content="{materialDesign:PackIcon Eye}"
-                                                ToolTip="Vizualizar Registro" Margin="0 0 5 0" ClickMode="Press"/>
+                                                ToolTip="Vizualizar Registro" Margin="0 0 5 0" ClickMode="Press" Click="Button_Vizualizar_Click"/>
 
-                                        <Button x:Name ="Button_acaode" Style="{StaticResource MaterialDesignIconForegroundButton}"
+                                        <Button x:Name ="Button_Delete" Style="{StaticResource MaterialDesignIconForegroundButton}"
                                                 Content="{materialDesign:PackIcon Deleete}"
-                                                ToolTip="Excluir Registro" ClickMode="Press" />
+                                                ToolTip="Excluir Registro" ClickMode="Press" Click="Button_Delete_Click" />
 
 
                                     </StackPanel>

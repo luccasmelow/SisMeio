@@ -207,18 +207,47 @@ namespace Sismeio
             CadastroGasto vsCadastroGasto = new CadastroGasto();
 
             vsCadastroGasto.ShowDialog();
+
+            //isso confere
+
+            LoadDataGrid();
         }
 
 
-        private void Button_acaovi_Click(object sender, RoutedEventArgs e)
+        private void Button_Vizualizar_Click(object sender, RoutedEventArgs e)
         {
             //ver oq ta errado 
-            //var gasto = dataGridGastos.SelectedItem as Gasto;
-           // MessageBox.Show(gasto.Codigo);
+            var gastoSelected = dataGridGastos.SelectedItem as Gasto;
+
+            var window = new CadastroGasto(gastoSelected.Codigo);
+
+            window.ShowDialog();
+            LoadDataGrid();
+
+           
+
         }
 
-        private void Button_acaode_Click(object sender, RoutedEventArgs e)
+        private void Button_Delete_Click(object sender, RoutedEventArgs e)
         {
+            var gastoSelected = dataGridGastos.SelectedItem as Gasto;
+
+            var result = MessageBox.Show($"Deseja realmente remover 0 gasto {gastoSelected.Descricao} ?", "Confirmação de Exclusão",
+                MessageBoxButton.YesNo, MessageBoxImage.Warning);
+
+            try
+            {
+                if (result == MessageBoxResult.Yes)
+                {
+                    var dao = new GastosDAO();
+                    dao.Delet(gastoSelected);
+                    LoadDataGrid();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Exceção", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
 
         }
     }
