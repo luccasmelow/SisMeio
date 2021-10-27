@@ -147,6 +147,7 @@ namespace Sismeio
 
         private void mnuCadastrarCompra_Click(object sender, RoutedEventArgs e)
         {
+
         }
     
 
@@ -216,23 +217,25 @@ namespace Sismeio
 
         private void Button_Vizualizar_Click(object sender, RoutedEventArgs e)
         {
+            
             //ver oq ta errado 
             var gastoSelected = dataGridGastos.SelectedItem as Gasto;
 
             var window = new CadastroGasto(gastoSelected.Codigo);
 
             window.ShowDialog();
-            LoadDataGrid();
 
-           
+            LoadDataGrid();
 
         }
 
         private void Button_Delete_Click(object sender, RoutedEventArgs e)
         {
+
+            //LoadDataGrid();
             var gastoSelected = dataGridGastos.SelectedItem as Gasto;
 
-            var result = MessageBox.Show($"Deseja realmente remover 0 gasto {gastoSelected.Descricao} ?", "Confirmação de Exclusão",
+            var result = MessageBox.Show($"Deseja realmente remover o gasto {gastoSelected.Descricao} ?", "Confirmação de Exclusão",
                 MessageBoxButton.YesNo, MessageBoxImage.Warning);
 
             try
