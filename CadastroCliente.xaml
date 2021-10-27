@@ -33,31 +33,45 @@
         <Label Content="Telefone" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="400,256,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.66,0.559" Grid.Row="1"/>
         <Label Content="Data de Nascimento" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="84,256,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.681,0.227" Height="39" Width="215" Grid.Row="1"/>
         <Label Content="Endereço" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="82,375,0,0" FontSize="20" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="2.165,1.795" Grid.Row="1"/>
-        <Label Content="Rua:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="82,439,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.66,0.559" Grid.Row="1"/>
-        <Label Content="Nº:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="400,442,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856" Grid.Row="1"/>
-        <Label Content="Complemento:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="653,442,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856" Grid.Row="1"/>
-        <Label Content="Cidade:" VerticalAlignment="Top" Margin="648,506,535,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856" Grid.Row="1"/>
-        <Label Content="Bairro:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="82,506,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856" Grid.Row="1"/>
-        <Label Content="CEP:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="400,506,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856" Grid.Row="1"/>
+        <Label Content="Logradouro:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="84,443,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.66,0.559" Grid.Row="1"/>
+        <Label Content="Nº:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="828,439,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856" Grid.Row="1"/>
+        <Label Content="Cidade:" VerticalAlignment="Top" Margin="448,524,735,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856" Grid.Row="1"/>
+        <Label Content="Bairro:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="448,439,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.507,0.856" Grid.Row="1"/>
+        <Label Content="Estado:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="84,524,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Grid.Row="1" Width="115"/>
+
+
+
         <TextBlock Text="TextBlock" TextWrapping="Wrap"/>
         <TextBlock Text="TextBlock" TextWrapping="Wrap"/>
         <TextBox Text="TextBox" TextWrapping="Wrap" Width="120"/>
         <TextBlock Text="TextBlock" TextWrapping="Wrap"/>
         <TextBox TextWrapping="Wrap" Margin="384,186,648,438" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam"  Name="CPF"/>
         <TextBox TextWrapping="Wrap" Margin="692,186,368,438" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam"  Name="RG"/>
-        <TextBox TextWrapping="Wrap" Margin="398,289,549,319" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam" Name="Telefone"/>
-        <TextBox TextWrapping="Wrap" Margin="809,442,214,188" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam" />
-        <TextBox TextWrapping="Wrap" Margin="161,517,905,111" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam" />
-        <TextBox TextWrapping="Wrap" Margin="140,450,905,178" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam" />
-        <TextBox TextWrapping="Wrap" Margin="445,450,696,178" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam" />
-        <TextBox TextWrapping="Wrap" Margin="482,517,635,112" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam" />
+        <TextBox TextWrapping="Wrap" Margin="384,303,563,318" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam" Name="Telefone"/>
+        <TextBox TextWrapping="Wrap" Margin="503,439,479,178" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam"  Name="Bairro"/>
+        <TextBox TextWrapping="Wrap" Margin="192,443,854,178" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam" Name="Logradouro"/>
+        <TextBox TextWrapping="Wrap" Margin="876,439,265,178" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam" x:Name="Numero" />
         <DatePicker x:Name="dtPickerDataNascimento"
         materialDesign:HintAssist.Hint="Janeiro"
 
         Style="{StaticResource MaterialDesignOutlinedDatePicker}" Margin="78,303,965,0" Grid.Row="1" VerticalAlignment="Top" />
-        <TextBox TextWrapping="Wrap" Margin="757,519,275,111" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam"  Name="cidade"/>
+        <TextBox TextWrapping="Wrap" Margin="522,497,479,106" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam"  Name="cidade"/>
         <Menu Height="20" Width="106" Margin="59,29,1105,621" Grid.Row="1"/>
 
+        <ComboBox
+                    x:Name="comboBoxEstado"
+                    materialDesign:HintAssist.Hint="Estado"
+                    Style="{StaticResource MaterialDesignOutlinedComboBox}"
+                    Width="200" Margin="165,520,905,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Height="60">
+            <ComboBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-1.885"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0.796"/>
+                </TransformGroup>
+            </ComboBox.RenderTransform>
+        </ComboBox>
         <TextBlock
                     VerticalAlignment="Top"
                      Margin="445,63,487,0"
@@ -69,7 +83,7 @@
                         Content="Cadastrar" 
                         Margin="1020,191,80,303" 
                         Cursor="Hand" 
-                        Height="32" ClickMode="Press" Grid.Row="1"/>
+                        Height="32" ClickMode="Press" Grid.Row="1" Click="btcadastrar_Click"/>
         <Button 
                         x:Name="bttfechar" 
                         Content="Fechar" 
@@ -142,6 +156,7 @@
                 materialDesign:HintAssist.Hint="Codigo"
                 materialDesign:TextFieldAssist.HasClearButton="True"
                 Style="{StaticResource MaterialDesignOutlinedTextBox}" IsEnabled="False" Text="" TextChanged="Codigo_TextChanged" Margin="53,70,1075,538" Grid.Row="1"/>
+
 
 
 
