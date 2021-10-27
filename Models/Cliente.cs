@@ -40,6 +40,7 @@ namespace Sismeio.Models
 
 		public string Historico { get; set; }
 
+		public Endereco Endereco { get; set; }
 
 	}
 }

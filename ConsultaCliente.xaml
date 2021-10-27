@@ -14,10 +14,10 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         
-        Title="ConsultaCliente"  MaxHeight="900" MaxWidth="1000"  WindowStartupLocation="CenterScreen">
-    <Grid MaxHeight="800" MaxWidth="1200">
+        Title="ConsultaCliente"  MaxHeight="900" MaxWidth="1000"  WindowStartupLocation="CenterScreen" Height="717">
+    <Grid MaxHeight="1000" MaxWidth="2000" Height="1000" Width="990">
 
-        <DataGrid Margin="48,292,208,58" x:Name="dataGridcli" IsReadOnly="true" 
+        <DataGrid Margin="48,292,260,58" x:Name="dataGridcli" IsReadOnly="true" 
                 AutoGenerateColumns="False" AlternatingRowBackground="#FFE5E5E5" AlternationCount="2" SelectionChanged="dataGridcli_SelectionChanged">
             <DataGrid.Columns >
 
@@ -45,7 +45,7 @@
                     FontSize="35"
                     Text="Consultar Cliente"/>
 
-        <MenuItem  Margin="10,10,779,542" Header="Menu" >
+        <MenuItem  Margin="48,74,740,894" Header="Menu" >
 
             <MenuItem Header="Página Inicial"/>
             <MenuItem Header="Realizar Venda"/>
@@ -60,20 +60,8 @@
             <MenuItem Header="Controlar Gastos"/>
 
         </MenuItem>
-        <Button 
-                        x:Name="btnnovo" 
-                        Content="Novo" 
-                        Margin="752,162,34,392" 
-                        Cursor="Hand" 
-                        Height="32" ClickMode="Press" Click="btnnovo_Click"/>
-        <Button 
-                        x:Name="btnfechar" 
-                        Content="Fechar" 
-                        Margin="752,526,29,28" 
-                        Cursor="Hand" 
-                        Height="32" ClickMode="Press" Click="btnfechar_click"/>
         <Label Content="Pesquisar" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="48,111,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="-0.282,0.86"/>
-        <Rectangle HorizontalAlignment="Left" Height="48" Margin="48,149,0,0" Stroke="Black" VerticalAlignment="Top" Width="372"/>
+        <Rectangle HorizontalAlignment="Left" Height="48" Margin="48,157,0,0" Stroke="Black" VerticalAlignment="Top" Width="372"/>
         <Button 
                     x:Name="btnVisualizar" 
                     Content="Ver Cliente" 
@@ -85,11 +73,32 @@
                     VerticalAlignment="Top" Click="btnVisualizar_Click"
                  />
         <Button 
-                    x:Name="btnExcluir" 
-                    Content="Excluir"
+                    x:Name="btnexcluir" 
+                    Content="Excluir" 
+                    Margin="752,410,0,0" 
                     Cursor="Hand" 
-                    ClickMode="Press"
-                 Margin="749,410,29,144" RenderTransformOrigin="0.838,-2.655" Click="btnExcluir_Click"
+                    Height="32" Width="110" 
+                    ClickMode="Press" 
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Top" Click="btnVisualizar_Click"
+                 />
+        <Button 
+                    x:Name="btfechar" 
+                    Content="Fechar" 
+                    Margin="752,464,0,198" 
+                    Cursor="Hand" Width="110" 
+                    ClickMode="Press" 
+                    HorizontalAlignment="Left" Click="btnVisualizar_Click"
+                 />
+        <Button 
+                    x:Name="btnovo" 
+                    Content="Novo" 
+                    Margin="752,157,0,0" 
+                    Cursor="Hand" 
+                    Height="32" Width="110" 
+                    ClickMode="Press" 
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Top" Click="btnVisualizar_Click"
                  />
     </Grid>
 

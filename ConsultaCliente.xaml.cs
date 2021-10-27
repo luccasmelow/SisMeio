@@ -27,9 +27,9 @@ namespace Sismeio
 
         private void ConsultarCliente_Loaded(object sender, RoutedEventArgs e)
         {
-            LoadDataGrid();
+            LoadDataGridcli();
         }
-        private void LoadDataGrid()
+        private void LoadDataGridcli()
         {
             try
             {
@@ -44,24 +44,12 @@ namespace Sismeio
                 MessageBox.Show(ex.Message, "Excessão", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-  
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            ConsultaCliente2 consulcli = new ConsultaCliente2();
-            consulcli.Show();
-        }
-
       
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
         private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
         {
 
         }
@@ -73,7 +61,7 @@ namespace Sismeio
 
         
 
-        private void btnfechar_click(object sender, RoutedEventArgs e)
+        private void btfechar_click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
@@ -83,12 +71,12 @@ namespace Sismeio
             
         }
 
-        private void btnnovo_Click(object sender, RoutedEventArgs e)
+        private void btnovo_Click(object sender, RoutedEventArgs e)
         {
             var window = new CadastroCliente();
             window.ShowDialog();
 
-            LoadDataGrid();
+            LoadDataGridcli();
 
         }
 
@@ -121,7 +109,7 @@ namespace Sismeio
                 {
                     var dao = new ClienteDAO();
                     dao.Delet(clienteSelected);
-                    LoadDataGrid();
+                    LoadDataGridcli();
                 }
             }
             catch(Exception ex)
