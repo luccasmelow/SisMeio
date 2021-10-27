@@ -9,6 +9,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Sismeio.Models;
 
 namespace Sismeio
 {
@@ -26,37 +27,31 @@ namespace Sismeio
 
         private void RelatorioGastos_Loaded(object sender, RoutedEventArgs e)
         {
-            List<Despesa> ListaGastos = new List<Despesa>();
+
+            LoadDataGrid();
+           
+            /*
+            dataGridCaixa.ItemsSource = ListaGastos;
+            */
+        }
+        private void LoadDataGrid()
+        {
 
 
-            ListaGastos.Add(new Despesa()
+            try
             {
-                abertas ="Conta de Energia",
-                vencidas="Pagamento - Vendedora",
-                pagas="Pagamento - Caixa",
-                caixa=2000,
-                debito=3000
+                var dao = new CaixaDAO();
 
-
-
-            });
-            ListaGastos.Add(new Despesa()
+                dataGridCaixa.ItemsSource = dao.List();
+            }
+            catch (Exception ex)
             {
-                abertas = "Água",
-                pagas = "Pedido Ramarim"
+                MessageBox.Show(ex.Message, "Exceção", MessageBoxButton.OK, MessageBoxImage.Error);
+
+            }
 
 
-            });
-            ListaGastos.Add(new Despesa()
-            {
-                abertas = "Pedido Arezzo",
-                pagas = "Pedido Adidas",
-                caixa=0
-               
-            });
-
-            dataGridEstoque.ItemsSource = ListaGastos;
-        }    
+        }
         private void mnuInicial_Click(object sender, RoutedEventArgs e)
         {
 
@@ -139,8 +134,53 @@ namespace Sismeio
             this.Close();
         }
 
-        private void dataGridEstoque_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void btnCadastrar_Click(object sender, RoutedEventArgs e)
         {
+            CadastroCaixa vsCadastroCaixa = new CadastroCaixa();
+
+            vsCadastroCaixa.ShowDialog();
+
+            //isso confere
+
+            LoadDataGrid();
+        }
+
+        private void Button_Vizualizar_Click(object sender, RoutedEventArgs e)
+        {
+
+            //ver oq ta errado 
+            var caixaSelected = dataGridCaixa.SelectedItem as Caixa;
+
+            //var window = new CadastroCaixa(caixaSelected.Codigo);
+
+            //window.ShowDialog();
+
+            LoadDataGrid();
+
+        }
+
+        private void Button_Delete_Click(object sender, RoutedEventArgs e)
+        {
+
+            //LoadDataGrid();
+            var caixaSelected = dataGridCaixa.SelectedItem as Caixa;
+
+            var result = MessageBox.Show($"Deseja realmente remover o gasto {caixaSelected.Mes} ?", "Confirmação de Exclusão",
+                MessageBoxButton.YesNo, MessageBoxImage.Warning);
+
+            try
+            {
+                if (result == MessageBoxResult.Yes)
+                {
+                    var dao = new CaixaDAO();
+                    dao.Delet(caixaSelected);
+                    LoadDataGrid();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Exceção", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
 
         }
     }

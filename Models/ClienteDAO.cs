@@ -5,6 +5,11 @@ using Sismeio.Interfaces;
 using Sismeio.Base;
 using MySql.Data.MySqlClient;
 using Sismeio.Models;
+<<<<<<< HEAD
+using Sismeio.Helpers;
+=======
+using Sismeio.Helpers; 
+>>>>>>> main
 
 namespace Sismeio.Models 
 {
@@ -74,6 +79,16 @@ namespace Sismeio.Models
                     cliente.Telefone = reader.GetString("telefone_cli");
                     cliente.DataNascimento = reader.GetDateTime("data_nasc_cli");
 
+                    if (!DAOHelper.IsNull(reader, "cod_end_fk"))
+                        cliente.Endereco = new Endereco()
+                        {
+                            Codigo = reader.GetInt32("cod__end"),
+                            Logradouro = reader.GetString("logradouro"),
+                            Numero = reader.GetInt32("numero"),
+                            Bairro = reader.GetString("bairro"),
+                            Cidade = reader.GetString("cidade"),
+                            Estado = reader.GetString("estado")
+                        };
                 }
                 return cliente;
             }
@@ -94,29 +109,42 @@ namespace Sismeio.Models
         {
             try
             {
+                var enderecoCod = new EnderecoDAO().Insert(t.Endereco);
                 var query = conec.Query();
-                query.CommandText = "INSERT INTO cliente (nome_cli, cpf_cli, rg_cli, data_nasc_cli, telefone_cli, situacao_cli, historico_cli)" +
-                    " VALUES (@nome, @cpf, @rg, @data_nasc, @telefone, @situacao, @historico)";
+                query.CommandText = "INSERT INTO cliente (nome_cli, cpf_cli, rg_cli, data_nasc_cli, telefone_cli, cod_end_fk)" +
+                " VALUES (@nome, @cpf, @rg, @data_nasc, @telefone, @enderecoCod)";
+
+                //query.CommandText = "CALL Inserir_Cliente(@nome, @rg, @cpf, @nascimento, @telefone, @enderecoCod)";
 
                 query.Parameters.AddWithValue("@nome", t.Nome);
                 query.Parameters.AddWithValue("@cpf", t.CPF);
                 query.Parameters.AddWithValue("@rg", t.RG);
-                query.Parameters.AddWithValue("@data_nasc", t.DataNascimento.ToString("yyyy-MM-dd")); //'18/02/2020 -> '2020/02/18' 
+                query.Parameters.AddWithValue("@nascimento", t.DataNascimento.ToString("yyyy-MM-dd")); //'18/02/2020 -> '2020/02/18' 
                 query.Parameters.AddWithValue("@telefone", t.Telefone);
-                query.Parameters.AddWithValue("@situacao", t.Situacao);
-                query.Parameters.AddWithValue("@historico", t.Historico);
+                query.Parameters.AddWithValue("@endereco", enderecoCod);
+
 
                 var result = query.ExecuteNonQuery();
 
                 if (result == 0)
-                    throw new Exception("O registro não foi inserido. Tente novamente");
+                    throw new Exception("O registro não foi inserido. Verifique e tente novamente");
 
+                /* MySqlDataReader reader = query.ExecuteReader();
 
+                 while(reader.Read())
+                 {
+                     if(reader.GetName(0).Equals("Alerta"))
+                     {
+                         throw new Exception(reader.GetString("Alerta"));
+                     }
+                 }
+                */
             }
             catch (Exception e)
             {
                 throw e;
-            }finally
+            }
+            finally
             {
                 conec.Close();
             }
@@ -134,6 +162,7 @@ namespace Sismeio.Models
 
                 while (reader .Read())
                 {
+                   
                     list.Add(new Cliente()
                     {
                         Codigo = reader.GetInt32("cod_cli"),
@@ -162,8 +191,16 @@ namespace Sismeio.Models
         {
             try
             {
+                long enderecoCod = t.Endereco.Codigo;
+                var endDAO = new EnderecoDAO();
+
+                if (enderecoCod > 0)
+                    endDAO.Update(t.Endereco);
+                else
+                    enderecoCod = endDAO.Insert(t.Endereco);
+
                 var query = conec.Query();
-                query.CommandText = " UPDATE cliente SET nome_cli = @nome, cpf_cli = @cpf, rg_cli = @rg, data_nasc_cli = @data_nasc, telefone_cli = @telefone, situacao_cli =  @situacao, historico_cli = @historico WHERE cod_cli = @id";
+                query.CommandText = " UPDATE cliente SET nome_cli = @nome, cpf_cli = @cpf, rg_cli = @rg, data_nasc_cli = @data_nasc, telefone_cli = @telefone,  cod_end_fk = @enderecoCod  WHERE cod_cli = @id";
 
                 query.Parameters.AddWithValue("@nome", t.Nome);
                 query.Parameters.AddWithValue("@cpf", t.CPF);
@@ -171,7 +208,7 @@ namespace Sismeio.Models
                 query.Parameters.AddWithValue("@data_nasc", t.DataNascimento.ToString("yyyy-MM-dd")); //'18/02/2020 -> '2020/02/18'
                 query.Parameters.AddWithValue("@sexo", t.Sexo);
                 query.Parameters.AddWithValue("@telefone", t.Telefone);
-                query.Parameters.AddWithValue("@situacao", t.Situacao);
+                query.Parameters.AddWithValue("@enderecoCod", enderecoCod);
 
                 query.Parameters.AddWithValue("@id", t.Codigo);
 

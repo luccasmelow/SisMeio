@@ -5,6 +5,7 @@ using System.Windows;
 using Sismeio.Interfaces;
 using Sismeio.Base;
 using MySql.Data.MySqlClient;
+using Sismeio.Helpers;
 
 
 namespace Sismeio.Models
@@ -72,11 +73,13 @@ namespace Sismeio.Models
                     gasto.Valor = reader.GetDouble("valor_gas");
                     gasto.Data = reader.GetDateTime("data_gas");
                     gasto.Descricao = reader.GetString("descricao");
-                    gasto.Caixa = reader.GetInt32("cod_cai_fk");
+                  
+
+                    if(DAOHelper.IsNull(reader,"cod_cai_fk"))
+                         gasto.Caixa = reader.GetInt32("cod_cai_fk");
 
 
 
-                    
                 }
 
               
@@ -137,18 +140,33 @@ namespace Sismeio.Models
 
                 while (reader.Read())
                 {
-                    list.Add(new Gasto()
+                    var gasto = new Gasto()
                     {
                         //(DateTime)dtPickerDataGasto.SelectedDate
                         Codigo = reader.GetInt32("cod_gas"),
                         Valor = reader.GetDouble("valor_gas"),
                         Data = reader.GetDateTime("data_gas"),
                         Descricao = reader.GetString("descricao"),
+                    
                         Caixa = reader.GetInt32("cod_cai_fk")
 
+                     };
 
+                    /*
+                    if (DAOHelper.IsNull(reader, "valor_gas"))
+                        gasto.Valor = reader.GetDouble("valor_gas");
+                    if (DAOHelper.IsNull(reader, "data_gas"))
+                        gasto.Data = reader.GetDateTime("data_gas");
+                    if (DAOHelper.IsNull(reader, "descricao"))
+                   
+                        gasto.Descricao = reader.GetString("descricao");
+                    */
+                    //if (DAOHelper.IsNull(reader, "cod_cai_fk"))
+                       // gasto.Caixa = reader.GetInt32("cod_cai_fk");
+                    
+                   
 
-                    });
+                    list.Add(gasto);
                 }
 
                 return list;
