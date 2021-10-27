@@ -13,7 +13,7 @@
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="Relátório de Gastos" MinHeight="510" MinWidth="500" MaxHeight="510" MaxWidth="500" WindowStartupLocation="CenterScreen" >
+        Title="Controle de Caixa" MinHeight="550" MinWidth="720" MaxHeight="550" MaxWidth="720" WindowStartupLocation="CenterScreen" >
     <DockPanel>
 
         <Grid>
@@ -108,34 +108,58 @@
                         <TranslateTransform X="-0.582" Y="0.022"/>
                     </TransformGroup>
                 </materialDesign:ColorZone.RenderTransform>
-                <StackPanel Orientation="Horizontal" Margin="0,0,0,0" HorizontalAlignment="Left" Width="500" Height="53"/>
+                <StackPanel Orientation="Horizontal" Margin="0,2,0,1" HorizontalAlignment="Left" Width="720" Height="53"/>
 
 
 
             </materialDesign:ColorZone>
 
-            <StackPanel Grid.ColumnSpan="2" Grid.Row="1">
-                <TextBlock FontSize="30" Text="Relatório de Gastos" Width="308" HorizontalAlignment="Center" Height="49" Padding="10"/>
+            <StackPanel Grid.Row="1">
+                <TextBlock FontSize="30" Text="Controle de Caixa" Width="260" HorizontalAlignment="Center" Height="49" Padding="10"/>
             </StackPanel>
 
-            <StackPanel Grid.Row="2">
+            <StackPanel Grid.Row="2" Grid.ColumnSpan="2" Margin="0,0,-138,0">
                 <DataGrid 
-                    x:Name="dataGridEstoque"
-                    Width="437" 
+                    x:Name="dataGridCaixa"
+                    Width="680" 
                     Height="272"
                     IsReadOnly="true"
                     AutoGenerateColumns="False"
                     AlternatingRowBackground="#FFE5E5E5"
                     AlternationCount="2" 
-                    Margin="10 40 5 0" AutomationProperties.Name="dataGridEstoque">
+                    Margin="-140 40 5 0" AutomationProperties.Name="dataGridCaixa" >
 
                     <DataGrid.Columns>
 
-                        <DataGridTextColumn Header="Abertas" Binding="{Binding abertas}"/>
-                        <DataGridTextColumn Header="Vencidas" Binding="{Binding vencidas}"/>
-                        <DataGridTextColumn Header="Pagas" Binding="{Binding pagas}"/>
-                        <DataGridTextColumn Header="Valor em Caixa" Binding="{Binding caixa, ConverterCulture='pt-Br', StringFormat=C}"/>
-                        <DataGridTextColumn Header="Débito" Binding="{Binding debito, ConverterCulture='pt-Br', StringFormat=C}"/>
+                        <DataGridTextColumn Header="Código" Binding="{Binding Codigo}"/>
+                        <DataGridTextColumn Header="Mes" Binding="{Binding Mes}"/>
+                        <DataGridTextColumn Header="Saldo Anterior" Binding="{Binding SaldoAnt, ConverterCulture='pt-Br', StringFormat=C}"/>
+                        <DataGridTextColumn Header="Saldo Final" Binding="{Binding SaldoFin, ConverterCulture='pt-Br', StringFormat=C}"/>
+                        <DataGridTextColumn Header="Débitos" Binding="{Binding Debitos, ConverterCulture='pt-Br', StringFormat=C}"/>
+                        <DataGridTextColumn Header="Créditos" Binding="{Binding Creditos, ConverterCulture='pt-Br', StringFormat=C}"/>
+
+                        <DataGridTemplateColumn Header="Ações">
+
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" >
+                                        <Button x:Name ="Button_Vizualizar" Style="{StaticResource MaterialDesignIconForegroundButton}"
+                                                Content="{materialDesign:PackIcon Eye}"
+                                                ToolTip="Vizualizar Registro" Margin="0 0 5 0" ClickMode="Press" Click="Button_Vizualizar_Click"/>
+
+                                        <Button x:Name ="Button_Delete" Style="{StaticResource MaterialDesignIconForegroundButton}"
+                                                Content="{materialDesign:PackIcon Delete}"
+                                                ToolTip="Excluir Registro" ClickMode="Press" Click="Button_Delete_Click" />
+
+
+                                    </StackPanel>
+                                </DataTemplate>
+
+                            </DataGridTemplateColumn.CellTemplate>
+
+
+                        </DataGridTemplateColumn>
+
 
                     </DataGrid.Columns>
 
@@ -145,12 +169,21 @@
 
 
 
-            <StackPanel Grid.Row="3" Orientation="Horizontal" Height="53" VerticalAlignment="Center" HorizontalAlignment="Center" Width="500">
+            <StackPanel Grid.Row="3" Orientation="Horizontal" Height="53" VerticalAlignment="Center" HorizontalAlignment="Center" Width="652">
 
+                <Button 
+                    x:Name="btnCadastrar" 
+                    Content="Cadastrar" 
+                    Margin="400 10 10 10" 
+                    Cursor="Hand" 
+                    Height="32" Width="141" 
+                    ClickMode="Press" 
+                    VerticalAlignment="center" Click="btnCadastrar_Click"
+                 />
                 <Button 
                     x:Name="btnSair" 
                     Content="Sair" 
-                    Margin="380 10 10 10" 
+                    Margin="10 10 10 10" 
                     Cursor="Hand" 
                     Height="32" Width="92" 
                     ClickMode="Press" 

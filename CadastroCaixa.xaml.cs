@@ -10,38 +10,32 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Sismeio.Models;
-using Sismeio.Base;
 
 namespace Sismeio
 {
     /// <summary>
-    /// Lógica interna para CadastroGasto.xaml
+    /// Lógica interna para CadastroCaixa.xaml
     /// </summary>
-    public partial class CadastroGasto : Window
+    public partial class CadastroCaixa : Window
     {
         private int _cod;
 
-        private Gasto _gasto; 
-
-
-        public CadastroGasto()
+        private Caixa _caixa;
+        public CadastroCaixa()
         {
             InitializeComponent();
-            Loaded += CadastroGasto_Loaded;
         }
-
-        public CadastroGasto(int codigo)
+        public CadastroCaixa(int codigo)
         {
             _cod = codigo;
             InitializeComponent();
-            Loaded += CadastroGasto_Loaded;
+            Loaded += CadastroCaixa_Loaded;
         }
-
-        private void CadastroGasto_Loaded(object sender, RoutedEventArgs e)
+        private void CadastroCaixa_Loaded(object sender, RoutedEventArgs e)
         {
-            // MessageBox.Show(_cod.ToString()); ---> usar p teste
+            
 
-            _gasto = new Gasto();
+            _caixa = new Caixa();
 
             if (_cod > 0)
                 FillForm();
@@ -49,41 +43,13 @@ namespace Sismeio
 
         }
 
-
-        private void cadastrar_Click(object sender, RoutedEventArgs e)
-        {
-           
-                
-            _gasto.Valor = Convert.ToDouble(txtValor.Text);
-            _gasto.Data = (DateTime)dtPickerDataGasto.SelectedDate;
-            _gasto.Descricao = txtDescricao.Text;
-            _gasto.Caixa = Convert.ToInt32(txtCaixa.Text);
-
-          //  if (double.TryParse(txtValor.Text, out double valor))
-               // _gasto.Valor = valor;
-           
-
-            if (dtPickerDataGasto.SelectedDate != null)
-                _gasto.Data = (DateTime)dtPickerDataGasto.SelectedDate;
-
-
-
-          
-
-
-            SalveData();
-
-
-            
-        }
-
         private bool Validate()
         {
-            var validator = new GastoValidator();
+            var validator = new CaixaValidator();
 
-            var result = validator.Validate(_gasto);
+            var result = validator.Validate(_caixa);
 
-            if(!result.IsValid)
+            if (!result.IsValid)
             {
                 string errors = null;
                 var count = 1;
@@ -100,9 +66,23 @@ namespace Sismeio
             return result.IsValid;
         }
 
+
         private void cancelar_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void cadastrar_Click(object sender, RoutedEventArgs e)
+        {
+            _caixa.Mes = txtMes.Text;
+            _caixa.SaldoAnt = Convert.ToDouble(txtSaldoAn.Text);
+            _caixa.SaldoFin = Convert.ToDouble(txtSaldoFin.Text);
+            _caixa.Creditos = Convert.ToDouble(txtCreditos.Text);
+            _caixa.Debitos = Convert.ToDouble(txtDebitos.Text);
+
+            SalveData();
+
+
         }
         private void SalveData()
         {
@@ -110,25 +90,25 @@ namespace Sismeio
             {
                 if (Validate())
                 {
-                    GastosDAO dao = new GastosDAO();
+                    CaixaDAO dao = new CaixaDAO();
                     var text = "atualizado";
 
-                    if (_gasto.Codigo == 0)
+                    if (_caixa.Codigo == 0)
                     {
-                        dao.Insert(_gasto);
+                        dao.Insert(_caixa);
                         text = "adicionado";
                     }
                     else
-                        dao.Update(_gasto);
+                        dao.Update(_caixa);
 
-                    MessageBox.Show($"Gasto {text} com sucesso", "Sucesso", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show($"Caixa {text} com sucesso", "Sucesso", MessageBoxButton.OK, MessageBoxImage.Information);
                     CloseFormVerify();
                 }
-                
 
-                
+
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Erro", MessageBoxButton.OK, MessageBoxImage.Error);
             }
@@ -139,14 +119,15 @@ namespace Sismeio
 
             try
             {
-                var dao = new GastosDAO();
-                _gasto = dao.GetById(_cod);
+                var dao = new CaixaDAO();
+                _caixa = dao.GetById(_cod);
 
-                txtCodigo.Text = _gasto.Codigo.ToString();
-                txtValor.Text = _gasto.Valor.ToString();
-                dtPickerDataGasto.SelectedDate = _gasto.Data;
-                txtDescricao.Text = _gasto.Descricao;
-                txtCaixa.Text = _gasto.Caixa.ToString();
+                txtCodigo.Text = _caixa.Codigo.ToString();
+                txtMes.Text = _caixa.Mes.ToString();
+                txtSaldoAn.Text = _caixa.SaldoAnt.ToString();
+                txtSaldoFin.Text = _caixa.SaldoFin.ToString();
+                txtCreditos.Text = _caixa.Debitos.ToString();
+                txtDebitos.Text = _caixa.Creditos.ToString();
 
 
 
@@ -158,7 +139,7 @@ namespace Sismeio
         }
         private void CloseFormVerify()
         {
-            if (_gasto.Codigo == 0)
+            if (_caixa.Codigo == 0)
             {
                 var result = MessageBox.Show("Deseja prosseguir com o cadastro de gastos?", "Continuar?", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
@@ -174,15 +155,16 @@ namespace Sismeio
         }
         private void ClearInputs()
         {
-          
-           
-            txtValor.Text ="";
-            dtPickerDataGasto.SelectedDate = null;
-            txtDescricao.Text = "";
-            txtCaixa.Text = "";
+
+
+            txtCodigo.Text = "";
+            txtMes.Text = "";
+            txtSaldoAn.Text = "";
+            txtSaldoFin.Text = "";
+            txtCreditos.Text = "";
+            txtDebitos.Text = "";
 
         }
-
 
     }
 }

@@ -14,37 +14,29 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         
-        Title="ConsultaCliente"  MaxHeight="900" MaxWidth="1000"  WindowStartupLocation="CenterScreen">
-    <Grid MaxHeight="800" MaxWidth="1200">
+        Title="ConsultaCliente"  MaxHeight="900" MaxWidth="1000"  WindowStartupLocation="CenterScreen" Height="717">
+    <Grid MaxHeight="1000" MaxWidth="2000" Height="1000" Width="990">
 
+        <DataGrid Margin="48,292,260,58" x:Name="dataGridcli" IsReadOnly="true" 
+                AutoGenerateColumns="False" AlternatingRowBackground="#FFE5E5E5" AlternationCount="2" SelectionChanged="dataGridcli_SelectionChanged">
+            <DataGrid.Columns >
 
-        <DataGrid 
-                    x:Name="dataGridCliente"
-                    IsReadOnly="true"
-                    AutoGenerateColumns="False"
-                    AlternatingRowBackground="#FFE5E5E5"
-                    AlternationCount="8"
-                    Margin="80,260,430,106" AutomationProperties.Name="dataGridCliente" Grid.ColumnSpan="5" Grid.Column="5" FrozenColumnCount="5" Grid.RowSpan="5" SelectionChanged="dataGridCliente_SelectionChanged">
+                <DataGridTextColumn Header="Codigo" Binding="{Binding Codigo}"/>
+                <DataGridTextColumn Header="Nome" Binding="{Binding Nome}"/>
+                <DataGridTextColumn Header="Telefone" Binding="{Binding Telefone}"/>
+                <DataGridTextColumn Header="Situação" Binding="{Binding Situação}"/>
 
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Código" Binding="{Binding Id}"/>
-                <DataGridTextColumn Header="Nome" Binding="{Binding Descricao}"/>
-                <DataGridTextColumn Header="Situação" Binding="{Binding ValorUnitario, ConverterCulture='pt-Br', StringFormat=C}"/>
+                <DataGridTemplateColumn Header="Selecionar">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
 
             </DataGrid.Columns>
         </DataGrid>
-
-
-        <Button
-        Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}"
-        ToolTip="MaterialDesignFloatingActionMiniDarkButton"  Margin="450,153,410,391"  Background="#FF6539B7">
-
-            <Image Source= "/img/pesquisar.png " Width="15"/>
-
-
-        </Button>
-
-
 
 
         <TextBlock 
@@ -53,7 +45,7 @@
                     FontSize="35"
                     Text="Consultar Cliente"/>
 
-        <MenuItem  Margin="10,10,779,542" Header="Menu" >
+        <MenuItem  Margin="48,74,740,894" Header="Menu" >
 
             <MenuItem Header="Página Inicial"/>
             <MenuItem Header="Realizar Venda"/>
@@ -68,62 +60,46 @@
             <MenuItem Header="Controlar Gastos"/>
 
         </MenuItem>
-        <ComboBox
-                
-                    Width="156"  Height="38" Margin="518,227,226,0"
-                    materialDesign:HintAssist.Hint="Consultar Compra"
-                    materialDesign:HintAssist.HintOpacity=".26"
-                    IsEditable="True" VerticalAlignment="Top">
-
-            <ComboBoxItem
-                        Content="João Silva" />
-            <ComboBoxItem
-                        Content="João Silva" />
-            <ComboBoxItem
-                        Content="João Silva" />
-
-        </ComboBox>
-
-        <ComboBox
-            x:Name="Filtros" 
-            materialDesign:HintAssist.Hint="Filtros" 
-            materialDesign:HintAssist.HintOpacity=".26" 
-            materialDesign:HintAssist.Foreground="Gray"
-            Margin ="518,162,287,0" Width="95" Height="40" VerticalAlignment="Top">
-
-            <ComboBoxItem
-                        Content="Devedor" />
-            <ComboBoxItem
-                        Content="Não Devedor" />
-
-        </ComboBox>
+        <Label Content="Pesquisar" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="48,111,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="-0.282,0.86"/>
+        <Rectangle HorizontalAlignment="Left" Height="48" Margin="48,157,0,0" Stroke="Black" VerticalAlignment="Top" Width="372"/>
         <Button 
-                        x:Name="btnnovo" 
-                        Content="Novo" 
-                        Margin="733,161,34,391" 
-                        Cursor="Hand" 
-                        Height="32" ClickMode="Press"/>
+                    x:Name="btnVisualizar" 
+                    Content="Ver Cliente" 
+                    Margin="752,348,0,0" 
+                    Cursor="Hand" 
+                    Height="32" Width="110" 
+                    ClickMode="Press" 
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Top" Click="btnVisualizar_Click"
+                 />
         <Button 
-                        x:Name="btnconsul" 
-                        Content="Consultar" 
-                        Margin="733,369,26,183" 
-                        Cursor="Hand" 
-                        Height="32" ClickMode="Press"/>
-
+                    x:Name="btnexcluir" 
+                    Content="Excluir" 
+                    Margin="752,410,0,0" 
+                    Cursor="Hand" 
+                    Height="32" Width="110" 
+                    ClickMode="Press" 
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Top" Click="btnVisualizar_Click"
+                 />
         <Button 
-                        x:Name="btexcluir" 
-                        Content="Excluir" 
-                        Margin="733,314,26,238" 
-                        Cursor="Hand" 
-                        Height="32" ClickMode="Press" RenderTransformOrigin="0.928,-1.446"/>
+                    x:Name="btfechar" 
+                    Content="Fechar" 
+                    Margin="752,464,0,198" 
+                    Cursor="Hand" Width="110" 
+                    ClickMode="Press" 
+                    HorizontalAlignment="Left" Click="btnVisualizar_Click"
+                 />
         <Button 
-                        x:Name="btnfechar" 
-                        Content="Fechar" 
-                        Margin="733,515,26,37" 
-                        Cursor="Hand" 
-                        Height="32" ClickMode="Press" Click="btnfechar_click"/>
-        <Label Content="Pesquisar" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="66,116,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="0.66,0.559"/>
-        <Rectangle HorizontalAlignment="Left" Height="48" Margin="66,149,0,0" Stroke="Black" VerticalAlignment="Top" Width="354"/>
+                    x:Name="btnovo" 
+                    Content="Novo" 
+                    Margin="752,157,0,0" 
+                    Cursor="Hand" 
+                    Height="32" Width="110" 
+                    ClickMode="Press" 
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Top" Click="btnVisualizar_Click"
+                 />
     </Grid>
 
 

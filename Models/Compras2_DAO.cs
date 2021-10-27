@@ -1,33 +1,30 @@
-Ôªøusing System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using Sismeio.Interfaces;
 using Sismeio.Base;
 using MySql.Data.MySqlClient;
 using Sismeio.Models;
-using Sismeio.Helpers;
-
-
 
 namespace Sismeio.Models 
 {
-    class ClienteDAO : IDAO<Cliente>
+    class Compras2_DAO : IDAO<Compras2>
     {
 
         private static Conexao conec;
       
 
-        public ClienteDAO()
+        public Compras2_DAO()
         {
             conec = new Conexao();
 
         }
-        public void Delet(Cliente t)
+        public void Delet(Compras2 t)
         {
             try
             {
                 var query = conec.Query();
-                query.CommandText = "DELETE FROM cliente WHERE cod_cli = @id"; 
+                query.CommandText = "DELETE FROM compras WHERE cod_cli = @id"; 
 
                 query.Parameters.AddWithValue("@id", t.Codigo);
         
@@ -35,7 +32,7 @@ namespace Sismeio.Models
                 var result = query.ExecuteNonQuery();
 
                 if (result == 0)
-                    throw new Exception("O registro n√£o foi exclu√≠do. Tente Novamente!");
+                    throw new Exception("O registro n„o foi excluÌdo. Tente Novamente!");
 
 
             }
@@ -49,12 +46,12 @@ namespace Sismeio.Models
             }
         }
 
-        public Cliente GetById(int codigo)
+        public Compras2 GetById(int codigo)
         {
             try
             {
                 var query = conec.Query();
-                query.CommandText = "SELECT * FROM cliente WHERE cod_cli = @codigo";
+                query.CommandText = "SELECT * FROM compras WHERE cod_cli = @codigo";
 
                 query.Parameters.AddWithValue("@codigo", codigo);
 
@@ -65,28 +62,20 @@ namespace Sismeio.Models
                     throw new Exception("Nenhum registro encontrado!");
                 }
 
-                var cliente = new Cliente();
+                var compras2 = new Compras2();
 
                 while (reader.Read())
                 {
 
-                    cliente.Codigo = reader.GetInt32("cod_cli");
-                    cliente.Nome = reader.GetString("nome_cli");
-                    cliente.RG = reader.GetString("rg_cli");
-                    cliente.CPF = reader.GetString("cpf_cli");
-                    cliente.Telefone = reader.GetString("telefone_cli");
-                    cliente.DataNascimento = reader.GetDateTime("data_nasc_cli");
+                    Compras2.cÛdigo = reader.getint32 ("cod_com");
+                    Compras2.valor = reader.Getint32 ("valor_com")
+                    Compras2.quantidadepro = reader.GetString("quantpro_com");
+                    Compras2.data = reader.GetString("data_com");
+                    Compras2.frete = reader.GetString("frete_com");
+                    Compras2.cÛdigofor = reader.GetDateTime("cod_for_fk");
+                    Compras2.dataentrega = reader.GetDateTime("data_entreg_com");
+                    Compras2.cÛdigocai = reader.GetDateTime("cod_cai_fk");
 
-                    if (!DAOHelper.IsNull(reader, "cod_end_fk"))
-                        cliente.Endereco = new Endereco()
-                        {
-                            Codigo = reader.GetInt32("cod__end"),
-                            Logradouro = reader.GetString("logradouro"),
-                            Numero = reader.GetInt32("numero"),
-                            Bairro = reader.GetString("bairro"),
-                            Cidade = reader.GetString("cidade"),
-                            Estado = reader.GetString("estado")
-                        };
                 }
                 return cliente;
             }
@@ -103,68 +92,54 @@ namespace Sismeio.Models
 
         }
 
-        public void Insert(Cliente t)
+        public void Insert(Compras2 t)
         {
             try
             {
-                var enderecoCod = new EnderecoDAO().Insert(t.Endereco);
                 var query = conec.Query();
-                query.CommandText = "INSERT INTO cliente (nome_cli, cpf_cli, rg_cli, data_nasc_cli, telefone_cli, cod_end_fk)" +
-                " VALUES (@nome, @cpf, @rg, @data_nasc, @telefone, @enderecoCod)";
-
-                //query.CommandText = "CALL Inserir_Cliente(@nome, @rg, @cpf, @nascimento, @telefone, @enderecoCod)";
+                query.CommandText = "INSERT INTO compras (nome_cli, cpf_cli, rg_cli, data_nasc_cli, telefone_cli, situacao_cli, historico_cli)" +
+                    " VALUES (@nome, @cpf, @rg, @data_nasc, @telefone, @situacao, @historico)";
 
                 query.Parameters.AddWithValue("@nome", t.Nome);
                 query.Parameters.AddWithValue("@cpf", t.CPF);
                 query.Parameters.AddWithValue("@rg", t.RG);
-                query.Parameters.AddWithValue("@nascimento", t.DataNascimento.ToString("yyyy-MM-dd")); //'18/02/2020 -> '2020/02/18' 
+                query.Parameters.AddWithValue("@data_nasc", t.DataNascimento.ToString("yyyy-MM-dd")); //'18/02/2020 -> '2020/02/18' 
                 query.Parameters.AddWithValue("@telefone", t.Telefone);
-                query.Parameters.AddWithValue("@endereco", enderecoCod);
-
+                query.Parameters.AddWithValue("@situacao", t.Situacao);
+                query.Parameters.AddWithValue("@historico", t.Historico);
 
                 var result = query.ExecuteNonQuery();
 
                 if (result == 0)
-                    throw new Exception("O registro n√£o foi inserido. Verifique e tente novamente");
+                    throw new Exception("O registro n„o foi inserido. Tente novamente");
 
-                /* MySqlDataReader reader = query.ExecuteReader();
 
-                 while(reader.Read())
-                 {
-                     if(reader.GetName(0).Equals("Alerta"))
-                     {
-                         throw new Exception(reader.GetString("Alerta"));
-                     }
-                 }
-                */
             }
             catch (Exception e)
             {
                 throw e;
-            }
-            finally
+            }finally
             {
                 conec.Close();
             }
         }
 
-        public List<Cliente> List()
+        public List<Compras2> List()
         {
             try
             {
-                List<Cliente> list = new List<Cliente>();
+                List<Compras2> list = new List<Compras2>();
                 var query = conec.Query();
-                query.CommandText = "SELECT * FROM cliente";
+                query.CommandText = "SELECT * FROM compras";
 
                MySqlDataReader reader = query.ExecuteReader();
 
                 while (reader .Read())
                 {
-                   
-                    list.Add(new Cliente()
+                    list.Add(new Compras2()
                     {
-                        Codigo = reader.GetInt32("cod_cli"),
-                        Nome = reader.GetString("nome_cli"),
+                        Codigo = reader.GetInt32("cod_com"),
+                        Valor = reader.GetString("valor_com"),
                         RG = reader.GetString("rg_cli"),
                         CPF = reader.GetString("cpf_cli"),
                         Telefone = reader.GetString("telefone_cli"),
@@ -185,20 +160,12 @@ namespace Sismeio.Models
             }
         }
 
-        public void Update(Cliente t)
+        public void Update(Compras2 t)
         {
             try
             {
-                long enderecoCod = t.Endereco.Codigo;
-                var endDAO = new EnderecoDAO();
-
-                if (enderecoCod > 0)
-                    endDAO.Update(t.Endereco);
-                else
-                    enderecoCod = endDAO.Insert(t.Endereco);
-
                 var query = conec.Query();
-                query.CommandText = " UPDATE cliente SET nome_cli = @nome, cpf_cli = @cpf, rg_cli = @rg, data_nasc_cli = @data_nasc, telefone_cli = @telefone,  cod_end_fk = @enderecoCod  WHERE cod_cli = @id";
+                query.CommandText = " UPDATE compras SET nome_cli = @nome, cpf_cli = @cpf, rg_cli = @rg, data_nasc_cli = @data_nasc, telefone_cli = @telefone, situacao_cli =  @situacao, historico_cli = @historico WHERE cod_cli = @id";
 
                 query.Parameters.AddWithValue("@nome", t.Nome);
                 query.Parameters.AddWithValue("@cpf", t.CPF);
@@ -206,7 +173,7 @@ namespace Sismeio.Models
                 query.Parameters.AddWithValue("@data_nasc", t.DataNascimento.ToString("yyyy-MM-dd")); //'18/02/2020 -> '2020/02/18'
                 query.Parameters.AddWithValue("@sexo", t.Sexo);
                 query.Parameters.AddWithValue("@telefone", t.Telefone);
-                query.Parameters.AddWithValue("@enderecoCod", enderecoCod);
+                query.Parameters.AddWithValue("@situacao", t.Situacao);
 
                 query.Parameters.AddWithValue("@id", t.Codigo);
 
@@ -214,7 +181,7 @@ namespace Sismeio.Models
                 var result = query.ExecuteNonQuery();
 
                 if (result == 0)
-                    throw new Exception("O registro n√£o foi atualizado. Tente novamente");
+                    throw new Exception("O registro n„o foi atualizado. Tente novamente");
 
 
             }

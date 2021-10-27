@@ -45,7 +45,8 @@ namespace Sismeio
             {
                 var conexao = new Conexao();
 
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -58,7 +59,11 @@ namespace Sismeio
             window.Owner = this;
             window.ShowDialog();
 
+
            //Insert_Teste();
+
+            Insert_Teste();
+
         }
 
         private void btnFuncionarios_Click(object sender, RoutedEventArgs e)
@@ -93,6 +98,7 @@ namespace Sismeio
             window.ShowDialog();
         }
 
+        
         private void BtnGestaoControle_Click(object sender, RoutedEventArgs e)
         {
             var window = new ControlarGastos();
@@ -100,6 +106,9 @@ namespace Sismeio
             window.Owner = this;
             window.ShowDialog();
         }
+        
+
+
 
         private void BtnCadastroClientes_Click(object sender, RoutedEventArgs e)
         {
@@ -127,7 +136,7 @@ namespace Sismeio
 
         private void BtnConsultarClientes_Click(object sender, RoutedEventArgs e)
         {
-            var window = new ConsultaCliente2();
+            var window = new ConsultaCliente();
 
             window.Owner = this;
             window.ShowDialog();
@@ -177,6 +186,9 @@ namespace Sismeio
 
         }
 
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
 
+        }
     }
 }

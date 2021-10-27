@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Sismeio.Models;
 
+
 namespace Sismeio
 {
     /// <summary>
@@ -26,38 +27,29 @@ namespace Sismeio
 
         private void ConsultarCliente_Loaded(object sender, RoutedEventArgs e)
         {
-            //List<Cliente> listacliente = new List<Cliente>();
-
-           // for (int i = 0; i < 10; i++)
-          //  {
-
-                //listacliente.Add(new Cliente()
-              //  {
-                    //codigo = i + 1,
-                    //nome = "João Alves" + i,
-                   // situacao = "Devedor"
-               // }); dataGridCliente.ItemsSource = listacliente;
-            //}
+            LoadDataGridcli();
         }
-  
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void LoadDataGridcli()
         {
-            ConsultaCliente2 consulcli = new ConsultaCliente2();
-            consulcli.Show();
-        }
+            try
+            {
+                var dao = new ClienteDAO();
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            CadastroCliente cadastrocli = new CadastroCliente();
-            cadastrocli.Show();
+                dataGridcli.ItemsSource = dao.List();
+            
+            }
+
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Excessão", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
- 
+      
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
         {
 
         }
@@ -69,16 +61,63 @@ namespace Sismeio
 
         
 
-        private void btnfechar_click(object sender, RoutedEventArgs e)
+        private void btfechar_click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
-        private void dataGridCliente_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void dataGridcli_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            
+        }
+
+        private void btnovo_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new CadastroCliente();
+            window.ShowDialog();
+
+            LoadDataGridcli();
 
         }
 
+        private void btnVisualizar_Click(object sender, RoutedEventArgs e)
+        {
+            var cliente = dataGridcli.SelectedItem as Cliente;
+
+            try
+            {
+                var dao = new ClienteDAO();
+                var cli = dao.GetById(1000);
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Excessão", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+        }
+
+        private void btnExcluir_Click(object sender, RoutedEventArgs e)
+        {
+            var clienteSelected = dataGridcli.SelectedItem as Cliente;
+
+            var result = MessageBox.Show($"Tem certeza que deseja excluir o cliente {clienteSelected.Nome}", "Confirmação de Exclusão", MessageBoxButton.YesNo, MessageBoxImage.Warning); 
+            
+            try
+            {
+                if(result == MessageBoxResult.Yes)
+                {
+                    var dao = new ClienteDAO();
+                    dao.Delet(clienteSelected);
+                    LoadDataGridcli();
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Excessão", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         
+        }
+
     }
 }

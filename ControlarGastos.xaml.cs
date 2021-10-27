@@ -37,38 +37,83 @@ namespace Sismeio
 
         private void ControlarGastos_Loaded(object sender, RoutedEventArgs e)
         {
+
+            LoadDataGrid();
+
+            //Erro
+            /*
+            try
+            {
+                var dao = new GastosDAO();
+
+                foreach (Gasto gas in dao.List())
+                {
+                    MessageBox.Show("R$" + gas.Valor);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Exceção", MessageBoxButton.OK, MessageBoxImage.Error);
+
+            }
+            */
+
+
+
+
+
             //List<Despesa> ListaGastos = new List<Despesa>();
 
 
             //ListaGastos.Add(new Despesa()
             //{
-              //  id= 0158,
-               // descricao = "Conta de Energia",
-                //valordesp = 500.97
+            //  id= 0158,
+            // descricao = "Conta de Energia",
+            //valordesp = 500.97
 
 
-           // });
-           // ListaGastos.Add(new Despesa()
-           // {
-             //   id = 0159,
-               // descricao = "Água",
-              //  valordesp = 150.77
+            // });
+            // ListaGastos.Add(new Despesa()
+            // {
+            //   id = 0159,
+            // descricao = "Água",
+            //  valordesp = 150.77
 
 
-           // });
-           // ListaGastos.Add(new Despesa()
-           // {
-              //  id = 0160,
-               // descricao = "Pedido Arezzo",
-               // valordesp = 2000.99
+            // });
+            // ListaGastos.Add(new Despesa()
+            // {
+            //  id = 0160,
+            // descricao = "Pedido Arezzo",
+            // valordesp = 2000.99
 
 
-           // });
+            // });
 
 
 
 
-           // dataGridGastos.ItemsSource = ListaGastos;
+            //dataGridGastos.ItemsSource = ListaGastos;
+        }
+
+        private void LoadDataGrid()
+        {
+
+            //erro
+            
+            try
+            {
+                var dao = new GastosDAO();
+
+                dataGridGastos.ItemsSource = dao.List();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Exceção", MessageBoxButton.OK, MessageBoxImage.Error );
+
+            }
+            
+
         }
         
         private void mnuInicial_Click(object sender, RoutedEventArgs e)
@@ -102,6 +147,7 @@ namespace Sismeio
 
         private void mnuCadastrarCompra_Click(object sender, RoutedEventArgs e)
         {
+
         }
     
 
@@ -162,6 +208,50 @@ namespace Sismeio
             CadastroGasto vsCadastroGasto = new CadastroGasto();
 
             vsCadastroGasto.ShowDialog();
+
+            //isso confere
+
+            LoadDataGrid();
+        }
+
+
+        private void Button_Vizualizar_Click(object sender, RoutedEventArgs e)
+        {
+            
+            //ver oq ta errado 
+            var gastoSelected = dataGridGastos.SelectedItem as Gasto;
+
+            var window = new CadastroGasto(gastoSelected.Codigo);
+
+            window.ShowDialog();
+
+            LoadDataGrid();
+
+        }
+
+        private void Button_Delete_Click(object sender, RoutedEventArgs e)
+        {
+
+            //LoadDataGrid();
+            var gastoSelected = dataGridGastos.SelectedItem as Gasto;
+
+            var result = MessageBox.Show($"Deseja realmente remover o gasto {gastoSelected.Descricao} ?", "Confirmação de Exclusão",
+                MessageBoxButton.YesNo, MessageBoxImage.Warning);
+
+            try
+            {
+                if (result == MessageBoxResult.Yes)
+                {
+                    var dao = new GastosDAO();
+                    dao.Delet(gastoSelected);
+                    LoadDataGrid();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Exceção", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
         }
     }
 }
