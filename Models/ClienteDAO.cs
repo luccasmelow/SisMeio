@@ -25,9 +25,9 @@ namespace Sismeio.Models
             try
             {
                 var query = conec.Query();
-                query.CommandText = "DELETE FROM cliente WHERE cod_cli = @id"; 
+                query.CommandText = "DELETE FROM cliente WHERE cod_cli = @codigo"; 
 
-                query.Parameters.AddWithValue("@id", t.Codigo);
+                query.Parameters.AddWithValue("@codigo", t.Codigo);
         
 
                 var result = query.ExecuteNonQuery();
@@ -52,7 +52,7 @@ namespace Sismeio.Models
             try
             {
                 var query = conec.Query();
-                query.CommandText = "SELECT * FROM cliente WHERE cod_cli = @codigo";
+                query.CommandText = "SELECT * FROM cliente LEFT JOIN endereco ON cod_end_fk WHERE cod_cli = @codigo";
 
                 query.Parameters.AddWithValue("@codigo", codigo);
 
@@ -78,7 +78,7 @@ namespace Sismeio.Models
                     if (!DAOHelper.IsNull(reader, "cod_end_fk"))
                         cliente.Endereco = new Endereco()
                         {
-                            Codigo = reader.GetInt32("cod__end"),
+                            Codigo = reader.GetInt32("cod_end"),
                             Logradouro = reader.GetString("logradouro"),
                             Numero = reader.GetInt32("numero"),
                             Bairro = reader.GetString("bairro"),
@@ -108,7 +108,7 @@ namespace Sismeio.Models
                 var enderecoCod = new EnderecoDAO().Insert(t.Endereco);
                 var query = conec.Query();
                 query.CommandText = "INSERT INTO cliente (nome_cli, cpf_cli, rg_cli, data_nasc_cli, telefone_cli, cod_end_fk)" +
-                " VALUES (@nome, @cpf, @rg, @data_nasc, @telefone, @enderecoCod)";
+                " VALUES (@nome, @cpf, @rg, @data_nasc, @telefone, @endereco)";
 
                 //query.CommandText = "CALL Inserir_Cliente(@nome, @rg, @cpf, @nascimento, @telefone, @enderecoCod)";
 
