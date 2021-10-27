@@ -22,102 +22,76 @@ namespace Sismeio
         public ConsultaCliente()
         {
             InitializeComponent();
-            Loaded += ConsultarCliente_Loaded;
+            Loaded += ConsultaCliente_Loaded;
         }
 
-        private void ConsultarCliente_Loaded(object sender, RoutedEventArgs e)
+        private void ConsultaCliente_Loaded(object sender, RoutedEventArgs e)
         {
-            LoadDataGridcli();
+            LoadDataGrid();
         }
-        private void LoadDataGridcli()
+
+        private void LoadDataGrid()
         {
             try
             {
                 var dao = new ClienteDAO();
 
                 dataGridcli.ItemsSource = dao.List();
-            
             }
-
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Excessão", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(ex.Message, "Exceção", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-        }
-      
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        
-
-        private void btfechar_click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
-        private void dataGridcli_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            
         }
 
         private void btnovo_Click(object sender, RoutedEventArgs e)
         {
             var window = new CadastroCliente();
             window.ShowDialog();
-
-            LoadDataGridcli();
-
+            LoadDataGrid();
         }
+
+        //private void btfechar_Click(object sender, RoutedEventArgs e)
+       // {
+
+        //}
 
         private void btnVisualizar_Click(object sender, RoutedEventArgs e)
         {
-            var cliente = dataGridcli.SelectedItem as Cliente;
+            var clienteSelected = dataGridcli.SelectedItem as Cliente;
 
-            try
-            {
-                var dao = new ClienteDAO();
-                var cli = dao.GetById(1000);
-
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Excessão", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-
+            var window = new CadastroCliente(clienteSelected.Codigo);
+            window.ShowDialog();
+            LoadDataGrid();
         }
 
-        private void btnExcluir_Click(object sender, RoutedEventArgs e)
+        private void Btnexcluir_Click(object sender, RoutedEventArgs e)
         {
             var clienteSelected = dataGridcli.SelectedItem as Cliente;
 
-            var result = MessageBox.Show($"Tem certeza que deseja excluir o cliente {clienteSelected.Nome}", "Confirmação de Exclusão", MessageBoxButton.YesNo, MessageBoxImage.Warning); 
-            
+
+            var result = MessageBox.Show($"Deseja realmente excluir o cliente `{clienteSelected.Nome}`?", "Confirmação de Exclusão",
+                MessageBoxButton.YesNo, MessageBoxImage.Warning);
+
             try
             {
-                if(result == MessageBoxResult.Yes)
+                if (result == MessageBoxResult.Yes)
                 {
                     var dao = new ClienteDAO();
                     dao.Delet(clienteSelected);
-                    LoadDataGridcli();
+                    LoadDataGrid();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Excessão", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(ex.Message, "Exceção", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-        
+
         }
 
+        private void dataGridcli_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

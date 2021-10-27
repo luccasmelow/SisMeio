@@ -25,7 +25,7 @@
                     IsReadOnly="False"
                     AutoGenerateColumns="False"
                     AlternatingRowBackground="#FFE5E5E5"
-                    AlternationCount="200" Margin="49,111,229,-20" Grid.ColumnSpan="3"  >
+                    AlternationCount="200" Margin="49,111,229,-20" Grid.ColumnSpan="3" SelectionChanged="dataGridVendas_SelectionChanged"  >
 
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Código" Binding="{Binding Id}"/>

@@ -137,5 +137,10 @@ namespace Sismeio
 
             vsRelatorioGastos.ShowDialog();
         }
+
+        private void dataGridVendas_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

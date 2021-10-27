@@ -16,13 +16,13 @@ namespace Sismeio.Models
             {
                 var query = conec.Query();
                 query.CommandText = "INSERT INTO endereco (logradouro, numero, bairro, cidade, estado) " +
-                    "VALUES (@logradouro, @numero, @bairro, @cidade, @estado)";
+                    "VALUES (@logradouro_end, @numero_end, @bairro_end, @cidade_end, @estado_end)";
 
-                query.Parameters.AddWithValue("@rua", t.Logradouro);
-                query.Parameters.AddWithValue("@numero", t.Numero);
-                query.Parameters.AddWithValue("@bairro", t.Bairro);
-                query.Parameters.AddWithValue("@cidade", t.Cidade);
-                query.Parameters.AddWithValue("@estado", t.Estado);
+                query.Parameters.AddWithValue("@logradouro_end", t.Logradouro);
+                query.Parameters.AddWithValue("@numero_end", t.Numero);
+                query.Parameters.AddWithValue("@bairro_end", t.Bairro);
+                query.Parameters.AddWithValue("@cidade_end", t.Cidade);
+                query.Parameters.AddWithValue("@estado_end", t.Estado);
 
                 var result = query.ExecuteNonQuery();
 
@@ -42,16 +42,16 @@ namespace Sismeio.Models
             try
             {
                 var query = conec.Query();
-                query.CommandText = "UPDATE endereco SET logradouro = @logradouro, numero = @numero, bairro = @bairro, " +
-                            "cidade = @cidade, estado = @estado  WHERE cod_end = @codigo ";
+                query.CommandText = "UPDATE endereco SET logradouro = @logradouro_end, numero = @numero_end, bairro = @bairro_end, " +
+                            "cidade = @cidade_end, estado = @estado_end  WHERE cod_end = @id_endereco ";
 
-                query.Parameters.AddWithValue("@rua", t.Logradouro);
-                query.Parameters.AddWithValue("@numero", t.Numero);
-                query.Parameters.AddWithValue("@bairro", t.Bairro);
-                query.Parameters.AddWithValue("@cidade", t.Cidade);
-                query.Parameters.AddWithValue("@estado", t.Estado);
+                query.Parameters.AddWithValue("@logradouro_end", t.Logradouro);
+                query.Parameters.AddWithValue("@numero_end", t.Numero);
+                query.Parameters.AddWithValue("@bairro_end", t.Bairro);
+                query.Parameters.AddWithValue("@cidade_end", t.Cidade);
+                query.Parameters.AddWithValue("@estado_end", t.Estado);
 
-                query.Parameters.AddWithValue("@id", t.Codigo);
+                query.Parameters.AddWithValue("@id_endereco", t.Codigo);
 
                 var result = query.ExecuteNonQuery();
 

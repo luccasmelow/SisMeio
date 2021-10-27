@@ -45,7 +45,6 @@ namespace Sismeio
             _cliente.Nome = Nome.Text;
             _cliente.CPF = CPF.Text;
             _cliente.RG = RG.Text;
-            _cliente.DataNascimento = (DateTime)dtPickerDataNascimento.SelectedDate;
             _cliente.Telefone = Telefone.Text;
 
             if (dtPickerDataNascimento.SelectedDate != null)
@@ -104,7 +103,7 @@ namespace Sismeio
                     else
                         dao.Update(_cliente);
 
-                    MessageBox.Show($"O Funcionário foi {text} com sucesso!", "Sucesso", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show($"O Cliente foi {text} com sucesso!", "Sucesso", MessageBoxButton.OK, MessageBoxImage.Information);
                    
                     CloseFormVerify();
                 }
@@ -153,7 +152,7 @@ namespace Sismeio
         {
             if (_cliente.Codigo== 0)
             {
-                var result = MessageBox.Show("Deseja continuar adicionando funcionários?", "Continuar?", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                var result = MessageBox.Show("Deseja continuar adicionando clientes?", "Continuar?", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
                 if (result == MessageBoxResult.No)
                     this.Close();
@@ -194,8 +193,7 @@ namespace Sismeio
 
             else
                 ClearInputs();
-                
-            
+                 
         }
 
         private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)

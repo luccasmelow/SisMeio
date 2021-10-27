@@ -24,7 +24,7 @@
                 <DataGridTextColumn Header="Codigo" Binding="{Binding Codigo}"/>
                 <DataGridTextColumn Header="Nome" Binding="{Binding Nome}"/>
                 <DataGridTextColumn Header="Telefone" Binding="{Binding Telefone}"/>
-                <DataGridTextColumn Header="Situação" Binding="{Binding Situação}"/>
+                
 
                 <DataGridTemplateColumn Header="Selecionar">
                     <DataGridTemplateColumn.CellTemplate>
@@ -44,22 +44,6 @@
                      Margin="300,10,100,0"
                     FontSize="35"
                     Text="Consultar Cliente"/>
-
-        <MenuItem  Margin="48,74,740,894" Header="Menu" >
-
-            <MenuItem Header="Página Inicial"/>
-            <MenuItem Header="Realizar Venda"/>
-            <MenuItem Header="Cadastrar Produto"/>
-            <MenuItem Header="Cadastrar Funcionário"/>
-            <MenuItem Header="Cadastrar Cliente"/>
-            <MenuItem Header="Cadastrar Compra"/>
-            <MenuItem Header="Consultar Estoque"/>
-            <MenuItem Header="Consultar Funcionário"/>
-            <MenuItem Header="Consultar Cliente"/>
-            <MenuItem Header="Consultar Vendas"/>
-            <MenuItem Header="Controlar Gastos"/>
-
-        </MenuItem>
         <Label Content="Pesquisar" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="48,111,0,0" FontSize="16" FontFamily= "Lucida Sans Unicode" FontWeight="Bold" RenderTransformOrigin="-0.282,0.86"/>
         <Rectangle HorizontalAlignment="Left" Height="48" Margin="48,157,0,0" Stroke="Black" VerticalAlignment="Top" Width="372"/>
         <Button 
@@ -81,14 +65,6 @@
                     ClickMode="Press" 
                     HorizontalAlignment="Left" 
                     VerticalAlignment="Top" Click="btnVisualizar_Click"
-                 />
-        <Button 
-                    x:Name="btfechar" 
-                    Content="Fechar" 
-                    Margin="752,464,0,198" 
-                    Cursor="Hand" Width="110" 
-                    ClickMode="Press" 
-                    HorizontalAlignment="Left" Click="btnVisualizar_Click"
                  />
         <Button 
                     x:Name="btnovo" 

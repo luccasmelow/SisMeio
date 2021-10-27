@@ -201,5 +201,10 @@ namespace Sismeio
         {
 
         }
+
+        private void dataGridEstoque_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
