@@ -102,7 +102,7 @@ namespace Sismeio.Models
             try
             {
                 var query = conn.Query();
-                query.CommandText = "INSERT INTO gastos (mes_cai, saldo_ant_cai, saldo_final_cai, debitos_cai, creditos_cai)" +
+                query.CommandText = "INSERT INTO caixa (mes_cai, saldo_ant_cai, saldo_final_cai, debitos_cai, creditos_cai)" +
                     "VALUES(@mes, @saldoa, @saldof, @debitos, @creditos)";
 
                 query.Parameters.AddWithValue("@mes", t.Mes);
@@ -179,7 +179,7 @@ namespace Sismeio.Models
             try
             {
                 var query = conn.Query();
-                query.CommandText = "UPDATE caixa SET mes_cai = @mes, @saldoa, @saldof, @debitos, @creditos" +
+                query.CommandText = "UPDATE caixa SET mes_cai = @mes, saldo_ant_cai = @saldoa, saldo_ant_cai = @saldof, debitos_cai = @debitos, creditos_cai = @creditos" +
                     "WHERE cod_cai =@codigo";
 
                 query.Parameters.AddWithValue("@codigo", t.Codigo);

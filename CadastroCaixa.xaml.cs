@@ -80,6 +80,10 @@ namespace Sismeio
             _caixa.Creditos = Convert.ToDouble(txtCreditos.Text);
             _caixa.Debitos = Convert.ToDouble(txtDebitos.Text);
 
+           //if (txtMes.Text, out string mes)
+             // _caixa.Mes = mes;
+
+
             SalveData();
 
 

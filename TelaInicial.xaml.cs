@@ -142,6 +142,42 @@ namespace Sismeio
             window.ShowDialog();
         }
 
+        private void BtnConsultaGasto_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new ControlarGastos();
+
+            window.Owner = this;
+            window.ShowDialog();
+        }
+
+        private void BtnConsultaCaixa_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new RelatorioGastos();
+
+            window.Owner = this;
+            window.ShowDialog();
+        }
+
+        private void BtnCadastroGasto_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new CadastroGasto();
+
+            window.Owner = this;
+            window.ShowDialog();
+        }
+
+        private void BtnCadastroCaixa_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new CadastroCaixa();
+
+            window.Owner = this;
+            window.ShowDialog();
+        }
+
+
+
+
+
         private void BtnConsultarFuncioanrios_Click(object sender, RoutedEventArgs e)
         {
             var window = new ConsultarFuncionario();

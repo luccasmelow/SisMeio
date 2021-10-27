@@ -28,12 +28,12 @@
             <TextBlock FontSize="30" FontWeight="Bold" Width="300" Height="35" RenderTransformOrigin="0.507,-0.248"><Run Language="pt-br" Text="Cadastrar Caixa"/></TextBlock>
 
 
-            <TextBox x:Name="txtCodigo" materialDesign:HintAssist.Hint="Código" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  Width="90"  IsEnabled = " False " HorizontalAlignment="Left" Cursor="IBeam"/>
-            <TextBox x:Name="txtMes" materialDesign:HintAssist.Hint="Mês" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 5" Width="201"  Cursor="IBeam" HorizontalAlignment="Left"/>
-            <TextBox x:Name ="txtSaldoAn" materialDesign:HintAssist.Hint="Saldo Anterior" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="201" Cursor="IBeam" HorizontalAlignment="Left" />
+            <TextBox x:Name="txtCodigo" materialDesign:HintAssist.Hint="Código" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  Width="90"  IsEnabled = " False " HorizontalAlignment="Left" />
+            <TextBox x:Name="txtMes" materialDesign:HintAssist.Hint="Mês" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 5" Width="201"  HorizontalAlignment="Left"  />
+            <TextBox x:Name ="txtSaldoAn" materialDesign:HintAssist.Hint="Saldo Anterior" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="201" HorizontalAlignment="Left" />
             <TextBox x:Name="txtSaldoFin" materialDesign:HintAssist.Hint="Saldo Final" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="201" HorizontalAlignment="Left" />
-            <TextBox x:Name="txtDebitos" materialDesign:HintAssist.Hint="Créditos" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="201" Cursor="IBeam" HorizontalAlignment="Left" />
-            <TextBox x:Name="txtCreditos" materialDesign:HintAssist.Hint="Débitos" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="201" Cursor="IBeam" HorizontalAlignment="Left" />
+            <TextBox x:Name="txtDebitos" materialDesign:HintAssist.Hint="Créditos" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="201"  HorizontalAlignment="Left" />
+            <TextBox x:Name="txtCreditos" materialDesign:HintAssist.Hint="Débitos" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="201"  HorizontalAlignment="Left" Cursor="IBeam" />
 
 
 

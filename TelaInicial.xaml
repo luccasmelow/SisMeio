@@ -105,6 +105,8 @@
                     <MenuItem Header="_Cliente" Click="BtnCadastroClientes_Click" Cursor="Hand"/>
                     <MenuItem Header="_Funcionários" Click="BtnCadastroFuncionario_Click" Cursor="Hand"/>
                     <MenuItem Header="_Produtos" Click="BtnCadastroProduto_Click" Cursor="Hand"/>
+                    <MenuItem Header="_Gasto" Click="BtnCadastroGasto_Click" Cursor="Hand"/>
+                    <MenuItem Header="_Caixa" Click="BtnCadastroCaixa_Click" Cursor="Hand"/>
                 </MenuItem>
             </Menu>
 
@@ -113,14 +115,12 @@
                     <MenuItem Header="_Cliente" Click="BtnConsultarClientes_Click" Cursor="Hand"/>
                     <MenuItem Header="_Funcionários" Click="BtnConsultarFuncioanrios_Click" Cursor="Hand"/>
                     <MenuItem Header="_Produtos" Click="BtnConsultarProdutos_Click" Cursor="Hand"/>
+                    <MenuItem Header="_Gasto" Click="BtnConsultaGasto_Click" Cursor="Hand"/>
+                    <MenuItem Header="_Caixa" Click="BtnConsultaCaixa_Click" Cursor="Hand"/>
                 </MenuItem>
             </Menu>
-
-            <Menu Padding="12">
-                <MenuItem Header="_Vendas">
-                    <MenuItem Header="_Relatórios de vendas"/>
-                </MenuItem>
-            </Menu>
+            
+            
         </StackPanel>
 
         <Grid DockPanel.Dock="Bottom">
