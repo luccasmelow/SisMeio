@@ -151,9 +151,9 @@ namespace Sismeio
             //ver oq ta errado 
             var caixaSelected = dataGridCaixa.SelectedItem as Caixa;
 
-            //var window = new CadastroCaixa(caixaSelected.Codigo);
+            var window = new CadastroCaixa(caixaSelected.Codigo);
 
-            //window.ShowDialog();
+            window.ShowDialog();
 
             LoadDataGrid();
 

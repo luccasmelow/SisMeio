@@ -30,10 +30,7 @@ namespace Sismeio
 
         }
 
-        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
+        
 
         private void ControlarGastos_Loaded(object sender, RoutedEventArgs e)
         {
@@ -217,10 +214,11 @@ namespace Sismeio
 
         private void Button_Vizualizar_Click(object sender, RoutedEventArgs e)
         {
-            
-            //ver oq ta errado 
-            var gastoSelected = dataGridGastos.SelectedItem as Gasto;
 
+            //ver oq ta errado 
+            Gasto gastoSelected = dataGridGastos.SelectedItem as Gasto;
+            
+            
             var window = new CadastroGasto(gastoSelected.Codigo);
 
             window.ShowDialog();
