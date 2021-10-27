@@ -5,7 +5,11 @@ using Sismeio.Interfaces;
 using Sismeio.Base;
 using MySql.Data.MySqlClient;
 using Sismeio.Models;
+<<<<<<< HEAD
 using Sismeio.Helpers;
+=======
+using Sismeio.Helpers; 
+>>>>>>> main
 
 namespace Sismeio.Models 
 {
