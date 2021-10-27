@@ -61,5 +61,10 @@ namespace Sismeio
         {
 
         }
+
+        private void Estado_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
