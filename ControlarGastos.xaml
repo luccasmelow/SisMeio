@@ -120,7 +120,7 @@
                 <StackPanel Orientation="Horizontal">
                     <!--<DatePicker  x:Name= "DatePickerPesquisar" Padding="5 5" Grid.Column="1" Margin="20,5,0,0" Width="137" Height="40" HorizontalContentAlignment="Center"/>-->
 
-                    <materialDesign:PackIcon Kind="Magnify" Margin="10,15,0,0" Height="21" Width="27"/>
+                    <!--<materialDesign:PackIcon Kind="Magnify" Margin="10,15,0,0" Height="21" Width="27"/>
 
                     <ComboBox
                 
@@ -137,7 +137,7 @@
                         <ComboBoxItem
                         Content="Sandália Ramarim" />
 
-                    </ComboBox>
+                    </ComboBox>-->
 
                 </StackPanel>
 

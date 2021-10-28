@@ -13,7 +13,7 @@
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="Consultar Estoque" MinHeight="500" MinWidth="800" MaxHeight="500" MaxWidth="800" WindowStartupLocation="CenterScreen">
+        Title="Consultar Estoque" MinHeight="500" MinWidth="800" MaxHeight="500" MaxWidth="800" WindowStartupLocation="CenterScreen" Width="852">
 
     <DockPanel>
         <Grid>
@@ -23,148 +23,45 @@
                 <RowDefinition Height="Auto" MinHeight="315"/>
                 <RowDefinition/>
 
+
+
             </Grid.RowDefinitions>
 
-            <StackPanel Height="20" Grid.Row="0">
-                <Menu Height="20" Width="106" Margin="10,0,750,0">
-                    <MenuItem Padding ="0,0,10,0" Header="Menu_" Height="20" Width="106" RenderTransformOrigin="0.471,0.43" >
-                        <MenuItem x:Name="mnuInicial"
-                          Header="_Página Inicial"  
-                          Height="Auto" Width="Auto" Click="mnuInicial_Click"
-                        />
-                        <Separator/>
-                        <MenuItem x:Name="mnuRealizarVenda"
-                          Header="_Realizar Venda"  
-                          Height="Auto" Width="Auto" Click="mnuRealizarVenda_Click"
-                        />
-                        <Separator/>
-                        <MenuItem x:Name="mnuCadastrarProduto"
-                          Header="_Cadastrar Produto"  
-                          Height="Auto" Width="Auto" Click="mnuCadastrarProduto_Click"
-                        />
-                        <Separator/>
-                        <MenuItem x:Name="mnuCadastrarFuncionario"
-                          Header="_Cadastrar Funcionário"  
-                          Height="Auto" Width="Auto" Click="mnuCadastrarFuncionario_Click"
-                        />
-                        <Separator/>
-                        <MenuItem x:Name="mnuCadastrarCliente"
-                          Header="_Cadastrar Cliente"  
-                          Height="Auto" Width="Auto" Click="mnuCadastrarCliente_Click"
-                        />
-                        <Separator/>
-                        <MenuItem x:Name="mnuCadastrarCompra"
-                          Header="_Cadastrar Compra"  
-                          Height="Auto" Width="Auto" Click="mnuCadastrarCompra_Click"
-                        />
-                        <Separator/>
-                        <MenuItem x:Name="mnuConsultarEstoque"
-                          Header="_Consultar Estoque"  
-                          Height="Auto" Width="Auto" Click="mnuConsultarEstoque_Click"
-                        />
-                        <Separator/>
-                        <MenuItem x:Name="mnuConsultarFuncionario"
-                          Header="_Consultar Funcionário"  
-                          Height="Auto" Width="Auto" Click="mnuConsultarFuncionario_Click"
-                        />
-                        <Separator/>
-                        <MenuItem x:Name="mnuConsultarCliente"
-                          Header="_Consultar Cliente"  
-                          Height="Auto" Width="Auto" Click="mnuConsultarCliente_Click"
-                        />
-                        <Separator/>
-                        <MenuItem x:Name="mnuConsultarVenda"
-                          Header="_Consultar Vendas"  
-                          Height="Auto" Width="Auto" Click="mnuConsultarVenda_Click"
-                        />
-                        <Separator/>
-                        <MenuItem x:Name="mnuControlarGastos"
-                          Header="_Controlar Gastos"  
-                          Height="Auto" Width="Auto" Click="mnuControlarGastos_Click"
-                        />
-                    </MenuItem>
 
-
-                </Menu>
-            </StackPanel>
-
-            <materialDesign:ColorZone
-                Grid.Row="1"
-                Foreground="Black" 
-                Background="#D3D3D3"
-                Mode="PrimaryLight"
-                Margin="1,0,1,0" Height="56" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Center">
-                <materialDesign:ColorZone.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform AngleX="-1.042" AngleY="0.003"/>
-                        <RotateTransform Angle="-0.011"/>
-                        <TranslateTransform X="-0.582" Y="0.022"/>
-                    </TransformGroup>
-                </materialDesign:ColorZone.RenderTransform>
-                <StackPanel Orientation="Horizontal" Margin="0,0,0,0" HorizontalAlignment="Left" Width="796" Height="53"/>
-
-
-            </materialDesign:ColorZone>
 
             <StackPanel Grid.Row ="1">
+
                 <TextBlock  Margin="10" FontSize="35" Text="Consultar Estoque" HorizontalAlignment="Center" Height="38"/>
             </StackPanel>
 
             <StackPanel  Grid.Row ="2" DockPanel.Dock="top" Orientation = "Horizontal"  Height="105" Margin="0,5,0,0" VerticalAlignment="Top">
 
 
-                <materialDesign:PackIcon Kind="Magnify" Margin="80 45 5 0" Height="21" Width="27"/>
+
+                <materialDesign:PackIcon Kind="Magnify" Margin="80 45 5 0" Height="22" Width="26" RenderTransformOrigin="8.537,0.645"/>
 
                 <ComboBox
                 
-                    Width="156"  Height="38" Margin="0 5"
-                    materialDesign:HintAssist.Hint="Consultar Estoque"
-                    materialDesign:HintAssist.HintOpacity=".26"
-                    IsEditable="True" SelectionChanged="ComboBox_SelectionChanged">
+                    Width="156"  Height="38" Margin="0 5">
+
 
                     <ComboBoxItem
-                        Content="Chinelo Havaina" />
+                        Content="Codigo" />
                     <ComboBoxItem
-                        Content="Tenis Adidas" />
+                        Content="Nome" />
                     <ComboBoxItem
-                        Content="Sandália Ramarim" />
+                        Content="Categoria" />
 
                 </ComboBox>
 
 
-                <StackPanel  Width="227" Height="90" Margin ="50 0" Orientation="Horizontal">
 
-                    <ComboBox
-                        x:Name="Filtros" 
-                        materialDesign:HintAssist.Hint="Filtros" 
-                        materialDesign:HintAssist.HintOpacity=".26" 
-                        materialDesign:HintAssist.Foreground="Gray"
-                        Margin ="15 20" Width="95" Height="40">
 
-                        <ComboBoxItem
-                        Content="Tênis" />
-                        <ComboBoxItem
-                        Content="Chinelo" />
-                        <ComboBoxItem
-                        Content="Sandálias" />
-                        <ComboBoxItem
-                        Content="Havaina" />
-                        <ComboBoxItem
-                        Content="Adidas" />
-                        <ComboBoxItem
-                        Content="Ramarim" />
 
-                    </ComboBox>
 
-                    <Button 
-                        x:Name="btnBuscar" 
-                        Content="Buscar" 
-                        Margin="5 7" 
-                        Cursor="Hand" 
-                        Height="32" Width="84" ClickMode="Press"/>
 
-                </StackPanel>
+
+
 
 
 
@@ -174,79 +71,56 @@
             <StackPanel Grid.Row="2">
                 <DataGrid 
                     x:Name="dataGridEstoque"
-                    Width="702" 
+                    Width="778" 
                     Height="213"
                     IsReadOnly="true"
                     AutoGenerateColumns="False"
                     AlternatingRowBackground="#FFE5E5E5"
                     AlternationCount="2" 
-                    Margin="15 90 5 0" AutomationProperties.Name="dataGridEstoque" SelectionChanged="dataGridEstoque_SelectionChanged">
+                    Margin="15 90 5 0" AutomationProperties.Name="dataGridEstoque">
 
                     <DataGrid.Columns>
 
-                        <DataGridTemplateColumn Header="Selecionar">
+
+
+                        <DataGridTextColumn Header="Código" Binding="{Binding Id}"/>
+                        <DataGridTextColumn Header="Nome" Binding="{Binding Nome}"/>
+                        <DataGridTextColumn Header="Descrição" Binding="{Binding Descricao}"/>
+                        <DataGridTextColumn Header="Valor" Binding="{Binding ValorUnitario, ConverterCulture='pt-Br', StringFormat=C}"/>
+                        <DataGridTextColumn Header="Peso" Binding="{Binding Peso, ConverterCulture='pt-Br', StringFormat=C}"/>
+                        <DataGridTextColumn Header="Categoria" Binding="{Binding Categoria}"/>
+                        <DataGridTextColumn Header="Marca" Binding="{Binding Marca}"/>
+                        <DataGridTextColumn Header="Numeração" Binding="{Binding Numeracao,ConverterCulture='pt-Br', StringFormat=C}"/>
+
+
+                        <DataGridTemplateColumn Header="Ações">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <CheckBox />
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button Style="{StaticResource MaterialDesignIconForegroundButton}"
+                                                Content="{materialDesign:PackIcon Eye}"
+                                                ToolTip="Visualizar Registro" Margin="0 0 5 0" Click="Button_Update_Click" />
+                                        <Button Style="{StaticResource MaterialDesignIconForegroundButton}"
+                                                Content="{materialDesign:PackIcon Delete}"
+                                                ToolTip="Excluir Registro" Margin="0 0 5 0" Click="Button_Delete_Click" />
+                                    </StackPanel>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
-
-                        <DataGridTextColumn Header="Código" Binding="{Binding Id}"/>
-                        <DataGridTextColumn Header="Descrição" Binding="{Binding Descricao}"/>
-                        <DataGridTextColumn Header="Quantidade" Binding="{Binding Quantidade}"/>
-                        <DataGridTextColumn Header="Valor" Binding="{Binding ValorUnitario, ConverterCulture='pt-Br', StringFormat=C}"/>
-                        <DataGridTextColumn Header="Valor Total" Binding="{Binding ValorEstoque, ConverterCulture='pt-Br', StringFormat=C}"/>
-                        <DataGridTextColumn Header="Categoria" Binding="{Binding Categoria}"/>
-                        <DataGridTextColumn Header="Marca" Binding="{Binding Marca}"/>
-                        <DataGridTextColumn Header="Numeração" Binding="{Binding Numeracao}"/>
                     </DataGrid.Columns>
-
-
                 </DataGrid>
             </StackPanel>
 
 
-            <StackPanel Grid.Row="3" Orientation="Horizontal" Height="77" VerticalAlignment="Center" HorizontalAlignment="Center" Width="800">
-
-                <Button 
-                    x:Name="btnVisualizar" 
-                    Content="Ver Produto" 
-                    Margin="459 0 5 0" 
-                    Cursor="Hand" 
-                    Height="32" Width="110" 
-                    ClickMode="Press" 
-                    HorizontalAlignment="Left" 
-                    VerticalAlignment="center"
-                 />
-                <Button 
-                    x:Name="btnAlterar" 
-                    Content="Alterar" 
-                    Margin="10 0 5 0" 
-                    Cursor="Hand" 
-                    Height="32" Width="84" 
-                    ClickMode="Press" 
-                    HorizontalAlignment="Left" 
-                    VerticalAlignment="center" Click="btnAlterar_Click"
-                 />
-                <Button 
-                    x:Name="btnExcluir" 
-                    Content="Excluir" 
-                    Margin="10 0 5 0"
-                    Cursor="Hand" 
-                    Height="32" Width="84" 
-                    ClickMode="Press" 
-                    HorizontalAlignment="Right" 
-                    VerticalAlignment="Center"
-                 />
-
-
+            <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="40,1,10,0">
+                <Button Content="Novo" RenderTransformOrigin="2.504,0.735" Click="Novo_Click"/>
             </StackPanel>
 
 
 
 
         </Grid>
+
 
 
 
