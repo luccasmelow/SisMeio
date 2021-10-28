@@ -18,6 +18,9 @@ namespace Sismeio.Models
 
         public string Categoria { get; set; }
 
+        public double Desconto { get; set; }
+
+        public string FormaPagamento { get; set; }
 
         public string Marca{ get; set; }
 
