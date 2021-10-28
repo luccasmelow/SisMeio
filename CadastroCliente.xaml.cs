@@ -170,7 +170,7 @@ namespace Sismeio
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
         }
         private void ClearInputs()

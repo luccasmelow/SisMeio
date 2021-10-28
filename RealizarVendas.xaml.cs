@@ -10,6 +10,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Sismeio.Models;
+using Sismeio.Base;
+
 
 namespace Sismeio
 {
@@ -27,9 +29,21 @@ namespace Sismeio
 
         private void RealizarVendas_Loaded(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                var conexao = new Conexao();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            
+
             txtData.Text = DateTime.Now.ToString("dd/MM/yyyy");
 
             List <Produto> ListaVenda = new List<Produto>();
+
 
 
             ListaVenda.Add(new Produto()
@@ -141,6 +155,8 @@ namespace Sismeio
         private void btnConfirmaVenda_Click(object sender, RoutedEventArgs e)
         {
 
+            Inserir_Teste();
+
 
             MessageBoxResult result = MessageBox.Show("Venda Realizada com sucesso!", "Confirmação", MessageBoxButton.OK, MessageBoxImage.Information);
 
@@ -150,7 +166,36 @@ namespace Sismeio
         {
 
             MessageBoxResult result = MessageBox.Show("Deseja Realmente cancelar a venda", "Confirmação",MessageBoxButton.OKCancel, MessageBoxImage.Information);
-            
+
+            this.Close();            
+        }
+
+        private void Inserir_Teste()
+        {
+            try
+            {
+                Vendas vendas = new Vendas();
+                vendas.Valor = 120;
+                vendas.Desconto = 0.1;
+                vendas.Quantidade = 1;
+                vendas.Codigo = 468514;
+                vendas.Produtos = "PIX";
+                vendas.Datavenda = 25/08/2021;
+                vendas.Categoria = "PIX";
+                vendas.Marca = "PIX";
+                vendas.Valoruni = 120;
+                vendas.FormaPagamento = "PIX";
+
+                VendasDAO VendasDAO = new VendasDAO();
+                VendasDAO.Insert(vendas);
+
+                MessageBox.Show(" O funcionário foi adicionado com com sucesso", "Sucesso", MessageBoxButton.OK, MessageBoxImage.Information);
+
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Não executado! ( não inseriu nada em BD)", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+            }
+           
         }
     }
 }
