@@ -171,7 +171,7 @@ namespace Sismeio
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
         }
         private void ClearInputs()
@@ -218,6 +218,11 @@ namespace Sismeio
         }
 
         private void comboBoxEstado_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void comboBoxEstado_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
         {
 
         }

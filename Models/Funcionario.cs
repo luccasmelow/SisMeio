@@ -22,24 +22,24 @@ namespace Sismeio.Models
 		 */
 
 
-
+		
 		public int Codigo { get; set; }
 
 		public string Nome { get; set; }
-
+		public string Sexo { get; set; }
 		public string RG { get; set; }
 
 		public string CPF { get; set; }
 
 		public DateTime DataNascimento { get; set; }
-
-		public string Sexo { get; set; }
+		public DateTime DataAdmissao { get; set; }
 
 		public string Telefone { get; set; }
 
-
+		public Double Salario { get; set; }
 		public string Setor { get; set; }
+		public Endereco Endereco { get; set; }
 
-		public string DataAdmissao { get; set; }
+
 	}
 }

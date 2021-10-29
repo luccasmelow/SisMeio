@@ -11,6 +11,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Sismeio.Models;
 
+
+
 namespace Sismeio
 {
     /// <summary>
@@ -18,193 +20,187 @@ namespace Sismeio
     /// </summary>
     public partial class ConsultarEstoque : Window
     {
+
         public ConsultarEstoque()
         {
             InitializeComponent();
             Loaded += ConsultarEstoque_Loaded;
         }
 
+
+
         private void ConsultarEstoque_Loaded(object sender, RoutedEventArgs e)
         {
-            List<Produto> ListaEstoque = new List<Produto>();
+
+            LoadDataGrid();
+        }
 
 
-            ListaEstoque.Add(new Produto()
+        /* private void LoadList ()
+         {
+             try
+             {
+                 var dao = new ProdutoDAO();
+                 dataGridEstoque.ItemsSource = dao.List(); 
+             }
+             catch(Exception ex)
+             {
+                 MessageBox.Show(ex.Message, "Excessão", MessageBoxButton.OK, MessageBoxImage.Error);
+             }
+         }*/
+
+        private void LoadDataGrid()
+        {
+            try
             {
-                Id = 001,
-                Descricao = "Chinelo Vermelho",
-                Categoria = "Chinelo",
-                Quantidade = 2,
-                ValorUnitario = 49.90,
-                ValorEstoque = 99.80,
-                Marca = "Havaiana",
-                Numeracao = 34
+                var dao = new ProdutoDAO();
 
+                dataGridEstoque.ItemsSource = dao.List();
 
-            });
-
-            ListaEstoque.Add(new Produto()
+            }
+            catch (Exception ex)
             {
-                Id = 009,
-                Descricao = "Chinelo Verde",
-                Categoria = "Chinelo",
-                Quantidade = 2,
-                ValorUnitario = 49.90,
-                ValorEstoque = 99.80,
-                Marca = "Havaiana",
-                Numeracao = 34
+                MessageBox.Show(ex.Message, "Excessão", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
 
 
-            });
 
-            ListaEstoque.Add(new Produto()
+
+
+        private void Button_Update_Click(object sender, RoutedEventArgs e)
+        {
+            var produtoSelected = dataGridEstoque.SelectedItem as Produto;
+
+            var window = new CadastroProduto(produtoSelected.Id);
+            window.ShowDialog();
+            LoadDataGrid();
+
+        }
+
+        private void Novo_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new CadastroProduto();
+            window.ShowDialog();
+            LoadDataGrid();
+
+
+        }
+
+        private void Button_Delete_Click(object sender, RoutedEventArgs e)
+        {
+            var produtoSelected = dataGridEstoque.SelectedItem as Produto;
+            var result = MessageBox.Show($"Deseja realmente remover o produto '{produtoSelected.Nome}' ?", "confirmação de exclusão",
+                MessageBoxButton.YesNo, MessageBoxImage.Warning);
+
+            try
             {
-                Id = 002,
-                Descricao = "Sandália Dourada",
-                Categoria = "Sandália",
-                Quantidade = 3,
-                ValorUnitario = 99.90,
-                ValorEstoque = 299.70,
-                Marca = "Ramarim",
-                Numeracao = 37
-
-
-            });
-
-            ListaEstoque.Add(new Produto()
+                if (result == MessageBoxResult.Yes)
+                {
+                    var dao = new ProdutoDAO();
+                    dao.Delet(produtoSelected);
+                    LoadDataGrid();
+                }
+            }
+            catch (Exception ex)
             {
-                Id = 005,
-                Descricao = "Sandália Rosa",
-                Categoria = "Sandália",
-                Quantidade = 1,
-                ValorUnitario = 99.90,
-                ValorEstoque = 99.90,
-                Marca = "Ramarim",
-                Numeracao = 39
-
-
-            });
-            ListaEstoque.Add(new Produto()
-            {
-                Id = 012,
-                Descricao = "Sandália Rosa",
-                Categoria = "Sandália",
-                Quantidade = 1,
-                ValorUnitario = 99.90,
-                ValorEstoque = 99.90,
-                Marca = "Ramarim",
-                Numeracao = 35
-
-
-            });
-
-            ListaEstoque.Add(new Produto()
-            {
-                Id = 008,
-                Descricao = "Tênia Preto",
-                Categoria = "Tênis",
-                Quantidade = 5,
-                ValorUnitario = 300.00,
-                ValorEstoque = 1.500,
-                Marca = "Adidas",
-                Numeracao = 39
-
-
-            });
-
-
-
-            dataGridEstoque.ItemsSource = ListaEstoque;
-        }
-
-        private void btnAlterar_Click(object sender, RoutedEventArgs e)
-        {
-            AtualizarProduto vsAtualizarProduto = new AtualizarProduto();
-
-            vsAtualizarProduto.ShowDialog();
+                MessageBox.Show(ex.Message, "Excessão", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
 
-        private void mnuInicial_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void mnuRealizarVenda_Click(object sender, RoutedEventArgs e)
-        {
-            RealizarVendas vsRealizarVendas = new RealizarVendas();
-
-            vsRealizarVendas.ShowDialog();
-
-        }
-
-        private void mnuCadastrarProduto_Click(object sender, RoutedEventArgs e)
-        {
-            CadastroProduto vsCadastrarProduto = new CadastroProduto();
-
-            vsCadastrarProduto.ShowDialog();
-        }
 
 
-        private void mnuCadastrarCliente_Click(object sender, RoutedEventArgs e)
-        {
-            CadastroCliente vsCadastrarCliente = new CadastroCliente();
 
-            vsCadastrarCliente.ShowDialog();
-        }
-
-        private void mnuCadastrarCompra_Click(object sender, RoutedEventArgs e)
-        {
-        }
-
-        private void mnuConsultarEstoque_Click(object sender, RoutedEventArgs e)
-        {
-            ConsultarEstoque vsConsultarEstoque = new ConsultarEstoque();
-
-            vsConsultarEstoque.ShowDialog();
-        }
-
-        private void mnuConsultarFuncionario_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void mnuConsultarCliente_Click(object sender, RoutedEventArgs e)
-        {
-            ConsultaCliente vsConsultaCliente = new ConsultaCliente();
-
-            vsConsultaCliente.ShowDialog();
-        }
-
-        private void mnuConsultarVenda_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void mnuControlarGastos_Click(object sender, RoutedEventArgs e)
-        {
-            ControlarGastos vsControlarGastos = new ControlarGastos();
-
-            vsControlarGastos.ShowDialog();
-        }
-
-        private void mnuCadastrarFuncionario_Click(object sender, RoutedEventArgs e)
-        {
-            CadastrarFuncionario vsCadastrarFuncionario = new CadastrarFuncionario();
-
-            vsCadastrarFuncionario.ShowDialog();
-
-        }
+        //  List<Produto> ListaEstoque = new List<Produto>();
 
 
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
+        //ListaEstoque.Add(new Produto()
+        //{
+        //  Id = 001,
+        //Descricao = "Chinelo Vermelho",
+        //Categoria = "Chinelo",
+        // Quantidade = 2,
+        //ValorUnitario = 49.90,
+        //ValorEstoque = 99.80,
+        //Marca = "Havaiana",
+        //Numeracao = 34
 
-        }
 
-        private void dataGridEstoque_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
+        //            });
 
-        }
+        //  ListaEstoque.Add(new Produto()
+        //{
+        //  Id = 009,
+        //Descricao = "Chinelo Verde",
+        //     Categoria = "Chinelo",
+        //   Quantidade = 2,
+        // ValorUnitario = 49.90,
+        //      ValorEstoque = 99.80,
+        //     Marca = "Havaiana",
+        //     Numeracao = 34
+
+
+        //   });
+
+        //   ListaEstoque.Add(new Produto()
+        //{
+        //     Id = 002,
+        //  Descricao = "Sandália Dourada",
+        //Categoria = "Sandália",
+        //   Quantidade = 3,
+        //     ValorUnitario = 99.90,
+        //ValorEstoque = 299.70,
+        // Marca = "Ramarim",
+        // Numeracao = 37
+
+
+        //});
+
+        //ListaEstoque.Add(new Produto()
+        //  {
+        //   Id = 005,
+        //     Descricao = "Sandália Rosa",
+        //     Categoria = "Sandália",
+        //   Quantidade = 1,
+        //   ValorUnitario = 99.90,
+        //   ValorEstoque = 99.90,
+        //    Marca = "Ramarim",
+        // Numeracao = 39
+
+
+        //});
+        //    ListaEstoque.Add(new Produto()
+        //  {
+        //    Id = 012,
+        //     Descricao = "Sandália Rosa",
+        //    Categoria = "Sandália",
+        //  Quantidade = 1,
+        //  ValorUnitario = 99.90,
+        //  ValorEstoque = 99.90,
+        //  Marca = "Ramarim",
+        //  Numeracao = 35
+
+
+        //  });
+
+        //   ListaEstoque.Add(new Produto()
+        // {
+        //   Id = 008,
+        //   Descricao = "Tênia Preto",
+        //   Categoria = "Tênis",
+        //  Quantidade = 5,
+        //  ValorUnitario = 300.00,
+        // ValorEstoque = 1.500,
+        // Marca = "Adidas",
+        // Numeracao = 39
+
+
+        //    });
+
+
+
+        //  dataGridEstoque.ItemsSource = ListaEstoque;
+
     }
 }

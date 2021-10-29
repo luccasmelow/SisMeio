@@ -1,9 +1,11 @@
 
 using System;
+using System.Linq   ;
 using System.Collections.Generic;
 using System.Text;
 using MySql.Data.MySqlClient;
 using System.Data;
+using System.Threading.Tasks;
 
 namespace Sismeio.Base
 {

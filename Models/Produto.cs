@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Sismeio.Models;
+using Sismeio.Base;
 
 namespace Sismeio.Models
 {
     public class Produto
-    {
+    {    
+        public String Nome { get; set; }
         public int Id { get; set; }
 
         public int CodBarras { get; set; }

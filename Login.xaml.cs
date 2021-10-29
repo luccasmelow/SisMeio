@@ -24,11 +24,15 @@ namespace Sismeio
 
         private void btnEntrar_Click(object sender, RoutedEventArgs e)
         {
-            var window = new TelaInicial();
+            
 
+            var window = new TelaInicial();
             window.Owner = this;
             window.ShowDialog();
-            window.Close();
+
+
+            
+           
         }
     }
 }
