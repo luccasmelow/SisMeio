@@ -220,6 +220,11 @@ namespace Sismeio
         {
 
         }
+
+        private void comboBoxEstado_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
   

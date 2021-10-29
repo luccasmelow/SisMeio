@@ -22,41 +22,41 @@
     <Grid>
 
 
-        <StackPanel Margin="59,58,519,76" RenderTransformOrigin="0.5,0.449">
+        <StackPanel Margin="59,58,519,23" RenderTransformOrigin="0.5,0.449">
 
 
             <TextBlock FontSize="30" FontWeight="Bold" Width="300" Height="51" Margin="0,0,-30,0"><Run Language="pt-br" Text="Cadastrar Funcionário"/></TextBlock>
 
 
-            <TextBox x:Name="txtNome" materialDesign:HintAssist.Hint="Nome" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 10" Width="262" TextChanged="nome_TextChanged" Cursor="IBeam"/>
-            <TextBox x:Name="txtCpf" materialDesign:HintAssist.Hint="CPF" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="-122,10,0,10" Width="136" TextChanged="cpf_TextChanged" />
-            <TextBox x:Name="TxtRg" materialDesign:HintAssist.Hint="RG" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,-44,-161,10" Width="102" />
-            <TextBox x:Name="TxtTelefone" materialDesign:HintAssist.Hint="Telefone" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 10" Width="262" />
+            <TextBox x:Name="txtNome" materialDesign:HintAssist.Hint="Nome" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 10" Width="262"  Cursor="IBeam"/>
+            <TextBox x:Name="txtCpf" materialDesign:HintAssist.Hint="CPF" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="-122,10,0,10" Width="136"  />
+            <TextBox x:Name="txtRg" materialDesign:HintAssist.Hint="RG" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,-44,-161,10" Width="102" />
+            <TextBox x:Name="txtTelefone" materialDesign:HintAssist.Hint="Telefone" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="-124,10,0,10" Width="134" />
 
-            <TextBlock FontSize="16" FontWeight="Medium" Width="262" Height="25" Margin="0,18,2,-5"><Run Text="Data de "/><Run Language="pt-br" Text="Nascimento"/></TextBlock>
-            <DatePicker
+            <TextBlock FontSize="16" FontWeight="Medium" Width="262" Height="29" Margin="0,18,2,-2" Padding="0,0,0,1" RenderTransformOrigin="0.508,1.372"><Run Text="Data de "/><Run Language="pt-br" Text="Nascimento"/></TextBlock>
+            <DatePicker x:Name="dtPickerDataNascimento"
 
                 materialDesign:HintAssist.Hint="Janeiro"
-                Style="{StaticResource MaterialDesignOutlinedDatePicker}" Width="267" Margin="-1,15,0,0" Height="51" />
+                Style="{StaticResource MaterialDesignOutlinedDatePicker}" Width="267" Margin="-1,15,0,-2" Height="60" Padding="16,16,16,1" />
 
-            <TextBlock FontSize="16" FontWeight="Medium" Width="262" Height="25" Margin="0,18,2,-5"><Run Language="pt-br" Text="Endereço"/></TextBlock>
-            <TextBox x:Name="txtBairro" materialDesign:HintAssist.Hint="Bairro" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 10" Width="262" />
+            <TextBlock FontSize="16" FontWeight="Medium" Width="262" Height="29" Margin="0,18,2,-2" Padding="0,0,0,1"><Run Language="pt-br" Text="Endereço"/></TextBlock>
+            <TextBox x:Name="txtBairro" materialDesign:HintAssist.Hint="Bairro" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,10,0,-2" Width="262" Cursor="IBeam" Height="40" Padding="0,4,0,1" />
 
 
 
         </StackPanel>
 
 
-        <StackPanel  Margin="456,107,122,343" RenderTransformOrigin="0.5,0.449">
+        <StackPanel  Margin="456,107,122,143" RenderTransformOrigin="0.5,0.449">
 
 
 
 
-            <TextBox x:Name="txtCep" materialDesign:HintAssist.Hint="CEP" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,10,-142,-44" Width="125" Cursor="IBeam" />
+            <TextBox x:Name="txtLogradouro" materialDesign:HintAssist.Hint="Logradouro" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,10,-142,-44" Width="125" Cursor="IBeam" />
             <ComboBox
-                x:Name="txtEstado"
+                x:Name="comboBoxEstado"
                 materialDesign:HintAssist.Hint="Estado"
-                Style="{StaticResource MaterialDesignOutlinedComboBox}" RenderTransformOrigin="0.5,0.5" Height="46" Width="132" Margin="0,0,-141,-152">
+                Style="{StaticResource MaterialDesignOutlinedComboBox}" RenderTransformOrigin="0.5,0.5" Height="46" Width="132" Margin="0,0,-141,-152" >
                 <ComboBox.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -67,7 +67,7 @@
                 </ComboBox.RenderTransform>
             </ComboBox>
             <TextBox x:Name="txtNumero" materialDesign:HintAssist.Hint="Número" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="-133,10,0,10" Width="127" />
-            <TextBox x:Name="txtCidade" materialDesign:HintAssist.Hint="Cidade" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="-144,10,0,10" Width="118" TextChanged="Estado_TextChanged" />
+            <TextBox x:Name="txtCidade" materialDesign:HintAssist.Hint="Cidade" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="-144,10,0,10" Width="118"  />
         </StackPanel>
         <StackPanel  Margin="458,440,120,9" RenderTransformOrigin="0.5,0.449">
             <StackPanel.RenderTransform>
@@ -80,20 +80,20 @@
             </StackPanel.RenderTransform>
 
 
-            <Button x:Name="txtCadastrar" Content="Cadastrar" Width="272" Margin="0,19,0,0" BorderBrush="{x:Null}" Click="cadastrar_Click"/>
-            <Button x:Name="txtCancelar" Content="Cancelar" Width="272" Margin="0,19,0,0" Background="#FFC90339" BorderBrush="{x:Null}" Click="cancelar_Click"/>
+            <Button x:Name="btcadastrar" Content="Cadastrar" Width="272" Margin="0,19,0,0" BorderBrush="{x:Null}" Click="btcadastrar_Click" Cursor="Hand"/>
+            <Button x:Name="btcancelar" Content="Cancelar" Width="272" Margin="0,19,0,0" Background="#FFC90339" BorderBrush="{x:Null}" Cursor="Hand" />
         </StackPanel>
         <StackPanel Margin="456,212,118,131" RenderTransformOrigin="0.5,0.449">
 
 
 
 
-            <TextBox x:Name="txtSalario" materialDesign:HintAssist.Hint="Salario" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 10" Width="262" TextChanged="nome_TextChanged" Cursor="IBeam"/>
-            <TextBox x:Name="txtSetor" materialDesign:HintAssist.Hint="Setor" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="-122,10,-120,10" Width="262" TextChanged="cpf_TextChanged" />
+            <TextBox x:Name="txtSalario" materialDesign:HintAssist.Hint="Salario" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 10" Width="262"  Cursor="IBeam"/>
+            <TextBox x:Name="txtSetor" materialDesign:HintAssist.Hint="Setor" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="-122,10,-120,10" Width="262" />
 
 
             <TextBlock FontSize="16" FontWeight="Medium" Width="262" Height="25" Margin="0,18,2,-5"><Run Text="Data de "/><Run Language="pt-br" Text="Admissão"/></TextBlock>
-            <DatePicker
+            <DatePicker x:Name="dtPickerDataAdmissao"
 
                 materialDesign:HintAssist.Hint="Janeiro"
                 Style="{StaticResource MaterialDesignOutlinedDatePicker}" Width="267" Margin="-1,15,0,0" Height="51" />
@@ -102,6 +102,22 @@
 
 
 
+        </StackPanel>
+        <StackPanel  Margin="260,163,554,287" RenderTransformOrigin="0.5,0.449">
+            <ComboBox
+                x:Name="txtSexo"
+                materialDesign:HintAssist.Hint="Sexo"
+                Style="{StaticResource MaterialDesignOutlinedComboBox}" RenderTransformOrigin="0.5,0.5" Height="46" Width="132" Margin="0,0,-9,-152" SelectionChanged="txtSexo_SelectionChanged" >
+                
+                <ComboBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="-0.352"/>
+                        <RotateTransform/>
+                        <TranslateTransform X="-0.007"/>
+                    </TransformGroup>
+                </ComboBox.RenderTransform>
+            </ComboBox>
         </StackPanel>
 
 
