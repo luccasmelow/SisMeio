@@ -17,6 +17,13 @@ namespace Sismeio.Models
         private static Conexao conec;
 
 
+        public FuncionarioDAO()
+        {
+            conec = new Conexao();
+
+        }
+
+
         public void Delet(Funcionario t)
         {
             throw new NotImplementedException();

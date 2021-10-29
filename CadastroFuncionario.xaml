@@ -17,44 +17,97 @@
         Background="#ffffff"
         FontFamily="{DynamicResource MaterialDesignFont}"
         
-        Title="CadastroFuncionário" Height="592" Width="946" MinHeight="592" MinWidth="946" WindowStartupLocation="CenterScreen" >
+        Title="CadastroFuncionário" Height="600" Width="980" MinHeight="600" MinWidth="980" WindowStartupLocation="CenterScreen" >
 
     <Grid>
 
 
-        <StackPanel Margin="59,58,519,-353" RenderTransformOrigin="0.5,0.449">
+        <StackPanel Margin="59,58,519,76" RenderTransformOrigin="0.5,0.449">
 
 
             <TextBlock FontSize="30" FontWeight="Bold" Width="300" Height="51" Margin="0,0,-30,0"><Run Language="pt-br" Text="Cadastrar Funcionário"/></TextBlock>
 
-            
-            <TextBox x:Name="nome" materialDesign:HintAssist.Hint="Nome" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 10" Width="262" TextChanged="nome_TextChanged" Cursor="IBeam"/>
-            <TextBox x:Name="cpf" materialDesign:HintAssist.Hint="CPF" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="-122,10,0,10" Width="136" TextChanged="cpf_TextChanged" />
-            <TextBox x:Name="rg" materialDesign:HintAssist.Hint="RG" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,-44,-161,10" Width="102" />
-            <TextBox x:Name="telefone" materialDesign:HintAssist.Hint="Telefone" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 10" Width="262" />
 
-            <TextBlock FontSize="16" FontWeight="Medium" Width="262" Height="25" Margin="0,18,2,-5"><Run Language="pt-br" Text="Data de admissão"/></TextBlock>
+            <TextBox x:Name="txtNome" materialDesign:HintAssist.Hint="Nome" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 10" Width="262" TextChanged="nome_TextChanged" Cursor="IBeam"/>
+            <TextBox x:Name="txtCpf" materialDesign:HintAssist.Hint="CPF" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="-122,10,0,10" Width="136" TextChanged="cpf_TextChanged" />
+            <TextBox x:Name="TxtRg" materialDesign:HintAssist.Hint="RG" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,-44,-161,10" Width="102" />
+            <TextBox x:Name="TxtTelefone" materialDesign:HintAssist.Hint="Telefone" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 10" Width="262" />
+
+            <TextBlock FontSize="16" FontWeight="Medium" Width="262" Height="25" Margin="0,18,2,-5"><Run Text="Data de "/><Run Language="pt-br" Text="Nascimento"/></TextBlock>
             <DatePicker
 
                 materialDesign:HintAssist.Hint="Janeiro"
                 Style="{StaticResource MaterialDesignOutlinedDatePicker}" Width="267" Margin="-1,15,0,0" Height="51" />
 
             <TextBlock FontSize="16" FontWeight="Medium" Width="262" Height="25" Margin="0,18,2,-5"><Run Language="pt-br" Text="Endereço"/></TextBlock>
-            <TextBox x:Name="bairro" materialDesign:HintAssist.Hint="Bairro" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 10" Width="262" />
+            <TextBox x:Name="txtBairro" materialDesign:HintAssist.Hint="Bairro" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 10" Width="262" />
 
 
 
         </StackPanel>
 
 
-        <StackPanel  Margin="473,107,105,158" RenderTransformOrigin="0.5,0.449">
-            <TextBox x:Name="cep" materialDesign:HintAssist.Hint="CEP" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,10,-142,-44" Width="125" />
-            <TextBox x:Name="numero" materialDesign:HintAssist.Hint="Número" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="-133,10,0,10" Width="127" />
-            <TextBox x:Name="estado" materialDesign:HintAssist.Hint="Estado" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 10" Width="262" />
-            <TextBox x:Name="cidade" materialDesign:HintAssist.Hint="Cidade" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 10" Width="262" TextChanged="Estado_TextChanged" />
+        <StackPanel  Margin="456,107,122,343" RenderTransformOrigin="0.5,0.449">
 
-            <Button x:Name="cadastrar" Content="Cadastrar" Width="272" Margin="0,19,0,0" BorderBrush="{x:Null}" Click="cadastrar_Click"/>
-            <Button x:Name="cancelar" Content="Cancelar" Width="272" Margin="0,19,0,0" Background="#FFC90339" BorderBrush="{x:Null}" Click="cancelar_Click"/>
+
+
+
+            <TextBox x:Name="txtCep" materialDesign:HintAssist.Hint="CEP" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,10,-142,-44" Width="125" Cursor="IBeam" />
+            <ComboBox
+                x:Name="txtEstado"
+                materialDesign:HintAssist.Hint="Estado"
+                Style="{StaticResource MaterialDesignOutlinedComboBox}" RenderTransformOrigin="0.5,0.5" Height="46" Width="132" Margin="0,0,-141,-152">
+                <ComboBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="-0.352"/>
+                        <RotateTransform/>
+                        <TranslateTransform X="-0.007"/>
+                    </TransformGroup>
+                </ComboBox.RenderTransform>
+            </ComboBox>
+            <TextBox x:Name="txtNumero" materialDesign:HintAssist.Hint="Número" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="-133,10,0,10" Width="127" />
+            <TextBox x:Name="txtCidade" materialDesign:HintAssist.Hint="Cidade" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="-144,10,0,10" Width="118" TextChanged="Estado_TextChanged" />
         </StackPanel>
+        <StackPanel  Margin="458,440,120,9" RenderTransformOrigin="0.5,0.449">
+            <StackPanel.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-0.824"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-2.008"/>
+                </TransformGroup>
+            </StackPanel.RenderTransform>
+
+
+            <Button x:Name="txtCadastrar" Content="Cadastrar" Width="272" Margin="0,19,0,0" BorderBrush="{x:Null}" Click="cadastrar_Click"/>
+            <Button x:Name="txtCancelar" Content="Cancelar" Width="272" Margin="0,19,0,0" Background="#FFC90339" BorderBrush="{x:Null}" Click="cancelar_Click"/>
+        </StackPanel>
+        <StackPanel Margin="456,212,118,131" RenderTransformOrigin="0.5,0.449">
+
+
+
+
+            <TextBox x:Name="txtSalario" materialDesign:HintAssist.Hint="Salario" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 10" Width="262" TextChanged="nome_TextChanged" Cursor="IBeam"/>
+            <TextBox x:Name="txtSetor" materialDesign:HintAssist.Hint="Setor" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="-122,10,-120,10" Width="262" TextChanged="cpf_TextChanged" />
+
+
+            <TextBlock FontSize="16" FontWeight="Medium" Width="262" Height="25" Margin="0,18,2,-5"><Run Text="Data de "/><Run Language="pt-br" Text="Admissão"/></TextBlock>
+            <DatePicker
+
+                materialDesign:HintAssist.Hint="Janeiro"
+                Style="{StaticResource MaterialDesignOutlinedDatePicker}" Width="267" Margin="-1,15,0,0" Height="51" />
+
+
+
+
+
+        </StackPanel>
+
+
+
+
+
+
     </Grid>
 </Window>
