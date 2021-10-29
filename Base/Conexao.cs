@@ -19,7 +19,7 @@ namespace Sismeio.Base
 
         private static string dbname = "bd_equipe_snow";
 
-        private static string sslmode = "none";
+        
 
 
 
@@ -33,7 +33,7 @@ namespace Sismeio.Base
         {
             try
             {
-                connection = new MySqlConnection($"server={host};user={user};database={dbname};port={port}; password={password}; sslmode={sslmode}");
+                connection = new MySqlConnection($"server={host};user={user};database={dbname};port={port}; password={password};");
                 connection.Open();
             }
             catch (Exception)

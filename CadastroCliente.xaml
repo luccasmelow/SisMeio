@@ -13,7 +13,7 @@
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="CadastroCliente" Height="600" Width="1333" Margin="20,0,30,0" MaxHeight="600" MaxWidth="1200" MinHeight="800" MinWidth="660" WindowStartupLocation="CenterScreen">
+        Title="CadastroCliente" Height="600" Width="2000" Margin="20,0,30,0" MaxHeight="1000" MaxWidth="1200" MinHeight="800" MinWidth="660" WindowStartupLocation="CenterScreen">
 
     <Grid Margin="-23,-32,-47,-75">
         <Grid.RowDefinitions>
@@ -21,7 +21,7 @@
             <RowDefinition Height="218*"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="1" Margin="10">
+        <StackPanel Grid.Row="1" Margin="10,10,0,10">
 
             <StackPanel Orientation="Horizontal"/>
         </StackPanel>
@@ -45,17 +45,17 @@
         <TextBlock Text="TextBlock" TextWrapping="Wrap"/>
         <TextBox Text="TextBox" TextWrapping="Wrap" Width="120"/>
         <TextBlock Text="TextBlock" TextWrapping="Wrap"/>
-        <TextBox TextWrapping="Wrap" Margin="432,343,600,462" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam"  Name="CPF"/>
+        <TextBox TextWrapping="Wrap" Margin="432,343,600,462" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam"  Name="Telefone"/>
         <TextBox TextWrapping="Wrap" Margin="788,197,272,610" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam"  Name="RG"/>
-        <TextBox TextWrapping="Wrap" Margin="601,504,347,306" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam" Name="Telefone"/>
-        <TextBox TextWrapping="Wrap" Margin="186,621,796,183" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam"  Name="Bairro"/>
+        <TextBox TextWrapping="Wrap" Margin="601,504,347,306" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam" Name="Bairro"/>
+        <TextBox TextWrapping="Wrap" Margin="186,621,796,183" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam"  Name="cidade"/>
         <TextBox TextWrapping="Wrap" Margin="217,504,828,306" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam" Name="Logradouro"/>
         <TextBox TextWrapping="Wrap" Margin="945,624,196,186" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam" x:Name="Numero" RenderTransformOrigin="0.818,0.681" />
         <DatePicker x:Name="dtPickerDataNascimento"
         materialDesign:HintAssist.Hint="Janeiro"
 
         Style="{StaticResource MaterialDesignOutlinedDatePicker}" Margin="72,343,971,0" Grid.Row="1" VerticalAlignment="Top" />
-        <TextBox TextWrapping="Wrap" Margin="78,196,924,610" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam"  Name="cidade"/>
+        <TextBox TextWrapping="Wrap" Margin="78,196,924,610" Grid.Row="1" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam"  Name="Nome"/>
         <Menu Height="20" Width="106" Margin="59,29,1105,621" Grid.Row="1"/>
 
         <ComboBox
@@ -89,7 +89,7 @@
                         Margin="1020,255,80,239" 
                         Cursor="Hand" 
                         Height="32" ClickMode="Press" Grid.Row="1" Click="bttfechar_Click_1"/>
-        <TextBox TextWrapping="Wrap" Margin="433,197,600,610" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam"  x:Name="Nome" Grid.Row="1"/>
+        <TextBox TextWrapping="Wrap" Margin="433,197,600,610" Foreground="#8d8d8d" CaretBrush="#8d8d8d" TextChanged="TextBox_TextChanged_1" Cursor="IBeam"  x:Name="CPF" Grid.Row="1"/>
 
         <TextBox
                 x:Name="Codigo"

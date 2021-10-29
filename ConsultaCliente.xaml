@@ -24,7 +24,7 @@
                 <DataGridTextColumn Header="Codigo" Binding="{Binding Codigo}"/>
                 <DataGridTextColumn Header="Nome" Binding="{Binding Nome}"/>
                 <DataGridTextColumn Header="Telefone" Binding="{Binding Telefone}"/>
-                
+
 
                 <DataGridTemplateColumn Header="Selecionar">
                     <DataGridTemplateColumn.CellTemplate>
@@ -64,7 +64,7 @@
                     Height="32" Width="110" 
                     ClickMode="Press" 
                     HorizontalAlignment="Left" 
-                    VerticalAlignment="Top" Click="btnVisualizar_Click"
+                    VerticalAlignment="Top" Click="btnexcluir_Click"
                  />
         <Button 
                     x:Name="btnovo" 
@@ -74,7 +74,17 @@
                     Height="32" Width="110" 
                     ClickMode="Press" 
                     HorizontalAlignment="Left" 
-                    VerticalAlignment="Top" Click="btnVisualizar_Click"
+                    VerticalAlignment="Top" Click="btnNovo_Click"
+                 />
+        <Button 
+                    x:Name="btfechar" 
+                    Content="Fechar" 
+                    Margin="752,585,0,0" 
+                    Cursor="Hand" 
+                    Height="32" Width="110" 
+                    ClickMode="Press" 
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Top" Click="btnfechar_Click"
                  />
     </Grid>
 
