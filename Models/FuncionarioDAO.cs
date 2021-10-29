@@ -74,9 +74,9 @@ namespace Sismeio.Models
                  }
                 */
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                throw ex;
+                throw e;
             }
             finally
             {
