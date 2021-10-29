@@ -44,18 +44,6 @@ namespace Sismeio
             }
         }
 
-        private void btnovo_Click(object sender, RoutedEventArgs e)
-        {
-            var window = new CadastroCliente();
-            window.ShowDialog();
-            LoadDataGrid();
-        }
-
-        //private void btfechar_Click(object sender, RoutedEventArgs e)
-       // {
-
-        //}
-
         private void btnVisualizar_Click(object sender, RoutedEventArgs e)
         {
             var clienteSelected = dataGridcli.SelectedItem as Cliente;
@@ -65,12 +53,17 @@ namespace Sismeio
             LoadDataGrid();
         }
 
-        private void Btnexcluir_Click(object sender, RoutedEventArgs e)
+        private void dataGridcli_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var clienteSelected = dataGridcli.SelectedItem as Cliente;
+
+        }
+
+        private void btnexcluir_Click(object sender, RoutedEventArgs e)
+        {
+            var clientSelected = dataGridcli.SelectedItem as Cliente;
 
 
-            var result = MessageBox.Show($"Deseja realmente excluir o cliente `{clienteSelected.Nome}`?", "Confirmação de Exclusão",
+            var result = MessageBox.Show($"Deseja realmente excluir o cliente `{clientSelected.Nome}`?", "Confirmação de Exclusão",
                 MessageBoxButton.YesNo, MessageBoxImage.Warning);
 
             try
@@ -78,7 +71,7 @@ namespace Sismeio
                 if (result == MessageBoxResult.Yes)
                 {
                     var dao = new ClienteDAO();
-                    dao.Delet(clienteSelected);
+                    dao.Delet(clientSelected);
                     LoadDataGrid();
                 }
             }
@@ -86,12 +79,22 @@ namespace Sismeio
             {
                 MessageBox.Show(ex.Message, "Exceção", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-
         }
 
-        private void dataGridcli_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void btnNovo_Click(object sender, RoutedEventArgs e)
         {
+            var window = new CadastroCliente();
+            window.ShowDialog();
+            LoadDataGrid();
+        }
 
+        private void btnfechar_Click(object sender, RoutedEventArgs e)
+        {
+            var result = MessageBox.Show("Tem certeza que deseja fechar esta janela?", "Sucesso", MessageBoxButton.YesNo, MessageBoxImage.Information);
+
+            if (result == MessageBoxResult.Yes)
+
+                this.Close();
         }
     }
 }
