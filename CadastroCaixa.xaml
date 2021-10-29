@@ -29,7 +29,7 @@
 
 
             <TextBox x:Name="txtCodigo" materialDesign:HintAssist.Hint="Código" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  Width="90"  IsEnabled = " False " HorizontalAlignment="Left" />
-            <TextBox x:Name="txtMes" materialDesign:HintAssist.Hint="Mês" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 5" Width="201"  HorizontalAlignment="Left"  />
+            <TextBox x:Name="txtMes" materialDesign:HintAssist.Hint="Mês" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 5" Width="201"  HorizontalAlignment="Left" />
             <TextBox x:Name ="txtSaldoAn" materialDesign:HintAssist.Hint="Saldo Anterior" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="201" HorizontalAlignment="Left" />
             <TextBox x:Name="txtSaldoFin" materialDesign:HintAssist.Hint="Saldo Final" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="201" HorizontalAlignment="Left" />
             <TextBox x:Name="txtDebitos" materialDesign:HintAssist.Hint="Créditos" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="201"  HorizontalAlignment="Left" />
