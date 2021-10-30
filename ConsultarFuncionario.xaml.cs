@@ -21,5 +21,42 @@ namespace Sismeio
         {
             InitializeComponent();
         }
+
+        private void dataGridcli_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void btcadastrar_Click(object sender, RoutedEventArgs e)
+        {
+            var result = MessageBox.Show("Tem certeza que deseja fechar esta janela?", "Sucesso", MessageBoxButton.YesNo, MessageBoxImage.Information);
+
+            if (result == MessageBoxResult.Yes)
+
+                this.Close();
+        }
+
+        private void btnovo_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new CadastrarFuncionario();
+            window.Owner = this;
+            window.ShowDialog();
+        }
+
+        private void btcancelar_Click(object sender, RoutedEventArgs e)
+        {
+            var result = MessageBox.Show("Tem certeza que deseja fechar esta janela?", "Sucesso", MessageBoxButton.YesNo, MessageBoxImage.Information);
+
+            if (result == MessageBoxResult.Yes)
+
+                this.Close();
+        }
+
+        private void btnovo_Click_1(object sender, RoutedEventArgs e)
+        {
+            var window = new CadastrarFuncionario();
+            window.Owner = this;
+            window.ShowDialog();
+        }
     }
 }
