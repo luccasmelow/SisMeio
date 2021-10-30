@@ -137,7 +137,46 @@ namespace Sismeio.Models
 
         public List<Funcionario> List()
         {
-            throw new NotImplementedException();
+            try
+            {
+                List<Funcionario> list = new List<Funcionario>();
+                var query = conec.Query();
+                query.CommandText = "SELECT * FROM funcionario";
+
+                MySqlDataReader reader = query.ExecuteReader();
+
+                while (reader.Read())
+                {
+
+                    list.Add(new Funcionario()
+                    {
+                        Codigo = reader.GetInt32("cod_fun"),
+                        Nome = reader.GetString("nome_fun"),
+                        RG = reader.GetString("rg_fun"),
+                        CPF = reader.GetString("cpf_fun"),
+                        Telefone = reader.GetString("telefone_fun"),
+                        DataNascimento = reader.GetDateTime("data_nasc_fun"),
+                        Sexo = reader.GetString("sexo_fun"),
+                        Salario = reader.GetInt32("salario_fun"),
+                        Setor = reader.GetString("setor_fun"),
+                        DataAdmissao = reader.GetDateTime("data_admissao_fun"),
+                        
+
+
+
+                    });;
+                }
+                return list;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                conec.Close();
+            }
+
         }
 
         public void Update(Funcionario t)
