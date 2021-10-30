@@ -27,7 +27,7 @@
             </StackPanel.RenderTransform>
 
 
-            <Button x:Name="btexcluir" Content="Excluir" Width="200" Background="#FFC90339" BorderBrush="{x:Null}" Cursor="Hand"  />
+            <Button x:Name="btexcluir" Content="Excluir" Width="200" Background="#FFC90339" BorderBrush="{x:Null}" Cursor="Hand" Click="btexcluir_Click"  />
 
 
             <Button x:Name="btconsultar" Content="Consultar" Width="200" Margin="0,19,0,0" BorderBrush="{x:Null}"  Cursor="Hand"/>
