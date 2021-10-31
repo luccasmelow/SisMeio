@@ -117,6 +117,8 @@ namespace Sismeio.Models
                 if (result == 0)
                     throw new Exception("O Registro não foi inserido, Tente Novamente!!");
 
+                
+
             }
             catch (Exception e)
             {
@@ -143,21 +145,23 @@ namespace Sismeio.Models
 
                 while (reader.Read())
                 {
-                    var caixa = new Caixa()
+                    
+
+                    list.Add(new Caixa()
                     {
 
                         Codigo = reader.GetInt32("cod_cai"),
-                        Mes = reader.GetString("mes_cai"),
-                        SaldoAnt = reader.GetDouble("saldo_ant_cai"),
-                        SaldoFin = reader.GetDouble("saldo_final_cai"),
-                        Debitos = reader.GetDouble("debitos_cai"),
-                        Creditos = reader.GetDouble("creditos_cai")
+                        Mes = DAOHelper.GetString(reader, "mes_cai"),
+                        SaldoAnt = DAOHelper.GetDouble(reader, "saldo_ant_cai"),
+                        SaldoFin = DAOHelper.GetDouble(reader, "saldo_final_cai"),
+                        Debitos = DAOHelper.GetDouble(reader, "debitos_cai"),
+                        Creditos = DAOHelper.GetDouble(reader, "creditos_cai")
 
 
-                    };
+                    });
 
                    
-                    list.Add(caixa);
+                    
                 }
 
                 return list;
@@ -193,7 +197,7 @@ namespace Sismeio.Models
                 var result = query.ExecuteNonQuery();
 
                 if (result == 0)
-                    throw new Exception("Atualização nãp Realizada, Tente Novamente!!");
+                    throw new Exception("Atualização não Realizada, Tente Novamente!!");
 
             }
             catch (Exception e)

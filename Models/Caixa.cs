@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Sismeio.Models
 {
-    class Caixa
+    public class Caixa
     {
         public int Codigo{ get; set; }
 

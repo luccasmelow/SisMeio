@@ -9,11 +9,11 @@ namespace Sismeio.Models
         public int Codigo { get; set; }
 
         public double Valor { get; set; }
-        public DateTime Data { get; set; }
+        public DateTime? Data { get; set; }
 
         public string Descricao  { get; set; }
 
-        public int Caixa { get; set; }
+        public Caixa Caixa { get; set; }
 
 
 

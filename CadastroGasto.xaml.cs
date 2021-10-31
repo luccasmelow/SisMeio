@@ -46,6 +46,8 @@ namespace Sismeio
             if (_cod > 0)
                 FillForm();
 
+            cbCaixa.ItemsSource = new CaixaDAO().List();
+
 
         }
 
@@ -53,18 +55,21 @@ namespace Sismeio
         private void cadastrar_Click(object sender, RoutedEventArgs e)
         {
            
-                
+             
             _gasto.Valor = Convert.ToDouble(txtValor.Text);
-            _gasto.Data = (DateTime)dtPickerDataGasto.SelectedDate;
-            _gasto.Descricao = txtDescricao.Text;
-            _gasto.Caixa = Convert.ToInt32(txtCaixa.Text);
-
-          //  if (double.TryParse(txtValor.Text, out double valor))
-               // _gasto.Valor = valor;
-           
-
+            //_gasto.Data = (DateTime)dtPickerDataGasto.SelectedDate;
+             _gasto.Descricao = txtDescricao.Text;
             if (dtPickerDataGasto.SelectedDate != null)
                 _gasto.Data = (DateTime)dtPickerDataGasto.SelectedDate;
+
+            if (cbCaixa.SelectedItem != null)
+                 _gasto.Caixa = cbCaixa.SelectedItem as Caixa;
+
+            //  if (double.TryParse(txtValor.Text, out double valor))
+            // _gasto.Valor = valor;
+
+
+           
 
 
 
@@ -146,7 +151,10 @@ namespace Sismeio
                 txtValor.Text = _gasto.Valor.ToString();
                 dtPickerDataGasto.SelectedDate = _gasto.Data;
                 txtDescricao.Text = _gasto.Descricao;
-                txtCaixa.Text = _gasto.Caixa.ToString();
+                
+
+                if (_gasto.Caixa != null)
+                    cbCaixa.SelectedValue = _gasto.Caixa.Codigo;
 
 
 
@@ -179,7 +187,7 @@ namespace Sismeio
             txtValor.Text ="";
             dtPickerDataGasto.SelectedDate = null;
             txtDescricao.Text = "";
-            txtCaixa.Text = "";
+            cbCaixa.Text = "";
 
         }
 

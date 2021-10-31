@@ -158,7 +158,7 @@
                         <DataGridTextColumn Header="Valor" Binding="{Binding Valor, ConverterCulture='pt-Br', StringFormat=C}"/>
                         <DataGridTextColumn Header="Data" Binding="{Binding Data}"/>
                         <DataGridTextColumn Header="Descrição" Binding="{Binding Descricao}"/>
-                        <DataGridTextColumn Header="Caixa" Binding="{Binding Caixa}"/>
+                        <DataGridTextColumn Header="Caixa" Binding="{Binding Caixa.Mes}"/>
 
                         <DataGridTemplateColumn Header="Ações">
 

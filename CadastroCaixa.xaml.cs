@@ -35,7 +35,7 @@ namespace Sismeio
         {
             
 
-            _caixa = new Caixa();
+            _caixa= new Caixa();
 
             if (_cod > 0)
                 FillForm();
@@ -47,7 +47,9 @@ namespace Sismeio
         {
             var validator = new CaixaValidator();
 
-            var result = validator.Validate(_caixa);
+            var caixa = new Caixa();
+
+            var result = validator.Validate(caixa);
 
             if (!result.IsValid)
             {
@@ -74,22 +76,41 @@ namespace Sismeio
 
         private void cadastrar_Click(object sender, RoutedEventArgs e)
         {
-            _caixa.Mes = txtMes.Text;
-            _caixa.SaldoAnt = Convert.ToDouble(txtSaldoAn.Text);
-            _caixa.SaldoFin = Convert.ToDouble(txtSaldoFin.Text);
-            _caixa.Creditos = Convert.ToDouble(txtCreditos.Text);
-            _caixa.Debitos = Convert.ToDouble(txtDebitos.Text);
 
-           //if (txtMes.Text, out string mes)
-             // _caixa.Mes = mes;
-
-
+            Caixa caixa = new Caixa();
+            
+            /*
+            caixa.Mes = txtMes.Text;
+            caixa.SaldoAnt = Convert.ToDouble(txtSaldoAn.Text);
+            caixa.SaldoFin = Convert.ToDouble(txtSaldoFin.Text);
+            caixa.Creditos = Convert.ToDouble(txtCreditos.Text);
+            caixa.Debitos = Convert.ToDouble(txtDebitos.Text);
+            */
+            
+            // if (txtMes.Text, out string mes)
+            //_caixa.Mes = mes;
+                        
+            if (txtMes.Text != null)
+                caixa.Mes = txtMes.Text;
+            if (txtSaldoAn.Text != null)
+                caixa.SaldoAnt = Convert.ToDouble(txtSaldoAn.Text);
+            if (txtSaldoFin.Text!= null)
+                caixa.SaldoFin = Convert.ToDouble(txtSaldoFin.Text);
+            if (txtDebitos.Text != null)
+                caixa.Debitos = Convert.ToDouble(txtDebitos.Text);
+            if (txtCreditos.Text != null)
+                caixa.Creditos = Convert.ToDouble(txtCreditos.Text);
+            
+            
             SalveData();
 
-
         }
+
+       
         private void SalveData()
         {
+            Caixa caixa = new Caixa();
+
             try
             {
                 if (Validate())
@@ -97,13 +118,13 @@ namespace Sismeio
                     CaixaDAO dao = new CaixaDAO();
                     var text = "atualizado";
 
-                    if (_caixa.Codigo == 0)
+                    if (caixa.Codigo == 0)
                     {
-                        dao.Insert(_caixa);
+                        dao.Insert(caixa);
                         text = "adicionado";
                     }
                     else
-                        dao.Update(_caixa);
+                        dao.Update(caixa);
 
                     MessageBox.Show($"Caixa {text} com sucesso", "Sucesso", MessageBoxButton.OK, MessageBoxImage.Information);
                     CloseFormVerify();
@@ -120,11 +141,11 @@ namespace Sismeio
         }
         private void FillForm()
         {
-
+            Caixa caixa = new Caixa();
             try
             {
                 var dao = new CaixaDAO();
-                _caixa = dao.GetById(_cod);
+                caixa = dao.GetById(_cod);
 
                 txtCodigo.Text = _caixa.Codigo.ToString();
                 txtMes.Text = _caixa.Mes.ToString();
@@ -143,7 +164,8 @@ namespace Sismeio
         }
         private void CloseFormVerify()
         {
-            if (_caixa.Codigo == 0)
+            Caixa caixa = new Caixa();
+            if (caixa.Codigo == 0)
             {
                 var result = MessageBox.Show("Deseja prosseguir com o cadastro de gastos?", "Continuar?", MessageBoxButton.YesNo, MessageBoxImage.Question);
 

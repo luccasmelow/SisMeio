@@ -71,12 +71,17 @@ namespace Sismeio.Models
                     //(DateTime)dtPickerDataGasto.SelectedDate
                     gasto.Codigo = reader.GetInt32("cod_gas");
                     gasto.Valor = reader.GetDouble("valor_gas");
-                    gasto.Data = reader.GetDateTime("data_gas");
+                    if (DAOHelper.IsNull(reader, "data_gas"))
+                        gasto.Data = reader.GetDateTime("data_gas");
                     gasto.Descricao = reader.GetString("descricao");
-                  
 
-                    if(DAOHelper.IsNull(reader,"cod_cai_fk"))
-                         gasto.Caixa = reader.GetInt32("cod_cai_fk");
+
+                    if (DAOHelper.IsNull(reader, "cod_cai_fk"))
+                        gasto.Caixa = new Caixa()
+                        {
+                            Codigo = reader.GetInt32("cod_cai"),
+                            Mes = reader.GetString("mes_cai")
+                        };
 
 
 
@@ -106,9 +111,9 @@ namespace Sismeio.Models
                     "VALUES(@valor, @data, @descricao, @caixa)";
 
                 query.Parameters.AddWithValue("@valor", t.Valor);
-                query.Parameters.AddWithValue("@data", t.Data.ToString("yyyy-MM-dd"));
+                query.Parameters.AddWithValue("@data", t.Data?.ToString("yyyy-MM-dd"));
                 query.Parameters.AddWithValue("@descricao", t.Descricao);
-                query.Parameters.AddWithValue("@caixa", t.Caixa);
+                query.Parameters.AddWithValue("@caixa", t.Caixa.Codigo);
 
                 var result = query.ExecuteNonQuery();
 
@@ -134,39 +139,34 @@ namespace Sismeio.Models
                 List<Gasto> list = new List<Gasto>();
 
                 var query = conn.Query();
-                query.CommandText = "SELECT * FROM gastos";
+                query.CommandText = "SELECT * FROM gastos LEFT JOIN caixa ON cod_cai = cod_cai_fk ";
 
                 MySqlDataReader reader = query.ExecuteReader();
 
                 while (reader.Read())
                 {
-                    var gasto = new Gasto()
-                    {
+                    list.Add(new Gasto()
+                    { 
+                    
                         //(DateTime)dtPickerDataGasto.SelectedDate
                         Codigo = reader.GetInt32("cod_gas"),
-                        Valor = reader.GetDouble("valor_gas"),
-                        Data = reader.GetDateTime("data_gas"),
-                        Descricao = reader.GetString("descricao"),
-                    
-                        Caixa = reader.GetInt32("cod_cai_fk")
+                        Valor = DAOHelper.GetDouble(reader, "valor_gas"),
+                        Data = DAOHelper.GetDateTime (reader,"data_gas"),
+                        Descricao = DAOHelper.GetString(reader,"descricao"),
+                       // Caixa = DAOHelper.IsNull(reader, "cod_cai_fk") ? null : new Caixa() { Codigo = reader.GetInt32("cod_caixa")}
 
-                     };
-
-                    /*
-                    if (DAOHelper.IsNull(reader, "valor_gas"))
-                        gasto.Valor = reader.GetDouble("valor_gas");
-                    if (DAOHelper.IsNull(reader, "data_gas"))
-                        gasto.Data = reader.GetDateTime("data_gas");
-                    if (DAOHelper.IsNull(reader, "descricao"))
-                   
-                        gasto.Descricao = reader.GetString("descricao");
-                    */
-                    //if (DAOHelper.IsNull(reader, "cod_cai_fk"))
-                       // gasto.Caixa = reader.GetInt32("cod_cai_fk");
-                    
-                   
-
-                    list.Add(gasto);
+                        
+                        Caixa = DAOHelper.IsNull(reader, "cod_cai_fk") ? null : new Caixa()
+                        {
+                            Codigo = reader.GetInt32("cod_cai"),
+                            Mes = reader.GetString("mes_cai"),
+                            SaldoAnt = reader.GetDouble("saldo_ant_cai"),
+                            SaldoFin = reader.GetDouble("saldo_final_cai"),
+                            Debitos = reader.GetDouble("debitos_cai"),
+                            Creditos = reader.GetDouble("creditos_cai")
+                        }
+                        
+                    });
                 }
 
                 return list;
@@ -174,14 +174,12 @@ namespace Sismeio.Models
             catch (Exception e)
             {
                 throw e;
-
             }
             finally
             {
                 conn.Close();
             }
         }
-        
 
         public void Update(Gasto t)
         {
@@ -194,14 +192,14 @@ namespace Sismeio.Models
                 query.Parameters.AddWithValue("@codigo", t.Codigo);
 
                 query.Parameters.AddWithValue("@valor", t.Valor);
-                query.Parameters.AddWithValue("@data", t.Data.ToString("yyyy-MM-dd"));
+                query.Parameters.AddWithValue("@data", t.Data?.ToString("yyyy-MM-dd"));
                 query.Parameters.AddWithValue("@descricao", t.Descricao);
-                query.Parameters.AddWithValue("@caixa", t.Caixa);
+                query.Parameters.AddWithValue("@caixa", t.Caixa.Codigo);
 
                 var result = query.ExecuteNonQuery();
 
                 if (result == 0)
-                    throw new Exception("Atualização nãp Realizada, Tente Novamente!!");
+                    throw new Exception("Atualização não Realizada, Tente Novamente!!");
 
             }
             catch (Exception e)
@@ -214,9 +212,8 @@ namespace Sismeio.Models
                 conn.Close();
             }
         }
-
-        
-
-
     }
 }
+
+
+                    
