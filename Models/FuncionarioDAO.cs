@@ -31,7 +31,58 @@ namespace Sismeio.Models
 
         public Funcionario GetById(int codigo)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var query = conec.Query();
+                query.CommandText = "SELECT * FROM funcionario LEFT JOIN endereco ON cod_end_fk WHERE cod_fun = @codigo";
+
+                query.Parameters.AddWithValue("@codigo", codigo);
+
+                MySqlDataReader reader = query.ExecuteReader();
+
+                if (!reader.HasRows)
+                {
+                    throw new Exception("Nenhum registro encontrado!");
+                }
+
+                var funcionario = new Funcionario();
+
+                while (reader.Read())
+                {
+
+                    funcionario.Codigo = reader.GetInt32("cod_fun");
+                    funcionario.Nome = reader.GetString("nome_fun");
+                    funcionario.CPF = reader.GetString("cpf_fun");
+                    funcionario.RG = reader.GetString("rg_fun");
+                    funcionario.Sexo = reader.GetString("sexo_fun");
+                    funcionario.DataNascimento = reader.GetDateTime("data_nasc_fun");
+                    funcionario.Telefone = reader.GetString("telefone_fun");
+                    funcionario.DataAdmissao = reader.GetDateTime("data_admissao_fun");
+                    funcionario.Setor = reader.GetString("setor_fun");
+                    funcionario.Salario = reader.GetDouble("salario_fun");
+
+                    if (!DAOHelper.IsNull(reader, "cod_end_fk"))
+                        funcionario.Endereco = new Endereco()
+                        {
+                            Codigo = reader.GetInt32("cod_end"),
+                            Logradouro = reader.GetString("logradouro"),
+                            Numero = reader.GetInt32("numero"),
+                            Bairro = reader.GetString("bairro"),
+                            Cidade = reader.GetString("cidade"),
+                            Estado = reader.GetString("estado")
+                        };
+                }
+                return funcionario;
+            }
+
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+
+            }
         }
 
         public void Insert(Funcionario t)
@@ -86,7 +137,46 @@ namespace Sismeio.Models
 
         public List<Funcionario> List()
         {
-            throw new NotImplementedException();
+            try
+            {
+                List<Funcionario> list = new List<Funcionario>();
+                var query = conec.Query();
+                query.CommandText = "SELECT * FROM funcionario";
+
+                MySqlDataReader reader = query.ExecuteReader();
+
+                while (reader.Read())
+                {
+
+                    list.Add(new Funcionario()
+                    {
+                        Codigo = reader.GetInt32("cod_fun"),
+                        Nome = reader.GetString("nome_fun"),
+                        RG = reader.GetString("rg_fun"),
+                        CPF = reader.GetString("cpf_fun"),
+                        Telefone = reader.GetString("telefone_fun"),
+                        DataNascimento = reader.GetDateTime("data_nasc_fun"),
+                        Sexo = reader.GetString("sexo_fun"),
+                        Salario = reader.GetInt32("salario_fun"),
+                        Setor = reader.GetString("setor_fun"),
+                        DataAdmissao = reader.GetDateTime("data_admissao_fun"),
+                        
+
+
+
+                    });;
+                }
+                return list;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                conec.Close();
+            }
+
         }
 
         public void Update(Funcionario t)

@@ -81,7 +81,7 @@
 
 
             <Button x:Name="btcadastrar" Content="Cadastrar" Width="272" Margin="0,19,0,0" BorderBrush="{x:Null}" Click="btcadastrar_Click" Cursor="Hand"/>
-            <Button x:Name="btcancelar" Content="Cancelar" Width="272" Margin="0,19,0,0" Background="#FFC90339" BorderBrush="{x:Null}" Cursor="Hand" />
+            <Button x:Name="btcancelar" Content="Cancelar" Width="272" Margin="0,19,0,0" Background="#FFC90339" BorderBrush="{x:Null}" Cursor="Hand" Click="btcancelar_Click_1" />
         </StackPanel>
         <StackPanel Margin="456,212,118,131" RenderTransformOrigin="0.5,0.449">
 

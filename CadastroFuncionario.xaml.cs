@@ -66,7 +66,8 @@ namespace Sismeio
 
         private void txtSexo_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-     
+            
+
         }
 
 
@@ -84,5 +85,19 @@ namespace Sismeio
 
 
 
+
+        private void btcancelar_Click_1(object sender, RoutedEventArgs e)
+        {
+            var result = MessageBox.Show("Tem certeza que deseja fechar esta janela?", "Sucesso", MessageBoxButton.YesNo, MessageBoxImage.Information);
+
+            if (result == MessageBoxResult.Yes)
+
+            this.Close();
+        }
+
+
+        
+        
+            
     }
 }
