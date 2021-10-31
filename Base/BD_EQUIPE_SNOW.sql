@@ -10,8 +10,8 @@
 
 #Banco de Dados:
 
-create database BD_EQUIPE_SNOW;
-use  BD_EQUIPE_SNOW;
+create database  bd_equipe_snow;
+use  bd_equipe_snow;
 
 #drop database BD_EQUIPE_SNOW;
 
@@ -209,7 +209,7 @@ call Inserir_Endereco (null, 'Avenida Daniel Comboni', 'liberdade', 506, '769258
 call Inserir_Endereco (null, 'Avenida Jk', 'Vale das Onças', 1006, '76956300', 'São Paulo', 'SP');
 call Inserir_Endereco (null, 'Avenida Principal', 'lírios', 789, '78963200', 'Rio de Janeiro', 'RJ');
 
-select*from Endereco;
+select*from endereco;
 
  #Funcionário-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -463,6 +463,7 @@ $$ delimiter ;
 
 call Inserir_caixa(null, 'Setembro/2021');
 call Inserir_caixa(null, 'Agosto/2021');
+call Inserir_caixa(null, 'Outubro/2021');
 
 select * from caixa;
 
@@ -475,7 +476,7 @@ begin
 declare valorfinal float;
 set valorfinal = valor_com + frete_com;
 
-insert into Compras()
+insert into compras()
 Values (cod_com, valor_com, quantpro_com , data_com , frete_com , cod_for, data_entreg_com, cod_cai);
 
 END;
@@ -703,11 +704,11 @@ DELIMITER $$
 CREATE PROCEDURE inserir_gastos(cod int, valor float, data date, descr varchar(100), codcai int)
 begin
 
-declare verificar float;
+declare verificar int;
 set verificar = (select cod_cai  from caixa where cod_cai = codcai);
 
 	if (valor > 0) then
-		if (verificar is not null) then
+		if (verificar is null) then
 			select 'Caixa correspondente inexistente' as erro;
 		else 
 			insert into gastos() values (cod,valor,data,descr,codcai);
@@ -721,9 +722,54 @@ set verificar = (select cod_cai  from caixa where cod_cai = codcai);
 
 end;
 $$ delimiter ;
+
 #drop procedure inserir_gastos;
+
 call inserir_gastos (null,100,'2020-10-10', 'energia', 1);
+
 call inserir_gastos (null,0,'2020-10-10', 'energia', 1);
+
+#estoque
+
+select * from gastos;
+
+#Trigger caixa----------------------------------------------------------------------------
+
+delimiter $$
+
+create trigger atualizar_caixa_gasto after insert on gastos for each row 
+
+begin
+
+update caixa set debitos_cai = debitos_cai + new.valor_gas where cod_cai = new.cod_cai_fk;
+update caixa set saldo_final_cai =  saldo_final_cai - debitos_cai where cod_cai = new.cod_cai_fk;
+end;
+
+$$ delimiter ;
+
+
+#drop trigger atualizar_caixa_gasto;
+
+call inserir_gastos (null,100,'2020-09-10', 'energia', 2);
+call inserir_gastos (null,300,'2020-10-10', 'energia', 3);
+call inserir_gastos (null,200,'2020-08-10', 'energia', 1);
+call inserir_gastos (null,150,'2020-10-11', 'taxa', 3);
+call inserir_gastos (null,80,'2020-08-10', 'multa', 1);
+
+create table usuario(
+cod_usu int auto_increment not null primary key,
+usuario_usu varchar(20) not null,
+senha_usu int not null,
+cod_fun_fk int not null,
+foreign key (cod_fun_fk) references funcionario (cod_fun)
+);
+#drop table usuario;
+
+
+insert  usuario values (null, 'alyne', 12563, 1 ); 
+
+
+
 
 
 
